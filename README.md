@@ -1,4 +1,21 @@
-# Testnets
+# Regen Ledger Testnets
+
+Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
+
+## Join `regen-test-1000` Public Testnet
+
+We are currently preparing the `regen-test-1000` public testnet launch.
+
+We are intending to airdrop testnet tokens to all current Cosmos Hub validators
+and delegators (as of early next week). You are also welcome to submit a genesis
+account PR to receive tokens.
+
+If you would like to be in the initial validator set, you are welcome to submit
+a `gentx` PR.
+
+Here is the planned timing for the testnet rollout:
+- 2019-06-04 21:00UTC (2pm PDT/5pm EDT/11pm CEST) - Finalize `genesis.json` and  [regen-ledger](https://github.com/regen-network/regen-ledger) version
+- 2019-06-05 18:00UTC (11am PDT/2pm EDT/8pm CEST) - Genesis time
 
 ## Testnet Status
 
