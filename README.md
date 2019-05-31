@@ -11,7 +11,7 @@ and delegators (as of early next week). You are also welcome to submit a genesis
 account PR to receive tokens.
 
 If you would like to be in the initial validator set, you are welcome to submit
-a `gentx` PR.
+a `gentx` PR. The staking token for this network is called `tree`.
 
 Here is the planned timing for the testnet rollout:
 - 2019-06-04 21:00UTC (2pm PDT/5pm EDT/11pm CEST) - Finalize `genesis.json` and  [regen-ledger](https://github.com/regen-network/regen-ledger) version
