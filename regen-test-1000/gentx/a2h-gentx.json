@@ -1,0 +1,45 @@
+{
+  "type": "auth/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "cosmos-sdk/MsgCreateValidator",
+        "value": {
+          "description": {
+            "moniker": "Appeal2Heaven",
+            "identity": "FED7C177A2303737",
+            "website": "",
+            "details": ""
+          },
+          "commission": {
+            "rate": "0.100000000000000000",
+            "max_rate": "0.250000000000000000",
+            "max_change_rate": "0.010000000000000000"
+          },
+          "min_self_delegation": "1",
+          "delegator_address": "xrn:1drx6a9k3js28fcz4p0f0tcnve2fapsr368lhmd",
+          "validator_address": "xrn:valoper1drx6a9k3js28fcz4p0f0tcnve2fapsr3vvwfut",
+          "pubkey": "xrn:valconspub1zcjduepq4l0ewj8wh4z5gjdemrwzyz876fqx88zdve66j8v0lpfhx2wvdcdqlsscnr",
+          "value": {
+            "denom": "tree",
+            "amount": "1000000"
+          }
+        }
+      }
+    ],
+    "fee": {
+      "amount": null,
+      "gas": "200000"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "AkolnSPABouOu7IJS3We7pqnIAmBD1sKZ3zVrCKJjTMk"
+        },
+        "signature": "XGNobYNOKFKwoAIJNPGc2c3hlptIeZ3Ii9rEWvSXP+lhRY0R5a1JWx9IUVeObA07XwgiN1+kqr4w5Sa+1EmwQQ=="
+      }
+    ],
+    "memo": "568fec0d1542472d65bb05a6213cd61336fbd780@159.65.40.135:26656"
+  }
+}
