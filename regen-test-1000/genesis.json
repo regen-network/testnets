@@ -94,13 +94,13 @@
         "min_deposit": [
           {
             "denom": "tree",
-            "amount": "1000"
+            "amount": "100"
           }
         ],
-        "max_deposit_period": "172800000000000"
+        "max_deposit_period": "345600000000000"
       },
       "voting_params": {
-        "voting_period": "172800000000000"
+        "voting_period": "345600000000000"
       },
       "tally_params": {
         "quorum": "0.334000000000000000",
@@ -128,10 +128,34 @@
     },
     "accounts": [
       {
+        "address": "xrn:1xrsmkqh305m09tc5x73v4t3wtcuqmf6cgy2taw",
+        "coins": [
+          {
+            "denom": "tree",
+            "amount": "1000000000"
+          },
+          {
+            "denom": "seed",
+            "amount": "1000000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": null,
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0"
+      },
+      {
         "address": "xrn:12677q7hjurt967k7ssrylvcnhl2xjcj0x85ycx",
         "coins": [
           {
             "denom": "tree",
+            "amount": "1000000"
+          },
+          {
+            "denom": "seed",
             "amount": "1000000000"
           }
         ],
@@ -148,6 +172,10 @@
         "coins": [
           {
             "denom": "tree",
+            "amount": "1000000"
+          },
+          {
+            "denom": "seed",
             "amount": "1000000000"
           }
         ],
@@ -156,22 +184,6 @@
         "original_vesting": null,
         "delegated_free": null,
         "delegated_vesting": null,
-        "start_time": "0",
-        "end_time": "0"
-      },
-      {
-        "address": "xrn:1xrsmkqh305m09tc5x73v4t3wtcuqmf6cgy2taw",
-        "coins": [
-          {
-            "denom": "tree",
-            "amount": "1000000000"
-          }
-        ],
-        "sequence_number": "0",
-        "account_number": "0",
-        "original_vesting": null,
-        "delegated_free": [],
-        "delegated_vesting": [],
         "start_time": "0",
         "end_time": "0"
       }
