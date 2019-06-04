@@ -17,6 +17,9 @@ Here is the planned timing for the testnet rollout:
 - 2019-06-04 21:00UTC (2pm PDT/5pm EDT/11pm CEST) - Finalize `genesis.json` and  [regen-ledger](https://github.com/regen-network/regen-ledger) version
 - 2019-06-05 18:00UTC (11am PDT/2pm EDT/8pm CEST) - Genesis time
 
+### How to Run a Validator
+Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet node](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130)
+
 ## Testnet Status
 
 ### `xrn-test-3`
