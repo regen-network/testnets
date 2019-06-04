@@ -6,19 +6,18 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 We are currently preparing the `regen-test-1000` public testnet launch.
 
-We are intending to airdrop testnet tokens to all current Cosmos Hub validators
-and delegators (as of early next week). You are also welcome to submit a genesis
-account PR to receive tokens.
-
-If you would like to be in the initial validator set, you are welcome to submit
-a `gentx` PR. The staking token for this network is called `tree`.
-
-Here is the planned timing for the testnet rollout:
-- 2019-06-04 21:00UTC (2pm PDT/5pm EDT/11pm CEST) - Finalize `genesis.json` and  [regen-ledger](https://github.com/regen-network/regen-ledger) version
+Here is the planned timing for the testnet launch:
 - 2019-06-05 18:00UTC (11am PDT/2pm EDT/8pm CEST) - Genesis time
 
-### How to Run a Validator
-Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet validator](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130).
+The genesis files are in [./latest](latest)
+
+We have airdropped testnet tokens to all participants in the last Cosmos Hub
+testnet. If you would like to participate and have not received tokens, you
+can open an issue with an address and we'll send you some.
+
+## How to Run a Testnet Validator
+Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet validator](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130)
+to be included in genesis.
 
 ## Testnet Status
 
