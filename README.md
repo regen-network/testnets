@@ -18,7 +18,7 @@ Here is the planned timing for the testnet rollout:
 - 2019-06-05 18:00UTC (11am PDT/2pm EDT/8pm CEST) - Genesis time
 
 ### How to Run a Validator
-Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet node](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130)
+Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet validator](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130).
 
 ## Testnet Status
 
