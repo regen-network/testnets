@@ -1,8 +1,1 @@
-name: xrn
-servername: xrnd
-clientname: xrncli
-version: 0.4.0
-gitcommit: 9335cc3607314ed3c9fd056315ba6e85cc5d1e9c
-buildtags: netgo,ledger
-goversion: go version go1.12.1 darwin/amd64
-
+0.4.0
