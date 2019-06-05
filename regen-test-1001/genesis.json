@@ -21794,10 +21794,55 @@
                   "type": "tendermint/PubKeySecp256k1",
                   "value": "AtRx+dQmZRSCrCr/Jr2pvIJ2/0bLYTlB9Z4UBkTHoQyK"
                 },
-                "signature": "3MWvpS1EzlN9Rdvfxk+jJUCdg6RdcIOORKECw+soERlGc+n5K6Oi1CQ48zb9B7EvMda8SoAYaJ0TJAhwvEIkqg=="
+                "signature": "qvO2+ttoHaDVchWDnXs7g7IxeWX9fewXgEdCNX431x5w01thdgOJuE/c8qWhgio8Wwl5z506fIjzLXtbP41UNg=="
               }
             ],
             "memo": "caed8cafd56b23739aea8fdf339caaac5a453b8c@xrn-us-west-1.regen.network:26656:26656"
+          }
+        },
+        {
+          "type": "auth/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "xrnd-eu-central-1",
+                    "identity": "",
+                    "website": "",
+                    "details": ""
+                  },
+                  "commission": {
+                    "rate": "0.100000000000000000",
+                    "max_rate": "0.200000000000000000",
+                    "max_change_rate": "0.010000000000000000"
+                  },
+                  "min_self_delegation": "1",
+                  "delegator_address": "xrn:12677q7hjurt967k7ssrylvcnhl2xjcj0x85ycx",
+                  "validator_address": "xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq",
+                  "pubkey": "xrn:valconspub1zcjduepql7xz2tsxrhhjjmam4aptk455sf8tqxlq4xvkv68nmnl4u7jt3fmslxf50s",
+                  "value": {
+                    "denom": "tree",
+                    "amount": "1000000"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "A2e5MRqr/WJL7VBmn/vcUuAn/NCIwGF7lqSVj4zaJ6P6"
+                },
+                "signature": "X7O+zkB4f5k0X0SsyB1pDX93NBTnRfdU3EKgvRWCCSsOkHVFOj0Gt/1rLWffHLdRl2Mn1XLuYjMZFcVmk2ISqA=="
+              }
+            ],
+            "memo": "0685b388c68dffb0959b86aa171c841151dd34d3@xrn-eu-central-1.regen.network:26656:26656"
           }
         },
         {
