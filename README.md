@@ -2,12 +2,11 @@
 
 Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
-## Join `regen-test-1000` Public Testnet
+## Join `regen-test-1001` Public Testnet
 
-We are currently preparing the `regen-test-1000` public testnet launch.
+`regen-test-1001` is now live!
 
-Here is the planned timing for the testnet launch:
-- 2019-06-05 18:00UTC (11am PDT/2pm EDT/8pm CEST) - Genesis time
+We have a partially working fork of [Lunie](https://github.com/luniehq/lunie) at https://regen-network.gitlab.io/lunie.
 
 The genesis files are in [./latest](latest)
 
@@ -15,11 +14,13 @@ We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
 can open an issue with an address and we'll send you some.
 
-## How to Run a Testnet Validator
+### How to Run a Testnet Validator
 Thank you to Jay from CypherCore who wrote this [short and sweet tutorial on setting up a testnet validator](https://www.notion.so/jim380/Regen-Ledger-Node-Set-up-67ede4023f1b45f99724ac52386a1130)
 to be included in genesis.
 
-## Testnet Status
+## `regen-test-1000` 
+
+`regen-test-1000` hit some weird consensus error on app state at block 2.
 
 ### `xrn-test-3`
 

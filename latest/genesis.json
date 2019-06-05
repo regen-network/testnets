@@ -1,6 +1,6 @@
 {
   "genesis_time": "2019-06-05T18:00:00Z",
-  "chain_id": "regen-test-1000",
+  "chain_id": "regen-test-1001",
   "consensus_params": {
     "block": {
       "max_bytes": "22020096",
@@ -21706,190 +21706,30 @@
         "delegated_vesting": [],
         "start_time": "0",
         "end_time": "0"
+      },
+      {
+        "address": "xrn:1h7jh55qn32vjscv0l9qakpx78k3l8vyhupnum3",
+        "coins": [
+          {
+            "denom": "tree",
+            "amount": "1001000"
+          },
+          {
+            "denom": "seed",
+            "amount": "1000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": null,
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0"
       }
     ],
     "genutil": {
       "gentxs": [
-        {
-          "type": "auth/StdTx",
-          "value": {
-            "msg": [
-              {
-                "type": "cosmos-sdk/MsgCreateValidator",
-                "value": {
-                  "description": {
-                    "moniker": "Cypher Core",
-                    "identity": "",
-                    "website": "",
-                    "details": ""
-                  },
-                  "commission": {
-                    "rate": "0.100000000000000000",
-                    "max_rate": "0.200000000000000000",
-                    "max_change_rate": "0.010000000000000000"
-                  },
-                  "min_self_delegation": "1",
-                  "delegator_address": "xrn:1z92wxxpszkgg2cd9zhrdtvm6y7ra42sv3lffgw",
-                  "validator_address": "xrn:valoper1z92wxxpszkgg2cd9zhrdtvm6y7ra42sv85ch0g",
-                  "pubkey": "xrn:valconspub1zcjduepqtqvvk5t6gepnw62wc6d2utx323hef2f5qacj48s7wlcwxu0nyxlq7q75m2",
-                  "value": {
-                    "denom": "tree",
-                    "amount": "1000000"
-                  }
-                }
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas": "200000"
-            },
-            "signatures": [
-              {
-                "pub_key": {
-                  "type": "tendermint/PubKeySecp256k1",
-                  "value": "AttrY2VMaC0jKsePEMUihOIKDz6kBt0ekOMRp8jJVuZL"
-                },
-                "signature": "0liE+JohRLJJU8qD778zdg8xCSFxACQPa0T5kds1NspK3TQJP+e1wAzBgCwfxpRXhs209egm9UubNf0beyRE3g=="
-              }
-            ],
-            "memo": "f8038a542c8b98277ebd493b85a125624d5f4770@144.202.89.54:26656"
-          }
-        },
-        {
-          "type": "auth/StdTx",
-          "value": {
-            "msg": [
-              {
-                "type": "cosmos-sdk/MsgCreateValidator",
-                "value": {
-                  "description": {
-                    "moniker": "Appeal2Heaven",
-                    "identity": "FED7C177A2303737",
-                    "website": "",
-                    "details": ""
-                  },
-                  "commission": {
-                    "rate": "0.100000000000000000",
-                    "max_rate": "0.250000000000000000",
-                    "max_change_rate": "0.010000000000000000"
-                  },
-                  "min_self_delegation": "1",
-                  "delegator_address": "xrn:1drx6a9k3js28fcz4p0f0tcnve2fapsr368lhmd",
-                  "validator_address": "xrn:valoper1drx6a9k3js28fcz4p0f0tcnve2fapsr3vvwfut",
-                  "pubkey": "xrn:valconspub1zcjduepq4l0ewj8wh4z5gjdemrwzyz876fqx88zdve66j8v0lpfhx2wvdcdqlsscnr",
-                  "value": {
-                    "denom": "tree",
-                    "amount": "1000000"
-                  }
-                }
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas": "200000"
-            },
-            "signatures": [
-              {
-                "pub_key": {
-                  "type": "tendermint/PubKeySecp256k1",
-                  "value": "AkolnSPABouOu7IJS3We7pqnIAmBD1sKZ3zVrCKJjTMk"
-                },
-                "signature": "XGNobYNOKFKwoAIJNPGc2c3hlptIeZ3Ii9rEWvSXP+lhRY0R5a1JWx9IUVeObA07XwgiN1+kqr4w5Sa+1EmwQQ=="
-              }
-            ],
-            "memo": "568fec0d1542472d65bb05a6213cd61336fbd780@159.65.40.135:26656"
-          }
-        },
-        {
-          "type": "auth/StdTx",
-          "value": {
-            "msg": [
-              {
-                "type": "cosmos-sdk/MsgCreateValidator",
-                "value": {
-                  "description": {
-                    "moniker": "chainflow",
-                    "identity": "",
-                    "website": "",
-                    "details": ""
-                  },
-                  "commission": {
-                    "rate": "0.100000000000000000",
-                    "max_rate": "0.200000000000000000",
-                    "max_change_rate": "0.010000000000000000"
-                  },
-                  "min_self_delegation": "1",
-                  "delegator_address": "xrn:1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5pfjtnp",
-                  "validator_address": "xrn:valoper1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5hzr458",
-                  "pubkey": "xrn:valconspub1zcjduepqt4330l5ryaak9ptckv3ze44aculg56w9jz7vjt0xx57wwwh00mqsnyaxzz",
-                  "value": {
-                    "denom": "tree",
-                    "amount": "1000000"
-                  }
-                }
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas": "200000"
-            },
-            "signatures": [
-              {
-                "pub_key": {
-                  "type": "tendermint/PubKeySecp256k1",
-                  "value": "Ag2N8bHUk8YcxKqSbshgD3EtcLujKtoNsRBPa29QPBca"
-                },
-                "signature": "S2daIYMmgaJXQsdSWcSdjvtuAD8Iv2QTxtq+xLsLMH9Jff1/qW3jRdOEUwVa4e2NJv4Y2Zh1Tk2zmkT2CW6RqQ=="
-              }
-            ],
-            "memo": "e7c1c61d41abbc66fab0493f7921289751db1f62@172.104.145.220:26656"
-          }
-        },
-        {
-          "type": "auth/StdTx",
-          "value": {
-            "msg": [
-              {
-                "type": "cosmos-sdk/MsgCreateValidator",
-                "value": {
-                  "description": {
-                    "moniker": "xrnd-eu-central-1",
-                    "identity": "",
-                    "website": "",
-                    "details": ""
-                  },
-                  "commission": {
-                    "rate": "0.100000000000000000",
-                    "max_rate": "0.200000000000000000",
-                    "max_change_rate": "0.010000000000000000"
-                  },
-                  "min_self_delegation": "1",
-                  "delegator_address": "xrn:12677q7hjurt967k7ssrylvcnhl2xjcj0x85ycx",
-                  "validator_address": "xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq",
-                  "pubkey": "xrn:valconspub1zcjduepql7xz2tsxrhhjjmam4aptk455sf8tqxlq4xvkv68nmnl4u7jt3fmslxf50s",
-                  "value": {
-                    "denom": "tree",
-                    "amount": "1000000"
-                  }
-                }
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas": "200000"
-            },
-            "signatures": [
-              {
-                "pub_key": {
-                  "type": "tendermint/PubKeySecp256k1",
-                  "value": "A2e5MRqr/WJL7VBmn/vcUuAn/NCIwGF7lqSVj4zaJ6P6"
-                },
-                "signature": "uOJz6Ep1JaGy/SaxT/m+prFSnxi0AxlZEaBqY+WBrz1H/W202GqD2T0nZCywn5xx89YbHCFb/2wdrEnTeF6SLQ=="
-              }
-            ],
-            "memo": "0685b388c68dffb0959b86aa171c841151dd34d3@xrn-eu-central-1.regen.network:26656"
-          }
-        },
         {
           "type": "auth/StdTx",
           "value": {
@@ -21929,10 +21769,10 @@
                   "type": "tendermint/PubKeySecp256k1",
                   "value": "A/8p1AdZtDUYmDwgCfNnFv1LiC/3NvsTSjLkUC1yjSWA"
                 },
-                "signature": "XO6G+NkkkenxNXI61v8qTydVKln0+Wa2G86XgUJYwJV0Dyq2xk/2PlwDS3hO+UGKlV7zPIHUVKiiwmFRQIlV1w=="
+                "signature": "oWZoGRTnrBmg6UOvTzelsBx4U0wlwDhzOXZoiGCRjYUCuKQxNeZnWEQCxm+mry+gBT45GMijdRfX+ToCj+p+dg=="
               }
             ],
-            "memo": "bcc81bbb45945307c8b32a276fa9700f1164f3b7@xrn-us-east-1.regen.network:26656"
+            "memo": "bcc81bbb45945307c8b32a276fa9700f1164f3b7@xrn-us-east-1.regen.network:26656:26656"
           }
         },
         {
@@ -21974,10 +21814,100 @@
                   "type": "tendermint/PubKeySecp256k1",
                   "value": "AtRx+dQmZRSCrCr/Jr2pvIJ2/0bLYTlB9Z4UBkTHoQyK"
                 },
-                "signature": "YQBZknLoepBGqBXIUvVjB+Rqdto4t+aCE/OtUd4YSjY6b2dX9+i/TYsuRb3rJvxMrznJEiTl6jRb7Q5aGll+qA=="
+                "signature": "qvO2+ttoHaDVchWDnXs7g7IxeWX9fewXgEdCNX431x5w01thdgOJuE/c8qWhgio8Wwl5z506fIjzLXtbP41UNg=="
               }
             ],
-            "memo": "bcc81bbb45945307c8b32a276fa9700f1164f3b7@xrn-us-west-1.regen.network:26656"
+            "memo": "caed8cafd56b23739aea8fdf339caaac5a453b8c@xrn-us-west-1.regen.network:26656:26656"
+          }
+        },
+        {
+          "type": "auth/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "xrnd-eu-central-1",
+                    "identity": "",
+                    "website": "",
+                    "details": ""
+                  },
+                  "commission": {
+                    "rate": "0.100000000000000000",
+                    "max_rate": "0.200000000000000000",
+                    "max_change_rate": "0.010000000000000000"
+                  },
+                  "min_self_delegation": "1",
+                  "delegator_address": "xrn:12677q7hjurt967k7ssrylvcnhl2xjcj0x85ycx",
+                  "validator_address": "xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq",
+                  "pubkey": "xrn:valconspub1zcjduepql7xz2tsxrhhjjmam4aptk455sf8tqxlq4xvkv68nmnl4u7jt3fmslxf50s",
+                  "value": {
+                    "denom": "tree",
+                    "amount": "1000000"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "A2e5MRqr/WJL7VBmn/vcUuAn/NCIwGF7lqSVj4zaJ6P6"
+                },
+                "signature": "X7O+zkB4f5k0X0SsyB1pDX93NBTnRfdU3EKgvRWCCSsOkHVFOj0Gt/1rLWffHLdRl2Mn1XLuYjMZFcVmk2ISqA=="
+              }
+            ],
+            "memo": "0685b388c68dffb0959b86aa171c841151dd34d3@xrn-eu-central-1.regen.network:26656:26656"
+          }
+        },
+        {
+          "type": "auth/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "chorusone",
+                    "identity": "",
+                    "website": "",
+                    "details": ""
+                  },
+                  "commission": {
+                    "rate": "1.000000000000000000",
+                    "max_rate": "1.000000000000000000",
+                    "max_change_rate": "0.010000000000000000"
+                  },
+                  "min_self_delegation": "1",
+                  "delegator_address": "xrn:140y8m6r7s40mvmz6g5dqrsrfvfkq5m8cu30tnv",
+                  "validator_address": "xrn:valoper140y8m6r7s40mvmz6g5dqrsrfvfkq5m8c267452",
+                  "pubkey": "xrn:valconspub1zcjduepqknswwqzjzquaqx9g69fhlfy98fygwr6aahdjj2zuvg052vaq3yssd7wfh3",
+                  "value": {
+                    "denom": "tree",
+                    "amount": "1000000"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": null,
+              "gas": "200000"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "AkyRJw6I9NZ2JhLiifzxoSsHJl7KgY8jHm4L+MOoN87X"
+                },
+                "signature": "gOr0ou5sXQE51Se4xhuA74h4NsEuH/vSIGc0wlyfQ1ggaRTDmSPc/KyU1JNG5vrNv+JkVAkNkyM48vm6hIaicw=="
+              }
+            ],
+            "memo": "ba8eb42b9b7633160e287c8964970c8ad2f6d293@192.168.0.19:26656"
           }
         },
         {
@@ -22010,7 +21940,7 @@
               }
             ],
             "fee": {
-              "amount": null,
+              "amount": [],
               "gas": "200000"
             },
             "signatures": [
@@ -22019,7 +21949,7 @@
                   "type": "tendermint/PubKeySecp256k1",
                   "value": "Aqk9TFsLfzzbw+Me/LDpHAS1qyGhytApUq0fCvSYdhXq"
                 },
-                "signature": "LzmvHYvkOPrB8p5tLcfY0DmbdsKlLTow0zEGMsynyAhESVot01T33Aq33o8/Olbe0GmcKm/5OCxu/Ccvhe/hUQ=="
+                "signature": "Xqh2Aw1SZY/pCG0RAvW6P2KLdo8SVQk3QPGXhyewsd0yN2rNUICxPFipzL//6TCxCfGD2OHI6OmhQalJJJYlFw=="
               }
             ],
             "memo": "5d7fee4c394309f38567859638377ea4c597075e@1.1.1.1:26656"
@@ -22033,7 +21963,7 @@
                 "type": "cosmos-sdk/MsgCreateValidator",
                 "value": {
                   "description": {
-                    "moniker": "chorusone",
+                    "moniker": "chainflow",
                     "identity": "",
                     "website": "",
                     "details": ""
@@ -22044,9 +21974,9 @@
                     "max_change_rate": "0.010000000000000000"
                   },
                   "min_self_delegation": "1",
-                  "delegator_address": "xrn:140y8m6r7s40mvmz6g5dqrsrfvfkq5m8cu30tnv",
-                  "validator_address": "xrn:valoper140y8m6r7s40mvmz6g5dqrsrfvfkq5m8c267452",
-                  "pubkey": "xrn:valconspub1zcjduepqknswwqzjzquaqx9g69fhlfy98fygwr6aahdjj2zuvg052vaq3yssd7wfh3",
+                  "delegator_address": "xrn:1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5pfjtnp",
+                  "validator_address": "xrn:valoper1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5hzr458",
+                  "pubkey": "xrn:valconspub1zcjduepqt4330l5ryaak9ptckv3ze44aculg56w9jz7vjt0xx57wwwh00mqsnyaxzz",
                   "value": {
                     "denom": "tree",
                     "amount": "1000000"
@@ -22062,12 +21992,57 @@
               {
                 "pub_key": {
                   "type": "tendermint/PubKeySecp256k1",
-                  "value": "AkyRJw6I9NZ2JhLiifzxoSsHJl7KgY8jHm4L+MOoN87X"
+                  "value": "Ag2N8bHUk8YcxKqSbshgD3EtcLujKtoNsRBPa29QPBca"
                 },
-                "signature": "bSBSLtaaNRHC789DLS1pWu1qCjAfwdMgFledCIkE1QEQ7rpEKWy+DgCB2EuB11p5+Vk+3RVPxX7xJzR5EW9q+g=="
+                "signature": "80ffzaeuaecjZwjqqjsHzo7+dIkKxBv1vI12xrBpN/1wXEGH+aJKYAh59Grn/EcTVyRwopjwfGrzKLcWZMzzjw=="
               }
             ],
-            "memo": "ba8eb42b9b7633160e287c8964970c8ad2f6d293@192.168.0.19:26656"
+            "memo": "e7c1c61d41abbc66fab0493f7921289751db1f62@172.104.145.220:26656"
+          }
+        },
+        {
+          "type": "auth/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "easy2stake",
+                    "identity": "",
+                    "website": "",
+                    "details": ""
+                  },
+                  "commission": {
+                    "rate": "0.100000000000000000",
+                    "max_rate": "0.200000000000000000",
+                    "max_change_rate": "0.010000000000000000"
+                  },
+                  "min_self_delegation": "1",
+                  "delegator_address": "xrn:1h7jh55qn32vjscv0l9qakpx78k3l8vyhupnum3",
+                  "validator_address": "xrn:valoper1h7jh55qn32vjscv0l9qakpx78k3l8vyh22zzuh",
+                  "pubkey": "xrn:valconspub1zcjduepqyd6vr3s36qpp0sjg5sw5fz0nelj2nv299dylrpe8qadvd0m7lsvqdsda0n",
+                  "value": {
+                    "denom": "tree",
+                    "amount": "1000000"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "A0iGAoMC12t8R1WqEVC1qe7JO9l9V7jtmT76rJrnSSkS"
+                },
+                "signature": "+rfvYA3txt2+gLUYiBEv9Qt+eWFZwDXP5GgyGwQG660gSUR1wXEuhDq8yUp9wiffr+XjOj6RQlefohSgv9Yw7w=="
+              }
+            ],
+            "memo": "a54128e49a40bcccf23f2db7d31fafab305dd9e2@80.241.217.149:26656"
           }
         }
       ]
