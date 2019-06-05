@@ -21706,6 +21706,26 @@
         "delegated_vesting": [],
         "start_time": "0",
         "end_time": "0"
+      },
+      {
+        "address": "xrn:1h7jh55qn32vjscv0l9qakpx78k3l8vyhupnum3",
+        "coins": [
+          {
+            "denom": "tree",
+            "amount": "1001000"
+          },
+          {
+            "denom": "seed",
+            "amount": "1000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": null,
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0"
       }
     ],
     "genutil": {
