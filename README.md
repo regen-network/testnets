@@ -81,7 +81,7 @@ Description=Regen Xrnd
 After=network-online.target
 
 [Service]
-User=jim380
+User=<your_user>
 ExecStart=/home/<your_user>/go_workspace/bin/xrnd start
 StandardOutput=file:/var/log/xrnd/xrnd.log
 StandardError=file:/var/log/xrnd/xrnd_error.log
