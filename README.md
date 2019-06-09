@@ -59,7 +59,7 @@ Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
 #### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
-$ curl https://github.com/regen-network/testnets/blob/master/regen-test-1001/genesis.json > $HOME/.xrnd/config/genesis.json
+$ curl https://raw.githubusercontent.com/regen-network/testnets/master/regen-test-1001/genesis.json > $HOME/.xrnd/config/genesis.json
 ```
 Add seed nodes in `config.toml`.
 ```
