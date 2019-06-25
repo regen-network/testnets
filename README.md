@@ -57,7 +57,7 @@ $ xrncli keys add <your_wallet_name>
 **Make sure you back up the mnemonics !!!**
 
 ### Creating a Validator
-*If you are joining at genesis scroll down to the section on joining at genesis!*
+*If you are joining at genesis scroll down to the section on Creating a Genesis Validator!*
 
 Please follow the documentation provided on [creating a validator for Cosmos hub](https://github.com/cosmos/gaia/blob/master/docs/validators/validator-setup.md#create-your-validator), replacing `gaiad` and `gaiacli` with `xrnd` and `xrncli` respectively. Also our testnet staking token denomination is `tree` and Regen addresses begin with `xrn:` instead of `cosmos`.
 
