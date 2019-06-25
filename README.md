@@ -14,19 +14,27 @@ We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
 can open an issue with an address and we'll send you some.
 
-### How to Run a Testnet Validator
-#### Prerequisites
+## How to Run a Testnet Validator
+
+Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
+
+* [Run a Validator](https://cosmos.network/docs/cosmos-hub/validators/validator-setup.html)
+* [Validators Overview](https://cosmos.network/docs/cosmos-hub/validators/overview.html)
+* [Validator Security](https://cosmos.network/docs/cosmos-hub/validators/security.html)
+* [Validator FAQ](https://cosmos.network/docs/cosmos-hub/validators/validator-faq.html)
+
+### Prerequisites
 ```
 $ sudo apt-get install gcc g++
 ```
-#### Install GO
+### Install GO
 ```
 $ wget https://raw.githubusercontent.com/jim380/node_tooling/master/Cosmos/CLI/go_install.sh
 $ chmod +x go_install.sh
 $ ./go_install.sh -v 1.12.5
 ```
 At the time of this writing, `1.12.5` is the latest version of Golang. **Go 1.12+ is required for the Cosmos SDK.**
-#### Install XRN
+### Install XRN
 ```
 $ mkdir -p $GOPATH/src/github.com/regen
 $ cd $GOPATH/src/github.com/regen
@@ -39,12 +47,23 @@ Find the latest release tags [here](https://github.com/regen-network/regen-ledge
 $ xrnd version --long
 $ xrncli version --long
 ```
-#### Setting Up a New Node
+### Setting Up a New Node
 ```
 $ xrnd init --chain-id=regen-test-1001 <your_moniker>
 $ xrncli keys add <your_wallet_name>
+
+##
 ```
 **Make sure you back up the mnemonics !!!**
+
+### Creating a Validator
+*If you are joining at genesis scroll down to the section on joining at genesis!*
+
+Please follow the documentation provided on [creating a validator for Cosmos hub](https://github.com/cosmos/gaia/blob/master/docs/validators/validator-setup.md#create-your-validator), replacing `gaiad` and `gaiacli` with `xrnd` and `xrncli` respectively. Also our testnet staking token denomination is `tree` and Regen addresses begin with `xrn:` instead of `cosmos`.
+
+### Creating a Genesis Validator
+
+*This section applies if you are joining at genesis!*
 #### Generate Genesis Transaction (optional)
 ```
 $ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000tree,1000000validatortoken
@@ -56,7 +75,7 @@ Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034k
 ```
 #### Submit Gentx (optional)
 Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
-#### Genesis & Seeds
+### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
 $ curl https://raw.githubusercontent.com/regen-network/testnets/master/regen-test-1001/genesis.json > $HOME/.xrnd/config/genesis.json
@@ -70,7 +89,7 @@ Find the following section and add the seed nodes.
 # Comma separated list of seed nodes to connect to
 seeds = ""
 ```
-#### Make `xrnd` a System Service (optional)
+### Make `xrnd` a System Service (optional)
 ```
 $ sudo nano /lib/systemd/system/xrnd.service
 ```
