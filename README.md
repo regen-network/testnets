@@ -12,7 +12,7 @@ The genesis files are in [./latest](latest)
 
 We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
-can open an issue with an address and we'll send you some.
+can get some from this faucet: http://regen.coris.network/faucet or open an issue with an address and we'll send you some.
 
 ## How to Run a Testnet Validator
 
