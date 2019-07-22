@@ -15,6 +15,9 @@ You need to use keybase to generate your own [pgp fingerprint](https://github.co
 | 1    | Participate in Genesis file generation process | Submit your gen-tx.json and use `name-pgp-fingerprint` as validator's name | Submit the url of your PR                                        | 100    |
 | 2    | Run a validator node |  | | 100    |
 | 3    | Vote on software upgrade proposal              |  |  | 100    |
-| 4    | Upgrade your node according the software upgrade proposal |  |  | 400 minus 1 point for every missed block   |
-| 5    | Uptime reward |  points awarded for blocks signed since genesis | points are rewarded based your uptime proportional to the life of the life of the testnet  | max 200, awarded proportionally to up time |
+| 4    | Upgrade your node according the software upgrade proposal 1 |  |  | 200 minus 1 point for every missed block   |
+| 5    | Upgrade your node according the software upgrade proposal 2 |  |  | 200 minus 1 point for every missed block   |
+| 6    | Test delegated fees functionality |  |  | 100    |
+| 7    | Uptime reward |  points awarded for blocks signed since genesis | points are rewarded based your uptime proportional to the life of the life of the testnet  | max 200, awarded proportionally to up time |
+
 
