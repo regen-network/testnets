@@ -22,6 +22,10 @@ In order to convert points into tokens at the end of the testnet program, you wi
 private key for the address that was awarded points through a signature and go through a KYC/AML process. Further
 details for how to proceed with this process will be published at a later point.
 
+## Notes
+
+The rate at which points will be converted to tokens will be published after the end of the testnet program.
+
 Regen Network Development, Inc. reserves the right to make adjustments to the above point structure in the event that
 an unforeseen event halts the testnet prior to a particular goal being reached, as well as to add additional point-earning
 activities as such activities become available on the testnet.
