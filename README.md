@@ -6,13 +6,14 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 `regen-test-1001` is now live!
 
-We have a partially working fork of [Lunie](https://github.com/luniehq/lunie) at https://regen-network.gitlab.io/lunie.
+We have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
+and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
 
 The genesis files are in [./latest](latest)
 
 We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
-can get some from this faucet: http://regen.coris.network/faucet or open an issue with an address and we'll send you some.
+can get some from this faucet: http://regen.coris.network/faucet, ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg or open an issue with an address and we'll send you some.
 
 ## How to Run a Testnet Validator
 
