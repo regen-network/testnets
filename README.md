@@ -64,7 +64,7 @@ Please follow the documentation provided on [creating a validator for Cosmos hub
 
 ### Creating a Genesis Validator
 
-*This section applies if you are joining at genesis!*
+*This section applies ONLY if you are joining at genesis! Genesis for Regen Test-1001 was in June 2019*
 #### Generate Genesis Transaction (optional)
 ```
 $ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000tree,1000000validatortoken
