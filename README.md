@@ -9,7 +9,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 We have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
 and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
 
-The genesis files are in [./latest](latest)
+The genesis files are in [./latest](latest) and the incentive point system in [./regen-test-1001/README.md](./regen-test-1001/README.md)
 
 We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
