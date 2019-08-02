@@ -29,14 +29,14 @@ The rate at which points will be converted to tokens will be published after the
 A token faucet is available at http://regen.coris.network/faucet. The following terms of use apply:
 
 * In order to ensure there are enough coins for everyone in the testnet and that there is a fair staking distribution,
-each validator and their delegators and welcome to withdraw up to 2m tree from the public faucet.
+each validator and their delegators and welcome to withdraw in aggregate up to 2m tree from the public faucet.
 
 * 2m tree is a soft limit and upon an accidental distribution that exceeds the 2m limit,
-there is no penalty or repercussions if the tokens are immediately returned to the faucet address
+there are no penalties or repercussions if the tokens are returned to the faucet address
 within a reasonable time-frame. 
 
-* Using the faucet to exceed this 2m limit may result in disqualification from
-receiving testnet rewards.
+* Using the faucet beyond this 2m limit without returning excess tokens will result
+in disqualification from testnet rewards.
 
 ## Notes
 
