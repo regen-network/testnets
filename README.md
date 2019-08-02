@@ -13,7 +13,9 @@ The genesis files are in [./latest](latest) and the incentive point system in [.
 
 We have airdropped testnet tokens to all participants in the last Cosmos Hub
 testnet. If you would like to participate and have not received tokens, you
-can get some from this faucet: http://regen.coris.network/faucet, ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg or open an issue with an address and we'll send you some.
+can get some from this faucet: http://regen.coris.network/faucet,
+ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg
+or open an issue with an address and we'll send you some.
 
 ## How to Run a Testnet Validator
 
