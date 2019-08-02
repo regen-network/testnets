@@ -22,10 +22,24 @@ In order to convert points into tokens at the end of the testnet program, you wi
 private key for the address that was awarded points through a signature and go through a KYC/AML process. Further
 details for how to proceed with this process will be published at a later point.
 
-## Notes
-
 The rate at which points will be converted to tokens will be published after the end of the testnet program.
 
-Regen Network Development, Inc. reserves the right to make adjustments to the above point structure in the event that
-an unforeseen event halts the testnet prior to a particular goal being reached, as well as to add additional point-earning
-activities as such activities become available on the testnet.
+## Faucet Terms of Use
+
+A token faucet is available at http://regen.coris.network/faucet. The following terms of use apply:
+
+* In order to ensure there are enough coins for everyone in the testnet and that there is a fair staking distribution,
+each validator and their delegators and welcome to withdraw up to 2m tree from the public faucet.
+
+* 2m tree is a soft limit and upon an accidental distribution that exceeds the 2m limit,
+there is no penalty or repercussions if the tokens are immediately returned to the faucet address
+within a reasonable time-frame. 
+
+* Using the faucet to exceed this 2m limit may result in disqualification from
+receiving testnet rewards.
+
+## Notes
+
+Regen Network Development, Inc. reserves the right to make adjustments to the above point structure to ensure the health
+of the testnet program, such as accomodating unforeseen events such as halts the testnet prior to a particular goal
+being reached, as well as to add additional point-earning activities as such activities become available on the testnet.
