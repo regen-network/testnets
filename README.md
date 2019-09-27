@@ -68,20 +68,6 @@ $ xrncli keys add <your_wallet_name>
 
 Please follow the documentation provided on [creating a validator for Cosmos hub](https://github.com/cosmos/gaia/blob/master/docs/validators/validator-setup.md#create-your-validator), replacing `gaiad` and `gaiacli` with `xrnd` and `xrncli` respectively. Also our testnet staking token denomination is `tree` and Regen addresses begin with `xrn:` instead of `cosmos`.
 
-### Creating a Genesis Validator
-
-*This section applies ONLY if you are joining at genesis! Genesis for Regen Test-1001 was in June 2019*
-#### Generate Genesis Transaction (optional)
-```
-$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000tree,1000000validatortoken
-$ xrnd gentx --name <your_wallet_name> --amount 1000000tree
-```
-If all goes well, you will see the following message:
-```
-Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
-```
-#### Submit Gentx (optional)
-Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
 ### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
@@ -141,22 +127,35 @@ Check node status
 ```
 $ xrncli status
 ```
+
+### Creating a Genesis Validator
+
+*This section applies ONLY if you are joining at genesis! Genesis for Regen Test-1001 was in June 2019.*
+#### Generate Genesis Transaction (optional)
+```
+$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000tree,1000000validatortoken
+$ xrnd gentx --name <your_wallet_name> --amount 1000000tree
+```
+If all goes well, you will see the following message:
+```
+Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
+```
+#### Submit Gentx (optional)
+Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
+
+
+# Historic Testnets (not in use)
+
+The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
+
 ## `regen-test-1000` 
 
 `regen-test-1000` hit some weird consensus error on app state at block 2.
 
 ### `xrn-test-3`
 
-Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z` and is live as of this writing.
+Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z` and is now defunct.
 
-In this testnet, validator nodes currently have ports 26656, 26657 and 1317 open for testing purposes. In the future,
-the testnet will be setup with more security hardening via sentry and seed nodes.
-
-The validator node URL's are as follows:
-
-* [xrn-us-east-1.regen.network](http://xrn-us-east-1.regen.network:26657)
-* [xrn-us-west-1.regen.network](http://xrn-us-west-1.regen.network:26657)
-* [xrn-eu-central-1.regen.network](http://xrn-eu-central-1.regen.network:26657)
 
 `xrncli` can be configured to connect to the testnet as follows:
 
