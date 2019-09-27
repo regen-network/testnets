@@ -17,6 +17,10 @@ can get some from this faucet: http://regen.coris.network/faucet,
 ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg
 or open an issue with an address and we'll send you some.
 
+For those wanting to develop against the Regen test network APIs, please use the following highly available service provided by [Chorus One](https://chorus.one):
+* **RPC**: https://regen.chorus.one:26657
+* **LCD**: https://regen-lcd.chorus.one:1317
+
 ## How to Run a Testnet Validator
 
 Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
@@ -90,7 +94,7 @@ $ nano $HOME/.xrnd/config/config.toml
 Find the following section and add the seed nodes.
 ```
 # Comma separated list of seed nodes to connect to
-seeds = ""
+seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@regen-seed-eu.chorus.one:36656,ca130fd7ca16a957850a96ee9bdb74a351c4929f@regen-seed-us.chorus.one:36656"
 ```
 ### Make `xrnd` a System Service (optional)
 ```
