@@ -35,23 +35,12 @@ func (h handler) CalculateUptime(startBlock int, endBlock int) {
 		for _, valAddr := range blocks[currentHeight].Validators {
 
 			//Get validator address from existed validator uptime count
-			valInfo, pos := GetExistedAddress(valAddr, validatorsList)
+			index := GetValidatorIndex(valAddr, validatorsList)
 
-			if pos > 0 {
+			if index > 0 {
 				// If validator is present in the list already (i.e., joined the network in previous block heights)
 				// Update uptime details
-
-				//Removing existed validator from uptime count
-				validatorsList = append(validatorsList[:pos], validatorsList[pos+1:]...)
-
-				//Incrementing uptime count
-				valInfo.Info.UptimeCount++
-
-				/*// TODO can we do this instead?
-				validatorsList[pos].Info.uptimeCount += 1*/
-
-				//Inserting existed validator into uptime count
-				validatorsList = append(validatorsList, *valInfo)
+				validatorsList[index].Info.UptimeCount++
 			} else {
 				// If the validator is not present in the list i.e., newly joined in the current block
 				// Fetch Validator information and Push to validators list
@@ -94,18 +83,18 @@ func (h handler) CalculateUptime(startBlock int, endBlock int) {
 	ExportIntoCsv(validatorsList)
 }
 
-func GetExistedAddress(validatorAddr string, validatorsList []ValidatorInfo) (*ValidatorInfo, int) {
-	var valAddrs ValidatorInfo
+// GetValidatorIndex
+// returns the index of the validator from the list
+func GetValidatorIndex(validatorAddr string, validatorsList []ValidatorInfo) int {
 	var pos int
 
 	for index, addr := range validatorsList {
 		if addr.ValAddress == validatorAddr {
-			valAddrs = addr
 			pos = index
 		}
 	}
 
-	return &valAddrs, pos
+	return pos
 }
 
 func ExportIntoCsv(data []ValidatorInfo) {
@@ -115,8 +104,9 @@ func ExportIntoCsv(data []ValidatorInfo) {
 
 	file, err := os.Create("result.csv")
 
-	//Error handling
-	checkError("Cannot create file", err)
+	if err != nil {
+		log.Fatal("Cannot write to file", err)
+	}
 
 	defer file.Close() //Close file
 
@@ -131,12 +121,9 @@ func ExportIntoCsv(data []ValidatorInfo) {
 		uptimeCount := strconv.Itoa(int(record.Info.UptimeCount))
 		addrObj := []string{record.ValAddress, record.Info.Moniker, uptimeCount}
 		err := writer.Write(addrObj)
-		checkError("Cannot write to file", err)
-	}
-}
 
-func checkError(message string, err error) {
-	if err != nil {
-		log.Fatal(message, err)
+		if err != nil {
+			log.Fatal("Cannot write to file", err)
+		}
 	}
 }
