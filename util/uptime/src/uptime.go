@@ -34,7 +34,7 @@ func (h handler) CalculateUptime(startBlock int, endBlock int) {
 	for currentHeight := 0; currentHeight < numBlocks; currentHeight++ {
 		for _, valAddr := range blocks[currentHeight].Validators {
 
-			//Get validator address from existed validator uptime count
+			//Get the validator index from validatorsList
 			index := GetValidatorIndex(valAddr, validatorsList)
 
 			if index > 0 {
@@ -83,8 +83,7 @@ func (h handler) CalculateUptime(startBlock int, endBlock int) {
 	ExportIntoCsv(validatorsList)
 }
 
-// GetValidatorIndex
-// returns the index of the validator from the list
+// GetValidatorIndex returns the index of the validator from the list
 func GetValidatorIndex(validatorAddr string, validatorsList []ValidatorInfo) int {
 	var pos int
 
