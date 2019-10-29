@@ -45,7 +45,10 @@ func (db Store) Terminate() {
 // FetchBlocks read the blocks data
 func (db Store) FetchBlocks(startBlock int, endBlock int) ([]Blocks, error) {
 	var blocks []Blocks
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(nil).Skip(startBlock).Limit(endBlock).All(&blocks)
+
+	andQuery := bson.M{"height": bson.M{"$gte": startBlock, "$lte": endBlock}}
+
+	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(andQuery).All(&blocks)
 
 	return blocks, err
 }
