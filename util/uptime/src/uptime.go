@@ -20,27 +20,31 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
-func (h handler) CalculateUptime() {
-	var finalValAddrs []ValidatorInfo //Intializing validators uptime
+func (h handler) CalculateUptime(startBlock int, endBlock int) {
+	var validatorsList []ValidatorInfo //Intializing validators uptime
+
+	fmt.Println("Fetching blocks from:", startBlock, ", to:", endBlock)
 
 	//Read all blocks
-	blocks, _ := h.db.ReadAllBlocks()
+	blocks, _ := h.db.FetchBlocks(startBlock, endBlock)
+
+	fmt.Println("Fetching data done. Calculating uptime")
 
 	for currentHeight := 0; currentHeight < len(blocks); currentHeight++ {
 		for _, valAddr := range blocks[currentHeight].Validators {
 
 			//Get validator address from existed validator uptime count
-			existedValAddr, pos := GetExistedAddress(valAddr, finalValAddrs)
+			existedValAddr, pos := GetExistedAddress(valAddr, validatorsList)
 
 			if pos > 0 {
 				//Removing existed validator from uptime count
-				finalValAddrs = append(finalValAddrs[:pos], finalValAddrs[pos+1:]...)
+				validatorsList = append(validatorsList[:pos], validatorsList[pos+1:]...)
 
 				//Incrementing uptime count
 				existedValAddr.Info.UptimeCount++
 
 				//Inserting existed validator into uptime count
-				finalValAddrs = append(finalValAddrs, *existedValAddr)
+				validatorsList = append(validatorsList, *existedValAddr)
 			} else {
 				query := bson.M{
 					"address": valAddr,
@@ -60,7 +64,7 @@ func (h handler) CalculateUptime() {
 				}
 
 				//Inserting new validator into uptime count
-				finalValAddrs = append(finalValAddrs, valAddressInfo)
+				validatorsList = append(validatorsList, valAddressInfo)
 			}
 		}
 	}
@@ -69,21 +73,21 @@ func (h handler) CalculateUptime() {
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Address\t Moniker\t Uptime Count")
 
-	for _, data := range finalValAddrs {
+	for _, data := range validatorsList {
 		fmt.Fprintln(w, " "+data.ValAddress+"\t "+data.Info.Moniker+"\t  "+strconv.Itoa(int(data.Info.UptimeCount)))
 	}
 
 	w.Flush()
 
 	//Exporing into csv file
-	ExportIntoCsv(finalValAddrs)
+	ExportIntoCsv(validatorsList)
 }
 
-func GetExistedAddress(validatorAddr string, finalValAddrs []ValidatorInfo) (*ValidatorInfo, int) {
+func GetExistedAddress(validatorAddr string, validatorsList []ValidatorInfo) (*ValidatorInfo, int) {
 	var valAddrs ValidatorInfo
 	var pos int
 
-	for index, addr := range finalValAddrs {
+	for index, addr := range validatorsList {
 		if addr.ValAddress == validatorAddr {
 			valAddrs = addr
 			pos = index

@@ -41,15 +41,15 @@ func (db Store) Terminate() {
 	db.session.Close()
 }
 
-//Read all blocks
-func (db Store) ReadAllBlocks() ([]Blocks, error) {
+// FetchBlocks read the blocks data
+func (db Store) FetchBlocks(startBlock int, endBlock int) ([]Blocks, error) {
 	var blocks []Blocks
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(nil).All(&blocks)
+	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(nil).Skip(startBlock).Limit(endBlock).All(&blocks)
 
 	return blocks, err
 }
 
-//Read single validator
+//GetValidator Read single validator info
 func (db Store) GetValidator(query bson.M) (Validator, error) {
 	var val Validator
 	err := db.session.DB(DB_NAME).C(VALIDATORS_COLLECTION).Find(query).One(&val)
@@ -61,7 +61,7 @@ type (
 	// DB interface defines all the methods accessible by the application
 	DB interface {
 		Terminate()
-		ReadAllBlocks() ([]Blocks, error)
+		FetchBlocks(startBlock int, endBlock int) ([]Blocks, error)
 		GetValidator(query bson.M) (Validator, error)
 	}
 

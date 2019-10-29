@@ -1,14 +1,31 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
-	"os"
 	"uptime/db"
 	"uptime/src"
 )
 
 func main() {
+
+	fmt.Println("Starting...")
+
+	var (
+		startBlock int
+		endBlock   int
+	)
+
+	//Read the start, end block flags passed from cmd
+	flag.IntVar(&startBlock, "start", -1, "start flag: Start Block Number")
+	flag.IntVar(&endBlock, "end", -1, "end flag: End Block Number")
+
+	flag.Parse()
+
+	if startBlock < 0 || endBlock < 1 {
+		panic("--start and/or --end block flags are missing. Use --start, --end to input the range of blocknumbers")
+	}
 
 	//Read database configuration from config.toml
 	uri := db.ReadDBConfig()
@@ -27,9 +44,5 @@ func main() {
 
 	handler := src.New(session)
 
-	if len(os.Args) < 1 || os.Args[1] != "from" {
-		panic("Requires from, to blocknumbers. No arguments supplied")
-	}
-
-	handler.CalculateUptime()
+	handler.CalculateUptime(startBlock, endBlock)
 }
