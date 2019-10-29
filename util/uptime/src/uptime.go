@@ -1,14 +1,15 @@
 package src
 
 import (
-	"uptime/db"
-	"gopkg.in/mgo.v2/bson"
+	"encoding/csv"
 	"fmt"
 	"log"
-	"encoding/csv"
 	"os"
 	"strconv"
 	"text/tabwriter"
+	"uptime/db"
+
+	"gopkg.in/mgo.v2/bson"
 )
 
 type handler struct {
@@ -19,14 +20,14 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
-func (h handler) CalUptime()  {
-	var finalValAddrs  []ValidatorInfo 		//Intializing validators uptime
+func (h handler) CalculateUptime() {
+	var finalValAddrs []ValidatorInfo //Intializing validators uptime
 
 	//Read all blocks
 	blocks, _ := h.db.ReadAllBlocks()
 
-	for currentHeight := 0; currentHeight<len(blocks); currentHeight++ {
-		for _,valAddr := range blocks[currentHeight].Validators {
+	for currentHeight := 0; currentHeight < len(blocks); currentHeight++ {
+		for _, valAddr := range blocks[currentHeight].Validators {
 
 			//Get validator address from existed validator uptime count
 			existedValAddr, pos := GetExistedAddress(valAddr, finalValAddrs)
@@ -51,10 +52,10 @@ func (h handler) CalUptime()  {
 				valAddressInfo := ValidatorInfo{
 					ValAddress: valAddr,
 					Info: Info{
-						UptimeCount: 1,
-						Moniker: validator.Description.Moniker,
+						UptimeCount:  1,
+						Moniker:      validator.Description.Moniker,
 						OperatorAddr: validator.OperatorAddress,
-						StartBlock: int64(currentHeight),
+						StartBlock:   int64(currentHeight),
 					},
 				}
 
@@ -67,8 +68,9 @@ func (h handler) CalUptime()  {
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Address\t Moniker\t Uptime Count")
-	for _,data := range finalValAddrs{
-		fmt.Fprintln(w, " "+ data.ValAddress+"\t "+data.Info.Moniker+"\t  "+strconv.Itoa(int(data.Info.UptimeCount)))
+
+	for _, data := range finalValAddrs {
+		fmt.Fprintln(w, " "+data.ValAddress+"\t "+data.Info.Moniker+"\t  "+strconv.Itoa(int(data.Info.UptimeCount)))
 	}
 
 	w.Flush()
@@ -77,10 +79,11 @@ func (h handler) CalUptime()  {
 	ExportIntoCsv(finalValAddrs)
 }
 
-func GetExistedAddress(validatorAddr string, finalValAddrs []ValidatorInfo) (*ValidatorInfo, int)  {
+func GetExistedAddress(validatorAddr string, finalValAddrs []ValidatorInfo) (*ValidatorInfo, int) {
 	var valAddrs ValidatorInfo
 	var pos int
-	for index,addr := range finalValAddrs {
+
+	for index, addr := range finalValAddrs {
 		if addr.ValAddress == validatorAddr {
 			valAddrs = addr
 			pos = index
@@ -89,7 +92,6 @@ func GetExistedAddress(validatorAddr string, finalValAddrs []ValidatorInfo) (*Va
 
 	return &valAddrs, pos
 }
-
 
 func ExportIntoCsv(data []ValidatorInfo) {
 	Header := []string{
@@ -101,7 +103,7 @@ func ExportIntoCsv(data []ValidatorInfo) {
 	//Error handling
 	checkError("Cannot create file", err)
 
-	defer file.Close()  	//Close file
+	defer file.Close() //Close file
 
 	writer := csv.NewWriter(file)
 

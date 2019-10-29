@@ -11,10 +11,12 @@ import (
 func ReadDBConfig() *mgo.DialInfo {
 	viper.SetConfigName("config") // name of config file (without extension)
 	viper.AddConfigPath(".")      // path to look for the config file in
-	err := viper.ReadInConfig()   // Find and read the config file
-	if err != nil {               // Handle errors reading the config file
+
+	err := viper.ReadInConfig() // Find and read the config file
+	if err != nil {             // Handle errors reading the config file
 		panic(fmt.Errorf("fatal error config file: %s", err))
 	}
+
 	viper.SetConfigType("toml")
 
 	uri, ok := viper.Get("mongo_uri").(string)
@@ -22,8 +24,7 @@ func ReadDBConfig() *mgo.DialInfo {
 		panic("database url is invalid")
 	}
 
-	dbConfig := &mgo.DialInfo{
-	}
+	dbConfig := &mgo.DialInfo{}
 
 	viper.Unmarshal(dbConfig)
 	dbConfig.Addrs = []string{uri}
