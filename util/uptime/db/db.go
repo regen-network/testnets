@@ -1,13 +1,14 @@
 package db
 
 import (
+	"github.com/spf13/viper"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 
 //configuring db name and collections
 var (
-	DB_NAME               = "bigdipper_db"
+	DB_NAME, dbErr        = viper.Get("database").(string)
 	BLOCKS_COLLECTION     = "blocks"
 	VALIDATORS_COLLECTION = "validators"
 )

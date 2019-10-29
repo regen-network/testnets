@@ -27,25 +27,36 @@ func (h handler) CalculateUptime(startBlock int, endBlock int) {
 
 	//Read all blocks
 	blocks, _ := h.db.FetchBlocks(startBlock, endBlock)
+	numBlocks := len(blocks)
 
-	fmt.Println("Fetching data done. Calculating uptime")
+	fmt.Println("Fetched ", numBlocks, " blocks. Calculating uptime ...")
 
-	for currentHeight := 0; currentHeight < len(blocks); currentHeight++ {
+	for currentHeight := 0; currentHeight < numBlocks; currentHeight++ {
 		for _, valAddr := range blocks[currentHeight].Validators {
 
 			//Get validator address from existed validator uptime count
-			existedValAddr, pos := GetExistedAddress(valAddr, validatorsList)
+			valInfo, pos := GetExistedAddress(valAddr, validatorsList)
 
 			if pos > 0 {
+				// If validator is present in the list already (i.e., joined the network in previous block heights)
+				// Update uptime details
+
 				//Removing existed validator from uptime count
 				validatorsList = append(validatorsList[:pos], validatorsList[pos+1:]...)
 
 				//Incrementing uptime count
-				existedValAddr.Info.UptimeCount++
+				valInfo.Info.UptimeCount++
+
+				/*// TODO can we do this instead?
+				validatorsList[pos].Info.uptimeCount += 1*/
 
 				//Inserting existed validator into uptime count
-				validatorsList = append(validatorsList, *existedValAddr)
+				validatorsList = append(validatorsList, *valInfo)
 			} else {
+				// If the validator is not present in the list i.e., newly joined in the current block
+				// Fetch Validator information and Push to validators list
+				// Initialize the validator uptime info with default info (i.e., 1)
+
 				query := bson.M{
 					"address": valAddr,
 				}
