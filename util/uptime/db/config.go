@@ -4,10 +4,11 @@ import (
 	"fmt"
 
 	"github.com/spf13/viper"
+	"gopkg.in/mgo.v2"
 )
 
 // ReadDBConfig would return connection string for database
-func ReadDBConfig() string {
+func ReadDBConfig() *mgo.DialInfo {
 	viper.SetConfigName("config") // name of config file (without extension)
 	viper.AddConfigPath(".")      // path to look for the config file in
 	err := viper.ReadInConfig()   // Find and read the config file
@@ -16,10 +17,16 @@ func ReadDBConfig() string {
 	}
 	viper.SetConfigType("toml")
 
-	mongoURI, ok := viper.Get("mongo_uri").(string)
+	uri, ok := viper.Get("mongo_uri").(string)
 	if !ok {
 		panic("database url is invalid")
 	}
 
-	return mongoURI
+	dbConfig := &mgo.DialInfo{
+	}
+
+	viper.Unmarshal(dbConfig)
+	dbConfig.Addrs = []string{uri}
+
+	return dbConfig
 }

@@ -1,0 +1,3 @@
+mongo_uri = "127.0.0.1:27017"
+database = "bigdipper_db"
+failFast = true

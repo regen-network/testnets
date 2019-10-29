@@ -4,6 +4,8 @@ go 1.13
 
 require (
 	github.com/magiconair/properties v1.8.1 // indirect
+	github.com/mattn/go-runewidth v0.0.5 // indirect
+	github.com/olekukonko/tablewriter v0.0.1 // indirect
 	github.com/pelletier/go-toml v1.6.0 // indirect
 	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
