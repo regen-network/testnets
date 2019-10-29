@@ -1,0 +1,6 @@
+mongo_uri = "localhost:27017"
+database = ""
+username = ""
+password = ""
+source = "admin"
+failFast = true

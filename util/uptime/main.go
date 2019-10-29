@@ -27,7 +27,9 @@ func main() {
 
 	handler := src.New(session)
 
-	if len(os.Args) > 1 && os.Args[1] == "from" {
-		handler.CalculateUptime()
+	if len(os.Args) < 1 || os.Args[1] != "from" {
+		panic("Requires from, to blocknumbers. No arguments supplied")
 	}
+
+	handler.CalculateUptime()
 }

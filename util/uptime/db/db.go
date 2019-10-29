@@ -44,7 +44,7 @@ func (db Store) Terminate() {
 //Read all blocks
 func (db Store) ReadAllBlocks() ([]Blocks, error) {
 	var blocks []Blocks
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(nil).Limit(50).All(&blocks)
+	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(nil).All(&blocks)
 
 	return blocks, err
 }
