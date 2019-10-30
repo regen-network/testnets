@@ -1,6 +1,17 @@
+# Database config
 mongo_uri = "localhost:27017"
 database = ""
 username = ""
 password = ""
 source = "admin"
 failFast = true
+
+# El choco upgrade config
+el_choco_startblock = 953628
+el_choco_endblock = 953827
+el_choco_reward_score_per_block = 1 #200 rewards are distributed equally for each block
+
+# Amazonas upgrade config
+amazonas_startblock = 1722051
+amazonas_endblock = 1722250
+amazonas_reward_score_per_block = 1 #200 rewards are distributed equally for each block

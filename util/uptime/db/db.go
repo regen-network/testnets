@@ -43,14 +43,21 @@ func (db Store) Terminate() {
 }
 
 // FetchBlocks read the blocks data
-func (db Store) FetchBlocks(startBlock int, endBlock int) ([]Blocks, error) {
+func (db Store) FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error) {
 	var blocks []Blocks
 
 	andQuery := bson.M{"height": bson.M{"$gte": startBlock, "$lte": endBlock}}
 
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(andQuery).All(&blocks)
+	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(andQuery).Sort("height").All(&blocks)
 
 	return blocks, err
+}
+
+//Get block by height
+func (db Store) GetBlockByHeight(query bson.M) (Blocks, error) {
+	var block Blocks
+	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(query).One(&block)
+	return block, err
 }
 
 //GetValidator Read single validator info
@@ -65,8 +72,9 @@ type (
 	// DB interface defines all the methods accessible by the application
 	DB interface {
 		Terminate()
-		FetchBlocks(startBlock int, endBlock int) ([]Blocks, error)
+		FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error)
 		GetValidator(query bson.M) (Validator, error)
+		GetBlockByHeight(query bson.M) (Blocks, error)
 	}
 
 	// Store will be used to satisfy the DB interface
