@@ -44,5 +44,5 @@ func main() {
 
 	handler := src.New(session)
 
-	handler.CalculateUptime(startBlock, endBlock)
+	handler.CalculateUptime(int64(startBlock), int64(endBlock))
 }
