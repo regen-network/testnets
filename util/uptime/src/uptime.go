@@ -14,8 +14,13 @@ import (
 )
 
 var (
-	upgrade1Height int64
-	upgrade2Height int64
+	elChocoStartBlock    int64
+	elChocoEndBlock      int64
+	elChocoScorePerBlock int64
+
+	amazonasStartBlock    int64
+	amazonasEndBlock      int64
+	amazonasScorePerBlock int64
 )
 
 type handler struct {
@@ -27,23 +32,32 @@ func New(db db.DB) handler {
 }
 
 func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
+	// Read El Choco upgrade configs
+	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
+	elChocoEndBlock = viper.Get("el_choco_endblock").(int64)
+	elChocoScorePerBlock = viper.Get("el_choco_reward_score_per_block").(int64)
 
-	upgrade1Height = viper.Get("upgrade1height").(int64)
-	upgrade2Height = viper.Get("upgrade2height").(int64)
+	// Read Amazonas upgrade configs
+	amazonasStartBlock = viper.Get("amazonas_startblock").(int64)
+	amazonasEndBlock = viper.Get("amazonas_endblock").(int64)
+	amazonasScorePerBlock = viper.Get("amazonas_reward_score_per_block").(int64)
 
 	var validatorsList []ValidatorInfo //Intializing validators uptime
 
 	fmt.Println("Fetching blocks from:", startBlock, ", to:", endBlock)
 
 	//Read all blocks
-	blocks, err := h.db.FetchBlocks(startBlock, endBlock+1)
+	blocks, err := h.db.FetchBlocks(startBlock, endBlock)
+
+	blocksLen := len(blocks)
 
 	if err != nil {
 		fmt.Printf("Error while fetching all blocks %v", err)
 		os.Exit(1)
 	}
 
-	for i := startBlock; i < endBlock; i++ {
+	for i := 0; i < blocksLen; i++ {
+		currentBlockHeight := blocks[i].Height
 
 		for _, valAddr := range blocks[i].Validators {
 			//Get the validator index from validatorsList
@@ -54,16 +68,18 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 				// Update uptime details
 				validatorsList[index].Info.UptimeCount++
 
-				//Updating upgrade1 score if score is not present and
-				//validator already exists in validator list
-				if validatorsList[index].Info.Upgrade1Score == 0 {
-					validatorsList[index].Info.Upgrade1Score = GetUpgradeScore(i, upgrade1Height)
+				//Block height must be in between El Choco upgrade startblock height and endblock height
+				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
+					if validatorsList[index].Info.Upgrade1Score == 0 {
+						validatorsList[index].Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - elChocoStartBlock)
+					}
 				}
 
-				//Updating upgrade2 score if score is not present and
-				//validator already exists in validator list
-				if validatorsList[index].Info.Upgrade2Score == 0 {
-					validatorsList[index].Info.Upgrade2Score = GetUpgradeScore(i, upgrade2Height)
+				//Block height must be in between Amazonas upgrade startblock height and endblock height
+				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight < amazonasEndBlock {
+					if validatorsList[index].Info.Upgrade2Score == 0 {
+						validatorsList[index].Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - amazonasStartBlock)
+					}
 				}
 			} else {
 				// If the validator is not present in the list i.e., newly joined in the current block
@@ -83,16 +99,22 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 						UptimeCount:  1,
 						Moniker:      validator.Description.Moniker,
 						OperatorAddr: validator.OperatorAddress,
-						StartBlock:   int64(i),
+						StartBlock:   int64(currentBlockHeight),
 					},
 				}
 
-				if valAddressInfo.Info.Upgrade1Score == 0 {
-					valAddressInfo.Info.Upgrade1Score = GetUpgradeScore(i, upgrade1Height)
+				//Block height must be in between El Choco upgrade startblock height and endblock height
+				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
+					if valAddressInfo.Info.Upgrade1Score == 0 {
+						valAddressInfo.Info.Upgrade1Score = elChocoScorePerBlock * (elChocoStartBlock - elChocoEndBlock)
+					}
 				}
 
-				if valAddressInfo.Info.Upgrade2Score == 0 {
-					valAddressInfo.Info.Upgrade2Score = GetUpgradeScore(i, upgrade2Height)
+				//Block height must be in between Amazonas upgrade startblock and endblock
+				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight < amazonasEndBlock {
+					if valAddressInfo.Info.Upgrade2Score == 0 {
+						valAddressInfo.Info.Upgrade2Score = amazonasScorePerBlock * (amazonasStartBlock - amazonasEndBlock)
+					}
 				}
 
 				//Inserting new validator into uptime count
@@ -110,7 +132,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
-	fmt.Fprintln(w, " Address\t Moniker\t Uptime Count \t Upgrade1 score \t Upgrade2 score \t Uptime score")
+	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count \t Upgrade1 score \t Upgrade2 score \t Uptime score")
 
 	for _, data := range validatorsList {
 		fmt.Fprintln(w, " "+data.Info.OperatorAddr+"\t "+data.Info.Moniker+
@@ -122,18 +144,6 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	//Exporing into csv file
 	ExportIntoCsv(validatorsList)
-}
-
-func GetUpgradeScore(blockHeight int64, upgradeHeight int64) int64 {
-	var result int64
-	value := upgradeHeight + 200
-
-	//Block height must be in between upgrade1 height and sum of 200 and upgrade1 height
-	if (blockHeight >= upgradeHeight) && blockHeight < value {
-		result = 200 - (blockHeight - upgradeHeight)
-	}
-
-	return result
 }
 
 // GetValidatorIndex returns the index of the validator from the list
@@ -151,7 +161,7 @@ func GetValidatorIndex(validatorAddr string, validatorsList []ValidatorInfo) int
 
 func ExportIntoCsv(data []ValidatorInfo) {
 	Header := []string{
-		"Address", "Moniker", "Uptime Count", "Upgrade1 Score", "Upgrade2 Score", "Uptime Score",
+		"ValOper Address", "Moniker", "Uptime Count", "elChoco Score", "Upgrade2 Score", "Uptime Score",
 	}
 
 	file, err := os.Create("result.csv")
@@ -174,7 +184,7 @@ func ExportIntoCsv(data []ValidatorInfo) {
 		up1Score := strconv.Itoa(int(record.Info.Upgrade1Score))
 		up2Score := strconv.Itoa(int(record.Info.Upgrade2Score))
 		uptimeScore := fmt.Sprintf("%f", record.Info.UptimeScore)
-		addrObj := []string{record.ValAddress, record.Info.Moniker, uptimeCount, up1Score, up2Score, uptimeScore}
+		addrObj := []string{record.Info.OperatorAddr, record.Info.Moniker, uptimeCount, up1Score, up2Score, uptimeScore}
 		err := writer.Write(addrObj)
 
 		if err != nil {
