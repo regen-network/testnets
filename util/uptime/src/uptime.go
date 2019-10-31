@@ -159,10 +159,10 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	aggQuery := GenerateAggregateQuery(startBlock, endBlock)
 
-	results, err := h.db.FetchAllBlocksByAgg(aggQuery)
+	results, err := h.db.QueryValAggregateData(aggQuery)
 
 	if err != nil {
-		fmt.Printf("Error while fetching blocks by aggregation %v", err)
+		fmt.Printf("Error while fetching validator data %v", err)
 		db.HandleError(err)
 	}
 
