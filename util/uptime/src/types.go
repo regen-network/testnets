@@ -17,4 +17,6 @@ type Info struct {
 	Upgrade2Score int64   `json:"upgrade2Score"`
 	StartBlock    int64   `json:"startBlock"`
 	UptimeCount   int64   `json:"uptimeCount"`
+	GenesisScore  int64   `json:"genesisScore"`
+	NodeScore     int64   `json:"nodeScore"`
 }

@@ -25,6 +25,20 @@ type Validator struct {
 	Description     Description `json:"description" bson:"description"`
 }
 
+type BlocksAggResult struct {
+	Id                string              `json:"_id" bson.M:"_id"`
+	Uptime_count      int64               `json:"uptime_count" bson:"uptime_count"`
+	Upgrade1_block    int64               `json:"upgrade1_block" bson:"upgrade1_block"`
+	Upgrade2_block    int64               `json:"upgrade2_block" bson:"upgrade2_block"`
+	Validator_details []Validator_details `json:"validator_details" bson:"validator_details"`
+}
+
+type Validator_details struct {
+	Description      Description `json:"description" bson:"description"`
+	Operator_address string      `json:"operator_address" bson:"operator_address"`
+	Address          string      `json:"address" bson:"address"`
+}
+
 type Description struct {
 	Moniker string `json:"moniker" bson:"moniker"`
 }
@@ -42,39 +56,17 @@ func (db Store) Terminate() {
 	db.session.Close()
 }
 
-// FetchBlocks read the blocks data
-func (db Store) FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error) {
-	var blocks []Blocks
-
-	andQuery := bson.M{"height": bson.M{"$gte": startBlock, "$lte": endBlock}}
-
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(andQuery).Sort("height").All(&blocks)
-
-	return blocks, err
-}
-
-//Get block by height
-func (db Store) GetBlockByHeight(query bson.M) (Blocks, error) {
-	var block Blocks
-	err := db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Find(query).One(&block)
-	return block, err
-}
-
-//GetValidator Read single validator info
-func (db Store) GetValidator(query bson.M) (Validator, error) {
-	var val Validator
-	err := db.session.DB(DB_NAME).C(VALIDATORS_COLLECTION).Find(query).One(&val)
-
-	return val, err
+//FetchAllBlocksByAgg - Fetch all blocks by using aggregate query
+func (db Store) FetchAllBlocksByAgg(aggQuery []bson.M) (result []BlocksAggResult, err error) {
+	err = db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Pipe(aggQuery).All(&result)
+	return result, err
 }
 
 type (
 	// DB interface defines all the methods accessible by the application
 	DB interface {
 		Terminate()
-		FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error)
-		GetValidator(query bson.M) (Validator, error)
-		GetBlockByHeight(query bson.M) (Blocks, error)
+		FetchAllBlocksByAgg(aggQuery []bson.M) ([]BlocksAggResult, error)
 	}
 
 	// Store will be used to satisfy the DB interface
