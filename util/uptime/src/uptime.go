@@ -71,14 +71,14 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 				//Block height must be in between El Choco upgrade startblock height and endblock height
 				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
 					if validatorsList[index].Info.Upgrade1Score == 0 {
-						validatorsList[index].Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - elChocoStartBlock)
+						validatorsList[index].Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - currentBlockHeight + 1)
 					}
 				}
 
 				//Block height must be in between Amazonas upgrade startblock height and endblock height
-				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight < amazonasEndBlock {
+				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight <= amazonasEndBlock {
 					if validatorsList[index].Info.Upgrade2Score == 0 {
-						validatorsList[index].Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - amazonasStartBlock)
+						validatorsList[index].Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - currentBlockHeight + 1)
 					}
 				}
 			} else {
@@ -106,14 +106,14 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 				//Block height must be in between El Choco upgrade startblock height and endblock height
 				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
 					if valAddressInfo.Info.Upgrade1Score == 0 {
-						valAddressInfo.Info.Upgrade1Score = elChocoScorePerBlock * (elChocoStartBlock - elChocoEndBlock)
+						valAddressInfo.Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - currentBlockHeight + 1)
 					}
 				}
 
 				//Block height must be in between Amazonas upgrade startblock and endblock
-				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight < amazonasEndBlock {
+				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight <= amazonasEndBlock {
 					if valAddressInfo.Info.Upgrade2Score == 0 {
-						valAddressInfo.Info.Upgrade2Score = amazonasScorePerBlock * (amazonasStartBlock - amazonasEndBlock)
+						valAddressInfo.Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - currentBlockHeight + 1)
 					}
 				}
 
