@@ -25,7 +25,7 @@ type Validator struct {
 	Description     Description `json:"description" bson:"description"`
 }
 
-type BlocksAggResult struct {
+type ValAggregateResult struct {
 	Id                string              `json:"_id" bson.M:"_id"`
 	Uptime_count      int64               `json:"uptime_count" bson:"uptime_count"`
 	Upgrade1_block    int64               `json:"upgrade1_block" bson:"upgrade1_block"`
@@ -56,8 +56,8 @@ func (db Store) Terminate() {
 	db.session.Close()
 }
 
-//FetchAllBlocksByAgg - Fetch all blocks by using aggregate query
-func (db Store) FetchAllBlocksByAgg(aggQuery []bson.M) (result []BlocksAggResult, err error) {
+//QueryValAggregateData - Fetch all blocks by using aggregate query
+func (db Store) QueryValAggregateData(aggQuery []bson.M) (result []ValAggregateResult, err error) {
 	err = db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Pipe(aggQuery).All(&result)
 	return result, err
 }
@@ -66,7 +66,7 @@ type (
 	// DB interface defines all the methods accessible by the application
 	DB interface {
 		Terminate()
-		FetchAllBlocksByAgg(aggQuery []bson.M) ([]BlocksAggResult, error)
+		QueryValAggregateData(aggQuery []bson.M) ([]ValAggregateResult, error)
 	}
 
 	// Store will be used to satisfy the DB interface
