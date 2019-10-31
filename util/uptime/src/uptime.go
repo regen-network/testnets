@@ -116,7 +116,7 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 				},
 				bson.M{
 					"$project": bson.M{
-						"description.moniker":1, "operator_address":1, "delegator_address":1, "_id": 0,
+						"description.moniker":1, "operator_address":1, "address":1, "_id": 0,
 					},
 				},
 			},
@@ -165,6 +165,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	for _, obj := range results {
 		valInfo := ValidatorInfo{
+			ValAddress: obj.Validator_details[0].Address,
 			Info: Info{
 				OperatorAddr: obj.Validator_details[0].Operator_address,
 				Moniker:	 obj.Validator_details[0].Description.Moniker,
@@ -193,7 +194,14 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		"\t Upgrade1 score \t Upgrade2 score \t Uptime score")
 
 	for _, data := range validatorsList {
-		fmt.Fprintln(w, " "+data.Info.OperatorAddr+"\t "+data.Info.Moniker+
+		var address string = data.Info.OperatorAddr
+
+		//Assigning validator address if operator address is not found
+		if address == "" {
+			address = data.ValAddress
+		}
+
+		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
 			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Score))+
 			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore))
 	}

@@ -34,9 +34,9 @@ type BlocksAggResult struct {
 }
 
 type Validator_details struct {
-	Delegator_address string      `json:"delegator_address" bson:"delegator_address"`
 	Description       Description `json:"description" bson:"description"`
 	Operator_address  string      `json:"operator_address" bson:"operator_address"`
+	Address 		  string 	  `json:"address" bson:"address"`
 }
 
 type Description struct {
