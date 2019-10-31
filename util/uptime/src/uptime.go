@@ -57,6 +57,12 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	for i := 0; i < blocksLen; i++ {
 		currentBlockHeight := blocks[i].Height
+		var genesisScore int64 = 0
+
+		//Assigning genesis score to validators at block height 2
+		if currentBlockHeight == 2 {
+			genesisScore = 100
+		}
 
 		for _, valAddr := range blocks[i].Validators {
 			//Get the validator index from validatorsList
@@ -103,6 +109,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 						Moniker:      validator.Description.Moniker,
 						OperatorAddr: validator.OperatorAddress,
 						StartBlock:   int64(currentBlockHeight),
+						GenesisScore: genesisScore,
 					},
 				}
 
@@ -131,16 +138,21 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		uptime := float64(v.Info.UptimeCount) / (float64(endBlock) - float64(startBlock))
 		uptimeScore := uptime * 300
 		validatorsList[i].Info.UptimeScore = uptimeScore
+
+		//Assigning every validator a node score 100
+		validatorsList[i].Info.NodeScore = 100
 	}
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
-	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count \t Upgrade1 score \t Upgrade2 score \t Uptime score")
+	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
+		"\t Upgrade1 score \t Upgrade2 score \t Uptime score \t Node Score \t Genesis Score")
 
 	for _, data := range validatorsList {
 		fmt.Fprintln(w, " "+data.Info.OperatorAddr+"\t "+data.Info.Moniker+
 			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Score))+
-			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore))
+			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore)+
+			"\t"+strconv.Itoa(int(data.Info.NodeScore))+"\t"+strconv.Itoa(int(data.Info.GenesisScore)))
 	}
 
 	w.Flush()
