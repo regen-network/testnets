@@ -6,11 +6,11 @@ import (
 	"log"
 	"os"
 	"strconv"
-	"text/tabwriter"
 	"uptime/db"
 
 	"github.com/spf13/viper"
 	"gopkg.in/mgo.v2/bson"
+	"text/tabwriter"
 )
 
 var (
@@ -31,6 +31,114 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
+func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
+	// Read El Choco upgrade configs
+	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
+	elChocoEndBlock = viper.Get("el_choco_endblock").(int64)
+
+	// Read Amazonas upgrade configs
+	amazonasStartBlock = viper.Get("amazonas_startblock").(int64)
+	amazonasEndBlock = viper.Get("amazonas_endblock").(int64)
+
+	aggQuery := []bson.M{}
+
+	//Query for filtering blocks in between given start block and end block
+	matchQuery := bson.M{
+		"$match": bson.M{
+			"$and": []bson.M{
+				bson.M{
+					"height": bson.M{"$gte": startBlock},
+				},
+				bson.M{
+					"height": bson.M{"$lte": endBlock},
+				},
+			},
+		},
+	}
+
+	aggQuery = append(aggQuery, matchQuery)
+
+	//Query for Unwind the Array of validators from each block
+	unwindQuery := bson.M{
+		"$unwind": "$validators",
+	}
+
+	aggQuery = append(aggQuery, unwindQuery)
+
+	//Query for calculating uptime count, upgrade1 count and upgrade2 count
+	groupQuery := bson.M{
+		"$group": bson.M{
+			"_id": "$validators",
+			"uptime_count": bson.M{"$sum":1},
+			"upgrade1_block": bson.M{
+				"$min": bson.M{
+					"$cond": []interface{}{
+						bson.M{
+							"$and": []bson.M{
+								bson.M{"$gte": []interface{}{"$height", elChocoStartBlock},},
+								bson.M{"$lte": []interface{}{"$height", elChocoEndBlock},},
+							},
+						},
+						"$height",
+						"null",
+					},
+				},
+			},
+			"upgrade2_block": bson.M{
+				"$min": bson.M{
+					"$cond": []interface{}{
+						bson.M{
+							"$and": []bson.M{
+								bson.M{"$gte": []interface{}{"$height", amazonasStartBlock},},
+								bson.M{"$lte": []interface{}{"$height", amazonasEndBlock},},
+							},
+						},
+						"$height",
+						"null",
+					},
+				},
+			},
+		},
+	}
+
+	aggQuery = append(aggQuery, groupQuery)
+
+	//Query for getting moniker, operator address from validators
+	lookUpQuery := bson.M{
+		"$lookup": bson.M{
+			"from": "validators",
+			"let": bson.M{"id": "$_id"},
+			"pipeline": []bson.M{
+				bson.M{
+					"$match": bson.M{
+						"$expr": bson.M{"$eq": []string{"$address", "$$id"}},
+					},
+				},
+				bson.M{
+					"$project": bson.M{
+						"description.moniker":1, "operator_address":1, "delegator_address":1, "_id": 0,
+					},
+				},
+			},
+			"as": "validator_details",
+		},
+	}
+
+	aggQuery = append(aggQuery, lookUpQuery)
+
+	return aggQuery
+}
+
+//Calculate upgrade score by using upgrade score per block, upgrade block and end block height
+func GetUpgradeScore(upgradeScorePerBlock int64, upgradeBlock int64, endBlockHeight int64) int64  {
+	if upgradeBlock == 0 {
+		return  0
+	}
+	score := upgradeScorePerBlock * (endBlockHeight - upgradeBlock + 1)
+
+	return score
+}
+
 func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	// Read El Choco upgrade configs
 	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
@@ -46,91 +154,27 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	fmt.Println("Fetching blocks from:", startBlock, ", to:", endBlock)
 
-	//Read all blocks
-	blocks, err := h.db.FetchBlocks(startBlock, endBlock)
+	aggQuery := GenerateAggQuery(startBlock, endBlock)
 
-	if err != nil {
+	results, err := h.db.FetchAllBlocksByAgg(aggQuery)
+
+	if err!=nil {
+		fmt.Printf("Error while fetching blocks by aggregation %v", err)
 		db.HandleError(err)
 	}
 
-	blocksLen := len(blocks)
-
-	for i := 0; i < blocksLen; i++ {
-		currentBlockHeight := blocks[i].Height
-		var genesisScore int64 = 0
-
-		//Assigning genesis score to validators at block height 2
-		if currentBlockHeight == 2 {
-			genesisScore = 100
+	for _, obj := range results {
+		valInfo := ValidatorInfo{
+			Info: Info{
+				OperatorAddr: obj.Validator_details[0].Operator_address,
+				Moniker:	 obj.Validator_details[0].Description.Moniker,
+				UptimeCount: obj.Uptime_count,
+				Upgrade1Score: GetUpgradeScore(elChocoScorePerBlock, obj.Upgrade1_block, elChocoEndBlock),
+				Upgrade2Score: GetUpgradeScore(amazonasScorePerBlock, obj.Upgrade2_block, amazonasEndBlock),
+			},
 		}
 
-		for _, valAddr := range blocks[i].Validators {
-			//Get the validator index from validatorsList
-			index := GetValidatorIndex(valAddr, validatorsList)
-
-			if index > 0 {
-				// If validator is present in the list already (i.e., joined the network in previous block heights)
-				// Update uptime details
-				validatorsList[index].Info.UptimeCount++
-
-				//Block height must be in between El Choco upgrade startblock height and endblock height
-				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
-					if validatorsList[index].Info.Upgrade1Score == 0 {
-						validatorsList[index].Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - currentBlockHeight + 1)
-					}
-				}
-
-				//Block height must be in between Amazonas upgrade startblock height and endblock height
-				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight <= amazonasEndBlock {
-					if validatorsList[index].Info.Upgrade2Score == 0 {
-						validatorsList[index].Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - currentBlockHeight + 1)
-					}
-				}
-			} else {
-				// If the validator is not present in the list i.e., newly joined in the current block
-				// Fetch Validator information and Push to validators list
-				// Initialize the validator uptime info with default info (i.e., 1)
-
-				query := bson.M{
-					"address": valAddr,
-				}
-
-				//Get validator by using validator address
-				validator, err := h.db.GetValidator(query)
-
-				if err != nil {
-					db.HandleError(err)
-				}
-
-				valAddressInfo := ValidatorInfo{
-					ValAddress: valAddr,
-					Info: Info{
-						UptimeCount:  1,
-						Moniker:      validator.Description.Moniker,
-						OperatorAddr: validator.OperatorAddress,
-						StartBlock:   int64(currentBlockHeight),
-						GenesisScore: genesisScore,
-					},
-				}
-
-				//Block height must be in between El Choco upgrade startblock height and endblock height
-				if currentBlockHeight >= elChocoStartBlock && currentBlockHeight <= elChocoEndBlock {
-					if valAddressInfo.Info.Upgrade1Score == 0 {
-						valAddressInfo.Info.Upgrade1Score = elChocoScorePerBlock * (elChocoEndBlock - currentBlockHeight + 1)
-					}
-				}
-
-				//Block height must be in between Amazonas upgrade startblock and endblock
-				if (currentBlockHeight >= amazonasStartBlock) && currentBlockHeight <= amazonasEndBlock {
-					if valAddressInfo.Info.Upgrade2Score == 0 {
-						valAddressInfo.Info.Upgrade2Score = amazonasScorePerBlock * (amazonasEndBlock - currentBlockHeight + 1)
-					}
-				}
-
-				//Inserting new validator into uptime count
-				validatorsList = append(validatorsList, valAddressInfo)
-			}
-		}
+		validatorsList = append(validatorsList, valInfo)
 	}
 
 	//calculating uptime score
@@ -146,32 +190,18 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Upgrade1 score \t Upgrade2 score \t Uptime score \t Node Score \t Genesis Score")
+		"\t Upgrade1 score \t Upgrade2 score \t Uptime score")
 
 	for _, data := range validatorsList {
 		fmt.Fprintln(w, " "+data.Info.OperatorAddr+"\t "+data.Info.Moniker+
 			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Score))+
-			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore)+
-			"\t"+strconv.Itoa(int(data.Info.NodeScore))+"\t"+strconv.Itoa(int(data.Info.GenesisScore)))
+			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore))
 	}
 
 	w.Flush()
 
 	//Exporing into csv file
 	ExportIntoCsv(validatorsList)
-}
-
-// GetValidatorIndex returns the index of the validator from the list
-func GetValidatorIndex(validatorAddr string, validatorsList []ValidatorInfo) int {
-	var pos int
-
-	for index, addr := range validatorsList {
-		if addr.ValAddress == validatorAddr {
-			pos = index
-		}
-	}
-
-	return pos
 }
 
 func ExportIntoCsv(data []ValidatorInfo) {

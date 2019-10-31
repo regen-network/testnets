@@ -25,6 +25,20 @@ type Validator struct {
 	Description     Description `json:"description" bson:"description"`
 }
 
+type BlocksAggResult struct {
+	Id 			string 		`json:"_id" bson.M:"_id"`
+	Uptime_count  int64 	`json:"uptime_count" bson:"uptime_count"`
+	Upgrade1_block	int64	`json:"upgrade1_block" bson:"upgrade1_block"`
+	Upgrade2_block  int64 	`json:"upgrade2_block" bson:"upgrade2_block"`
+	Validator_details []Validator_details `json:"validator_details" bson:"validator_details"`
+}
+
+type Validator_details struct {
+	Delegator_address string      `json:"delegator_address" bson:"delegator_address"`
+	Description       Description `json:"description" bson:"description"`
+	Operator_address  string      `json:"operator_address" bson:"operator_address"`
+}
+
 type Description struct {
 	Moniker string `json:"moniker" bson:"moniker"`
 }
@@ -53,6 +67,12 @@ func (db Store) FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error) 
 	return blocks, err
 }
 
+//Fetech all blocks by using aggregate
+func (db Store) FetchAllBlocksByAgg(aggQuery []bson.M) (result []BlocksAggResult, err error)  {
+	err = db.session.DB(DB_NAME).C(BLOCKS_COLLECTION).Pipe(aggQuery).All(&result)
+	return result, err
+}
+
 //Get block by height
 func (db Store) GetBlockByHeight(query bson.M) (Blocks, error) {
 	var block Blocks
@@ -75,6 +95,7 @@ type (
 		FetchBlocks(startBlock int64, endBlock int64) ([]Blocks, error)
 		GetValidator(query bson.M) (Validator, error)
 		GetBlockByHeight(query bson.M) (Blocks, error)
+		FetchAllBlocksByAgg(aggQuery []bson.M) ([]BlocksAggResult, error)
 	}
 
 	// Store will be used to satisfy the DB interface
