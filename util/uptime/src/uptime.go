@@ -8,9 +8,10 @@ import (
 	"strconv"
 	"uptime/db"
 
+	"text/tabwriter"
+
 	"github.com/spf13/viper"
 	"gopkg.in/mgo.v2/bson"
-	"text/tabwriter"
 )
 
 var (
@@ -31,7 +32,8 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
-func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
+func GenerateAggregateQuery(startBlock int64, endBlock int64) []bson.M {
+
 	// Read El Choco upgrade configs
 	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
 	elChocoEndBlock = viper.Get("el_choco_endblock").(int64)
@@ -68,15 +70,15 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 	//Query for calculating uptime count, upgrade1 count and upgrade2 count
 	groupQuery := bson.M{
 		"$group": bson.M{
-			"_id": "$validators",
-			"uptime_count": bson.M{"$sum":1},
+			"_id":          "$validators",
+			"uptime_count": bson.M{"$sum": 1},
 			"upgrade1_block": bson.M{
 				"$min": bson.M{
 					"$cond": []interface{}{
 						bson.M{
 							"$and": []bson.M{
-								bson.M{"$gte": []interface{}{"$height", elChocoStartBlock},},
-								bson.M{"$lte": []interface{}{"$height", elChocoEndBlock},},
+								bson.M{"$gte": []interface{}{"$height", elChocoStartBlock}},
+								bson.M{"$lte": []interface{}{"$height", elChocoEndBlock}},
 							},
 						},
 						"$height",
@@ -89,8 +91,8 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 					"$cond": []interface{}{
 						bson.M{
 							"$and": []bson.M{
-								bson.M{"$gte": []interface{}{"$height", amazonasStartBlock},},
-								bson.M{"$lte": []interface{}{"$height", amazonasEndBlock},},
+								bson.M{"$gte": []interface{}{"$height", amazonasStartBlock}},
+								bson.M{"$lte": []interface{}{"$height", amazonasEndBlock}},
 							},
 						},
 						"$height",
@@ -107,7 +109,7 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 	lookUpQuery := bson.M{
 		"$lookup": bson.M{
 			"from": "validators",
-			"let": bson.M{"id": "$_id"},
+			"let":  bson.M{"id": "$_id"},
 			"pipeline": []bson.M{
 				bson.M{
 					"$match": bson.M{
@@ -116,7 +118,7 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 				},
 				bson.M{
 					"$project": bson.M{
-						"description.moniker":1, "operator_address":1, "address":1, "_id": 0,
+						"description.moniker": 1, "operator_address": 1, "address": 1, "_id": 0,
 					},
 				},
 			},
@@ -129,10 +131,11 @@ func GenerateAggQuery(startBlock int64, endBlock int64) []bson.M  {
 	return aggQuery
 }
 
-//Calculate upgrade score by using upgrade score per block, upgrade block and end block height
-func GetUpgradeScore(upgradeScorePerBlock int64, upgradeBlock int64, endBlockHeight int64) int64  {
+// CalculateUpgradePoints - Calculates upgrade score by using upgrade score per block,
+// upgrade block and end block height
+func CalculateUpgradePoints(upgradeScorePerBlock int64, upgradeBlock int64, endBlockHeight int64) int64 {
 	if upgradeBlock == 0 {
-		return  0
+		return 0
 	}
 	score := upgradeScorePerBlock * (endBlockHeight - upgradeBlock + 1)
 
@@ -154,11 +157,11 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	fmt.Println("Fetching blocks from:", startBlock, ", to:", endBlock)
 
-	aggQuery := GenerateAggQuery(startBlock, endBlock)
+	aggQuery := GenerateAggregateQuery(startBlock, endBlock)
 
 	results, err := h.db.FetchAllBlocksByAgg(aggQuery)
 
-	if err!=nil {
+	if err != nil {
 		fmt.Printf("Error while fetching blocks by aggregation %v", err)
 		db.HandleError(err)
 	}
@@ -167,11 +170,11 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		valInfo := ValidatorInfo{
 			ValAddress: obj.Validator_details[0].Address,
 			Info: Info{
-				OperatorAddr: obj.Validator_details[0].Operator_address,
-				Moniker:	 obj.Validator_details[0].Description.Moniker,
-				UptimeCount: obj.Uptime_count,
-				Upgrade1Score: GetUpgradeScore(elChocoScorePerBlock, obj.Upgrade1_block, elChocoEndBlock),
-				Upgrade2Score: GetUpgradeScore(amazonasScorePerBlock, obj.Upgrade2_block, amazonasEndBlock),
+				OperatorAddr:  obj.Validator_details[0].Operator_address,
+				Moniker:       obj.Validator_details[0].Description.Moniker,
+				UptimeCount:   obj.Uptime_count,
+				Upgrade1Score: CalculateUpgradePoints(elChocoScorePerBlock, obj.Upgrade1_block, elChocoEndBlock),
+				Upgrade2Score: CalculateUpgradePoints(amazonasScorePerBlock, obj.Upgrade2_block, amazonasEndBlock),
 			},
 		}
 
@@ -198,7 +201,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 		//Assigning validator address if operator address is not found
 		if address == "" {
-			address = data.ValAddress
+			address = data.ValAddress + " (Hex Address)"
 		}
 
 		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
@@ -208,11 +211,12 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	w.Flush()
 
-	//Exporing into csv file
-	ExportIntoCsv(validatorsList)
+	//Export data to csv file
+	ExportToCsv(validatorsList)
 }
 
-func ExportIntoCsv(data []ValidatorInfo) {
+// ExportToCsv - Export data to CSV file
+func ExportToCsv(data []ValidatorInfo) {
 	Header := []string{
 		"ValOper Address", "Moniker", "Uptime Count", "elChoco Score", "Upgrade2 Score", "Uptime Score",
 	}
@@ -233,11 +237,18 @@ func ExportIntoCsv(data []ValidatorInfo) {
 	_ = writer.Write(Header)
 
 	for _, record := range data {
+		var address string = record.Info.OperatorAddr
+
+		//Assigning validator address if operator address is not found
+		if address == "" {
+			address = record.ValAddress + " (Hex Address)"
+		}
+
 		uptimeCount := strconv.Itoa(int(record.Info.UptimeCount))
 		up1Score := strconv.Itoa(int(record.Info.Upgrade1Score))
 		up2Score := strconv.Itoa(int(record.Info.Upgrade2Score))
 		uptimeScore := fmt.Sprintf("%f", record.Info.UptimeScore)
-		addrObj := []string{record.Info.OperatorAddr, record.Info.Moniker, uptimeCount, up1Score, up2Score, uptimeScore}
+		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Score, up2Score, uptimeScore}
 		err := writer.Write(addrObj)
 
 		if err != nil {
