@@ -49,12 +49,11 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	//Read all blocks
 	blocks, err := h.db.FetchBlocks(startBlock, endBlock)
 
-	blocksLen := len(blocks)
-
 	if err != nil {
-		fmt.Printf("Error while fetching all blocks %v", err)
-		os.Exit(1)
+		db.HandleError(err)
 	}
+
+	blocksLen := len(blocks)
 
 	for i := 0; i < blocksLen; i++ {
 		currentBlockHeight := blocks[i].Height
@@ -91,7 +90,11 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 				}
 
 				//Get validator by using validator address
-				validator, _ := h.db.GetValidator(query)
+				validator, err := h.db.GetValidator(query)
+
+				if err != nil {
+					db.HandleError(err)
+				}
 
 				valAddressInfo := ValidatorInfo{
 					ValAddress: valAddr,
