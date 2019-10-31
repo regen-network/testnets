@@ -10,13 +10,13 @@ type ValidatorInfo struct {
 }
 
 type Info struct {
-	UptimeScore   float64 `json:"uptimeScore"`
-	Moniker       string  `json:"moniker"`
-	OperatorAddr  string  `json:"operatorAddr"`
-	Upgrade1Score int64   `json:"upgrade1Score"`
-	Upgrade2Score int64   `json:"upgrade2Score"`
-	StartBlock    int64   `json:"startBlock"`
-	UptimeCount   int64   `json:"uptimeCount"`
-	GenesisScore  int64   `json:"genesisScore"`
-	NodeScore     int64   `json:"nodeScore"`
+	UptimePoints   float64 `json:"uptimePoints"`
+	Moniker        string  `json:"moniker"`
+	OperatorAddr   string  `json:"operatorAddr"`
+	Upgrade1Points int64   `json:"upgrade1Points"`
+	Upgrade2Points int64   `json:"upgrade2Points"`
+	StartBlock     int64   `json:"startBlock"`
+	UptimeCount    int64   `json:"uptimeCount"`
+	GenesisPoints  int64   `json:"genesisPoints"`
+	NodePoints     int64   `json:"nodePoints"`
 }

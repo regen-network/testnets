@@ -15,13 +15,13 @@ import (
 )
 
 var (
-	elChocoStartBlock    int64
-	elChocoEndBlock      int64
-	elChocoScorePerBlock int64
+	elChocoStartBlock     int64
+	elChocoEndBlock       int64
+	elChocoPointsPerBlock int64
 
-	amazonasStartBlock    int64
-	amazonasEndBlock      int64
-	amazonasScorePerBlock int64
+	amazonasStartBlock     int64
+	amazonasEndBlock       int64
+	amazonasPointsPerBlock int64
 )
 
 type handler struct {
@@ -131,27 +131,27 @@ func GenerateAggregateQuery(startBlock int64, endBlock int64) []bson.M {
 	return aggQuery
 }
 
-// CalculateUpgradePoints - Calculates upgrade score by using upgrade score per block,
+// CalculateUpgradePoints - Calculates upgrade points by using upgrade points per block,
 // upgrade block and end block height
-func CalculateUpgradePoints(upgradeScorePerBlock int64, upgradeBlock int64, endBlockHeight int64) int64 {
+func CalculateUpgradePoints(upgradePointsPerBlock int64, upgradeBlock int64, endBlockHeight int64) int64 {
 	if upgradeBlock == 0 {
 		return 0
 	}
-	score := upgradeScorePerBlock * (endBlockHeight - upgradeBlock + 1)
+	points := upgradePointsPerBlock * (endBlockHeight - upgradeBlock + 1)
 
-	return score
+	return points
 }
 
 func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	// Read El Choco upgrade configs
-	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
-	elChocoEndBlock = viper.Get("el_choco_endblock").(int64)
-	elChocoScorePerBlock = viper.Get("el_choco_reward_score_per_block").(int64)
+	elChocoStartBlock = viper.Get("el_choco_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
+	elChocoEndBlock = viper.Get("el_choco_endblock").(int64) + 1
+	elChocoPointsPerBlock = viper.Get("el_choco_reward_points_per_block").(int64)
 
 	// Read Amazonas upgrade configs
-	amazonasStartBlock = viper.Get("amazonas_startblock").(int64)
-	amazonasEndBlock = viper.Get("amazonas_endblock").(int64)
-	amazonasScorePerBlock = viper.Get("amazonas_reward_score_per_block").(int64)
+	amazonasStartBlock = viper.Get("amazonas_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
+	amazonasEndBlock = viper.Get("amazonas_endblock").(int64) + 1
+	amazonasPointsPerBlock = viper.Get("amazonas_reward_points_per_block").(int64)
 
 	var validatorsList []ValidatorInfo //Intializing validators uptime
 
@@ -170,31 +170,31 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		valInfo := ValidatorInfo{
 			ValAddress: obj.Validator_details[0].Address,
 			Info: Info{
-				OperatorAddr:  obj.Validator_details[0].Operator_address,
-				Moniker:       obj.Validator_details[0].Description.Moniker,
-				UptimeCount:   obj.Uptime_count,
-				Upgrade1Score: CalculateUpgradePoints(elChocoScorePerBlock, obj.Upgrade1_block, elChocoEndBlock),
-				Upgrade2Score: CalculateUpgradePoints(amazonasScorePerBlock, obj.Upgrade2_block, amazonasEndBlock),
+				OperatorAddr:   obj.Validator_details[0].Operator_address,
+				Moniker:        obj.Validator_details[0].Description.Moniker,
+				UptimeCount:    obj.Uptime_count,
+				Upgrade1Points: CalculateUpgradePoints(elChocoPointsPerBlock, obj.Upgrade1_block, elChocoEndBlock),
+				Upgrade2Points: CalculateUpgradePoints(amazonasPointsPerBlock, obj.Upgrade2_block, amazonasEndBlock),
 			},
 		}
 
 		validatorsList = append(validatorsList, valInfo)
 	}
 
-	//calculating uptime score
+	//calculating uptime points
 	for i, v := range validatorsList {
 		uptime := float64(v.Info.UptimeCount) / (float64(endBlock) - float64(startBlock))
-		uptimeScore := uptime * 300
-		validatorsList[i].Info.UptimeScore = uptimeScore
+		uptimePoints := uptime * 300
+		validatorsList[i].Info.UptimePoints = uptimePoints
 
-		//Assigning every validator a node score 100
-		validatorsList[i].Info.NodeScore = 100
+		//Assigning every validator a node points 100
+		validatorsList[i].Info.NodePoints = 100
 	}
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Upgrade1 score \t Upgrade2 score \t Uptime score")
+		"\t Upgrade1 points \t Upgrade2 points \t Uptime points")
 
 	for _, data := range validatorsList {
 		var address string = data.Info.OperatorAddr
@@ -205,8 +205,8 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		}
 
 		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
-			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Score))+
-			" \t"+strconv.Itoa(int(data.Info.Upgrade2Score))+" \t"+fmt.Sprintf("%f", data.Info.UptimeScore))
+			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+
+			" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints))
 	}
 
 	w.Flush()
@@ -218,7 +218,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 // ExportToCsv - Export data to CSV file
 func ExportToCsv(data []ValidatorInfo) {
 	Header := []string{
-		"ValOper Address", "Moniker", "Uptime Count", "elChoco Score", "Upgrade2 Score", "Uptime Score",
+		"ValOper Address", "Moniker", "Uptime Count", "elChoco Points", "Upgrade2 Points", "Uptime Points",
 	}
 
 	file, err := os.Create("result.csv")
@@ -245,10 +245,10 @@ func ExportToCsv(data []ValidatorInfo) {
 		}
 
 		uptimeCount := strconv.Itoa(int(record.Info.UptimeCount))
-		up1Score := strconv.Itoa(int(record.Info.Upgrade1Score))
-		up2Score := strconv.Itoa(int(record.Info.Upgrade2Score))
-		uptimeScore := fmt.Sprintf("%f", record.Info.UptimeScore)
-		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Score, up2Score, uptimeScore}
+		up1Points := strconv.Itoa(int(record.Info.Upgrade1Points))
+		up2Points := strconv.Itoa(int(record.Info.Upgrade2Points))
+		uptimePoints := fmt.Sprintf("%f", record.Info.UptimePoints)
+		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Points, up2Points, uptimePoints}
 		err := writer.Write(addrObj)
 
 		if err != nil {
