@@ -192,6 +192,22 @@
         "end_time": "0"
       },
       {
+        "address": "xrn:1thq0u7qeltna23emadkqv9cz0qmcjj5299ne06",
+        "coins": [
+          {
+            "denom": "tree",
+            "amount": "1000000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0"
+      },
+      {
         "address": "xrn:1qkgrm27cs5c74wwxkwrvvk5jtdudlultcck0tv",
         "coins": [
           {
