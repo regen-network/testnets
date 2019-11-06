@@ -4,8 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"uptime/db"
-	"uptime/src"
+
+	"github.com/regen-network/testnets/util/uptime/db"
+	"github.com/regen-network/testnets/util/uptime/src"
 )
 
 func main() {

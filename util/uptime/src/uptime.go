@@ -6,10 +6,10 @@ import (
 	"log"
 	"os"
 	"strconv"
-	"uptime/db"
 
 	"text/tabwriter"
 
+	"github.com/regen-network/testnets/util/uptime/db"
 	"github.com/spf13/viper"
 	"gopkg.in/mgo.v2/bson"
 )
