@@ -18,5 +18,5 @@ type Info struct {
 	StartBlock     int64   `json:"startBlock"`
 	UptimeCount    int64   `json:"uptimeCount"`
 	GenesisPoints  int64   `json:"genesisPoints"`
-	NodePoints     int64   `json:"nodePoints"`
+	TotalPoints    float64   `json:"totalPoints"`
 }

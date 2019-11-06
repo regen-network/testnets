@@ -15,3 +15,6 @@ el_choco_reward_points_per_block = 1 #200 rewards are distributed equally for ea
 amazonas_startblock = 1722051
 amazonas_endblock = 1722250
 amazonas_reward_points_per_block = 1 #200 rewards are distributed equally for each block
+
+#Node Rewards
+node_rewards = 100

@@ -22,6 +22,8 @@ var (
 	amazonasStartBlock     int64
 	amazonasEndBlock       int64
 	amazonasPointsPerBlock int64
+
+	nodeRewards int64
 )
 
 type handler struct {
@@ -32,15 +34,8 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
-func GenerateAggregateQuery(startBlock int64, endBlock int64) []bson.M {
-
-	// Read El Choco upgrade configs
-	elChocoStartBlock = viper.Get("el_choco_startblock").(int64)
-	elChocoEndBlock = viper.Get("el_choco_endblock").(int64)
-
-	// Read Amazonas upgrade configs
-	amazonasStartBlock = viper.Get("amazonas_startblock").(int64)
-	amazonasEndBlock = viper.Get("amazonas_endblock").(int64)
+func GenerateAggregateQuery(startBlock int64, endBlock int64,
+	elChocoStartBlock int64, elChocoEndBlock int64, amazonasStartBlock int64, amazonasEndBlock int64) []bson.M {
 
 	aggQuery := []bson.M{}
 
@@ -143,6 +138,9 @@ func CalculateUpgradePoints(upgradePointsPerBlock int64, upgradeBlock int64, end
 }
 
 func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
+	//Read node rewards from config
+	nodeRewards = viper.Get("node_rewards").(int64)
+
 	// Read El Choco upgrade configs
 	elChocoStartBlock = viper.Get("el_choco_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
 	elChocoEndBlock = viper.Get("el_choco_endblock").(int64) + 1
@@ -157,7 +155,8 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	fmt.Println("Fetching blocks from:", startBlock, ", to:", endBlock)
 
-	aggQuery := GenerateAggregateQuery(startBlock, endBlock)
+	aggQuery := GenerateAggregateQuery(startBlock, endBlock, elChocoStartBlock,
+		elChocoEndBlock, amazonasStartBlock, amazonasEndBlock)
 
 	results, err := h.db.QueryValAggregateData(aggQuery)
 
@@ -186,15 +185,14 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		uptime := float64(v.Info.UptimeCount) / (float64(endBlock) - float64(startBlock))
 		uptimePoints := uptime * 300
 		validatorsList[i].Info.UptimePoints = uptimePoints
-
-		//Assigning every validator a node points 100
-		validatorsList[i].Info.NodePoints = 100
+		validatorsList[i].Info.TotalPoints = float64(validatorsList[i].Info.Upgrade1Points) +
+			float64(validatorsList[i].Info.Upgrade2Points) + uptimePoints + float64(nodeRewards)
 	}
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Upgrade1 points \t Upgrade2 points \t Uptime points")
+		"\t Upgrade1 points \t Upgrade2 points \t Uptime points \t Node points \t Total points")
 
 	for _, data := range validatorsList {
 		var address string = data.Info.OperatorAddr
@@ -206,19 +204,21 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
 			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+
-			" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints))
+			" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints)+
+			"\t"+strconv.Itoa(int(nodeRewards))+"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
 	}
 
 	w.Flush()
 
 	//Export data to csv file
-	ExportToCsv(validatorsList)
+	ExportToCsv(validatorsList, nodeRewards)
 }
 
 // ExportToCsv - Export data to CSV file
-func ExportToCsv(data []ValidatorInfo) {
+func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 	Header := []string{
-		"ValOper Address", "Moniker", "Uptime Count", "elChoco Points", "Upgrade2 Points", "Uptime Points",
+		"ValOper Address", "Moniker", "Uptime Count", "elChoco Points",
+		"Upgrade2 Points", "Uptime Points", "Node points",
 	}
 
 	file, err := os.Create("result.csv")
@@ -248,7 +248,10 @@ func ExportToCsv(data []ValidatorInfo) {
 		up1Points := strconv.Itoa(int(record.Info.Upgrade1Points))
 		up2Points := strconv.Itoa(int(record.Info.Upgrade2Points))
 		uptimePoints := fmt.Sprintf("%f", record.Info.UptimePoints)
-		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Points, up2Points, uptimePoints}
+		nodePoints := strconv.Itoa(int(nodeRewards))
+		totalPoints := fmt.Sprintf("%f", record.Info.TotalPoints)
+		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Points,
+			up2Points, uptimePoints, nodePoints, totalPoints}
 		err := writer.Write(addrObj)
 
 		if err != nil {
