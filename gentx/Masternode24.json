@@ -1,12 +1,2 @@
-{"type":"auth/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgCreateValidator","vaa
-lue":{"description":{"moniker":"Masternode24","identity":"","website":"","detaill
-s":""},"commission":{"rate":"1.000000000000000000","max_rate":"1.0000000000000000
-000","max_change_rate":"1.000000000000000000"},"min_self_delegation":"1","delegaa
-tor_address":"xrn:1uvj0pv36adlwd4fe7mktzfjkmj5659kdfpfw06","validator_address":""
-xrn:valoper1uvj0pv36adlwd4fe7mktzfjkmj5659kdl2csgu","pubkey":"xrn:valconspub1zcjj
-duepqq72a7l2g7udawqerk6u8vupwgxt8v7t5wrmzsy8u5vma28dj2y6qtxzgyd","value":{"denomm
-":"tree","amount":"900000000"}}}],"fee":{"amount":[],"gas":"200000"},"signaturess
-":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A0TWP4FPORDrONq0uOeGG
-ZLxIKm2Z3dJXMVc7FJTj5j49"},"signature":"lZ8MMVuhhrWPc1rPTbQ2H0eJN6YQLs5eQDzdmnnLL
-3lVMJvA5c+pvMEkFzA8T0l/IX8akYUysPo5+ijJyKBaKbQ=="}],"memo":"1b14ce12a9defe1423599
+{"type":"auth/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgCreateValidator","vaalue":{"description":{"moniker":"Masternode24","identity":"","website":"","detaills":""},"commission":{"rate":"1.000000000000000000","max_rate":"1.0000000000000000000","max_change_rate":"1.000000000000000000"},"min_self_delegation":"1","delegaator_address":"xrn:1uvj0pv36adlwd4fe7mktzfjkmj5659kdfpfw06","validator_address":""xrn:valoper1uvj0pv36adlwd4fe7mktzfjkmj5659kdl2csgu","pubkey":"xrn:valconspub1zcjjduepqq72a7l2g7udawqerk6u8vupwgxt8v7t5wrmzsy8u5vma28dj2y6qtxzgyd","value":{"denomm":"tree","amount":"900000000"}}}],"fee":{"amount":[],"gas":"200000"},"signaturess":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A0TWP4FPORDrONq0uOeGGZLxIKm2Z3dJXMVc7FJTj5j49"},"signature":"lZ8MMVuhhrWPc1rPTbQ2H0eJN6YQLs5eQDzdmnnLL3lVMJvA5c+pvMEkFzA8T0l/IX8akYUysPo5+ijJyKBaKbQ=="}],"memo":"1b14ce12a9defe1423599
 7387d30551b9e17ba461@68.183.231.183:26656"}}
