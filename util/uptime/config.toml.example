@@ -18,3 +18,34 @@ amazonas_reward_points_per_block = 1 #200 rewards are distributed equally for ea
 
 #Node Rewards
 node_rewards = 100
+
+#Elchoco Vote Validators
+elchoco_vote_validators  = ["xrn:valoper1yh4rwtgck9w7k8tf4y8uh7w0rvtk6ssclrxv3j",
+		"xrn:valoper1nmlcq98p8vwxufe5ajry5eqev9mudz5sx085vg", "xrn:valoper1xrsmkqh305m09tc5x73v4t3wtcuqmf6c70m46g",
+		"xrn:valoper1rh5z237xvv9k2xujs7xp2cjut86j0f763z8p75", "xrn:valoper1z92wxxpszkgg2cd9zhrdtvm6y7ra42sv85ch0g",
+		"xrn:valoper150hvuw9natzg567aftl3ztplxqq5ffmulg2kt7", "xrn:valoper1m5hgahs2pcdkrh7hzprn0sqm50ya69lv2g603y",
+		"xrn:valoper1m5hgahs2pcdkrh7hzprn0sqm50ya69lv2g603y", "xrn:valoper1ftgr7fym5pyyhd4a6xu2wel5nxj7mtya68yxex",
+		"xrn:valoper12k9a9px0zr88kh7dva3fxugzrvqgxzmfjlxuym", "xrn:valoper1wxp8f5u575zx7vt7jj54rlhlf27xeh5cg2h7l8",
+		"xrn:valoper1guccv5arnat8hv4zkakv2cx9j0ledgywp239wz", "xrn:valoper1puk2hkmsmrt6nrzy8lph2gq89l23a6vmg8t7pu",
+		"xrn:valoper1vfcutwavlvgg9ljayjz080smpdjplx9hax4g5s", "xrn:valoper10505nl7yftsme9jk2glhjhta7w0475uv2vxczk",
+		"xrn:valoper1wa6l0zrj26yxdjhmne4gvf0chpzalzk9dztdxr", "xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq",
+		"xrn:valoper1qkgrm27cs5c74wwxkwrvvk5jtdudlultwn83v2", "xrn:valoper17evyqqxmln973vctzql3pqnmf9nlh5yn3nxec4",
+		"xrn:valoper1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5hzr458", "xrn:valoper1zm7rgagetdxzpz5zakcvutp45wfzsjrutq4zd9",
+		"xrn:valoper1cf79sumhf35ayq8n2e0szy266gsmf8rvhmwg9f","xrn:valoper1dy39q7t3ja893qwnhr9hgllpd966npke003uud",
+		"xrn:valoper1e6tz5v50dnnapvqnjw9n3mnp8gs0tx0r4gr4nk","xrn:valoper1pq4skpr0glaz2ul8e6q5w4lqe8e2ph2vdu6fnf",
+		"xrn:valoper12ew2s5fex0ftnu9wngpqk5xea3j26v3wmrw06p","xrn:valoper1jeuqc29nkznvy0tk7c54kc239cea92vz9kzgnm",
+		"xrn:valoper1h7jh55qn32vjscv0l9qakpx78k3l8vyh22zzuh","xrn:valoper1drx6a9k3js28fcz4p0f0tcnve2fapsr3vvwfut",
+		"xrn:valoper1z8g335nj56gmjyreq2wgleyxezjfhypcc8rlx5"]
+
+#Amazonas Vote Validators
+amazonas_vote_validators = ["xrn:valoper1xrsmkqh305m09tc5x73v4t3wtcuqmf6c70m46g",
+		"xrn:valoper1rh5z237xvv9k2xujs7xp2cjut86j0f763z8p75","xrn:valoper1z92wxxpszkgg2cd9zhrdtvm6y7ra42sv85ch0g",
+		"xrn:valoper1m5hgahs2pcdkrh7hzprn0sqm50ya69lv2g603y","xrn:valoper1ftgr7fym5pyyhd4a6xu2wel5nxj7mtya68yxex",
+		"xrn:valoper1wxp8f5u575zx7vt7jj54rlhlf27xeh5cg2h7l8","xrn:valoper1vfcutwavlvgg9ljayjz080smpdjplx9hax4g5s",
+		"xrn:valoper10505nl7yftsme9jk2glhjhta7w0475uv2vxczk","xrn:valoper1ykya6xv5f0rsmv23mj4wjy57ldgngrq4n4dn6d",
+		"xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq","xrn:valoper1qkgrm27cs5c74wwxkwrvvk5jtdudlultwn83v2",
+		"xrn:valoper1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5hzr458","xrn:valoper1zm7rgagetdxzpz5zakcvutp45wfzsjrutq4zd9",
+		"xrn:valoper1cf79sumhf35ayq8n2e0szy266gsmf8rvhmwg9f","xrn:valoper1e6tz5v50dnnapvqnjw9n3mnp8gs0tx0r4gr4nk",
+		"xrn:valoper1pq4skpr0glaz2ul8e6q5w4lqe8e2ph2vdu6fnf","xrn:valoper1jeuqc29nkznvy0tk7c54kc239cea92vz9kzgnm",
+		"xrn:valoper1h7jh55qn32vjscv0l9qakpx78k3l8vyh22zzuh","xrn:valoper140y8m6r7s40mvmz6g5dqrsrfvfkq5m8c267452",
+		"xrn:valoper1z8g335nj56gmjyreq2wgleyxezjfhypcc8rlx5"]

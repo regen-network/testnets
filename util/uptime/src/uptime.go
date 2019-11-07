@@ -34,6 +34,28 @@ func New(db db.DB) handler {
 	return handler{db}
 }
 
+func CalculateProposal1VoteScore(address string) int64 {
+	proposal1Voters := viper.Get("elchoco_vote_validators").([]interface{})
+
+	for _, obj := range proposal1Voters {
+		if obj.(string) == address {
+			return 100
+		}
+	}
+	return 0
+}
+
+func CalculateProposal2VoteScore(address string) int64 {
+	proposal2Voters := viper.Get("amazonas_vote_validators").([]interface{})
+
+	for _, obj := range proposal2Voters {
+		if obj.(string) == address {
+			return 100
+		}
+	}
+	return 0
+}
+
 func GenerateAggregateQuery(startBlock int64, endBlock int64,
 	elChocoStartBlock int64, elChocoEndBlock int64, amazonasStartBlock int64, amazonasEndBlock int64) []bson.M {
 
@@ -185,14 +207,26 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		uptime := float64(v.Info.UptimeCount) / (float64(endBlock) - float64(startBlock))
 		uptimePoints := uptime * 300
 		validatorsList[i].Info.UptimePoints = uptimePoints
+
+		//calculate proposal1 vote score
+		proposal1VoteScore := CalculateProposal1VoteScore(validatorsList[i].Info.OperatorAddr)
+
+		//calculate proposal2 vote score
+		proposal2VoteScore := CalculateProposal2VoteScore(validatorsList[i].Info.OperatorAddr)
+
+		validatorsList[i].Info.Proposal1VoteScore = proposal1VoteScore
+		validatorsList[i].Info.Proposal2VoteScore = proposal2VoteScore
+
 		validatorsList[i].Info.TotalPoints = float64(validatorsList[i].Info.Upgrade1Points) +
-			float64(validatorsList[i].Info.Upgrade2Points) + uptimePoints + float64(nodeRewards)
+			float64(validatorsList[i].Info.Upgrade2Points) + uptimePoints + float64(nodeRewards) +
+			float64(proposal1VoteScore) + float64(proposal2VoteScore)
 	}
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Upgrade1 points \t Upgrade2 points \t Uptime points \t Node points \t Total points")
+		"\t Upgrade-1 Points \t Upgrade-2 Points \t Uptime Points \t Node Points"+
+		" \t Proposal-1 Points \t Proposal-2 Points \t Total points")
 
 	for _, data := range validatorsList {
 		var address string = data.Info.OperatorAddr
@@ -205,7 +239,9 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
 			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+
 			" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints)+
-			"\t"+strconv.Itoa(int(nodeRewards))+"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
+			"\t"+strconv.Itoa(int(nodeRewards))+"\t"+
+			"\t"+strconv.Itoa(int(data.Info.Proposal1VoteScore))+"\t"+strconv.Itoa(int(data.Info.Proposal2VoteScore))+
+			"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
 	}
 
 	w.Flush()
@@ -217,8 +253,9 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 // ExportToCsv - Export data to CSV file
 func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 	Header := []string{
-		"ValOper Address", "Moniker", "Uptime Count", "elChoco Points",
+		"ValOper Address", "Moniker", "Uptime Count", "Upgrade1 Points",
 		"Upgrade2 Points", "Uptime Points", "Node points",
+		"Proposal1 Vote Score", "Proposal2 Vote score", "Total Points",
 	}
 
 	file, err := os.Create("result.csv")
@@ -250,8 +287,10 @@ func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 		uptimePoints := fmt.Sprintf("%f", record.Info.UptimePoints)
 		nodePoints := strconv.Itoa(int(nodeRewards))
 		totalPoints := fmt.Sprintf("%f", record.Info.TotalPoints)
+		p1VoteScore := strconv.Itoa(int(record.Info.Proposal1VoteScore))
+		p2VoteScore := strconv.Itoa(int(record.Info.Proposal2VoteScore))
 		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Points,
-			up2Points, uptimePoints, nodePoints, totalPoints}
+			up2Points, uptimePoints, nodePoints, p1VoteScore, p2VoteScore, totalPoints}
 		err := writer.Write(addrObj)
 
 		if err != nil {
