@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/regen-network/testnets/util/uptime/db"
-	"github.com/regen-network/testnets/util/uptime/src"
+	"github.com/regen-friends/testnets/util/uptime/db"
+	"github.com/regen-friends/testnets/util/uptime/src"
 )
 
 func main() {

@@ -19,6 +19,9 @@ amazonas_reward_points_per_block = 1 #200 rewards are distributed equally for ea
 #Node Rewards
 node_rewards = 100
 
+#Uptime Rewards
+max_uptime_rewards = 300
+
 #Elchoco Vote Validators
 elchoco_vote_validators  = ["xrn:valoper1yh4rwtgck9w7k8tf4y8uh7w0rvtk6ssclrxv3j",
 		"xrn:valoper1nmlcq98p8vwxufe5ajry5eqev9mudz5sx085vg", "xrn:valoper1xrsmkqh305m09tc5x73v4t3wtcuqmf6c70m46g",

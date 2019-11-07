@@ -9,7 +9,7 @@ import (
 
 	"text/tabwriter"
 
-	"github.com/regen-network/testnets/util/uptime/db"
+	"github.com/regen-friends/testnets/util/uptime/db"
 	"github.com/spf13/viper"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -204,8 +204,9 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 
 	//calculating uptime points
 	for i, v := range validatorsList {
-		uptime := float64(v.Info.UptimeCount) / (float64(endBlock) - float64(startBlock))
-		uptimePoints := uptime * 300
+		maxUptimeRewards := viper.Get("max_uptime_rewards").(int64)
+		uptimePoints := float64(v.Info.UptimeCount*maxUptimeRewards) / (float64(endBlock) - float64(startBlock))
+
 		validatorsList[i].Info.UptimePoints = uptimePoints
 
 		//calculate proposal1 vote score
@@ -225,8 +226,8 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Upgrade-1 Points \t Upgrade-2 Points \t Uptime Points \t Node Points"+
-		" \t Proposal-1 Points \t Proposal-2 Points \t Total points")
+		"\t Uptime Points \t Upgrade-1 \t Upgrade-2 \t Node "+
+		" \t Proposal-1 \t Proposal-2 \t Total Points")
 
 	for _, data := range validatorsList {
 		var address string = data.Info.OperatorAddr
@@ -237,8 +238,8 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		}
 
 		fmt.Fprintln(w, " "+address+"\t "+data.Info.Moniker+
-			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+
-			" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints)+
+			"\t  "+strconv.Itoa(int(data.Info.UptimeCount))+" \t"+fmt.Sprintf("%f", data.Info.UptimePoints)+
+			"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+
 			"\t"+strconv.Itoa(int(nodeRewards))+"\t"+
 			"\t"+strconv.Itoa(int(data.Info.Proposal1VoteScore))+"\t"+strconv.Itoa(int(data.Info.Proposal2VoteScore))+
 			"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
@@ -253,8 +254,8 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 // ExportToCsv - Export data to CSV file
 func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 	Header := []string{
-		"ValOper Address", "Moniker", "Uptime Count", "Upgrade1 Points",
-		"Upgrade2 Points", "Uptime Points", "Node points",
+		"ValOper Address", "Moniker", "Uptime Count", "Uptime Points", "Upgrade1 Points",
+		"Upgrade2 Points", "Node points",
 		"Proposal1 Vote Score", "Proposal2 Vote score", "Total Points",
 	}
 
@@ -282,9 +283,9 @@ func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 		}
 
 		uptimeCount := strconv.Itoa(int(record.Info.UptimeCount))
+		uptimePoints := fmt.Sprintf("%f", record.Info.UptimePoints)
 		up1Points := strconv.Itoa(int(record.Info.Upgrade1Points))
 		up2Points := strconv.Itoa(int(record.Info.Upgrade2Points))
-		uptimePoints := fmt.Sprintf("%f", record.Info.UptimePoints)
 		nodePoints := strconv.Itoa(int(nodeRewards))
 		totalPoints := fmt.Sprintf("%f", record.Info.TotalPoints)
 		p1VoteScore := strconv.Itoa(int(record.Info.Proposal1VoteScore))
