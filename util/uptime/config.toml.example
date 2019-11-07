@@ -52,3 +52,9 @@ amazonas_vote_validators = ["xrn:valoper1xrsmkqh305m09tc5x73v4t3wtcuqmf6c70m46g"
 		"xrn:valoper1pq4skpr0glaz2ul8e6q5w4lqe8e2ph2vdu6fnf","xrn:valoper1jeuqc29nkznvy0tk7c54kc239cea92vz9kzgnm",
 		"xrn:valoper1h7jh55qn32vjscv0l9qakpx78k3l8vyh22zzuh","xrn:valoper140y8m6r7s40mvmz6g5dqrsrfvfkq5m8c267452",
 		"xrn:valoper1z8g335nj56gmjyreq2wgleyxezjfhypcc8rlx5"]
+
+#Gentx validators
+gentx_validators = ["xrn:valoper1xrsmkqh305m09tc5x73v4t3wtcuqmf6c70m46g",
+"xrn:valoper1e6tz5v50dnnapvqnjw9n3mnp8gs0tx0r4gr4nk", "xrn:valoper12677q7hjurt967k7ssrylvcnhl2xjcj0sv96lq",
+"xrn:valoper140y8m6r7s40mvmz6g5dqrsrfvfkq5m8c267452", "xrn:valoper1wa6l0zrj26yxdjhmne4gvf0chpzalzk9dztdxr",
+"xrn:valoper1qkht8zq6jpnu34m9xyjcgmf4gspdk6t5hzr458", "xrn:valoper1h7jh55qn32vjscv0l9qakpx78k3l8vyh22zzuh"]

@@ -159,6 +159,89 @@ func CalculateUpgradePoints(upgradePointsPerBlock int64, upgradeBlock int64, end
 	return points
 }
 
+func GetCommonValidators(gentxVals, blockVals []string) (results []string) {
+	m := make(map[string]bool)
+
+	for _, item := range gentxVals {
+		m[item] = true
+	}
+
+	for _, item := range blockVals {
+		if _, ok := m[item]; ok {
+			results = append(results, item)
+		}
+	}
+
+	return results
+}
+
+func (h handler) CalculateGenesisPoints(address string) int64 {
+	var aggQuery []bson.M
+
+	matchQuery := bson.M{
+		"$match": bson.M{
+			"height": 2,
+		},
+	}
+
+	aggQuery = append(aggQuery, matchQuery)
+
+	lookUpQuery := bson.M{
+		"$lookup": bson.M{
+			"from": "validators",
+			"let":  bson.M{"id": "$validators"},
+			"pipeline": []bson.M{
+				bson.M{
+					"$match": bson.M{
+						"$expr": bson.M{"$in": []string{"$address", "$$id"}},
+					},
+				},
+				bson.M{
+					"$project": bson.M{
+						"description.moniker": 1, "operator_address": 1, "address": 1, "_id": 0,
+					},
+				},
+			},
+			"as": "validator_details",
+		},
+	}
+
+	aggQuery = append(aggQuery, lookUpQuery)
+
+	results, err := h.db.QueryValAggregateData(aggQuery)
+
+	if err != nil {
+		fmt.Printf("Error while fetching validator data at height 2 %v", err)
+		db.HandleError(err)
+	}
+
+	var blockValidators []string
+
+	if len(results) > 0 {
+		for _, val := range results[0].Validator_details {
+			blockValidators = append(blockValidators, val.Operator_address)
+		}
+	}
+
+	GentxValidators := viper.Get("gentx_validators").([]interface{})
+	var genxVal []string
+
+	for _, val := range GentxValidators {
+		genxVal = append(genxVal, val.(string))
+	}
+
+	commonValidators := GetCommonValidators(genxVal, blockValidators)
+
+	for _, val := range commonValidators {
+		if val == address {
+			return 100
+		}
+	}
+
+	return 0
+
+}
+
 func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	//Read node rewards from config
 	nodeRewards = viper.Get("node_rewards").(int64)
@@ -218,16 +301,20 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 		validatorsList[i].Info.Proposal1VoteScore = proposal1VoteScore
 		validatorsList[i].Info.Proposal2VoteScore = proposal2VoteScore
 
+		genesisPoints := h.CalculateGenesisPoints(validatorsList[i].Info.OperatorAddr)
+		validatorsList[i].Info.GenesisPoints = genesisPoints
+
 		validatorsList[i].Info.TotalPoints = float64(validatorsList[i].Info.Upgrade1Points) +
 			float64(validatorsList[i].Info.Upgrade2Points) + uptimePoints + float64(nodeRewards) +
-			float64(proposal1VoteScore) + float64(proposal2VoteScore)
+			float64(proposal1VoteScore) + float64(proposal2VoteScore) + float64(genesisPoints)
+
 	}
 
 	//Printing Uptime results in tabular view
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintln(w, " Operator Addr \t Moniker\t Uptime Count "+
-		"\t Uptime Points \t Upgrade-1 \t Upgrade-2 \t Node "+
-		" \t Proposal-1 \t Proposal-2 \t Total Points")
+		"\t Upgrade-1 Points \t Upgrade-2 Points \t Uptime Points \t Node Points"+
+		" \t Proposal-1 Points \t Proposal-2 Points \t Genesis Points \t Total points")
 
 	for _, data := range validatorsList {
 		var address string = data.Info.OperatorAddr
@@ -242,7 +329,7 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 			"\t "+strconv.Itoa(int(data.Info.Upgrade1Points))+" \t"+strconv.Itoa(int(data.Info.Upgrade2Points))+
 			"\t"+strconv.Itoa(int(nodeRewards))+"\t"+
 			"\t"+strconv.Itoa(int(data.Info.Proposal1VoteScore))+"\t"+strconv.Itoa(int(data.Info.Proposal2VoteScore))+
-			"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
+			"\t"+strconv.Itoa(int(data.Info.GenesisPoints))+"\t"+fmt.Sprintf("%f", data.Info.TotalPoints))
 	}
 
 	w.Flush()
@@ -254,9 +341,9 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 // ExportToCsv - Export data to CSV file
 func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 	Header := []string{
-		"ValOper Address", "Moniker", "Uptime Count", "Uptime Points", "Upgrade1 Points",
-		"Upgrade2 Points", "Node points",
-		"Proposal1 Vote Score", "Proposal2 Vote score", "Total Points",
+		"ValOper Address", "Moniker", "Uptime Count", "Upgrade1 Points",
+		"Upgrade2 Points", "Uptime Points", "Node points",
+		"Proposal1 Vote Points", "Proposal2 Vote Points", "Genesis Points", "Total Points",
 	}
 
 	file, err := os.Create("result.csv")
@@ -290,8 +377,9 @@ func ExportToCsv(data []ValidatorInfo, nodeRewards int64) {
 		totalPoints := fmt.Sprintf("%f", record.Info.TotalPoints)
 		p1VoteScore := strconv.Itoa(int(record.Info.Proposal1VoteScore))
 		p2VoteScore := strconv.Itoa(int(record.Info.Proposal2VoteScore))
+		genPoints := strconv.Itoa(int(record.Info.GenesisPoints))
 		addrObj := []string{address, record.Info.Moniker, uptimeCount, up1Points,
-			up2Points, uptimePoints, nodePoints, p1VoteScore, p2VoteScore, totalPoints}
+			up2Points, uptimePoints, nodePoints, p1VoteScore, p2VoteScore, genPoints, totalPoints}
 		err := writer.Write(addrObj)
 
 		if err != nil {
