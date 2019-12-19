@@ -6,6 +6,9 @@ A short series of festive-themed challenges, between Thursday 19th December to M
 ## Where is it?
 The Regen Validators (DVD) telegram channel.
 
+## Who is it for?
+Validators on the `congo-1` testnet; participation rules are as per the rest of the Regen incentivised testnet programme.
+
 ## What is it for?
 There will be a _small_ reward, added to the incentivised testnet balance, for those validators that complete each challenge.
 
