@@ -2,18 +2,41 @@
 
 Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
-## Join `regen-test-1001` Public Testnet
+## Join `congo-1` Public Testnet
 
-`regen-test-1001` is now live!
+`congo-1` is due to have it's genesis block set in stone on Thursday November 7th at 1700 UTC (08/11 at 0200KST, 1200EST and 0900PST).
 
 We have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
 and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
 
-The genesis files are in [./latest](latest) and the incentive point system in [./regen-test-1001/README.md](./regen-test-1001/README.md)
+The genesis files are in [./latest](latest). *This testnet is not incentivised* and is run purely by the community for the benefit of those validators working on integrations and tooling to have a sandbox.
 
-We have airdropped testnet tokens to all participants in the last Cosmos Hub
-testnet. If you would like to participate and have not received tokens, you
-can get some from this faucet: http://regen.coris.network/faucet, ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg or open an issue with an address and we'll send you some.
+We have airdropped testnet tokens to all participants in the regen-testnet-1001 genesis 
+plus all accounts that ran a validator in that testnet. If you would like to participate 
+and have not received tokens, you can get some from this faucet: http://regen.coris.network/faucet,
+ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg
+or open an issue with an address and we'll send you some.
+
+For those wanting to develop against the Regen test network APIs, please use the following highly available service provided by [Chorus One](https://chorus.one):
+* **RPC**: https://regen.chorus.one:26657
+* **LCD**: https://regen-lcd.chorus.one:1317
+
+## Creating a Genesis Validator
+
+*This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 1700UTC on 6th November 2019*
+
+#### Generate Genesis Transaction (optional)
+```
+$ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/congo-1/genesis.json > ~/.xrnd/config/genesis.json
+$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000000tree,100000000000seed
+$ xrnd gentx --name <your_wallet_name> --amount 900000000tree
+```
+If all goes well, you will see the following message:
+```
+Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
+```
+#### Submit Gentx (optional)
+Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
 
 ## How to Run a Testnet Validator
 
@@ -23,6 +46,7 @@ Please refer to the Cosmos Hub documentation on validators for a general overvie
 * [Validators Overview](https://cosmos.network/docs/cosmos-hub/validators/overview.html)
 * [Validator Security](https://cosmos.network/docs/cosmos-hub/validators/security.html)
 * [Validator FAQ](https://cosmos.network/docs/cosmos-hub/validators/validator-faq.html)
+
 
 ### Prerequisites
 ```
@@ -62,20 +86,6 @@ $ xrncli keys add <your_wallet_name>
 
 Please follow the documentation provided on [creating a validator for Cosmos hub](https://github.com/cosmos/gaia/blob/master/docs/validators/validator-setup.md#create-your-validator), replacing `gaiad` and `gaiacli` with `xrnd` and `xrncli` respectively. Also our testnet staking token denomination is `tree` and Regen addresses begin with `xrn:` instead of `cosmos`.
 
-### Creating a Genesis Validator
-
-*This section applies ONLY if you are joining at genesis! Genesis for Regen Test-1001 was in June 2019*
-#### Generate Genesis Transaction (optional)
-```
-$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000tree,1000000validatortoken
-$ xrnd gentx --name <your_wallet_name> --amount 1000000tree
-```
-If all goes well, you will see the following message:
-```
-Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
-```
-#### Submit Gentx (optional)
-Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
 ### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
@@ -88,7 +98,7 @@ $ nano $HOME/.xrnd/config/config.toml
 Find the following section and add the seed nodes.
 ```
 # Comma separated list of seed nodes to connect to
-seeds = ""
+seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@regen-seed-eu.chorus.one:36656,ca130fd7ca16a957850a96ee9bdb74a351c4929f@regen-seed-us.chorus.one:36656"
 ```
 ### Make `xrnd` a System Service (optional)
 ```
@@ -135,22 +145,23 @@ Check node status
 ```
 $ xrncli status
 ```
+
+# Historic Testnets (not in use)
+
+The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
+
+## `regen-test-1001`
+
+`regen-test-1001` ran between August and October 2019. It is now defunct, having discovered a cosmos-sdk bug in governance-driven parameter updates logic.
+
 ## `regen-test-1000` 
 
 `regen-test-1000` hit some weird consensus error on app state at block 2.
 
 ### `xrn-test-3`
 
-Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z` and is live as of this writing.
+Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z` and is now defunct.
 
-In this testnet, validator nodes currently have ports 26656, 26657 and 1317 open for testing purposes. In the future,
-the testnet will be setup with more security hardening via sentry and seed nodes.
-
-The validator node URL's are as follows:
-
-* [xrn-us-east-1.regen.network](http://xrn-us-east-1.regen.network:26657)
-* [xrn-us-west-1.regen.network](http://xrn-us-west-1.regen.network:26657)
-* [xrn-eu-central-1.regen.network](http://xrn-eu-central-1.regen.network:26657)
 
 `xrncli` can be configured to connect to the testnet as follows:
 
