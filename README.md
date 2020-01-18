@@ -26,8 +26,8 @@ For those wanting to develop against the Regen test network APIs, please use the
 #### Generate Genesis Transaction (optional)
 ```
 $ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1/genesis.json > ~/.xrnd/config/genesis.json
-$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 10000000tree   # other values will be removed.
-$ xrnd gentx --name <your_wallet_name> --amount 9000000tree
+$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 10000000utree   # other values will be removed.
+$ xrnd gentx --name <your_wallet_name> --amount 9000000utree
 ```
 If all goes well, you will see the following message:
 ```
