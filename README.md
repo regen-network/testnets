@@ -72,7 +72,7 @@ $ xrncli version --long
 ```
 ### Setting Up a New Node
 ```
-$ xrnd init --chain-id=regen-test-1001 <your_moniker>
+$ xrnd init --chain-id=algradigon-1 <your_moniker>
 $ xrncli keys add <your_wallet_name>
 
 ##
@@ -87,7 +87,7 @@ Please follow the documentation provided on [creating a validator for Cosmos hub
 ### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
-$ curl https://raw.githubusercontent.com/regen-network/testnets/master/regen-test-1001/genesis.json > $HOME/.xrnd/config/genesis.json
+$ curl https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1001/genesis.json > $HOME/.xrnd/config/genesis.json
 ```
 Add seed nodes in `config.toml`.
 ```
