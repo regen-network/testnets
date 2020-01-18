@@ -2,20 +2,18 @@
 
 Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
-## Join `congo-1` Public Testnet
 
-`congo-1` is due to have it's genesis block set in stone on Thursday November 7th at 1700 UTC (08/11 at 0200KST, 1200EST and 0900PST).
 
-We have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
+## Join `algradigon-1` Public Testnet
+
+`algradigon-1` is the second phase of the Regen Network Incentivised testnet programme. It is due to have it's genesis block set in stone on Thursday January 23rd at 1700 UTC (1200EST and 0900PST; 24/01 at 0200KST). Future upgrades will be staggered so all validators get 'good' upgrade windows and 'bad' upgrade windows!
+
+We will have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
 and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
 
-The genesis files are in [./latest](latest). *This testnet is not incentivised* and is run purely by the community for the benefit of those validators working on integrations and tooling to have a sandbox.
+The genesis files are in [./latest](latest). This is an incentivised testnet, and further details can be found on the Regen blog: <link to be added>
 
-We have airdropped testnet tokens to all participants in the regen-testnet-1001 genesis 
-plus all accounts that ran a validator in that testnet. If you would like to participate 
-and have not received tokens, you can get some from this faucet: http://regen.coris.network/faucet,
-ask in our validator telegram channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg
-or open an issue with an address and we'll send you some.
+Gentx submissions must be included in a PR to this repo *by 22nd Jan at 1200UTC*. The genesis file will be released by 1800UTC on 22nd Jan - 23 hours before genesis.
 
 For those wanting to develop against the Regen test network APIs, please use the following highly available service provided by [Chorus One](https://chorus.one):
 * **RPC**: https://regen.chorus.one:26657
@@ -23,13 +21,13 @@ For those wanting to develop against the Regen test network APIs, please use the
 
 ## Creating a Genesis Validator
 
-*This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 1700UTC on 6th November 2019*
+*This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 1200UTC on 22nd January 2020*
 
 #### Generate Genesis Transaction (optional)
 ```
-$ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/congo-1/genesis.json > ~/.xrnd/config/genesis.json
-$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 1000000000tree,100000000000seed
-$ xrnd gentx --name <your_wallet_name> --amount 900000000tree
+$ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1/genesis.json > ~/.xrnd/config/genesis.json
+$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 10000000tree   # other values will be removed.
+$ xrnd gentx --name <your_wallet_name> --amount 9000000tree
 ```
 If all goes well, you will see the following message:
 ```
@@ -149,6 +147,10 @@ $ xrncli status
 # Historic Testnets (not in use)
 
 The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
+
+## `congo-1` 
+
+`congo-1` was the first community-driven testnet between 7th November 2019 and 17th January 2020, at which point it was abandoned in order to prepare for the next incentivised testnet.
 
 ## `regen-test-1001`
 
