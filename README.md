@@ -4,7 +4,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 
 
-## Join `algradigon-1` Public Testnet
+## Join `algradigon-1` Incentivised Testnet
 
 `algradigon-1` is the second phase of the Regen Network Incentivised testnet programme. It is due to have it's genesis block set in stone on Thursday January 23rd at 1700 UTC (1200EST and 0900PST; 24/01 at 0200KST). Future upgrades will be staggered so all validators get 'good' upgrade windows and 'bad' upgrade windows!
 
