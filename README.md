@@ -11,7 +11,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 We will have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
 and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
 
-The genesis files are in [./latest](latest). This is an incentivised testnet, and further details can be found on the Regen blog: <link to be added>
+The genesis files are in [./latest](latest). This is an incentivised testnet, and further details can be found on the Regen blog: [algradigon regens testnet](https://medium.com/regen-network/algradigon-regens-testnet-2000-4ea377c4a590)
 
 Gentx submissions must be included in a PR to this repo *by 22nd Jan at 1200UTC*. The genesis file will be released by 1800UTC on 22nd Jan - 23 hours before genesis.
 
@@ -34,7 +34,18 @@ If all goes well, you will see the following message:
 Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
 ```
 #### Submit Gentx (optional)
-Submit your gentx in a PR [here](https://github.com/regen-network/testnets) 
+Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
+
+- Clone the repo using
+
+```sh
+git clone https://github.com/regen-network/testnets
+```
+
+- Copy the generated gentx json file to <repo_path>/algradigon-1/gentxs/<your_gentx_file.json>
+
+- Commit and push to your repo
+- Create a PR into https://github.com/regen-network/testnets
 
 ## How to Run a Testnet Validator
 
@@ -87,7 +98,7 @@ Please follow the documentation provided on [creating a validator for Cosmos hub
 ### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
-$ curl https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1001/genesis.json > $HOME/.xrnd/config/genesis.json
+$ curl https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1/genesis.json > $HOME/.xrnd/config/genesis.json
 ```
 Add seed nodes in `config.toml`.
 ```
