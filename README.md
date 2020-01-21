@@ -67,12 +67,12 @@ $ wget https://raw.githubusercontent.com/jim380/node_tooling/master/Cosmos/CLI/g
 $ chmod +x go_install.sh
 $ ./go_install.sh -v 1.12.5
 ```
-At the time of this writing, `1.12.5` is the latest version of Golang. **Go 1.12+ is required for the Cosmos SDK.**
+**Go 1.12+ is required.**
 ### Install XRN
 ```
 $ mkdir -p $GOPATH/src/github.com/regen
 $ cd $GOPATH/src/github.com/regen
-$ git clone -b <latest-release-tag> https://github.com/regen-network/regen-ledger
+$ git clone -b v0.5.0 https://github.com/regen-network/regen-ledger
 $ cd regen-ledger
 $ make install
 ```
