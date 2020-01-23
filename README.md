@@ -69,6 +69,7 @@ $ ./go_install.sh -v 1.12.5
 ```
 **Go 1.12+ is required.**
 ### Install XRN
+**xnrd and xrncli v0.5.0 is required to launch at genesis on algradigon-1.**
 ```
 $ mkdir -p $GOPATH/src/github.com/regen
 $ cd $GOPATH/src/github.com/regen
