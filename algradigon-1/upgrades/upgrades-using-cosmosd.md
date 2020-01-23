@@ -126,10 +126,16 @@ sudo systemctl stop xrnd
 
 ```
 cd $DAEMON_HOME/upgrade_manager
-mkdir -p upgrades/papua/bin
-cd upgrades/papua
+mkdir -p upgrades/patagonia/bin
+cd upgrades/patagonia
 curl -L -o bin/xrnd https://github.com/regen-network/regen-ledger/releases/download/v0.5.1/xrnd-v0.5.1
 chmod +x bin/xrnd
 ./bin/xrnd version # this should print 0.5.1
 cd ../..
 ```
+
+Now your setup for automatic upgrade is done. `cosmosd` should do the work needed for `upgrade`
+
+## Important Note
+
+Hopefully the setup works as intented, but if it fails, you need to download the binary and run it manually. So, make yourself available for the upgrade and keep an eye on the logs. `Cosmosd` is still under testing for different scenarios. Please help us improving it by sending your valuable feedback. As always, please join the Regen Network DVD telegram group for any development or validator related questions.
