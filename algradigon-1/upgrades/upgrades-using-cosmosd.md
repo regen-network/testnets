@@ -43,18 +43,32 @@ chmod +x $DAEMON_HOME/cosmosd
 
 ```
 cd $DAEMON_HOME/upgrade_manager
-mkdir -p genesis/bin
 
 wget -c https://github.com/regen-network/regen-ledger/releases/download/v0.5.0/regen-ledger-v0.5.0-linux-amd64.tar.xz -O - | tar -xz -C $DAEMON_HOME/upgrade_manager/genesis/ ./bin
 
-chmod +x bin/xrnd
-./bin/xrnd version # this should print 0.5.0
+chmod +x genesis/bin/xrnd
+./genesis/bin/xrnd version # this should print 0.5.0
 ```
 
 
 ### Make sure to set the current link, if not starting from genesis
 
-`ln -s $DAEMON_HOME/upgrade_manager/upgrades/genesis current`
+`ln -s $DAEMON_HOME/upgrade_manager/genesis current`
+
+# Download the upgrade binaries, so `cosmosd` can handle the required upgrades for you
+
+
+## Download patagonia binary
+
+```
+cd $DAEMON_HOME/upgrade_manager
+mkdir -p upgrades/patagonia/bin
+cd upgrades/patagonia
+curl -L -o bin/xrnd https://github.com/regen-network/regen-ledger/releases/download/v0.5.1/xrnd-v0.5.1
+chmod +x bin/xrnd
+./bin/xrnd version # this should print 0.5.1
+cd ../..
+```
 
 ## Setup Cosmosd system service (Ubuntu)
 
@@ -119,23 +133,9 @@ If you need to Stop the node (not required atm):
 sudo systemctl stop xrnd
 ```
 
-# Download the upgrade binaries, so `cosmosd` can handle the required upgrades for you
-
-
-## Download patagonia binary
-
-```
-cd $DAEMON_HOME/upgrade_manager
-mkdir -p upgrades/patagonia/bin
-cd upgrades/patagonia
-curl -L -o bin/xrnd https://github.com/regen-network/regen-ledger/releases/download/v0.5.1/xrnd-v0.5.1
-chmod +x bin/xrnd
-./bin/xrnd version # this should print 0.5.1
-cd ../..
-```
-
 Now your setup for automatic upgrade is done. `cosmosd` should do the work needed for `upgrade`
 
 ## Important Note
 
 Hopefully the setup works as intented, but if it fails, you need to download the binary and run it manually. So, make yourself available for the upgrade and keep an eye on the logs. `Cosmosd` is still under testing for different scenarios. Please help us improving it by sending your valuable feedback. As always, please join the Regen Network DVD telegram group for any development or validator related questions.
+
