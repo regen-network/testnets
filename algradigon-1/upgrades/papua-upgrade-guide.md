@@ -117,9 +117,6 @@ chmod +x $DAEMON_HOME/cosmosd
 
 ## Lets configure `cosmosd` to use `xrnd` `v0.5.1`
 
-# Download the upgrade binaries, so `cosmosd` can handle the required upgrades for you
-
-
 ## Download patagonia binary
 
 ```
