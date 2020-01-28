@@ -175,11 +175,12 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 ```
-
-# *** IMPORTANT ***
-### STOP YOUR `xrnd` if it is runnning already.
-#### make sure your validator is not running anymore.
-
+****
+******
+# IMPORTANT
+### STOP YOUR `xrnd` if it is runnning already and make sure your validator is not running anymore.
+********
+****
 
 Now enable the service:
 ```
