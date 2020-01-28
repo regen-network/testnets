@@ -6,8 +6,10 @@ In this release, faucet account is credited with some newly minted tokens along 
 
 To query this proposal using the client, you can use this command on your validator or proxy node:
 ```
-xrncli query gov proposal 4 --chain-id algradigon-1 -o json
+xrncli query gov proposal 4 --chain-id algradigon-1 -o json --node https://regen.chorus.one:26657
 ```
+Note: The ```--node``` flag indicates that we are connecting to Chorus one node. If you are executing this command on your local node/validator, this flag is not needed.
+
 This will return a response that looks something like this:
 ```
 { 
@@ -49,9 +51,9 @@ As we can see in the ``` proposal_status```, we are currently in the ```VotingPe
 ## Voting for the Software Upgrade proposal
 
 You can vote for this proposal using the client by using the following command:
-```xrncli tx gov vote 4 yes --from <mykey> --chain-id algradigon-1```
+```xrncli tx gov vote 4 yes --from <mykey> --chain-id algradigon-1 --node https://regen.chorus.one:26657```
 
 Note:
-You could also vote ```no``` or ```abstain``` on the proposal.
+You could also vote ```no``` or ```abstain``` on the proposal if you're not confident about it.
 
 
