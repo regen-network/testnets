@@ -70,6 +70,22 @@ chmod +x bin/xrnd
 cd ../..
 ```
 
+### or build from source using:
+```
+cd $GOPATH/src/github.com/regen-network/regen-ledger
+git fetch
+git checkout v0.5.1
+make build
+./build/xrnd version #should print 0.5.1
+mkdir -p $DAEMON_HOME/upgrade_manager/upgrades/patagonia/bin
+mv build/xrnd $DAEMON_HOME/upgrade_manager/upgrades/patagonia/bin/
+cd $DAEMON_HOME/upgrade_manager/upgrades/patagonia
+chmod +x bin/xrnd
+
+```
+
+
+
 ## Setup Cosmosd system service (Ubuntu)
 
 ### Prerequistes
@@ -138,4 +154,5 @@ Now your setup for automatic upgrade is done. `cosmosd` should do the work neede
 ## Important Note
 
 Hopefully the setup works as intented, but if it fails, you need to download the binary and run it manually. So, make yourself available for the upgrade and keep an eye on the logs. `Cosmosd` is still under testing for different scenarios. Please help us improving it by sending your valuable feedback. As always, please join the Regen Network DVD telegram group for any development or validator related questions.
+
 
