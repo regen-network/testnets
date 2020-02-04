@@ -10,41 +10,41 @@ Note: The ```--node``` flag indicates that we are connecting to Chorus one node.
 
 This will return a response that looks something like this:
 ```
-{ 
-   "content":{ 
-      "type":"cosmos-sdk/SoftwareUpgradeProposal",
-      "value":{ 
-         "title":"Darien Gap Upgrade",
-         "description":"Upgrade to Darien Gap release (v0.5.3)",
-         "plan":{ 
-            "name":"darien-gap",
-            "time":"2020-02-07T09:00:00Z",
-            "info":"Release tag v0.5.3"
-         }
+{
+  "content": {
+    "type": "cosmos-sdk/SoftwareUpgradeProposal",
+    "value": {
+      "title": "Darien Gap upgrade proposal",
+      "description": "This proposal proposes to switch the working binary to v0.5.3 to reduce the VotingPeriod to 6 hours",
+      "plan": {
+        "name": "darien-gap",
+        "time": "2020-02-07T09:00:00Z",
+        "info": "Release tag - v0.5.3"
       }
-   },
-   "id":"4",
-   "proposal_status":"VotingPeriod",
-   "final_tally_result":{ 
-      "yes":"0",
-      "abstain":"0",
-      "no":"0",
-      "no_with_veto":"0"
-   },
-   "submit_time":"2020-02-04T13:00:46Z",
-   "deposit_end_time":"2020-02-04T13:15:46Z",
-   "total_deposit":[ 
-      { 
-         "denom":"utree",
-         "amount":"50000000"
-      }
-   ],
-   "voting_start_time":"2020-02-04T13:15:00Z",
-   "voting_end_time":"2020-02-06T13:15:00Z"
+    }
+  },
+  "id": "5",
+  "proposal_status": "VotingPeriod",
+  "final_tally_result": {
+    "yes": "0",
+    "abstain": "0",
+    "no": "0",
+    "no_with_veto": "0"
+  },
+  "submit_time": "2020-02-04T20:56:14.227299877Z",
+  "deposit_end_time": "2020-02-06T20:56:14.227299877Z",
+  "total_deposit": [
+    {
+      "denom": "utree",
+      "amount": "109000000"
+    }
+  ],
+  "voting_start_time": "2020-02-04T21:00:48.004370347Z",
+  "voting_end_time": "2020-02-06T21:00:48.004370347Z"
 }
 ```
 
-As we can see in the ``` proposal_status```, we are currently in the ```VotingPeriod```. This means that all the token holders can and should vote on the proposal before the voting period ends. Voting period for this proposal is scheduled to end on 6th Feb, 2019 at 13:15UTC. Votes cast after this time will not be registered on-chain and the voters will miss out on points.
+As we can see in the ``` proposal_status```, we are currently in the ```VotingPeriod```. This means that all the token holders can and should vote on the proposal before the voting period ends. Voting period for this proposal is scheduled to end on 6th Feb, 2019 at 21:00:48 UTC. Votes cast after this time will not be registered on-chain and the voters will miss out on points.
 
 ## Voting for the Software Upgrade proposal
 
