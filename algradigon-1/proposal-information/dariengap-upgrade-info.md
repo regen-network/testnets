@@ -1,4 +1,4 @@
-# Papua software upgrade details and voting instructions.
+# Darien Gap software upgrade details and voting instructions.
 
 The second software proposal is titled "Darien Gap Upgrade". This upgrade will be applied on 7th Feb, 2020 at 09:00UTC. This proposal proposes to switch the working binary to v0.5.3. This release can be found here:- https://github.com/regen-network/regen-ledger/releases/tag/v0.5.3
 
@@ -14,12 +14,12 @@ This will return a response that looks something like this:
    "content":{ 
       "type":"cosmos-sdk/SoftwareUpgradeProposal",
       "value":{ 
-         "title":"Papua Upgrade",
-         "description":"Upgrade to Papua release (v0.5.2)",
+         "title":"Darien Gap Upgrade",
+         "description":"Upgrade to Darien Gap release (v0.5.3)",
          "plan":{ 
-            "name":"papua",
-            "time":"2020-01-29T23:00:00Z",
-            "info":"Release tag v0.5.2"
+            "name":"darien-gap",
+            "time":"2020-02-07T09:00:00Z",
+            "info":"Release tag v0.5.3"
          }
       }
    },
@@ -31,16 +31,16 @@ This will return a response that looks something like this:
       "no":"0",
       "no_with_veto":"0"
    },
-   "submit_time":"2020-01-27T22:29:46.026225074Z",
-   "deposit_end_time":"2020-01-29T22:29:46.026225074Z",
+   "submit_time":"2020-02-04T13:00:46Z",
+   "deposit_end_time":"2020-02-04T13:15:46Z",
    "total_deposit":[ 
       { 
          "denom":"utree",
          "amount":"50000000"
       }
    ],
-   "voting_start_time":"2020-01-27T22:45:56.63777773Z",
-   "voting_end_time":"2020-01-29T22:45:56.63777773Z"
+   "voting_start_time":"2020-02-04T13:15:00Z",
+   "voting_end_time":"2020-02-06T13:15:00Z"
 }
 ```
 
