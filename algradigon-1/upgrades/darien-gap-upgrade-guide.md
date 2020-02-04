@@ -213,10 +213,10 @@ cd $DAEMON_HOME/upgrade_manager
 mkdir -p upgrades/darien-gap
 cd upgrades/darien-gap
 
-wget -c https://github.com/vitwit/regen-ledger/releases/download/v0.5.2/regen-ledger-v0.5.2-linux-amd64.tar.xz -O - | tar -xz -C $DAEMON_HOME/upgrade_manager/upgrades/darien-gap/ bin
+wget -c https://github.com/vitwit/regen-ledger/releases/download/v0.5.3/regen-ledger-v0.5.3-linux-amd64.tar.xz -O - | tar -xz -C $DAEMON_HOME/upgrade_manager/upgrades/darien-gap/ bin
 
 chmod +x bin/xrnd
-./bin/xrnd version # this should print 0.5.2
+./bin/xrnd version # this should print 0.5.3
 cd ../..
 ```
 
