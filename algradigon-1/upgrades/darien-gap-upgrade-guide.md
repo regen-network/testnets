@@ -123,7 +123,9 @@ chmod +x $DAEMON_HOME/cosmosd
 cd $DAEMON_HOME/upgrade_manager
 mkdir -p upgrades/papua/bin
 cd upgrades/papua
-curl -L -o bin/xrnd https://github.com/regen-network/regen-ledger/releases/download/v0.5.2/xrnd-v0.5.2
+
+wget -c https://github.com/regen-network/regen-ledger/releases/download/v0.5.2/regen-ledger-v0.5.2-linux-amd64.tar.xz -O - | tar -xz -C $DAEMON_HOME/upgrade_manager/upgrades/papua/ bin
+
 chmod +x bin/xrnd
 ./bin/xrnd version # this should print 0.5.2
 cd ../..
