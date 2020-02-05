@@ -13,9 +13,9 @@ Download the Darien Gap release from here
 
 Linux:
 ```
-wget https://github.com/regen-network/regen-ledger/releases/download/v0.5.2/regen-ledger-v0.5.2-linux-amd64.tar.xz
+wget https://github.com/regen-network/regen-ledger/releases/download/v0.5.3/regen-ledger-v0.5.3-linux-amd64.tar.xz
 
-tar -xzvf regen-ledger-v0.5.2-linux-amd64.tar.xz
+tar -xzvf regen-ledger-v0.5.3-linux-amd64.tar.xz
 ```
 
 
@@ -25,9 +25,9 @@ go get github.com/regen-network/regen-ledger
 cd <GOPATH>/regen-network/regen-ledger
 
 git fetch
-git checkout v0.5.2
+git checkout v0.5.3
 make build
-./build/xrnd version #this should print 0.5.2
+./build/xrnd version #this should print 0.5.3
 ```
 
 Note: The following instructions should be executed at the time of upgrade
@@ -43,7 +43,7 @@ sudo systemctl stop xrnd
 
 If you have dowloaded the prebuild binary, use this:
 ```
-mv regen-ledger-v0.5.2-linux-amd64/bin/* <GOBIN>/
+mv regen-ledger-v0.5.3-linux-amd64/bin/* <GOBIN>/
 ```
 
 If you built the binary from source:
