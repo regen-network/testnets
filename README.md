@@ -4,15 +4,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 # Upcoming Testnets
 
-The testnets below are upcoming testnets.
-
-## Regen Network Testnet 4000: Aplikiĝo Testnet
-
-`Focus`: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
-
-*Estimated Dates: Early Feb*
-
-*Total points to be allocated: 800*
+Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
 
 ## Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
@@ -21,6 +13,14 @@ The testnets below are upcoming testnets.
 *Estimated Date: 9th Mar - 23rd Mar*
 
 *Total points to be allocated: 900*
+
+## Regen Network Testnet 4000: Aplikiĝo Testnet
+
+`Focus`: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+
+*Estimated Dates: April*
+
+*Total points to be allocated: 800*
 
 # Historic Testnets (not in use)
 
