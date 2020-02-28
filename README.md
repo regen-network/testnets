@@ -26,9 +26,9 @@ Here are the details for upcoming testnets. Please check our blog post [Regen Ne
 
 The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
 
-## `Algragigon-1`
+## `Algradigon-1`
 
-`Algragigon-1` was launched on 23rd Jan at 17:00UTC with 38 validators signing on the genesis block. The validator set was increased to a total of 49 validators and total of 4 upgrades were executed in a span of two weeks i.e. 6th Jan at 17:00UTC.
+`Algradigon-1` was launched on 23rd Jan at 17:00UTC with 38 validators signing on the genesis block. The validator set was increased to a total of 49 validators and total of 4 upgrades were executed in a span of two weeks i.e. 6th Jan at 17:00UTC.
 
 ## `congo-1` 
 
