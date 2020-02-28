@@ -8,7 +8,7 @@ Here are the details for upcoming testnets. Please check our blog post [Regen Ne
 
 ## Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
-`Focus`: Adversarial testnet and network load testing with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
+**Focus**: Adversarial testnet and network load testing with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
 
 *Estimated Date: 9th Mar - 23rd Mar*
 
@@ -16,7 +16,7 @@ Here are the details for upcoming testnets. Please check our blog post [Regen Ne
 
 ## Regen Network Testnet 4000: Aplikiĝo Testnet
 
-`Focus`: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
 
 *Estimated Dates: April*
 
