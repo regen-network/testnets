@@ -7,7 +7,9 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ### [`Algradigon-1`](https://github.com/vitwit/testnets/tree/modifications/archive/algradigon-1)
 
-`Algradigon-1` was launched on 23rd Jan at 17:00UTC with 38 validators signing on the genesis block. The validator set was increased to a total of 49 validators and total of 4 upgrades were executed in a span of two weeks by 7th Feb.
+`Algradigon-1`, an incentivized testnet was launched on 23rd Jan at 17:00UTC with 38 validators signing on the genesis block. The validator set was increased to a total of 49 validators and total of 4 upgrades were executed in a span of two weeks by 7th Feb.
+
+Total points allocated: 900
 
 **Note**
 The incentive program for the testnet was ended on 12th Feb 2020 at 12:00UTC
