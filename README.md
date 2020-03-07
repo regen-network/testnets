@@ -12,7 +12,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 * Total points to be allocated: 1100+
 * Gentx submissions: 9th March 0900UTC (start date) - 12th March 0900 UTC (end date)
 * Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
-* Network start time: 13th March, 1500UTC*
+* Network start time: 13th March, 1500UTC
 
 #### [Click here to join the testnet](./kontraŭa/join-testnet.md)
 
