@@ -37,7 +37,7 @@ $ wamscli keys add <your_wallet_name>
 #### Generate Genesis Transaction 
 ```
 $ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/kontraŭa/genesis.json > ~/.wamsd/config/genesis.json
-$ wamsd add-genesis-account $(wamscli keys show <your_wallet_name> -a) 10000000utree   # other values will be removed.
+$ wamsd add-genesis-account <your_wallet_name> 10000000utree   # other values will be removed.
 $ wamsd gentx --name <your_wallet_name> --amount 9000000utree
 ```
 If all goes well, you will see the following message:
@@ -53,7 +53,7 @@ Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
 git clone https://github.com/regen-network/testnets
 ```
 
-- Copy the generated gentx json file to <repo_path>/algradigon-1/gentxs/<your_gentx_file.json>
+- Copy the generated gentx json file to <repo_path>/kontraua/gentxs/<your_gentx_file.json>
 
 - Commit and push to your repo
 - Create a PR into https://github.com/regen-network/testnets
