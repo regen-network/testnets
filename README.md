@@ -14,7 +14,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 * Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
 * Network start time: 13th March, 1500UTC
 
-#### [Click here to join the testnet](./kontraŭa/join-testnet.md)
+#### [Click here to join the testnet](./kontraua/README.md)
 
 
 ## Upcoming Testnets
