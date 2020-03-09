@@ -4,7 +4,7 @@
 
 * Testnet schedule: 13th March - 17th Apr, 2020 (5 weeks)
 * Total points to be allocated: 1100+
-* Gentx submissions: 9th March 0900UTC (start date) - 12th March 0900 UTC (end date)
+* Gentx submissions: 9th March 1500UTC (start date) - 12th March 0900 UTC (end date)
 * Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
 * Network start time: 13th March, 1500UTC
 
