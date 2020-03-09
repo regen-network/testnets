@@ -16,18 +16,18 @@
 $ mkdir -p $GOPATH/src/github.com/regen
 $ cd $GOPATH/src/github.com/regen
 $ git clone https://github.com/regen-network/wasmd && cd wasmd
-$ git checkout v0.7.0
+$ git checkout v0.7.1
 $ make install
 ```
  To verify if installation was successful:
 ```
-$ wamsd version --long
-$ wasmcli version --long
+$ xrnd version --long
+$ xrncli version --long
 ```
 ### Setting Up a New Node
 ```
-$ wasmd init --chain-id=kontraŭa <your_moniker>
-$ wamscli keys add <your_wallet_name>
+$ xrnd init --chain-id=kontraua <your_moniker>
+$ xrncli keys add <your_wallet_name>
 
 ```
 **Make sure you back up the mnemonics !!!**
@@ -36,13 +36,13 @@ $ wamscli keys add <your_wallet_name>
 
 #### Generate Genesis Transaction 
 ```
-$ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/kontraŭa/genesis.json > ~/.wamsd/config/genesis.json
-$ wamsd add-genesis-account <your_wallet_name> 10000000utree   # other values will be removed.
-$ wamsd gentx --name <your_wallet_name> --amount 9000000utree
+$ curl -s https://raw.githubusercontent.com/kaustubhkapatral/testnets/master/kontraua/genesis.json > ~/.xrnd/config/genesis.json
+$ xrnd add-genesis-account <your_wallet_name> 10000000utree   # other values will be removed.
+$ xrnd gentx --name <your_wallet_name> --amount 9000000utree
 ```
 If all goes well, you will see the following message:
 ```
-Genesis transaction written to "/home/user/.wamsd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
+Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
 ```
 #### Submit Gentx (optional)
 Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
