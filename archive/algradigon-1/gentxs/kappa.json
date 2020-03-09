@@ -1,0 +1,47 @@
+{ 
+   "type":"auth/StdTx",
+   "value":{ 
+      "msg":[ 
+         { 
+            "type":"cosmos-sdk/MsgCreateValidator",
+            "value":{ 
+               "description":{ 
+                  "moniker":"kappa",
+                  "identity":"",
+                  "website":"",
+                  "details":""
+               },
+               "commission":{ 
+                  "rate":"0.100000000000000000",
+                  "max_rate":"0.200000000000000000",
+                  "max_change_rate":"0.010000000000000000"
+               },
+               "min_self_delegation":"1",
+               "delegator_address":"xrn:19sjtae4l9rjlat27ttc89zthsk7juun22gvgru",
+               "validator_address":"xrn:valoper19sjtae4l9rjlat27ttc89zthsk7juun2uraky6",
+               "pubkey":"xrn:valconspub1zcjduepqa7egkvce68fk72xjffjprhfx60ta85mlm969ml472fm9nenmwt8stqwhch",
+               "value":{ 
+                  "denom":"utree",
+                  "amount":"9000000"
+               }
+            }
+         }
+      ],
+      "fee":{ 
+         "amount":[ 
+
+         ],
+         "gas":"200000"
+      },
+      "signatures":[ 
+         { 
+            "pub_key":{ 
+               "type":"tendermint/PubKeySecp256k1",
+               "value":"A+A2ugtLRm0QZlTY07I4jYZEUCMKGOpPz75vt0ldllTi"
+            },
+            "signature":"d+iQqUV3TwWz6TecJItVMzYy0NRn3WTASne/tYU5jTUSEP4La4AK81E0nizzN2ALgI2yAD3wyNOK3P4aWRrT1A=="
+         }
+      ],
+      "memo":"1ef5b81637ad06710b0bf8f860e6a15432e5ae48@103.125.217.108:26656"
+   }
+}
