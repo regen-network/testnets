@@ -2,176 +2,64 @@
 
 Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
+## Active Testnets
+
+### Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
+
+**Focus**: Adversarial testnet and network load testing with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
+
+* Testnet schedule: 13th March - 17th Apr, 2020 (5 weeks)
+* Total points to be allocated: 1100+
+* Gentx submissions: 9th March 1500UTC (start date) - 12th March 0900 UTC (end date)
+* Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
+* Network start time: 13th March, 1500UTC
+
+#### [Click here to join the testnet](./kontraua/README.md)
 
 
-## Join `algradigon-1` Incentivised Testnet
+## Upcoming Testnets
 
-`algradigon-1` is the second phase of the Regen Network Incentivised testnet programme. It is due to have it's genesis block set in stone on Thursday January 23rd at 1700 UTC (1200EST and 0900PST; 24/01 at 0200KST). Future upgrades will be staggered so all validators get 'good' upgrade windows and 'bad' upgrade windows!
+Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
 
-We will have a working fork of [Lunie](https://github.com/luniehq/lunie) at https://lunie.regen.network
-and a fork of [Big Dipper](https://github.com/forbole/big_dipper) at at https://bigdipper.regen.network/
+### Regen Network Testnet 4000: Aplikiĝo Testnet
 
-The genesis files are in [./latest](latest). This is an incentivised testnet, and further details can be found on the Regen blog: [algradigon regens testnet](https://medium.com/regen-network/algradigon-regens-testnet-2000-4ea377c4a590)
+**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
 
-Gentx submissions must be included in a PR to this repo *by 22nd Jan at 1200UTC*. The genesis file will be released by 1800UTC on 22nd Jan - 23 hours before genesis.
+*Estimated Dates: April 4th week*
 
-For those wanting to develop against the Regen test network APIs, please use the following highly available service provided by [Chorus One](https://chorus.one):
-* **RPC**: https://regen.chorus.one:26657
-* **LCD**: https://regen-lcd.chorus.one:1317
+*Total points to be allocated: 800*
 
-## Creating a Genesis Validator
-
-*This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 1200UTC on 22nd January 2020*
-
-#### Generate Genesis Transaction (optional)
-```
-$ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1/genesis.json > ~/.xrnd/config/genesis.json
-$ xrnd add-genesis-account $(xrncli keys show <your_wallet_name> -a) 10000000utree   # other values will be removed.
-$ xrnd gentx --name <your_wallet_name> --amount 9000000utree
-```
-If all goes well, you will see the following message:
-```
-Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034kl987ebd493b85a125624d5f4770.json"
-```
-#### Submit Gentx (optional)
-Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
-
-- Clone the repo using
-
-```sh
-git clone https://github.com/regen-network/testnets
-```
-
-- Copy the generated gentx json file to <repo_path>/algradigon-1/gentxs/<your_gentx_file.json>
-
-- Commit and push to your repo
-- Create a PR into https://github.com/regen-network/testnets
-
-## How to Run a Testnet Validator
-
-Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
-
-* [Run a Validator](https://cosmos.network/docs/cosmos-hub/validators/validator-setup.html)
-* [Validators Overview](https://cosmos.network/docs/cosmos-hub/validators/overview.html)
-* [Validator Security](https://cosmos.network/docs/cosmos-hub/validators/security.html)
-* [Validator FAQ](https://cosmos.network/docs/cosmos-hub/validators/validator-faq.html)
-
-
-### Prerequisites
-```
-$ sudo apt-get install gcc g++
-```
-### Install GO
-```
-$ wget https://raw.githubusercontent.com/jim380/node_tooling/master/Cosmos/CLI/go_install.sh
-$ chmod +x go_install.sh
-$ ./go_install.sh -v 1.12.5
-```
-**Go 1.12+ is required.**
-### Install XRN
-```
-$ mkdir -p $GOPATH/src/github.com/regen
-$ cd $GOPATH/src/github.com/regen
-$ git clone -b v0.5.0 https://github.com/regen-network/regen-ledger
-$ cd regen-ledger
-$ make install
-```
-Find the latest release tags [here](https://github.com/regen-network/regen-ledger/releases). To verify if installation was successful:
-```
-$ xrnd version --long
-$ xrncli version --long
-```
-### Setting Up a New Node
-```
-$ xrnd init --chain-id=algradigon-1 <your_moniker>
-$ xrncli keys add <your_wallet_name>
-
-##
-```
-**Make sure you back up the mnemonics !!!**
-
-### Creating a Validator
-*If you are joining at genesis scroll down to the section on Creating a Genesis Validator!*
-
-Please follow the documentation provided on [creating a validator for Cosmos hub](https://github.com/cosmos/gaia/blob/master/docs/validators/validator-setup.md#create-your-validator), replacing `gaiad` and `gaiacli` with `xrnd` and `xrncli` respectively. Also our testnet staking token denomination is `tree` and Regen addresses begin with `xrn:` instead of `cosmos`.
-
-### Genesis & Seeds
-Fetch `genesis.json` into `xrnd`'s `config` directory.
-```
-$ curl https://raw.githubusercontent.com/regen-network/testnets/master/algradigon-1/genesis.json > $HOME/.xrnd/config/genesis.json
-```
-Add seed nodes in `config.toml`.
-```
-$ nano $HOME/.xrnd/config/config.toml
-```
-Find the following section and add the seed nodes.
-```
-# Comma separated list of seed nodes to connect to
-seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@regen-seed-eu.chorus.one:36656,ca130fd7ca16a957850a96ee9bdb74a351c4929f@regen-seed-us.chorus.one:36656"
-```
-### Make `xrnd` a System Service (optional)
-```
-$ sudo nano /lib/systemd/system/xrnd.service
-```
-Paste in the following:
-```
-[Unit]
-Description=Regen Xrnd
-After=network-online.target
-
-[Service]
-User=<your_user>
-ExecStart=/home/<your_user>/go_workspace/bin/xrnd start
-StandardOutput=file:/var/log/xrnd/xrnd.log
-StandardError=file:/var/log/xrnd/xrnd_error.log
-Restart=always
-RestartSec=3
-LimitNOFILE=4096
-
-[Install]
-WantedBy=multi-user.target
-```
-**This tutorial assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
-#### Start Node
-**Method 1** - With `systemd`
-```
-$ sudo systemctl enable xrnd
-$ sudo systemctl start xrnd
-```
-Check node status
-```
-$ xrncli status
-```
-Check logs
-```
-$ sudo journalctl -u xrnd -f
-```
-**Method 2** - Without `systemd`
-```
-$ xrnd start
-```
-Check node status
-```
-$ xrncli status
-```
-
-# Historic Testnets (not in use)
+## Historic Testnets (not in use)
 
 The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
 
-## `congo-1` 
+### [`Algradigon-1`](https://github.com/regen-network/testnets/tree/modifications/archive/algradigon-1)
+
+`Algradigon-1`, an incentivized testnet was launched on 23rd Jan at 17:00UTC with 38 validators signing on the genesis block. The validator set was increased to a total of 49 validators and total of 4 upgrades were executed in a span of two weeks by 7th Feb.
+
+Total points allocated: 900
+
+**Note**
+The incentive program for the testnet was ended on 12th Feb 2020 at 12:00UTC
+
+**Important links**
+
+* Postmortem report of the testnet: https://medium.com/regen-network/postmortem-of-algradigon-1-eb2dc7652850
+* Testnet results: https://medium.com/@gregorylandua/algradigon-1-testnet-results-d32d8cfca615
+
+### [`congo-1`](https://github.com/regen-network/testnets/tree/modifications/archive/congo-1)
 
 `congo-1` was the first community-driven testnet between 7th November 2019 and 17th January 2020, at which point it was abandoned in order to prepare for the next incentivised testnet.
 
-## `regen-test-1001`
+### [`regen-test-1001`](https://github.com/regen-network/testnets/tree/modifications/archive/regen-test-1001)
 
 `regen-test-1001` ran between August and October 2019. It is now defunct, having discovered a cosmos-sdk bug in governance-driven parameter updates logic.
 
-## `regen-test-1000` 
+### [`regen-test-1000`](https://github.com/regen-network/testnets/tree/modifications/archive/regen-test-1000)
 
 `regen-test-1000` hit some weird consensus error on app state at block 2.
 
-### `xrn-test-3`
+#### [`xrn-test-3`](https://github.com/regen-network/testnets/tree/modifications/archive/xrn-test-3)
 
 Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z` and is now defunct.
 
@@ -182,11 +70,11 @@ Testnet `xrn-test-3` started producing blocks at `2019-03-29T19:44:44.571815638Z
 xrncli init --chain-id xrn-test-2 --node tcp://xrn-us-east-1.regen.network:26657
 ```
 
-### `xrn-test-2`
+#### [`xrn-test-2`](https://github.com/regen-network/testnets/tree/modifications/archive/xrn-test-2)
 
 Deployed at `2018-12-19T20:40:06.463846Z`.
 
-### `xrn-1`
+#### [`xrn-1`](https://github.com/regen-network/testnets/tree/modifications/archive/xrn-1)
 
 The initial Regen Ledger testnet `xrn-1` was deployed on 2018-12-19.
 
