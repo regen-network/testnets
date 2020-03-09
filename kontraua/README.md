@@ -47,10 +47,12 @@ Genesis transaction written to "/home/user/.xrnd/config/gentx/gentx-f8038a89034k
 #### Submit Gentx (optional)
 Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
 
-- Clone the repo using
+- Fork the testnets repo to your github account 
+
+- Clone your repo using
 
 ```sh
-git clone https://github.com/regen-network/testnets
+git clone https://github.com/<your-github-username>/testnets
 ```
 
 - Copy the generated gentx json file to <repo_path>/kontraua/gentxs/<your_gentx_file.json>
