@@ -36,7 +36,7 @@ $ xrncli keys add <your_wallet_name>
 
 #### Generate Genesis Transaction 
 ```
-$ curl -s https://raw.githubusercontent.com/kaustubhkapatral/testnets/master/kontraua/genesis.json > ~/.xrnd/config/genesis.json
+$ curl -s https://raw.githubusercontent.com/regen-network/testnets/cosmwasm_testnet_instructions/kontraua/genesis.json > ~/.xrnd/config/genesis.json
 $ xrnd add-genesis-account <your_wallet_name> 10000000utree   # other values will be removed.
 $ xrnd gentx --name <your_wallet_name> --amount 9000000utree
 ```
