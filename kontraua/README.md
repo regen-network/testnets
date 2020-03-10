@@ -1,6 +1,6 @@
 # Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
-**Focus**: Adversarial testnet and network load testing with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
+**Focus**: Adversarial testnet, network load testing, amd interchain smart contracting with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
 
 * Testnet schedule: 13th March - 17th Apr, 2020 (5 weeks)
 * Total points to be allocated: 1100+
