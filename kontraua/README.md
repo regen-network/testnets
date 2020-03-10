@@ -19,10 +19,19 @@ $ git clone https://github.com/regen-network/wasmd && cd wasmd
 $ git checkout v0.7.1
 $ make install
 ```
- To verify if installation was successful:
+To verify if installation was successful execute the following command:
 ```
 $ xrnd version --long
-$ xrncli version --long
+```
+It will display the version of xrnd currently installed:
+```
+name: wasm
+server_name: xrnd
+client_name: xrncli
+version: 0.7.1
+commit: c91f81c25042bfa3ee5890761f818b59914e344b
+build_tags: netgo,ledger
+go: go version go1.13.3 linux/amd64
 ```
 ### Setting Up a New Node
 ```
