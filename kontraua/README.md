@@ -8,7 +8,7 @@
 * Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
 * Network start time: 13th March, 1500UTC
 
-## How to run a validator node
+## How to become a validator
 
 Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
 
@@ -23,7 +23,7 @@ Please refer to the Cosmos Hub documentation on validators for a general overvie
 sudo apt-get install gcc g++
 ```
 
-#### Go 1.13+ is required
+***Go 1.13+ is required***
 
 You can use following commands to install go-1.13.3
 ```sh
@@ -42,7 +42,7 @@ $ git checkout v0.7.1
 $ make install
 ```
 
-To verify if installation was successful execute the following command:
+To verify if the installation was successful, execute the following command:
 ```
 $ xrnd version --long
 ```
@@ -57,7 +57,7 @@ build_tags: netgo,ledger
 go: go version go1.13.3 linux/amd64
 ```
 
-## Setting Up a Validator Node
+### Setting Up a Validator Node
 ```
 $ xrnd init --chain-id=kontraua <your_moniker>
 $ xrncli keys add <your_wallet_name>
@@ -66,7 +66,7 @@ $ xrncli keys add <your_wallet_name>
 
 ### Become a Genesis validator
 
-If you are looking for joining the testnet after the genesis, please check [How to run your  validator](#how-to-run-your-validator)
+If you are looking for joining the testnet after the genesis, please check [Start your validator](#start-your-validator)
 
 *This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 0900UTC on 12th March 2020.
 
@@ -97,18 +97,17 @@ git clone https://github.com/<your-github-username>/testnets
 - Create a PR into https://github.com/regen-network/testnets
 
 
-## How to run your validator node
+## Start your validator
 
 This section is applicable only after the genesis is released. Genesis release time is: 12th March, 1600UTC.
 
-If you are not part of the genesis
-
-### Create your validator
+### Configure your validator
 
 If you are a Genesis Validator, skip to [Genesis & Seeds](#genesis-&-seeds)
 
 If you are not part of the genesis validators, please request some free tokens here: [Kontraua Faucet](https://leaderboard.regen.vitwit.com/faucet)
 
+#### Create validator
 ```sh
 xrncli tx staking create-validator \
   --amount=1000000uatom \
@@ -123,7 +122,7 @@ xrncli tx staking create-validator \
   --from=<key_name>
 ```
 
-### Genesis & Seeds
+#### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
 $ curl https://raw.githubusercontent.com/regen-network/testnets/master/kontraua/releases/genesis.json > $HOME/.xrnd/config/genesis.json
@@ -138,7 +137,13 @@ Find the following section and add the seed nodes.
 # Comma separated list of seed nodes to connect to
 seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@regen-seed-eu.chorus.one:36656,ca130fd7ca16a957850a96ee9bdb74a351c4929f@regen-seed-us.chorus.one:36656"
 ```
-### Make `xrnd` a System Service (optional)
+
+## Start Your Node
+
+### **Method 1** - With `systemd`
+
+#### Make `xrnd` a System Service
+
 ```
 $ sudo nano /lib/systemd/system/xrnd.service
 ```
@@ -161,8 +166,7 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 ```
 **This tutorial assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
-#### Start Node
-**Method 1** - With `systemd`
+
 ```
 $ sudo systemctl enable xrnd
 $ sudo systemctl start xrnd
@@ -175,7 +179,8 @@ Check logs
 ```
 $ sudo journalctl -u xrnd -f
 ```
-**Method 2** - Without `systemd`
+
+### **Method 2** - Without `systemd`
 ```
 $ xrnd start
 ```
