@@ -110,7 +110,7 @@ If you are not part of the genesis validators, please request some free tokens h
 #### Create validator
 ```sh
 xrncli tx staking create-validator \
-  --amount=1000000uatom \
+  --amount=9000000utree \
   --pubkey=$(xrnd tendermint show-validator) \
   --moniker="<your_moniker>" \
   --chain-id=kontraua \
