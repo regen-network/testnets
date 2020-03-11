@@ -10,6 +10,20 @@
 
 ## Become a Genesis validator
 
+### Prerequisites
+
+```sh
+sudo apt-get install gcc g++
+```
+
+#### Go 1.13+ is required
+
+You can use following commands to install go-1.13.3
+```sh
+$ wget https://raw.githubusercontent.com/jim380/node_tooling/master/Cosmos/CLI/go_install.sh
+$ chmod +x go_install.sh
+$ ./go_install.sh -v 1.13.3
+```
 
 ### Install Wasmd
 ```
