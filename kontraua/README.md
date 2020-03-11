@@ -119,7 +119,7 @@ xrncli tx staking create-validator \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1" \
   --gas="auto" \
-  --from=<key_name>
+  --from=<your_wallet_name>
 ```
 
 #### Genesis & Seeds
