@@ -1,12 +1,12 @@
 # Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
-**Focus**: Adversarial testnet, network load testing, amd interchain smart contracting with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
+**Focus**: Adversarial testnet, network load testing, and interchain smart contracting with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet as we are sensitive to the larger community opportunity.
 
-* Testnet schedule: 13th March - 17th Apr, 2020 (5 weeks)
+* Testnet schedule: 13th March - 17th Apr 2020 (5 weeks)
 * Total points to be allocated: 1100+
 * Gentx submissions: 9th March 1500UTC (start date) - 12th March 0900 UTC (end date)
-* Genesis release time: 12th March, 1600UTC (23 hours before genesis time)
-* Network start time: 13th March, 1500UTC
+* Genesis release time: 12th March 1600UTC (23 hours before genesis time)
+* Network start time: 13th March 1500UTC
 
 ## How to become a validator
 
@@ -20,7 +20,7 @@ Please refer to the Cosmos Hub documentation on validators for a general overvie
 ### Prerequisites
 
 ```sh
-sudo apt-get install gcc g++
+sudo apt-get install build-essential
 ```
 
 ***Go 1.13+ is required***
@@ -66,7 +66,7 @@ $ xrncli keys add <your_wallet_name>
 
 ### Become a Genesis validator
 
-If you are looking for joining the testnet after the genesis, please check [Start your validator](#start-your-validator)
+If you are looking to join the testnet after the genesis, please check [Start your validator](#start-your-validator)
 
 *This section applies ONLY if you are wishing to validate from the genesis block. This process will close at 0900UTC on 12th March 2020.
 
@@ -155,7 +155,7 @@ After=network-online.target
 
 [Service]
 User=<your_user>
-ExecStart=/home/<your_user>/go_workspace/bin/xrnd start
+ExecStart=/home/<your_user>/go_workspace/bin/xrnd start --pruning nothing
 StandardOutput=file:/var/log/xrnd/xrnd.log
 StandardError=file:/var/log/xrnd/xrnd_error.log
 Restart=always
@@ -165,6 +165,9 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 ```
+
+##### Note: Please make sure to add the ```--pruning ``` flag after the start command
+
 **This tutorial assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
 
 ```
@@ -182,9 +185,10 @@ $ sudo journalctl -u xrnd -f
 
 ### **Method 2** - Without `systemd`
 ```
-$ xrnd start
+$ xrnd start --pruning nothing
 ```
 Check node status
 ```
 $ xrncli status
 ```
+##### Note: Please make sure to add the ```--pruning ``` flag after the start command
