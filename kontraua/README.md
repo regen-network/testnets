@@ -103,7 +103,7 @@ This section is applicable only after the genesis is released. Genesis release t
 
 ### Configure your validator
 
-If you are a Genesis Validator, skip to [Genesis & Seeds](#genesis-&-seeds)
+If you are a Genesis Validator, skip to [Genesis & Seeds](#genesis--seeds)
 
 If you are not part of the genesis validators, please request some free tokens here: [Kontraua Faucet](https://leaderboard.regen.vitwit.com/faucet)
 
