@@ -125,7 +125,7 @@ xrncli tx staking create-validator \
 #### Genesis & Seeds
 Fetch `genesis.json` into `xrnd`'s `config` directory.
 ```
-$ curl https://raw.githubusercontent.com/regen-network/testnets/master/kontraua/releases/genesis.json > $HOME/.xrnd/config/genesis.json
+$ curl https://raw.githubusercontent.com/regen-network/testnets/master/kontraua/genesis.json > $HOME/.xrnd/config/genesis.json
 ```
 
 Add seed nodes in `config.toml`.
