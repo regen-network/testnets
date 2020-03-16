@@ -1,0 +1,46 @@
+{
+  "type": "cosmos-sdk/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "cosmos-sdk/MsgCreateValidator",
+        "value": {
+          "description": {
+            "moniker": "replicator.network",
+            "identity": "9203983F91296B66",
+            "website": "https://replicator.network",
+            "security_contact": "",
+            "details": ""
+          },
+          "commission": {
+            "rate": "0.100000000000000000",
+            "max_rate": "0.200000000000000000",
+            "max_change_rate": "0.010000000000000000"
+          },
+          "min_self_delegation": "1",
+          "delegator_address": "xrn:1yagqzjn3lmuvhtzn2yqlg06rjcnks3av7s6xfy",
+          "validator_address": "xrn:valoper1yagqzjn3lmuvhtzn2yqlg06rjcnks3avgmtcwz",
+          "pubkey": "xrn:valconspub1zcjduepqhz7g7dvdjtnmmrx6d5lqgpvup54a7rx66gu00gr6trhf7pxqcpssnpsasv",
+          "value": {
+            "denom": "utree",
+            "amount": "9000000"
+          }
+        }
+      }
+    ],
+    "fee": {
+      "amount": [],
+      "gas": "200000"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "A4TyduBdSAe8ppGFVFd/Nu30wzAzi4+ODZfugvX0wi26"
+        },
+        "signature": "YoAyYnzme6UzAQfq+uioii8yXkow4S6llKGNfxNT6kRsQbh/hszjR/OJIsDNplblHP2mQ0DT0pVvU/+lQq6mug=="
+      }
+    ],
+    "memo": "bf2d9c642d82990ab7e6b5dbc24695e56edfb43e@3.134.55.15:26656"
+  }
+}
