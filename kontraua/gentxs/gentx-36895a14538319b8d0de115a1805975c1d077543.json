@@ -1,0 +1,5 @@
+{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgCreateValidator","value":{"description":{"moniker":"huglestermoniker","identity":"","website":"","security_contact":"","details":""},"commissi
+on":{"rate":"0.100000000000000000","max_rate":"0.200000000000000000","max_change_rate":"0.010000000000000000"},"min_self_delegation":"1","delegator_address":"xrn:1mgrvud8puhhser4mpmy92l3w8590c8v4s9sc2g","vali
+dator_address":"xrn:valoper1mgrvud8puhhser4mpmy92l3w8590c8v4xwpxdw","pubkey":"xrn:valconspub1zcjduepqcywwngz2rnpl6srz3276dwajrjt4g4a8dytae00jhg2fmefnmsts6j6ud8","value":{"denom":"utree","amount":"9000000"}}}]
+,"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"Ai1BZ8DRiE/2F/6tLwTEegvprVEDadb1qqy7suTClOa6"},"signature":"DYd3wD1ISfxo13f3ehmxeSaTl4KU9OZsp1dRXQJAG
+481nflIgxqQtP1zumDSAkOdZJXa4CqNkcaEWLOLx8LYtg=="}],"memo":"36895a14538319b8d0de115a1805975c1d077543@116.203.124.196:26656"}}
