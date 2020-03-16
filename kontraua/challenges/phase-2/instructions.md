@@ -45,7 +45,7 @@ $ git checkout erc20-0.3.0
 rustup default stable
 cargo wasm
 ```
-After this compiles, it should produce a file at  `target/wasm32-unknown-unknown/release/escrow.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
+After this compiles, it should produce a file at  `target/wasm32-unknown-unknown/release/cw_erc20.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
 
 ### Compiling for Production
 You can check the size of the contract file by running:
