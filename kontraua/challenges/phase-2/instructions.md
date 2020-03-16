@@ -162,7 +162,6 @@ xrncli --chain-id kontraua query wasm  contract-state smart $CONTRACT "$BALANCE_
 8. Commit the changes to your repo
 9. Raise PR with title: "Phase-2: <Validator_moniker>"
 
-
 ## Points criteria
 - 100 points for successful deployment (code upload is optional, instance creation is mandatory)
 - 100 points for transfering contract tokens (at least 5 transfers)
@@ -173,7 +172,10 @@ First 5–100 each
 6 to 10 : 50 each
 11 to 20: 25 each
 
-**Note:** There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
+**Note:** 
+- There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
+
+- All the edited contracts must be deployed using your validator owner account.
 
 # Important Links
 
