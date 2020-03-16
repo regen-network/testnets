@@ -147,7 +147,7 @@ BALANCE_QUERY="{\"balance\": {\"address\": \"xrn:1ntlzxh9y245htk99gz55gslz3n8lzc
 
 Command to query balance is
 ```
-xrncli --chain-id kontraua query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http://173.255.192.172:26657 --chain-id kontraua -o json
+xrncli query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http://173.255.192.172:26657 --chain-id kontraua -o json
 ```
 
 ## What is expected from validators?
