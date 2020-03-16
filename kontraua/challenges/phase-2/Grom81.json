@@ -1,0 +1,21 @@
+{
+    "valOprAddr": "xrn:valoper1p4z0nlgwunlz2r6qk7vrksq7azwk039hcqlmlc",
+    "codeId": "16",
+    "contractAddress": "xrn:1j7t7h9ne6t7tdgvly8dr5432k6xar5u2uhvymt",
+    "transfers": [
+        "DDE8C4C822B7E37B73CCC796AF99A63EC8A517A36769831ADA1B688EFEB036A1",
+        "4C849EBF23F122392587080B7A1820EAAD295569F81B6D2FCCF2F81FC6FDA6C7",
+        "263A18230D1AB0331D7DEE34F0E7FC99370A09072FE9BD17B415C5700C735576",
+        "B9EC0A39578997A6E6351FA50E7390B4CE450230F280EB4456A7059C1F2CB1C5",
+        "D5CAEF02F0F1015F1A92F04237ADD37087D5E462298E98DDE07E6219B1ACFD91"
+    ],
+    "allowance": [
+        "<list of tx hashes using transferFrom and approve calls (optional)>"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "tx hash of edited contract function",
+            "description": "<what to expect?>"
+        }
+    ]
+}
