@@ -1,0 +1,25 @@
+{
+    "valOprAddr": "xrn:1n2fd69k0scr2fjcnd4w8wqg4z69jctv0h9hq00",
+    "codeId": "22",
+    "contractAddress": "xrn:1sv6zretsq3nqrv9wtwkvsy6vrh94wgkjuywe6a",
+    "transfers": [
+        "84C5A4822DDB2C823F77C7A359E6113971FE6CFD1860822F218396D361CF8330",
+        "AF008869C7C5B27A2A43589D82162692A442B77C6EA4BEFF2ACF8806033356B2",
+        "F5B48F3B5E70D35D9AC2F8753B459840DA009B1BEAB53C225C4EEFBE3C0C0DD6",
+        "37818A20B96914A3C1DFACCC9D72E41943F9B5813BAD18A0F4F2D01823E89F54",
+        "009DD73800FDFD5612E51861ABF478C58DC3C4A702A6DF9FE605EE9E9313A774"
+    ],
+    "allowance": [
+        "453919A719AE44475FEB2BB115E2E81402DC0909C37929149D176E07C3AB6BC0",
+        "1A5029A0D813CB6A37D70F29BB930B82AA01324B2BB130F33CE790A572712FA3",
+        "979F4E71354DF6CE022E3C412BBC99890765676029791A22C40DDE2EA90DB02B"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "A154EE70BF5FD3F887A84FAD9BA24E8C083F5664A5C3B9FF89A925C85B7A37C2",
+            "description": "modified try_transfer_from and perform_transfer functions, now the contract transfer extra 5 SEB tokens ( from sender, let's call it fee:) ) to xrn:1n2fd69k0scr2fjcnd4w8wqg4z69jctv0h9hq00(sebytza05's validator) when someone use this contract to send tokens , ofc if sender has enoguh balance , example:A154EE70BF5FD3F887A84FAD9BA24E8C083F5664A5C3B9FF89A925C85B7A37C2, check all balances(sender and xrn:1n2fd69k0scr2fjcnd4w8wqg4z69jctv0h9hq00) before and after you send"
+        }
+    ]
+}
+
+
