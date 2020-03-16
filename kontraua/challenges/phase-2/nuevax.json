@@ -1,7 +1,7 @@
 {
     "valOprAddr": "xrn:valoper18fwc35qnn8q6q8y6y7pn2mwhad7z0e9dgqedxt",
-    "codeId": "<contract code id that is used for challenge, ex: 2>",
-    "contractAddress": "<your contract address>",
+    "codeId": "5",
+    "contractAddress": "xrn:1utw8uj4hedkpvhv8e43nua4p3c0lrqw73ejjp5",
     "transfers": [
         "<list of tx hashes>"
     ],
