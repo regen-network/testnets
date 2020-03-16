@@ -11,5 +11,11 @@
     ],
     "allowance": [
         ""
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "31C555AAA587CD622CED2CC78FC39EA130630ECD9B75EC823EBC585A4C239463",
+            "description": "Regardless of requested amount, contract sends only a fixed amount per transfer."
+        }
     ]
 }
