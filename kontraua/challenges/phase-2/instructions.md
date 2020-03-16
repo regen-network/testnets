@@ -167,10 +167,10 @@ xrncli query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http:/
 - 100 points for transfering contract tokens (at least 5 transfers)
 - 50 points for editing the contract to add any custom feature (send extra tokens than allowed,  hardcode recipient address, send text message, request funds, approve fund request, data storage etc)
 - 100 bonus points for creating an allowance and use transferFrom to send tokens from a second address (Instructions for this are not available, as it is a bonus)
-- A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in the phase-2).
-First 5–100 each
-6 to 10 : 50 each
-11 to 20: 25 each
+- A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in phase-2). These rankings will be based on **final (latest) tx time**
+  - First 5–100 each
+  - 6 to 10 : 50 each
+  - 11 to 20: 25 each
 
 **Note:** 
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
