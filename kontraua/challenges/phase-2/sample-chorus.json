@@ -15,8 +15,8 @@
     ],
     "editContractTxs": [
         {
-            "txHash": "tx hash of edited contract function",
-            "description": "<what to expect?>"
+            "txHash": "6CBEB3C18A1EBBCC2608F9F3BF97E7D25E4FE870A18173576FF0992F5462773E",
+            "description": "airdrop msg type (takes recipients [array of HumanAddr]) and airdrop 'amount' to all addresses"
         }
     ]
 }
