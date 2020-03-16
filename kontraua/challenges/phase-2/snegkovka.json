@@ -1,0 +1,21 @@
+{
+    "valOprAddr": "xrn:1u500dy4lj2a9gf2kzpehk37tfvhrut6hv9a4c2",
+    "codeId": "5",
+    "contractAddress": "xrn:1wseqw423yne04j96y2gwwk0t5gtclux8pl8kfz",
+    "transfers": [
+        "F2D51A8DE45F0668FC1C926FF2574A8EAC5C6A7CA083E5C875E91A3462A6F2FF",
+        "16EFF2B2152AFDA48C8DFD5DCC76788038CC9E0D4FCB8BF3D050CACDF20911D5",
+        "4B55DF801087B878814916488B921DD45D4AE93CAB56B9869261D984CFCD0087",
+        "2E00272CC13051408786E49C9F3276399F841A7E49DFF3F089B535E02639E7D0",
+        "9AD94CA261EA1BBB8606D8DEBC29E5E04FA88CC937AB9E59E33EA5B5E4D403C7"
+    ],
+    "allowance": [
+        "<list of tx hashes using transferFrom and approve calls (optional)>"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "05AC889AC831454E433FDD77FD6DD90985D78CB19E72DB62BBE9DBE90EAC3D9E",
+            "description": "Stage-2 snegkovka"
+        }
+    ]
+}
