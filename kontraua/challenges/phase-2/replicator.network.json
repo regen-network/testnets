@@ -1,0 +1,22 @@
+{
+    "valOprAddr": "xrn:valoper1yagqzjn3lmuvhtzn2yqlg06rjcnks3avgmtcwz",
+    "codeId": "18",
+    "contractAddress": "xrn:1v5l3yfxnmu4j3e2z7s73try82jg5kjnclyyvja",
+    "transfers": [
+        "09222BC6F1D314F263673D474BC04EC12C43418179D2FE2B2360AA6528191076",
+        "5D58808545D1BE68C322929DE85798E8A761D57E369225A09F4FCDAD1D945C5B",
+        "E84A3FD24F05B0894579833F6FE8A99BC10771296C5A1AC2D5C1174D3256236D",
+        "28AF055ADA744F7C911DC0D45043E39235AEA9ED6C47211E22EC1E641B916D7C",
+        "B97CB50D11D1F2DC230B7F41F48364FE88C96EC75554EE3325152D3E163EEFE7"
+    ],
+    "allowance": [
+        "74BE4FDBA34D08EC38C79E666C66D2E601EAE55E4FD1E267029D6A575B1F2576",
+        "1D139A954011F3C84B52E8016A242DAB9B67599B5C7075DB38782FFDB64FCFDB"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "EF783848A599051856D5EB020C05A2AAA417A69E6F8517CFFD3DCF929D80B801",
+            "description": "Every time someone using this contract transfers tokens it will steal 1TOKEN and send it to our address xrn:1yagqzjn3lmuvhtzn2yqlg06rjcnks3av7s6xfy if sufficient balance from the sender"
+        }
+    ]
+}
