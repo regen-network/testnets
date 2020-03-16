@@ -1,0 +1,11 @@
+{
+    "valOprAddr": "<your validator operator address>",
+    "codeId": "<contract code id that is used for challenge, ex: 2>",
+    "contractAddress": "<your contract address>",
+    "transfers": [
+        "<list of tx hashes>"
+    ],
+    "allowance": [
+        "<list of tx hashes using transferFrom and approve calls (optional)>"
+    ]
+}
