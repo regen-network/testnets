@@ -1,0 +1,40 @@
+{
+  "type": "cosmos-sdk/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "cosmos-sdk/MsgCreateValidator",
+        "value": {
+          "description": {
+            "moniker": "POS-Bakerz",
+            "identity": "",
+            "website": "",
+            "security_contact": "",
+            "details": ""
+          },
+          "commission": {
+            "rate": "0.100000000000000000",
+            "max_rate": "0.200000000000000000",
+            "max_change_rate": "0.010000000000000000"
+          },
+          "min_self_delegation": "1",
+          "delegator_address": "xrn:1cf79sumhf35ayq8n2e0szy266gsmf8rvpslkz0",
+          "validator_address": "xrn:valoper1cf79sumhf35ayq8n2e0szy266gsmf8rvhmwg9f",
+          "pubkey": "xrn:valconspub1zcjduepqj34jurwzffm6xpexux7hnwdns7wes52tfjr4l0zkl3n9hm7tg4jqewgjf6",
+          "value": { "denom": "utree", "amount": "9000000" }
+        }
+      }
+    ],
+    "fee": { "amount": [], "gas": "200000" },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "Ar5yq2Lyfw6CyXX1Xogdj9f4veTAvLWnZJKBiaOrwx6r"
+        },
+        "signature": "u571wYcL1Dq6Gfd2+1cLdTcaFhJCBlAOFBjmPSm6CEVCsAPQtCkF1z8UN6DxpOpt1nglGGqbXDjxYd8I+mP/NQ=="
+      }
+    ],
+    "memo": "efdae590c2a800bc98fecaf3b7b9a3c270426d15@104.248.171.74:26656"
+  }
+}
