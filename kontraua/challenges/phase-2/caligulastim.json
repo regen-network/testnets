@@ -1,0 +1,22 @@
+{
+    "valOprAddr": "xrn:18mq8np7g4pakka6mx7x9wnkhz07ctzfzzehpsq",
+    "codeId": "5",
+    "contractAddress": "xrn:1l8csclnefpzdhv22y0smulhzev77evxk8ujve5",
+    "transfers": [
+        "85DC97A18550940395E28CAB88CF6B8C43426CCD0883571E7ED65762A2A693CC",
+        "16E80CA0BC90B7052393DD6EF455599A10A17D99D79F95BDD60EB9AE58A8C720",
+        "D3A410295A1C018203C2EC51BCC88FCA3BBB6BA8624A1E14793F5147D6FA5D7F",
+        "B49E210EA887FBDD315D2C607DCDA45AB29DBF34D028C1DB23C5C081D597C7AB",
+        "D5B0E2A69056BC01F1E86321BA1B14700A94CD574BE20BAAB47E81C569A0128D"
+
+    ],
+    "allowance": [
+        "<list of tx hashes using transferFrom and approve calls (optional)>"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "xrn:1l8csclnefpzdhv22y0smulhzev77evxk8ujve5",
+            "description": "CALI"
+        }
+    ]
+}
