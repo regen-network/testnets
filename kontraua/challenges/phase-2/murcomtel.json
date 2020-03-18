@@ -1,0 +1,21 @@
+{
+    "valOprAddr": "xrn:1s4rfmnpekqxdntlkyr2pzwkwyu387jql3z77tx",
+    "codeId": "5",
+    "contractAddress": "xrn:1xqnk2lku04urkfmfse0fk20pjn5v2nlrh77rzf",
+    "transfers": [
+        "4D169FF75E00B5827E0E138A93B52F853E16E93FFA2E48BE548F37CBE00D7381",
+        "E8E5B8CF99A92E5DBFCF8D8323BBF7432D02DD3B0A6E3BF77140A88133A0A311",
+        "96A0717AA12C9C0DCD52048A9E99F34D5EB7C6804A507A44EE15B927D0D7B129",
+        "E29200B184D072744A927AEF05C43B9094BB331CD7A546552B263FFBF89278FF",
+        "3200FE80A8A8CE34C3853E3B433FDD8B5A795E41E42451E38D65EFBE19CF86F1"
+    ],
+    "allowance": [
+        "<list of tx hashes using transferFrom and approve calls (optional)>"
+    ],
+    "editContractTxs": [
+        {
+            "txHash": "BE7F6F170F5E794EF12DDE873565A4B7150DB31A5E67E36FFBF250865FB1E4D6",
+            "description": "Phase-2: murcomtel"
+        }
+    ]
+}
