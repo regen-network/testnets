@@ -1,0 +1,46 @@
+{
+  "type": "cosmos-sdk/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "cosmos-sdk/MsgCreateValidator",
+        "value": {
+          "description": {
+            "moniker": "DokiaCapital",
+            "identity": "",
+            "website": "",
+            "security_contact": "",
+            "details": ""
+          },
+          "commission": {
+            "rate": "0.100000000000000000",
+            "max_rate": "0.200000000000000000",
+            "max_change_rate": "0.010000000000000000"
+          },
+          "min_self_delegation": "1",
+          "delegator_address": "xrn:1z8g335nj56gmjyreq2wgleyxezjfhypcwvjppj",
+          "validator_address": "xrn:valoper1z8g335nj56gmjyreq2wgleyxezjfhypcc8rlx5",
+          "pubkey": "xrn:valconspub1zcjduepqsfg3xh5dr7x7j0m4v27gel2qayufdejn34s6zp2nsfr8a5thv28qc5dgq8",
+          "value": {
+            "denom": "utree",
+            "amount": "9000000"
+          }
+        }
+      }
+    ],
+    "fee": {
+      "amount": [],
+      "gas": "200000"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "A2xHrzVVxWC2htKBpAVurNHbUB6NyxiF4om9liDzyZKs"
+        },
+        "signature": "7I2magf7oADgzLNNPjbS1CQOR2koP1mTEzpRkfJWTHZuJuM1npQ6zXYyKhLc1OkDBI3ZbX0HCjzBO5bxyIb0Xw=="
+      }
+    ],
+    "memo": "96e61f52c6d1fd9de811b7e0858d634d6ed86452@10.0.1.4:26656"
+  }
+}
