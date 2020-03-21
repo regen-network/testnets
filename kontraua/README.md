@@ -8,6 +8,7 @@
 * Genesis release time: 12th March 1600UTC (23 hours before genesis time)
 * Network start time: 13th March 1500UTC
 * Network Explorer: [Kontraua Explorer](https://explorer.regen.vitwit.com/)
+* Code Explorer: [Cosmwasm Code Explorer](https://regen.wasm.glass/codes)
 
 ## How to become a validator
 
