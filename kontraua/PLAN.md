@@ -1,6 +1,6 @@
 # COSMWASM Kontraŭa Testnet - Plan
 
-## Dates:  13th March - 17th Apr, 2020
+## Dates:  13th March - 25th Apr, 2020
 
 ## Total Points to be allocated: 1100+
 
