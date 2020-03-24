@@ -45,7 +45,7 @@ $ git checkout erc20-0.3.0
 rustup default stable
 cargo wasm
 ```
-After this compiles, it should produce a file at  `target/wasm32-unknown-unknown/release/escrow.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
+After this compiles, it should produce a file at  `target/wasm32-unknown-unknown/release/cw_erc20.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
 
 ### Compiling for Production
 You can check the size of the contract file by running:
@@ -97,7 +97,7 @@ For more details about uploading contract, check the details here: https://www.c
 
 ### Step - 2: Instantiating the Contract
 
-Please edit the **INIT** config with your details. You can add as many account address as you wish. Naming your token name unique is preferred.
+Please edit the **INIT** config with your details. You can add as many account address as you wish. Make sure to include your account address as one of the addresses. Naming your token name unique is preferred.
 
 ```
 # Please make sure to add your address(es) in initial_balances
@@ -147,7 +147,7 @@ BALANCE_QUERY="{\"balance\": {\"address\": \"xrn:1ntlzxh9y245htk99gz55gslz3n8lzc
 
 Command to query balance is
 ```
-xrncli --chain-id kontraua query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http://173.255.192.172:26657 --chain-id kontraua -o json
+xrncli query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http://173.255.192.172:26657 --chain-id kontraua -o json
 ```
 
 ## What is expected from validators?
@@ -167,10 +167,10 @@ xrncli --chain-id kontraua query wasm  contract-state smart $CONTRACT "$BALANCE_
 - 100 points for transfering contract tokens (at least 5 transfers)
 - 50 points for editing the contract to add any custom feature (send extra tokens than allowed,  hardcode recipient address, send text message, request funds, approve fund request, data storage etc)
 - 100 bonus points for creating an allowance and use transferFrom to send tokens from a second address (Instructions for this are not available, as it is a bonus)
-- A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in the phase-2).
-First 5–100 each
-6 to 10 : 50 each
-11 to 20: 25 each
+- A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in phase-2). These rankings will be based on **final (latest) tx time**
+  - First 5–100 each
+  - 6 to 10 : 50 each
+  - 11 to 20: 25 each
 
 **Note:** 
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
