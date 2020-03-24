@@ -78,7 +78,7 @@ Note: Due to seed nodes issue on genesis time, uptime calculations are calculate
 
 ### Phase-3: 100+ points
 - 25 points for casting vote
-- 25 points for tweeting about the proposal and vote (with why?) and putting a link to the tweet in the memo of a transaction. 
+- 25 points for tweeting about the proposal and vote
 - 50 points for successful upgrade
 - A total of 1000 bonus points are shared among first 20 validators who upgrade their nodes (A periodic state dump is used to find out the winners)
     - First 200 points

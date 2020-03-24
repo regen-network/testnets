@@ -83,3 +83,13 @@ $ xrncli status
 
 
 NOTE: You need to start your new binary after reaching the upgrade time i.e., 2020-03-26 12:00:00UTC (Thursday)
+
+### Tweet bonus
+
+Those who tweeted about network upgrade proposal, please raise a PR.
+```
+$ cd testnets/kontraua/challenges/phase-3
+$ cp sample.json <your_moniker.json>
+```
+
+Update the required details and raise a PR with title: `Phase-3_<your_moniker>`
