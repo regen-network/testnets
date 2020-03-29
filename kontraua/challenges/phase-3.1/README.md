@@ -42,8 +42,10 @@ Here is the general SKIP UPGRADE usage
 xrnd start --unsafe-skip-upgrades <upgrade1_height> <upgrade2_height> <upgrade3_height>
 ```
 
-To skip **Twilight Drama** upgrade, use the following command
+To skip **Twilight Drama** upgrade, just restart your `xrnd` instance with the `--unsafe-skip-upgrades` flag
 
+1. Stop your xrnd
+2. Start your xrnd service with `--unsafe-skip-upgrades` flag
 ```sh
 xrnd start --unsafe-skip-upgrades 288888
 ```
