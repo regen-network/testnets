@@ -1,7 +1,7 @@
 # Phase - 3.1: Skip upgrade (**twilight drama**)
 
 ## Foreword
-There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. Upgrade module allows a way to handle such cases with SKIP UPGRADE funcationaliy. This phase is about testing SKIP UPGRADE functionality.
+There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. Upgrade module provides us a way to handle such cases with SKIP UPGRADE functionality. This phase is about testing SKIP UPGRADE functionality.
 
 ## Schedule
 1. Upgrade proposal : 30 March, 1200 UTC
@@ -28,14 +28,14 @@ There could be cases where the planned upgrades might need to be skipped due to 
 
 Use the following command to vote on the proposal.
 ```sh
-xrncli tx gov vote 2 yes --chain-id kontraua --node http://<ip>:26657
+xrncli tx gov vote 2 yes --chain-id kontraua --node http://<ip>:26657 --from <key-name>
 ```
 
-Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to chose only `yes` on the proposal as this is not about testing the upgrade and there won't be any changes on the network after this phase.
+Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` on the proposal as this is not about testing the upgrade and there won't be any changes on the network after this phase.
 
 ## How to SKIP UPGRADE
 
-Upgrade module has a handly SKIP UPGRADE option. You can skip any known upgrade with it's HEIGHT.
+Upgrade module has a handy SKIP UPGRADE option. You can skip any known upgrade with its HEIGHT.
 
 Here is the general SKIP UPGRADE usage
 ```sh
@@ -47,5 +47,5 @@ To skip **Twilight Drama** upgrade, just restart your `xrnd` instance with the `
 1. Stop your xrnd
 2. Start your xrnd service with `--unsafe-skip-upgrades` flag
 ```sh
-xrnd start --unsafe-skip-upgrades 288888
+xrnd start --pruning nothing --unsafe-skip-upgrades 288888
 ```
