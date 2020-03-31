@@ -1,7 +1,7 @@
 # Phase - 3.1: Skip upgrade (**twilight drama**)
 
 ## Foreword
-There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. Upgrade module provides us a way to handle such cases with SKIP UPGRADE functionality. This phase is about testing SKIP UPGRADE functionality.
+There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. `Upgrade` module provides us a way to handle such cases with **SKIP UPGRADE** functionality. This phase is about testing SKIP UPGRADE feature from `upgrade` module.
 
 ## Schedule
 1. Upgrade proposal : 30 March, 1200 UTC
@@ -16,13 +16,11 @@ There could be cases where the planned upgrades might need to be skipped due to 
 | Name |    twilight-drama   |
 | Title | Twilight Drama | 
 | Description | Twilight Drama Upgrade Proposal to test SKIP UPGRADE functionality from `upgrade` module
-| Proposal Time | 2020-03-25 13:03:27 UTC |
-| Voting Start Time | 2020-03-25 13:03:27 UTC |
-| Voting End Time | 2020-03-25 13:03:27 UTC |
+| Proposal Time | 2020-03-30 1411 UTC |
+| Voting Start Time | 2020-03-30 1417 UTC |
+| Voting End Time | 2020-04-01 1417 UTC |
 | Upgrade Height | 288888 |
 | Link | https://regen-lcd.vitwit.com/gov/proposals/2 |   
-
-
 
 ## Voting for proposal
 
@@ -31,7 +29,7 @@ Use the following command to vote on the proposal.
 xrncli tx gov vote 2 yes --chain-id kontraua --node http://<ip>:26657 --from <key-name>
 ```
 
-Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` on the proposal as this is not about testing the upgrade and there won't be any changes on the network after this phase.
+Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` as the proposal vote as this is not about testing the upgrade and there won't be any changes on the network after this phase.
 
 ## How to SKIP UPGRADE
 
@@ -49,3 +47,13 @@ To skip **Twilight Drama** upgrade, just restart your `xrnd` instance with the `
 ```sh
 xrnd start --pruning nothing --unsafe-skip-upgrades 288888
 ```
+
+## Tweet bonus
+
+Those who tweeted about network upgrade proposal, please raise a PR.
+```
+$ cd <path/to/testnets>/kontraua/challenges/phase-3-1
+$ cp sample.json <your_moniker.json>
+```
+
+Update the required details and raise a PR with title: `Phase-3-1_<your_moniker>`
