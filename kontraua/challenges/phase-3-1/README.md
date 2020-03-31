@@ -1,6 +1,6 @@
 # Phase - 3.1: Skip upgrade (**twilight drama**)
 
-## Foreword
+## Context - Why SKIP UPGRADE?
 There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. `Upgrade` module provides us a way to handle such cases with **SKIP UPGRADE** functionality. This phase is about testing SKIP UPGRADE feature from `upgrade` module.
 
 ## Schedule
