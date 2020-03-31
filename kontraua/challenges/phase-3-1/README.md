@@ -29,7 +29,7 @@ Use the following command to vote on the proposal.
 xrncli tx gov vote 2 yes --chain-id kontraua --node http://<ip>:26657 --from <key-name>
 ```
 
-Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` as the proposal vote as this is not about testing the upgrade and there won't be any changes on the network after this phase.
+Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` option as this is not about deciding on the upgrade features. Also there won't be any changes on the network after this phase.
 
 ## How to SKIP UPGRADE
 
