@@ -33,7 +33,7 @@ Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recom
 
 ## How to SKIP UPGRADE
 
-Upgrade module has a handy SKIP UPGRADE option. You can skip any known upgrade with its HEIGHT.
+Upgrade module has a handy SKIP UPGRADE option. You can skip any known upgrade with its HEIGHT. It can be done anytime after the upgrade proposal goes through, even after the binary panics with UPGRADE NEEDED message.
 
 Here is the general SKIP UPGRADE usage
 ```sh
