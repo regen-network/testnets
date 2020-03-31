@@ -42,11 +42,39 @@ xrnd start --unsafe-skip-upgrades <upgrade1_height> <upgrade2_height> <upgrade3_
 
 To skip **Twilight Drama** upgrade, just restart your `xrnd` instance with the `--unsafe-skip-upgrades` flag
 
+### Using systemd
+
 1. Stop your xrnd
-2. Start your xrnd service with `--unsafe-skip-upgrades` flag
+```sh
+sudo service xrnd stop
+```
+2. Edit your xrnd service with your favorite editor and add `--unsafe-skip-upgrades` flag to the start command
+```
+$ sudo nano /lib/systemd/system/xrnd.service
+```
+Edit in the following line to add `--unsafe-skip-upgrades`
+
+```
+xrnd start --pruning nothing --unsafe-skip-upgrades 288888
+```
+
+3. Update systemd
+```sh
+$ systemctl daemon-reload
+```
+
+4. Start your xrnd
+```sh
+sudo service xrnd start
+```
+
+### Manual
+This is very simple, just stop the binary and restart it with the following command
 ```sh
 xrnd start --pruning nothing --unsafe-skip-upgrades 288888
 ```
+
+
 
 ## Tweet bonus
 
