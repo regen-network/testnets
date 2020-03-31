@@ -4,10 +4,10 @@
 There could be cases where the planned upgrades might need to be skipped due to issues in new binaries or decision changes after the proposal goes through. `Upgrade` module provides us a way to handle such cases with **SKIP UPGRADE** functionality. This phase is about testing SKIP UPGRADE feature from `upgrade` module.
 
 ## Schedule
-1. Upgrade proposal : 30 March, 1200 UTC
-2. Binary release - 31 March, 1600 UTC
-3. Voting Period : 30, March - 1 Apr
-4. Upgrade time: 02 Apr, 1600UTC
+- Upgrade proposal time: 30 March, 1411 UTC
+- Binary release (Dummy release) - 31 March, 1600 UTC
+- Voting Period : 30, March - 1 Apr, 1417 UTC
+- Upgrade Height: 288888
 
 ## Proposal Details
 |    |            |
