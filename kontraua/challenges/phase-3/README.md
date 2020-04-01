@@ -2,6 +2,42 @@
 
 Upgrading your node is simple, you just need to replace old binary (v0.7.1) with new binary (v0.7.2) and start your node.
 
+IMPORTANT: New binaries should be executed after the upgrade time i.e., 2020-03-26 12:00:00UTC (Thursday)
+
+## Method - 1: Use the release binary
+
+Download the new binary and replace the old binary with it.
+
+```sh
+$ wget https://github.com/regen-network/wasmd/releases/download/v0.7.2/regen--v0.7.2-linux-amd64.tar.xz
+
+$ tar -xvf regen--v0.7.2-linux-amd64.tar.xz
+
+$ mv bin/* $GOBIN/
+```
+
+Check binary version
+```
+$ xrnd version --long
+```
+It will display the version of xrnd currently installed:
+```
+name: wasm
+server_name: xrnd
+client_name: xrncli
+version: 0.7.2
+commit: c5ffddfc6d960e8140425f4d7887749ac50aab5e
+build_tags: netgo,ledger
+go: go version go1.13.3 linux/amd64
+```
+
+Start your binary
+```sh
+$ xrnd start
+```
+
+## Method - 2: Build from source
+
 ### Get the latest release (v0.7.2)
 ```
 $ mkdir -p $GOPATH/src/github.com/regen
