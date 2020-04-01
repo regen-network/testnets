@@ -85,4 +85,4 @@ $ cp sample.json <your_moniker.json>
 ```
 
 Update the required details and raise a PR with title: `Phase-3-1_<your_moniker>`
-Tweet bonus ends at : 2020-04-01 1417 UTC (tweet time)
+Tweet bonus ends at : 2020-04-02 1417 UTC (tweet time)
