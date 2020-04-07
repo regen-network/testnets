@@ -5,7 +5,7 @@
     "approve": [
         "<tx hash>"
     ],
-    "steal": [
+    "refund": [
         "<tx hash>"
     ]
 }

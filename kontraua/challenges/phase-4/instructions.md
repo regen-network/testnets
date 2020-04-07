@@ -87,13 +87,12 @@ NOTE: Please feel free to request tokens in DVD channel if your validator accoun
 To upload a new contract,
 
 ```
-xrncli tx wasm store cw_escrow.wasm --gas auto --from <key_name> --node <rpc_endpoint> -y
+xrncli tx wasm store contract.wasm --gas auto --from <key_name> --node <rpc_endpoint> -y
 
-#Add keys for arbiter, recipient and thief
+#Add keys for arbiter, recipient
 
 xrncli keys add fred
 xrncli keys add bob
-xrncli keys add thief
 ```
 
 You can check your code id at (by your account address): https://regen.wasm.glass/codes
@@ -104,9 +103,10 @@ For more details about uploading contract, check the details here: https://www.c
 
 
 ```
-# Please make sure to add keys of bob, fred and thief to your keyring
+# Please make sure to add keys of bob and fred to your keyring.
+# Insert an appropriate end_height in the INIT msg to make sure the escrow has am expiry height.
 
-INIT="{\"arbiter\":\"$(xrncli keys show fred -a)\", \"recipient\":\"$(xrncli keys show bob -a)\", \"end_time\":0, \"end_height\":0}"
+INIT="{\"arbiter\":\"$(xrncli keys show fred -a)\", \"recipient\":\"$(xrncli keys show bob -a)\", \"end_time\":0, \"end_height\":<height>}"
 
 xrncli tx wasm instantiate <code_id> "$INIT" --from <key_name> --label "escrow 1 <moniker>" --node <rpc_endpoint> --chain-id kontraua --amount 5000utree -y 
 ```
@@ -114,28 +114,20 @@ xrncli tx wasm instantiate <code_id> "$INIT" --from <key_name> --label "escrow 1
 Verify your code instance:
 ```
 # check the contract state (and account balance)
-xrncli query wasm list-contract-by-code <code_id>  --node <rpc_endpoint> --chain-id kontraua
+xrncli query wasm list-contract-by-code <code_id>  --node <rpc_endpoint> --chain-id kontraua -o json
 
 # contracts ids (like code ids) are based on an auto-gen sequence
 # if this is the first contract in the devnet, it will have this address (otherwise, use the result from list-contract-by-code)
 CONTRACT=xrn:10pyejy66429refv3g35g2t7am0was7ya75d7y2
 
-# query contract to verify init message and balances
-xrncli query wasm contract $CONTRACT --node <rpc_endpoint> --chain-id kontraua --trust-node
+# query contract to verify init message
+xrncli query wasm contract $CONTRACT --node <rpc_endpoint> --chain-id kontraua --trust-node -o json
 
 # you can query contract address as normal account
-xrncli query account $CONTRACT --node <rpc_endpoint> --chain-id kontraua --trust-node
+xrncli query account $CONTRACT --node <rpc_endpoint> --chain-id kontraua --trust-node -o json
 
 # you can dump entire contract state
 xrncli query wasm contract-state all $CONTRACT
-
-# note that we prefix the key "config" with two bytes indicating it's length
-# echo -n config | xxd -ps
-# gives 636f6e666967
-# thus we have a key 0006636f6e666967
-
-# you can also query one key directly
-xrncli query wasm contract-state raw $CONTRACT 0006636f6e666967 --hex
 
 # Note that keys are hex encoded, and val is base64 encoded.
 # To view the returned data (assuming it is ascii), try something like:
@@ -154,9 +146,11 @@ APPROVE='{"approve":{"quantity":[{"amount":"2000","denom":"utree"}]}}'
 
 Execute the approve function 
 ```
-xrncli tx wasm execute $CONTRACT "$APPROVE" --from <key-name> -y --chain-id kontraua
+xrncli tx wasm execute $CONTRACT "$APPROVE" --from bob -y --chain-id kontraua
+
 # looking at the logs should show: "execute wasm contract failed: Unauthorized"
 # and bob should still be broke (and broken showing the account does not exist Error)
+
 xrncli query account $(xrncli keys show bob -a)
 
 # but succeeds when fred tries
@@ -165,15 +159,17 @@ xrncli query account $(xrncli keys show bob -a)
 xrncli query account $CONTRACT
 ```
 
-Set the steal msg:
+Set the refund msg:
 ```
-STEAL="{\"steal\":{\"destination\":\"$(xrncli keys show thief -a)\"}}"
+REFUND='{"refund":{}}'
 ```
-Execute the steal function
+Execute the refund function
 ```
-xrncli tx wasm execute $CONTRACT "$STEAL" --from thief -y
+xrncli tx wasm execute $CONTRACT "$REFUND" --from bob --chain-id kontraua -y 
 
-xrncli query account $(xrncli keys show thief -a)
+xrncli query account $(xrncli keys show bob -a)
+
+xrncli query account $(xrncli keys show fred -a)
 
 xrncli query account $CONTRACT
 ```
