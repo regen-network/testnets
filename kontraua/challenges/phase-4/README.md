@@ -139,6 +139,8 @@ xrncli query wasm contract-state all $CONTRACT | jq -r .[0].val | base64 -d
 
 ### Step-3: Execute contract functions
 
+#### Approve
+
 Set the Approve msg:
 ```
 APPROVE='{"approve":{"quantity":[{"amount":"2000","denom":"utree"}]}}'
@@ -158,6 +160,8 @@ xrncli tx wasm execute $CONTRACT "$APPROVE" --from fred -y
 xrncli query account $(xrncli keys show bob -a)
 xrncli query account $CONTRACT
 ```
+#### Refund
+*You can execute this tx only after the escrow time gets expire*
 
 Set the refund msg:
 ```
@@ -173,8 +177,6 @@ xrncli query account $(xrncli keys show fred -a)
 
 xrncli query account $CONTRACT
 ```
-
-
 
 ## What is expected from validators?
 
