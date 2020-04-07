@@ -144,6 +144,7 @@ seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@regen-seed-eu.chorus.one:36656
 persistent_peers = "4efed1cf14c69aee0695837fc7341036fe7dcc52@173.249.40.87:26656,bf2d9c642d82990ab7e6b5dbc24695e56edfb43e@3.134.55.15:26656"
 ```
 
+```
 # Comma separated list of persistent peers to connect to
 persistent_peers = "4efed1cf14c69aee0695837fc7341036fe7dcc52@173.249.40.87:26656,bf2d9c642d82990ab7e6b5dbc24695e56edfb43e@3.134.55.15:26656"
 ```
