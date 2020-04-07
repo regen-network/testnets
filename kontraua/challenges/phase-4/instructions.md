@@ -82,8 +82,7 @@ xrncli query wasm -h
 
 NOTE: Please feel free to request tokens in DVD channel if your validator account doesn't have available tokens
 
-### Step - 1 : Upload your contract (Optional)
-You can create/upload a new contract code or instantiate an existing code too (You can use https://regen.wasm.glass/codes/5 in case you chose to instantiate contract directly).
+### Step - 1 : Upload your contract
 
 To upload a new contract,
 
