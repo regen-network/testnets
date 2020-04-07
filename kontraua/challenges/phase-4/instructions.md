@@ -1,4 +1,4 @@
-# Phase-2 Instructions: Deploy Escrow token smart contract
+# Phase-4 Instructions: Deploy Escrow token smart contract
 
 This guide helps you to deploy an escrow token smart contract on [Kontraua testnet](https://regen.wasm.glass/)
 
@@ -193,14 +193,12 @@ xrncli query account $CONTRACT
 . Raise PR with title: "Phase-4: <Validator_moniker>"
 
 ## Points criteria
-- 100 points for successful deployment (code upload is optional, instance creation is mandatory)
-- 100 points for transfering contract tokens (at least 5 transfers)
-- 50 points for editing the contract to add any custom feature (send extra tokens than allowed,  hardcode recipient address, send text message, request funds, approve fund request, data storage etc)
-- 100 bonus points for creating an allowance and use transferFrom to send tokens from a second address (Instructions for this are not available, as it is a bonus)
-- A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in phase-2). These rankings will be based on **final (latest) tx time**
-  - First 5–100 each
-  - 6 to 10 : 50 each
-  - 11 to 20: 25 each
+- 50 points for successful deployment
+- 50 points for executing the escrow
+- A total of 1000 bonus points are shared among first 20 validators to complete these tasks
+    - First 5 - 100 each
+    - 6 to 10 : 50 each
+    - 11 to 20: 25 each
 
 **Note:** 
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
