@@ -102,10 +102,9 @@ For more details about uploading contract, check the details here: https://www.c
 
 ### Step - 2: Instantiating the Contract
 
-Please edit the **INIT** config with your details. You can add as many account address as you wish. Make sure to include your account address as one of the addresses. Naming your token name unique is preferred.
 
 ```
-# Please make sure to add your address(es) in initial_balances
+# Please make sure to add keys of bob, fred and thief to your keyring
 
 INIT="{\"arbiter\":\"$(xrncli keys show fred -a)\", \"recipient\":\"$(xrncli keys show bob -a)\", \"end_time\":0, \"end_height\":0}"
 
