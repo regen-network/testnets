@@ -162,19 +162,19 @@ xrncli query account $(wasmcli keys show bob -a)
 
 # but succeeds when fred tries
 xrncli tx wasm execute $CONTRACT "$APPROVE" --from fred -y
-xrncli query account $(wasmcli keys show bob -a)
+xrncli query account $(xrncli keys show bob -a)
 xrncli query account $CONTRACT
 ```
 
 Set the steal msg:
 ```
-STEAL="{\"steal\":{\"destination\":\"$(wasmcli keys show thief -a)\"}}"
+STEAL="{\"steal\":{\"destination\":\"$(xrncli keys show thief -a)\"}}"
 ```
 Execute the steal function
 ```
 xrncli tx wasm execute $CONTRACT "$STEAL" --from thief -y
 
-xrncli query account $(wasmcli keys show thief -a)
+xrncli query account $(xrncli keys show thief -a)
 
 xrncli query account $CONTRACT
 ```
