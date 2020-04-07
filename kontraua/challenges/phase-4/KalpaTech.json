@@ -1,0 +1,33 @@
+{
+    "valOprAddr": "xrn:valoper1j0d5hqgm9q5v85xr9zhv6fd9dre63zwdxamczf",
+    "codeId": "65",
+    "contractAddress": "xrn:1lpzh3v53stw6a5mlwt6pggnspjgzjj22z2pvwc",
+    "approve": [
+        "2B7643C542F1F647F80B0AFBDBE8220520803C68B5EEA27CC2B323C4B71434EE"
+    ],
+    "refund": [
+        "C933ED59F859FD12EC0E7699619B68C6DB1BAC65873C2EC9CE0615A80EC0F982"
+    ]
+},
+{
+    "valOprAddr": "xrn:valoper1j0d5hqgm9q5v85xr9zhv6fd9dre63zwdxamczf",
+    "codeId": "60",
+    "contractAddress": "xrn:1jgmy3xrujj78smtx6c2wjpnwtc6vffml3w8237",
+    "approve": [
+        "EB8A5D375D2E512AA3C107FBE2873AAB2A4CD552A94A84B618052029D38173F3"
+    ],
+    "refund": [
+        "FC8426B5012AAC50E3411A2DD5B84FC09C30043599B8EC0291FE7A4E05C49A67"
+    ]
+},
+{
+    "valOprAddr": "xrn:valoper1j0d5hqgm9q5v85xr9zhv6fd9dre63zwdxamczf",
+    "codeId": "56",
+    "contractAddress": "xrn:1czpyfq5neawjyuntacngm3gw3cqugxenew5dtq",
+    "approve": [
+        "01DAA59ECEDB2D40CBC3CFCBD7D7A20084EF2CDF815DFA793E2F31FB3EE1EA7A"
+    ],
+    "refund": [
+        "BC9FBED75A09203AD6680A7F14B297DDF99BD784FD85E18345A95F2D2EBA347B"
+    ]
+}
