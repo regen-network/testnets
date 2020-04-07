@@ -158,7 +158,7 @@ Execute the approve function
 xrncli tx wasm execute $CONTRACT "$APPROVE" --from <key-name> -y --chain-id kontraua
 # looking at the logs should show: "execute wasm contract failed: Unauthorized"
 # and bob should still be broke (and broken showing the account does not exist Error)
-xrncli query account $(wasmcli keys show bob -a)
+xrncli query account $(xrncli keys show bob -a)
 
 # but succeeds when fred tries
 xrncli tx wasm execute $CONTRACT "$APPROVE" --from fred -y
