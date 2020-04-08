@@ -21,6 +21,7 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 Once installed, make sure you have the wasm32 target, both on stable and nightly:
+
 ```
 $ rustup default stable
 $ rustup target list --installed
@@ -41,20 +42,25 @@ $ git checkout erc20-0.3.0
 ```
 
 ### Compile the wasm contract with stable toolchain
+
 ```
 rustup default stable
 cargo wasm
 ```
-After this compiles, it should produce a file at  `target/wasm32-unknown-unknown/release/cw_erc20.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
+
+After this compiles, it should produce a file at `target/wasm32-unknown-unknown/release/cw_erc20.wasm`. A quick `ls -l` should show around 1.5MB. This is a release build, but not stripped of all unneeded code
 
 ### Compiling for Production
+
 You can check the size of the contract file by running:
+
 ```
 $ du -h target/wasm32-unknown-unknown/release/cw_erc20.wasm
 
 // Outputs
 1.9M    target/wasm32-unknown-unknown/release/cw_erc20.wasm
 ```
+
 This works, but is huge for a blockchain transaction. Let's try to make it smaller. Turns out there is a linker flag to strip off debug information:
 
 ```
@@ -64,6 +70,7 @@ $ du -h target/wasm32-unknown-unknown/release/cw_erc20.wasm
 // Outputs
 128K    target/wasm32-unknown-unknown/release/cw_erc20.wasm
 ```
+
 This is looking much better in size.
 
 Those who wants to experiment with other cool features can try out: [reproduceable builds](https://www.cosmwasm.com/docs/getting-started/editing-escrow-contract#reproduceable-builds)
@@ -71,11 +78,13 @@ Those who wants to experiment with other cool features can try out: [reproduceab
 ## Deploy your erc20 contract
 
 All the wasm related commands can be found at:
+
 ```
 xrncli tx wasm -h
 ```
 
-And, related queries at: 
+And, related queries at:
+
 ```
 xrncli query wasm -h
 ```
@@ -83,6 +92,7 @@ xrncli query wasm -h
 NOTE: Please feel free to request tokens in DVD channel if your validator account doesn't have available tokens
 
 ### Step - 1 : Upload your contract (Optional)
+
 You can create/upload a new contract code or instantiate an existing code too (You can use https://regen.wasm.glass/codes/5 in case you chose to instantiate contract directly).
 
 To upload a new contract,
@@ -104,10 +114,11 @@ Please edit the **INIT** config with your details. You can add as many account a
 
 INIT="{\"decimals\":5,\"name\":\"XRN token\",\"symbol\":\"XRN\",\"initial_balances\":[{\"address\":\"xrn:1tay3xlj0jnl8csnvteky8wc0e3206favkg74ue\",\"amount\":\"1000\"},{\"address\":\"xrn:1ntlzxh9y245htk99gz55gslz3n8lzclexenx9m\",\"amount\":\"2000\"},{\"address\":\"xrn:1vkxgpw4xtyeljzvqnxxy84kpa6udqaqw8leqjg\",\"amount\":\"3000\"}]}"
 
-xrncli tx wasm instantiate <code_id> "$INIT" --from <key_name> --label "ERC20 <moniker>" --node <rpc_endpoint> --chain-id kontraua -y 
+xrncli tx wasm instantiate <code_id> "$INIT" --from <key_name> --label "ERC20 <moniker>" --node <rpc_endpoint> --chain-id kontraua -y
 ```
 
 Verify your code instance:
+
 ```
 # check the contract state (and account balance)
 xrncli query wasm list-contract-by-code <code_id>  --node <rpc_endpoint> --chain-id kontraua
@@ -129,11 +140,13 @@ xrncli query wasm contract-state all $CONTRACT --node <rpc_endpoint> --chain-id 
 ### Step-3: Execute contract functions
 
 Set the transfer msg:
+
 ```
 TRANSFER_MSG="{\"transfer\": {\"recipient\": \"xrn:1ntlzxh9y245htk99gz55gslz3n8lzclexenx9m\",\"amount\": \"2\"}}"
 ```
 
-Execute the transfer function 
+Execute the transfer function
+
 ```
 xrncli tx wasm execute $CONTRACT "$TRANSFER_MSG" --from <from_key>
 ```
@@ -141,11 +154,13 @@ xrncli tx wasm execute $CONTRACT "$TRANSFER_MSG" --from <from_key>
 **Check balance:**
 
 You need to create a smart query with account address for querying balance:
+
 ```
 BALANCE_QUERY="{\"balance\": {\"address\": \"xrn:1ntlzxh9y245htk99gz55gslz3n8lzclexenx9m\"}}"
 ```
 
 Command to query balance is
+
 ```
 xrncli query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http://173.255.192.172:26657 --chain-id kontraua -o json
 ```
@@ -163,16 +178,18 @@ xrncli query wasm  contract-state smart $CONTRACT "$BALANCE_QUERY" --node http:/
 9. Raise PR with title: "Phase-2: <Validator_moniker>"
 
 ## Points criteria
+
 - 100 points for successful deployment (code upload is optional, instance creation is mandatory)
 - 100 points for transfering contract tokens (at least 5 transfers)
-- 50 points for editing the contract to add any custom feature (send extra tokens than allowed,  hardcode recipient address, send text message, request funds, approve fund request, data storage etc)
+- 50 points for editing the contract to add any custom feature (send extra tokens than allowed, hardcode recipient address, send text message, request funds, approve fund request, data storage etc)
 - 100 bonus points for creating an allowance and use transferFrom to send tokens from a second address (Instructions for this are not available, as it is a bonus)
 - A total of 1000 bonus points are shared among first 20 validators to complete these tasks (Eligibility: min 250 points earnings in phase-2). These rankings will be based on **final (latest) tx time**
   - First 5–100 each
   - 6 to 10 : 50 each
   - 11 to 20: 25 each
 
-**Note:** 
+**Note:**
+
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
 
 - All the edited contracts must be deployed using your validator owner account.
