@@ -97,7 +97,7 @@ For more details about uploading contract, check the details here: https://www.c
 
 ### Step - 2: Instantiating the Contract
 
-Please edit the **INIT** config with your details. You can add as many account address as you wish. Naming your token name unique is preferred.
+Please edit the **INIT** config with your details. You can add as many account address as you wish. Make sure to include your account address as one of the addresses. Naming your token name unique is preferred.
 
 ```
 # Please make sure to add your address(es) in initial_balances
