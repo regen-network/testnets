@@ -15,7 +15,7 @@
   "editContractTxs": [
     {
       "txHash": "tx hash of edited contract function",
-      "description": "<what to expect?>"
+      "description": "<what to expect>"
     }
   ]
 }
