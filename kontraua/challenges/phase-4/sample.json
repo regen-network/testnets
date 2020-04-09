@@ -1,11 +1,11 @@
 {
-    "valOprAddr": "<your validator operator address>",
-    "codeId": "<contract code id that is used for challenge, ex: 2>",
-    "contractAddress": "<your contract address>",
+    "valOprAddr": "xrn:valoper1z92wxxpszkgg2cd9zhrdtvm6y7ra42sv85ch0g",
+    "codeId": "108",
+    "contractAddress": "xrn:1ds27hgjwldcphfg3u2j64zxgay2a0ahvrkdsja",
     "approve": [
-        "<tx hash>"
+        "A9E54798CEDD31159786DF343737489BF7D72AE42376176B9311F1E80515620A"
     ],
     "refund": [
-        "<tx hash>"
+        "EE743B3DE0389890FFCAA8C2FF5787EA46EB1AE027B3125F564D9FA62ABC7501"
     ]
 }
