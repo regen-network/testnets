@@ -41,7 +41,7 @@ Note: Instructions will be shared on 1 Apr, 1200UTC
 
 Note: Instructions will be shared on 7 Apr, 1200UTC
 
-### Phase - 5: High skill time - 14 Apr, 0200UTC - 18 Apr, 0200 UTC (Bonus phase)
+### Phase - 5: High skill time - 14 Apr, 0200UTC - 22 Apr, 0200 UTC (Bonus phase)
 1. Custom contracts deployment based on a provided criteria
 2. Criteria & instructions will be shared on: 13 Apr, 2100UTC
 
