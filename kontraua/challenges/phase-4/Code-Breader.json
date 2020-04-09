@@ -1,0 +1,11 @@
+{
+    "valOprAddr": "xrn:valoper1kdxkezjm2le753yqzkppq247uj2f0qtrs3ahxn",
+    "codeId": "125",
+    "contractAddress": "xrn:1p3llplff6ncuv2x4zvqe74lz2fhxepzxvz4yyk",
+    "approve": [
+        "<tx hash>"
+    ],
+    "refund": [
+        "<tx hash>"
+    ]
+}
