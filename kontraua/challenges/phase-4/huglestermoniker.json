@@ -1,0 +1,11 @@
+{
+    "valOprAddr": "xrn:1mgrvud8puhhser4mpmy92l3w8590c8v4s9sc2g",
+    "codeId": "119",
+    "contractAddress": "xrn:15x2t8ft8rs8fqtfdxycq8u5t5wrzjkqtphn7sh",
+    "approve": [
+        "37EDFCE0053A73960DF6FF59553AE0B627DDCEB2EC92C8FF5C87CB628BF43EF6"
+    ],
+    "refund": [
+        "866E45AA657001FC3B8F026C66FE9CA67F0F9BEFED26D410A6D3EF69ECA50A8E"
+    ]
+}
