@@ -1,0 +1,14 @@
+{
+    "valOprAddr": "<your validator operator address>",
+    "codeId": "<contract code id that is used for challenge, ex: 2>",
+    "contractAddress": "<your contract address>",
+    "txs": [
+        "<list of tx hashes>"
+    ],
+    "customTxs": [
+        {
+            "txHash": "hash of executing extra/custom functions on the contract",
+            "customTxDescription": "<explain the feature, single line>"
+        }
+    ]
+}
