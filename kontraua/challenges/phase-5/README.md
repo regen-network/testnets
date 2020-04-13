@@ -167,7 +167,7 @@ $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 - All the edited contracts must be deployed using your validator owner account.
 
 # Important Links
-
+- Cosmwasm docs: https://www.cosmwasm.com/docs/getting-started/intro
 - Code explorer: https://regen.wasm.glass/
 - Network explorer: https://explorer.regen.vitwit.com
 - Testnet plan: https://medium.com/regen-network/cosmwasm-kontra%C5%ADa-testnet-plan-2756490ccdf4
