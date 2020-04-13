@@ -44,7 +44,7 @@ A contract is considered to be a Payout Contract if it meets the following crite
 - 6 to 10 : 50 each
 - 11 to 20: 25 each
 
-## Helpful code snippets
+## Helpful code snippets (This is all optional, you can refer cosmwasm official docs for more details)
 
 ### State
 
