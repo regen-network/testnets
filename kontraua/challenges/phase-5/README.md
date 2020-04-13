@@ -5,14 +5,14 @@ Providing payout contracts for the ecological state was the original reason behi
 
 Implement a payout contract to allow a beneficiary to receive the tokens.
 
-### What should the contract contain
+### Payout Contract Requirements
 
-- Init with `region`, `total_tokens`, `oracle`,  `beneficiary` addresses. You can set optional params : `payout_start_height`, `payout_end_height`
+- Contract should implement init with `region`, `total_tokens`, `oracle`,  `beneficiary` addresses. You can set optional params : `payout_start_height`, `payout_end_height`
 - Initialize the contract with 1000 coins with a specified beneficiary
-- Every day the oracle (a thrid party account in general) provides the percentage of forest cover for this region. Multiply the percentage with 100 and avoid decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
-* If the forest cover has decreased since last measurement - no payout.
-* If it is higher, pay out 10 coin per 1% increase.
-* If it is the same or higher, pay out 0.2 coin for current forest cover above 50% (eg. 0 at 50%, 3.0 at 65%, 7.8 at 89%)
+- At some interval (10minutes lets say), the oracle (a thrid party account in general) provides the percentage of forest cover for the region. To avoid floats in the contract, multiply the percentage with 100 and trim  decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
+* If the forest cover has decreased since last measurement - no payout. It means, the beneficiary will not get any token rewards.
+* If it is more than 1$, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 531 coins.
+* If it is the same or less than 1% (0% < change% < 1%), pay out 20 coins for current forest cover above 50% (eg. 0 at 50%, 30 at 65%, 78 at 89%)
 
 ### Incentive Plan
 
@@ -55,7 +55,7 @@ pub struct State {
     pub beneficiary: CanonicalAddr,
     pub owner: CanonicalAddr,
     pub oracle: CanonicalAddr,
-    pub ecological_state: i64,
+    pub ecolstate: i64,
     pub total_tokens: i64,
     pub released_tokens: i64,
     pub payout_start_height: i64,
@@ -72,7 +72,7 @@ pub struct InitMsg {
     pub region: String,
     pub beneficiary: HumanAddr,
     pub oracle: CanonicalAddr,
-    pub ecological_state: i64,
+    pub ecostate: i64,
     pub total_tokens: i64,
     pub payout_start_height: i64,
     pub payout_end_height: i64,
@@ -113,7 +113,7 @@ NOTE: This is just to give a way to get started. You can change it as you wish.
 
 **Init message:**
 ```sh
-$ INIT = "{\"region\":\"region-1\",\"beneficiary\":\"$(wasmcli keys show beneficiary -a)\",\"oracle\":\"$(wasmcli keys show oracle -a)\",\"ecological_state\":1070,\"total_tokens\":10000,\"released_tokens\":0,\"payout_start_height\":460000,\"payout_end_height\":1000000,\"is_locked\":0}"
+$ INIT = "{\"region\":\"region-1\",\"beneficiary\":\"$(wasmcli keys show beneficiary -a)\",\"oracle\":\"$(wasmcli keys show oracle -a)\",\"ecostate\":1070,\"total_tokens\":10000,\"released_tokens\":0,\"payout_start_height\":460000,\"payout_end_height\":1000000,\"is_locked\":0}"
 ```
 
 **Instantiate code:**
