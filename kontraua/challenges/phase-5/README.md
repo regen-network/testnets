@@ -7,8 +7,16 @@ Implement a payout contract to allow a beneficiary to receive the tokens.
 
 ### Payout Contract Requirements
 
-- Contract should implement init with `region`, `total_tokens`, `oracle`,  `beneficiary` addresses. You can set optional params : `payout_start_height`, `payout_end_height`
-- Initialize the contract with 100000 coins with a specified beneficiary
+- Contract should implement init with `region`, `ecostate`, `total_tokens`, `oracle`,  `beneficiary` addresses. You can set optional params : `payout_start_height`, `payout_end_height`, `is_locked` as well.
+    - `region` is a string, refers to a place/zone
+    - `ecostate` is a positive integer, which maintains the percentage of forest cover, without decimals. 56.16% is stored as 5616
+    - `total_tokens` is a positive integer, locked in the contract
+    - `oracle` is the account address of ecological state data provider (It can be any general account with some tokens for gas cost)
+    - `beneficiary` is the account address of beneficiary, which receives token payouts
+    - `payout_start_height` is the block height from which the contract is valid
+    - `payout_end_height` is the block height until which the contract is valid
+    - `is_locked` maintains contract status. It allows the owner to lock the contract in case of any malicious activities.
+- Initialize the contract with 100000 (`total_tokens`) coins with a specified beneficiary
 - At some interval (10minutes lets say), the oracle (a thrid party account in general) provides the percentage of forest cover for the region. To avoid floats in the contract, multiply the percentage with 100 and trim  decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
 * If the forest cover has decreased since last measurement - no payout. It means, the beneficiary will not get any token rewards.
 * If it is more than 1%, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 53 coins.
@@ -55,7 +63,7 @@ pub struct State {
     pub beneficiary: CanonicalAddr,
     pub owner: CanonicalAddr,
     pub oracle: CanonicalAddr,
-    pub ecolstate: i64,
+    pub ecostate: i64,
     pub total_tokens: i64,
     pub released_tokens: i64,
     pub payout_start_height: i64,
