@@ -167,11 +167,10 @@ $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 9. Raise PR with title: "Phase-5: <Validator_moniker>"
 
 **Note:**
-- PRs should be raised only after the deadline. For early submission rewards, only tx time is considered (Last tx from the list). PR time will not play a role in distributing bonus rewards.
+- For early submission rewards, only tx time is considered (Last tx from the list). PR time will not play a role in distributing bonus rewards.
 - Contract should be unique in-order to be eligible for the reward
-- There will be a round of code submission along with PR after the deadline.
+- There will be a round of code submission after the deadline.
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
-
 - All the edited contracts must be deployed using your validator owner account.
 
 # Important Links
