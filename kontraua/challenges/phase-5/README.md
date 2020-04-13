@@ -11,7 +11,7 @@ Implement a payout contract to allow a beneficiary to receive the tokens.
 - Initialize the contract with 1000 coins with a specified beneficiary
 - At some interval (10minutes lets say), the oracle (a thrid party account in general) provides the percentage of forest cover for the region. To avoid floats in the contract, multiply the percentage with 100 and trim  decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
 * If the forest cover has decreased since last measurement - no payout. It means, the beneficiary will not get any token rewards.
-* If it is more than 1$, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 531 coins.
+* If it is more than 1%, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 531 coins.
 * If it is the same or less than 1% (0% < change% < 1%), pay out 20 coins for current forest cover above 50% (eg. 0 at 50%, 30 at 65%, 78 at 89%)
 
 ### Incentive Plan
