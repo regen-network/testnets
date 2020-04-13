@@ -2,7 +2,7 @@
     "valOprAddr": "<your validator operator address>",
     "codeId": "<contract code id that is used for challenge, ex: 2>",
     "contractAddress": "<your contract address>",
-    "txs": [
+    "oracleTxs": [
         "<list of tx hashes>"
     ],
     "customTxs": [

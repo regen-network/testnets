@@ -144,3 +144,20 @@ $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 ```
 
 - Query contract state, `released_tokens` should have been updated based on the ecostate change.
+
+
+
+
+## What is expected from validators?
+
+1. Implement Payout Contract, compile and upload
+2. Instantiate contract with validator label and copy Contract address
+3. Update the ecostate using oracle's account
+4. Copy all the tx hashes
+4. Fork testnets repo and clone: githbu.com/regen-network/testnets
+5. cd testnets/kontraua/challenges/phase-5/
+6. cp sample.json <your_validator_moniker>.json
+7. Add tx hashes from 4 in `oracleTxs` section. YOu can add array of tx hashes. A minimum of 3 are required.
+8. If you have added any extra functionality as stated in [Bonus Payout](#bonus-payout---50-points-for-each-of-the-below-features), add the respective tx hashes and feature title/description in `customTxs` section.
+8. Commit the changes to your repo
+9. Raise PR with title: "Phase-5: <Validator_moniker>"
