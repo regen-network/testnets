@@ -17,10 +17,10 @@ Implement a payout contract to allow a beneficiary to receive the tokens.
 ### Incentive Plan
 
 #### Working Payout Contract - 300 Points
-To be eligible for the reward, the contract should at least do one sample payout with external oracle trigger (not direct transfer of tokens)
+To be eligible for the reward, the contract should at least do one sample payout with state update trigger (direct token transfer are not eligible for the reward)
 A contract is considered to be a Payout Contract if it meets the following criterias:
 - Should be able to initialize with oracle, owner, beneficiary (INIT)
-- Oracle should (only) be able to send/update ecostate
+- Oracle (account) should (only) be able to update the ecostate
 - Implements at least one payout criteria from the points mentioned above. The contract should be able to receive and process the oracle's data
 - At least one successful payout trasaction (PAYOUT)
 
@@ -142,11 +142,7 @@ $ UPDATE_ECOSTATE='{"update_ecostate":{"ecostate": 1210}'
 ```sh
 $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 ```
-
-- Query contract state, `released_tokens` should have been updated based on the ecostate change.
-
-
-
+- Query contract state response should show the updated `released_tokens` based on the ecostate change
 
 ## What is expected from validators?
 
@@ -157,7 +153,23 @@ $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 4. Fork testnets repo and clone: githbu.com/regen-network/testnets
 5. cd testnets/kontraua/challenges/phase-5/
 6. cp sample.json <your_validator_moniker>.json
-7. Add tx hashes from 4 in `oracleTxs` section. YOu can add array of tx hashes. A minimum of 3 are required.
+7. Add tx hashes from 4 in `oracleTxs` section. You can add array of tx hashes.
 8. If you have added any extra functionality as stated in [Bonus Payout](#bonus-payout---50-points-for-each-of-the-below-features), add the respective tx hashes and feature title/description in `customTxs` section.
 8. Commit the changes to your repo
 9. Raise PR with title: "Phase-5: <Validator_moniker>"
+
+**Note:**
+- PRs should be raised only after the deadline. For early submission rewards, only tx time is considered (Last tx from the list). PR time will not play a role in distributing bonus rewards.
+- Contract should be unique in-order to be eligible for the reward
+- There will be a round of code submission along with PR after the deadline.
+- There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
+
+- All the edited contracts must be deployed using your validator owner account.
+
+# Important Links
+
+- Code explorer: https://regen.wasm.glass/
+- Network explorer: https://explorer.regen.vitwit.com
+- Testnet plan: https://medium.com/regen-network/cosmwasm-kontra%C5%ADa-testnet-plan-2756490ccdf4
+- Regen Network DVD Channel: https://t.me/joinchat/FJGNSxOpjJcgrUGwAAOKUg
+- Testnet instructions https://github.com/regen-network/testnets/blob/master/kontraua/README.md
