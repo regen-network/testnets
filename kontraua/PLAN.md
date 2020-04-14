@@ -105,9 +105,8 @@ Note: Due to seed nodes issue on genesis time, uptime calculations are calculate
     - 11 to 20: 25 each
 
 ### Phase-5: 300+ points
-- 150 points for writing contract
+- 200 points for writing contract
 - 100 points for executing the contract
-- 50 points for executing transactions on other's contracts (if needed external validators support)
 
 ### Phase-6: 200+ points
 - 90-100% uptime will share 100 points. 90% uptime will get 0 points, 100% uptime shares 100 points. (Points distribution is linear mostly, more details coming soon)
