@@ -16,8 +16,8 @@ Implement a payout contract to allow a beneficiary to receive the tokens.
     - `payout_start_height` is the block height from which the contract is valid
     - `payout_end_height` is the block height until which the contract is valid
     - `is_locked` maintains contract status. It allows the owner to lock the contract in case of any malicious activities.
-- Initialize the contract with 100000 (`total_tokens`) coins with a specified beneficiary
-- At some interval (10minutes lets say), the oracle (a thrid party account in general) provides the percentage of forest cover for the region. To avoid floats in the contract, multiply the percentage with 100 and trim  decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
+- Initialize the contract with 100,000 coins (`total_tokens`) with a specified beneficiary
+- At some interval (10 minutes lets say), the oracle (a thrid party account in general) provides the percentage of forest cover for the region. To avoid floats in the contract, multiply the percentage with 100 and trim  decimals. For example: 12.39% is inputed as 1239, 1.004% is inputed as 100.
 * If the forest cover has decreased since last measurement - no payout. It means, the beneficiary will not get any token rewards.
 * If it is more than 1%, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 531 coins.
 * If it is the same or less than 1% (0% < change% < 1%), pay out 2 coins for current forest cover above 50% (eg. 0 at 50%, 30 at 65%, 78 at 89%). Round the tokens to next integer if you are not using any decimals. Like 57.6 at 78.8% would result in a payout of 58 tokens
@@ -172,6 +172,7 @@ $ xrncli tx wasm execute $CONTRACT "$UPDATE_ECOSTATE" --from oracle -y
 - There will be a round of code submission after the deadline.
 - There will be a special bonus of 100 points for each bug/vulnerability reported (non-duplicate), malfunctioning the network.
 - All the edited contracts must be deployed using your validator owner account.
+- Expect chaos : Custom oracle service?
 
 # Important Links
 - Cosmwasm docs: https://www.cosmwasm.com/docs/getting-started/intro
