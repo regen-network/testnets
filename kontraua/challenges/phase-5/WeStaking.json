@@ -44,15 +44,23 @@
         },
         {
             "txHash": "BD786757ACE37C588923C1E144CD7A555B0DC78554EF58B61F3E213D2B2358E6",
-            "customTxDescription": "update_ecostate call after changing Oracle account"
+            "customTxDescription": "call update_ecostate with new oracle account"
         },
         {
             "txHash": "B7D9CC552E08A54D5854435757864FAAF7801C284C7F8668D10F790EBA22BF56",
-            "customTxDescription": "After changing the Oracle, call the update_ecostate with the previous Oracle account, so.. failed"
+            "customTxDescription": "call update_ecostate with previous oracle account : FAILED"
         },
         {
             "txHash": "C620D180F1C64F3786BDC792162A31A63923BFEC79D9F437240ABF9769E2C98A",
             "customTxDescription": "transfer ownership"
+        },
+        {
+            "txHash": "7C78AA047699CF348ACB52FACB447692DC8A3A126AD9D673661E7C9D92384B6A",
+            "customTxDescription": "tx for the last payout"
+        },
+        {
+            "txHash": "8636867A0D7298C8E3F3FA27F58026E5146CB55A8A3AFE00B06A7E01DF563046",
+            "customTxDescription": "reject tx on done"
         }
     ]
 }
