@@ -1,0 +1,58 @@
+{
+    "valOprAddr": "xrn:valoper139vgxtta9y7jjap5kl9uu4ygyl4j26lv497wls",
+    "codeId": "130",
+    "contractAddress": "xrn:13fu3kds44qxl4na0gqvrxq4ztykzqlgcl5gerl",
+    "oracleTxs": [
+        "C0D43CE59410AB0697223732EEEFAD7CEB2A13E9AA5B4ECA46B6BE0D4E62A8C0",
+        "B88A61D2954FB8263B93CA6BE8D2EDB32786EE40A4A2E6D0049470F75E96F25B",
+        "600B8B995147EF29E7902A5779B305FA029FD278050053FE5BF722986EC28F92",
+        "BF810C3767D919D55424111B207C555A3C3AB57F56C9B8741E558ACA43636B6A",
+        "C6BE8C381FF3E88AEA883236DC7BF81050A5B3438C120C946055B3A8E67825BE"
+    ],
+    "customTxs": [
+        {
+            "txHash": "D77833D109CF3F11C1DD666CC7019FBB75F808A471C857E7B665B7675827F364",
+            "customTxDescription": "error: The contract has not been started."
+        },
+        {
+            "txHash": "C0D43CE59410AB0697223732EEEFAD7CEB2A13E9AA5B4ECA46B6BE0D4E62A8C0",
+            "customTxDescription": "update ecostate after contract started."
+        },
+        {
+            "txHash": "D55A4816B76C48ECA176839D79B07774E8CE5696E31CAB8AA36ECD2ED1E15D7E",
+            "customTxDescription": "lock contract"
+        },
+        {
+            "txHash": "4ECE08D146AD000C6E5FCF387F9CAD952846323421237F617A2404F511F0290A",
+            "customTxDescription": "The contract is locked, so the update_ecostate call fails."
+        },
+        {
+            "txHash": "A7076D41D8532BFA7CBF5F0CA83FD11DD4FCDC57FEDC08A1579FCB4E629BE549",
+            "customTxDescription": "unlock contract" 
+        },
+        {
+            "txHash": "C86CEADB81892F7352FF90CED453779C0EE8721C508DD65683FC76AD6FB8246D",
+            "customTxDescription": "Can be updated after unlocking."
+        },
+        {
+            "txHash": "02FCFD71F3BFB93E5423080483B43F87EF93D95F28A6A1C654FD1A9D6FAD458E",
+            "customTxDescription": "Change Beneficiary"
+        },
+        {
+            "txHash": "A6D6C261DF11924CD0765D35F99EF6CCB109A61C6AEE94B9F5012FAF18F0A324",
+            "customTxDescription": "change oracle"
+        },
+        {
+            "txHash": "BD786757ACE37C588923C1E144CD7A555B0DC78554EF58B61F3E213D2B2358E6",
+            "customTxDescription": "update_ecostate call after changing Oracle account"
+        },
+        {
+            "txHash": "B7D9CC552E08A54D5854435757864FAAF7801C284C7F8668D10F790EBA22BF56",
+            "customTxDescription": "After changing the Oracle, call the update_ecostate with the previous Oracle account, so.. failed"
+        },
+        {
+            "txHash": "C620D180F1C64F3786BDC792162A31A63923BFEC79D9F437240ABF9769E2C98A",
+            "customTxDescription": "transfer ownership"
+        }
+    ]
+}
