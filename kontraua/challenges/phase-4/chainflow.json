@@ -15,9 +15,9 @@
     "codeId": "116",
     "contractAddress": "xrn:1sea22767399jnxzvtul2zhzretj9c5hlca88xh",
     "approve": [
-        "<tx hash>"
+        "973E7ECED039CC073EB77B595F50C2415DC0700129E557877F933ACAA0B57CE5"
     ],
     "refund": [
-        "<tx hash>"
+        "0274C2EFFCE706847734C5C5EF12D7D51A9149C1DA57411D6574CA656DE5C502"
     ]
 }
