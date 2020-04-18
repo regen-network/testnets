@@ -144,7 +144,7 @@ $ xrncli query wasm contract $CONTRACT
 
 Let's update teh ecostate to 27.1% i.e., 2710
 ```sh
-$ UPDATE_ECOSTATE='{"update_ecostate":{"ecostate": 2710}'
+$ UPDATE_ECOSTATE='{"update_ecostate":{"ecostate": 2710}}'
 ```
 
 ```sh
