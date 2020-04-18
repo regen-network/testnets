@@ -121,7 +121,7 @@ NOTE: This is just to give a way to get started. You can change it as you wish.
 
 **Init message:**
 ```sh
-$ INIT = "{\"region\":\"region-1\",\"beneficiary\":\"$(wasmcli keys show beneficiary -a)\",\"oracle\":\"$(wasmcli keys show oracle -a)\",\"ecostate\":2500,\"total_tokens\":100000,\"released_tokens\":0,\"payout_start_height\":460000,\"payout_end_height\":1000000,\"is_locked\":0}"
+$ INIT = "{\"region\":\"region-1\",\"beneficiary\":\"$(xrncli keys show beneficiary -a)\",\"oracle\":\"$(xrncli keys show oracle -a)\",\"ecostate\":2500,\"total_tokens\":100000,\"released_tokens\":0,\"payout_start_height\":460000,\"payout_end_height\":1000000,\"is_locked\":0}"
 ```
 
 **Instantiate code:**
