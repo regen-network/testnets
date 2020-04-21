@@ -1,0 +1,47 @@
+{
+    "valOprAddr": "xrn:valoper18n0zs0ylfhmgs88rtshj2cs4wyr0kh864g2s7m",
+    "codeId": "154",
+    "contractAddress": "xrn:14t8ju5fwwjjcxfdmj7vcyk6q4g3xwsj7zdkk6z",
+    "oracleTxs": [
+        "AD681B5E1032B63F81CEB817AB39A4CE2154D2457C4A21FFD8D5C8B867F1A16A",
+	"4527B2D48228BD4053F46F4151291A3AD40A37830C5978E1C040311DEE565B34",
+	"75A77C45EAC0FA3EA937127DB8594BADFCA008AA7AF0CDAC24769A40830F2F73",
+	"1289AB0ED5E1C82437F6AE667A449F2005C50B347EBE63CAD6736EA9484369D2",
+	"88CAFF74C8585DF5E428FCFEF7FED1F9C2B318671C3842569FA8F194FBAB4D1F",
+	"7295149FD98AA03F59E3D4121A6A1FD358D8AB0CA0F5AE23D6F90D451EB0379F",
+    ],
+    "customTxs": [
+        {
+            "txHash": "615AD3CE3212D2CADC01A9546AF15D2F8DB0AFE4B18B50A373CF0DEF437F87A6",
+            "customTxDescription": "Changes the oracle from existing one to a new oracle address",
+            
+            "txHash": "EC8082FA66A322F54DE932D44212443A36D423B88EF8A6F86525127791C19225",
+            "customTxDescription": "Changes the beneficiary of the contract payout",
+            
+            "txHash": "8666F7B8991837CFC2DFFDCF3E54CA0839D9AB9BF24203A474B14995218C9945",
+            "customTxDescription": "Transfers the ownership of the contract",
+            
+            "txHash": "3CF8EF6FDAA8F9289860315240D9FC33D8B29158955C216AAD1F68F004AD18A0",
+            "customTxDescription": "Lock the contract and preventing the state from being updated",
+            
+            "txHash": "7C9263C2CD2AC1DED72E32CEF6B64A5F44B23AD2D07F3DC0BF453CB06EBD39B4",
+            "customTxDescription": "Failed update of ecostate after locking the contract",
+            
+            "txHash": "17B9B371B1D719335AC78888483B2BB29079707AF0D110BB7DBDD13B3CA0E0EB",
+            "customTxDescription": "Unlocking the contract",
+            
+            "txHash": "AC5A800E205A930076BF7318B4DF89BBDECA34C4B6F659C9037419705AC38DC8",
+            "customTxDescription": "Successful state update after unlocking the contract",
+            
+            "txHash": "4C5765D0B43BED7F9C909F9A7C34F3F0F6E84D1339DFBDC2A79EA9E23FCB9491",
+            "customTxDescription": "Unsucessful tx while changing the oracle address from an unauthorized address",
+            
+            "txHash": "3EA4A385BD4C4E690EB67F53F2A454442FB6849A12989015E245A0C7D726363C",
+            "customTxDescription": "Unsucessful tx while changing the beneficiary address from an unauthorized address",
+            
+            "txHash": "DECA828B8266FB5F3C27E84A10AE3E31AA6FAB02E5928784DAAEC8D4E37808E7",
+            "customTxDescription": "Unsucessful tx while changing the ownership from an unauthorized address",
+            
+        }
+    ]
+}
