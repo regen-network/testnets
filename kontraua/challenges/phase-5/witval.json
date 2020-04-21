@@ -1,0 +1,25 @@
+{
+    "valOprAddr": "xrn:valoper18n0zs0ylfhmgs88rtshj2cs4wyr0kh864g2s7m",
+    "codeId": "154",
+    "contractAddress": "xrn:14t8ju5fwwjjcxfdmj7vcyk6q4g3xwsj7zdkk6z",
+    "oracleTxs": [
+        "AD681B5E1032B63F81CEB817AB39A4CE2154D2457C4A21FFD8D5C8B867F1A16A",
+	"4527B2D48228BD4053F46F4151291A3AD40A37830C5978E1C040311DEE565B34",
+	"75A77C45EAC0FA3EA937127DB8594BADFCA008AA7AF0CDAC24769A40830F2F73",
+	"1289AB0ED5E1C82437F6AE667A449F2005C50B347EBE63CAD6736EA9484369D2",
+	"88CAFF74C8585DF5E428FCFEF7FED1F9C2B318671C3842569FA8F194FBAB4D1F",
+	"7295149FD98AA03F59E3D4121A6A1FD358D8AB0CA0F5AE23D6F90D451EB0379F",
+    ],
+    "customTxs": [
+        {
+            "txHash": "615AD3CE3212D2CADC01A9546AF15D2F8DB0AFE4B18B50A373CF0DEF437F87A6",
+            "customTxDescription": "Changes the oracle from existing one to a new oracle address",
+            
+            "txHash": "EC8082FA66A322F54DE932D44212443A36D423B88EF8A6F86525127791C19225",
+            "customTxDescription": "Changes the beneficiary of the contract payout",
+            
+            "txHash": "8666F7B8991837CFC2DFFDCF3E54CA0839D9AB9BF24203A474B14995218C9945",
+            "customTxDescription": "Transfers the ownership of the contract"
+        }
+    ]
+}
