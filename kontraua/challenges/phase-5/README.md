@@ -22,6 +22,35 @@ Implement a payout contract to allow a beneficiary to receive the tokens.
 * If it is more than 1%, pay out 100 coin per 1% increase. So if there's 5.31% increase in the forest cover, beneficiary would get 531 coins.
 * If it is the same or less than 1% (0% < change% < 1%), pay out 2 coins for current forest cover above 50% (eg. 0 at 50%, 30 at 65%, 78 at 89%). Round the tokens to next integer if you are not using any decimals. Like 57.6 at 78.8% would result in a payout of 58 tokens
 
+### Oracle Node Integration
+
+There are two working options for how to integrate an Oracle with your working contract.
+
+#### VitWit Oracle Node
+
+A basic oracle service is deployed at [oracle.vitwit.com](https://oracle.vitwit.com).
+
+Oracle address is: `xrn:1cecal686c75p0lz5qdmp86gs7ss3ymqcay5rrr`
+
+You can register your contract to receive data from oracle by running:
+
+```
+curl -d "contract=xrn:13fu3kds44qxl4na0gqvrxq4ztykzqlgcl5gerl" https://oracle.vitwit.com/register
+```
+
+#### FarmOS Oracle Node
+
+FarmOS has developed a sample UI where validators can create a FarmOS area / region, store an `ecostate` variable for that region, and have all ecostate updates automatically propogate to the Kontraua testnet as transactions sent by the Oracle address.
+
+The oracle address is: `xrn:1lvzazn8h66kmpy2spxattzh6s33emz8nyymy0y`
+
+To setup a FarmOS area and register your contract, log in to the [FarmOS Kontraua Testnet Console](http://farmos-ecostate.rootedsolutions.net/farm/ecostate) with the credentials below, and follow the instructions for "Link Existing Contract".
+
+```
+user: regen
+password: kontraua
+```
+
 ### Incentive Plan
 
 #### Working Payout Contract - 300 Points
