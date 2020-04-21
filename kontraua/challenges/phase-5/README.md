@@ -34,6 +34,11 @@ The oracle address is: `xrn:1lvzazn8h66kmpy2spxattzh6s33emz8nyymy0y`
 
 To setup a FarmOS area and register your contract, log in to the [FarmOS Kontraua Testnet Console](http://farmos-ecostate.rootedsolutions.net/farm/ecostate) with the credentials below, and follow the instructions for "Link Existing Contract".
 
+```
+user: regen
+password: kontraua
+```
+
 #### Vitwit Oracle Node
 
 A basic oracle service is deployed at [oracle.vitwit.com](https://oracle.vitwit.com).
@@ -44,11 +49,6 @@ You can register your contract to receive data from oracle by running:
 
 ```
 curl -d "contract=xrn:13fu3kds44qxl4na0gqvrxq4ztykzqlgcl5gerl" https://oracle.vitwit.com/register
-```
-
-```
-user: regen
-password: kontraua
 ```
 
 ### Incentive Plan
