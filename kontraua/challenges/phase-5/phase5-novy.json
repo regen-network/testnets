@@ -1,0 +1,19 @@
+{
+    "valOprAddr": "xrn:valoper1txlm2m8gy0sce84ap6sxv3w7prgwfc7m5ek2nz",
+    "codeId": "156",
+    "contractAddress": "xrn:17ajuqdc99knzvutadqm94nlk7y596qu9vza460",
+    "oracleTxs": [
+        "1EFA58AC14B91675A8205D897DB82E1DDD725ED70CED9F020B2674F6661A883A",
+        "2BC53B75F6ED0AE8F141D5CD59AB77C2C87D7C565FA2CF084C345A0F8EA3F960"
+    ],
+    "customTxs": [
+        {
+            "txHash": "52275AFECBAD1837649F7D5E07A955D7DF67F9F93B90C184AFBCAF2A3D6C25CD",
+            "customTxDescription": "lock"
+        },
+        {
+            "txHash": "3108F12D483A27AAB0CEAB9B8C5DE8646DE04E91E9D44FC28BA7C6B4DEEFFD06",
+            "customTxDescription": "unlock"
+        }
+    ]
+}
