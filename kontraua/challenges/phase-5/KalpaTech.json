@@ -1,0 +1,35 @@
+{
+  "valOprAddr": "xrn:valoper1j0d5hqgm9q5v85xr9zhv6fd9dre63zwdxamczf",
+  "codeId": "159",
+  "contractAddress": "xrn:1cfkqs693zn3c4v5lf96d2dm8zh7mt3m88yrn0a",
+  "oracleTxs": [
+    "84AEE3DFC5075A120DB1BE9A595A1FDBC26072501F2BDF7ED7F877873468EA3C",
+    "A68FD8C51E75F6757033D0C7AC81CEC6325A8C59E1933FE76EF85DCDE1881896",
+    "83B257E62BA38868596CF2B9EE456378A0F2C246CB21369CEF185B354340A375",
+    "C7E68500C18647CA708D249E3E0B7542C696C20B81E7917E725938AF1E03D8A5",
+  ],
+  "customTxs": [
+    {
+      "txHash": "019E8E822DE3DC5392057AF68045771ADE38419C4C20A60A30F5D4D5E37165DF",
+      "customTxDescription": "Change beneficiary",
+
+      "txHash": "436BA0BC0D96BFF01E46C89AA3CECA46965F55D7DD64B9060B8A49DC47360F10",
+      "customTxDescription": "Change owner",
+
+      "txHash": "D3EAB14021F6864E6235F74066EEB8AB362790379FB42B7DF4952EC5D95A3997",
+      "customTxDescription": "Lock",
+
+      "txHash": "6E15454F87712DCDEEBA2E8EDF727D990F8DCC98A6ABA3724A40837D43CF7F9B",
+      "customTxDescription": "Ecostate failed => contract locked",
+
+      "txHash": "8CF42E635519C8E26EEBFB8416192203D03313B31FE098398F6B251770909BD5",
+      "customTxDescription": "Unlocking",
+
+      "txHash": "AC5A800E205A930076BF7318B4DF89BBDECA34C4B6F659C9037419705AC38DC8",
+      "customTxDescription": "Successful state update after unlocking the contract",
+
+      "txHash": "C34632F92515083490B5FACCEBCD7FC3A1BD4A246188E099700EED2F9040D69A",
+      "customTxDescription": "Failed lock from an unauthorized address"
+    }
+  ]
+}
