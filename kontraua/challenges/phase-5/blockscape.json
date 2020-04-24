@@ -1,0 +1,28 @@
+{
+    "valOprAddr": "xrn:valoper10l9t2lvxhxut2s60lwct8f6n2q5x88kh04442w",
+    "codeId": "160",
+    "contractAddress": "xrn:1uw9u7thn55qvtc0lqtv4f9yumj8addd9u96a8v",
+    "oracleTxs": [
+    	"065AEEA419570C291BB0290B5A8240A71B684F8E647C72D18E91730C0B91307F",
+    	"45F7CB8B746C0C8DE539A3D635C13075335EB6D680FEB5717B093E70E40BAA8B",
+        "A5B82CBFC1C5F23B9275851166E82F1F7B82EF9F6DEA3F1A18F7608DE3A17CB6"
+    ],
+    "customTxs": [
+        {
+            "txHash": "C27E8FBC27C949EC78D396F6D65F01F867693D5FCB7E75D4B00B84AD8E6DEF58",
+            "customTxDescription": "locking the contract"
+        },
+        {
+            "txHash": "639C89A36AA5B7BD3DE1E1CDE4A04B09CB157EAF9067F35854C0680E87D16001",
+            "customTxDescription": "unlocking the contract"
+        },
+        {
+        	"txHash": "DF43C3BE13214313A1FD30278A7086382FCA1FD4E4E64FD2C6FAD94A6AAD76E0",
+        	"customTxDescription": "transferring ownership"
+        },
+        {
+        	"txHash": "8DA0F5C040E27C6D3A56664ACAF09ADDB172554B70ECFF41F5F905F94220CD51",
+        	"customTxDescription": "change beneficiary. has to be done by former beneficiary"
+        }
+    ]
+}
