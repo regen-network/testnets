@@ -263,9 +263,9 @@ func (h handler) CalculateUptime(startBlock int64, endBlock int64) {
 	// nodeRewards = viper.Get("node_rewards").(int64)
 
 	// Read El Choco upgrade configs
-	himalayaStartBlock = viper.Get("el_choco_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
-	himalayaEndBlock = viper.Get("el_choco_endblock").(int64) + 1
-	himalayaPointsPerBlock = viper.Get("el_choco_reward_points_per_block").(int64)
+	himalayaStartBlock = viper.Get("himalaya_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
+	himalayaEndBlock = viper.Get("himalaya_endblock").(int64) + 1
+	himalayaPointsPerBlock = viper.Get("himalaya_reward_points_per_block").(int64)
 
 	// Read twilight upgrade configs
 	twilightStartBlock = viper.Get("twilight_startblock").(int64) + 1 //Need to consider votes from next block after upgrade
