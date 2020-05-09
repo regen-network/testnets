@@ -1,0 +1,30 @@
+# Database config
+mongo_uri = "localhost:27017"
+database = ""
+username = ""
+password = ""
+source = "admin"
+failFast = true
+
+# Himalaya upgrade config
+himalaya_startblock = 187334
+himalaya_endblock = 187384
+himalaya_reward_points_per_block = 1 #50 rewards are distributed equally for each block
+
+# Twilight Drama upgrade config
+twilight_startblock = 288888
+twilight_endblock = 288938
+twilight_reward_points_per_block = 1 #50 rewards are distributed equally for each block
+
+
+# Phase-6 
+phase6_startblock = 583350
+phase6_endblock = 587525
+phase6_uptime_max_points = 100
+phase6_zero_miss_bonus = 100;
+
+#Uptime Rewards
+max_uptime_rewards = 100
+
+#Gentx validators
+gentx_validators = []
