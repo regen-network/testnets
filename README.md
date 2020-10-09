@@ -16,7 +16,7 @@ Here are the details for upcoming testnets. Please check our blog post [Regen Ne
 
 **Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
 
-*Estimated Dates: April 4th week*
+*Estimated Dates: Jan 5th —Feb 15th 2021
 
 *Total points to be allocated: 1800*
 
