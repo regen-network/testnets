@@ -22,8 +22,8 @@ Persistent Peer: `4763e95d731a3402c1f06fbac1535fc38a2e439f@18.220.101.192:26656`
 Here are the instructions to run a validator for `regen-devnet-1`:
 
 ```sh
-git clone https://github.com/regen-network/regen-ledger
-cd regen-ledger
+git clone https://github.com/regen-network/testnets
+cd testnets
 
 chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh
