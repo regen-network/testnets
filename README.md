@@ -23,7 +23,7 @@ Here are the instructions to run a validator for `regen-devnet-1`:
 
 ```sh
 git clone https://github.com/regen-network/testnets
-cd regen-ledger
+cd testnets
 
 chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh
