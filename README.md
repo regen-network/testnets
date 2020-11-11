@@ -12,10 +12,10 @@ We are currently supporting the [BigBang-1 Stargate testnet](https://github.com/
 
 `regen-devnet-1` is active now and here are some important details:
 
-Explorer: https://devnet.regen.aneka.io
-Faucet: https://faucet.devnet.regen.vitwit.com
-RPC: http://18.220.101.192:26657
-LCD: http://18.220.101.192:1317
+- Explorer: https://devnet.regen.aneka.io
+- Faucet: https://faucet.devnet.regen.vitwit.com
+- RPC: http://18.220.101.192:26657
+- LCD: http://18.220.101.192:1317
 
 Persistent Peer: `4763e95d731a3402c1f06fbac1535fc38a2e439f@18.220.101.192:26656`
 
