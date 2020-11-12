@@ -12,7 +12,8 @@ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
 
-source ~/.bashrc
+#source ~/.bashrc
+. ~/.bashrc
 
 go version
 
@@ -24,7 +25,7 @@ YOUR_NAME=myname
 DAEMON=regen
 DENOM=utree
 CHAIN_ID=regen-devnet-1
-PERSISTENT_PEERS="4763e95d731a3402c1f06fbac1535fc38a2e439f@18.220.101.192:26656"
+PERSISTENT_PEERS="a621e6bf1f5981b3e72e059f86cbfc9dc5577fcb@18.220.101.192:26656"
 
 echo "install regen-ledger:master"
 git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
