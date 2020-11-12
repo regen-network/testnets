@@ -17,8 +17,10 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
 
 go version
 
-
 -- Install Regen-ledger and setup the node -----
+
+rm -rf ~/.regen
+rm -rf $GOPATH/src/github.com/regen-network/regen-ledger
 
 YOUR_KEY_NAME=mykey
 YOUR_NAME=myname
