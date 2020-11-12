@@ -17,7 +17,7 @@ We are currently supporting the [BigBang-1 Stargate testnet](https://github.com/
 - RPC: http://18.220.101.192:26657
 - LCD: http://18.220.101.192:1317
 
-Persistent Peer: `4763e95d731a3402c1f06fbac1535fc38a2e439f@18.220.101.192:26656`
+Persistent Peer: `a621e6bf1f5981b3e72e059f86cbfc9dc5577fcb@18.220.101.192:26656`
 
 Here are the instructions to run a validator for `regen-devnet-1`:
 
