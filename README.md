@@ -21,6 +21,11 @@ Persistent Peer: `f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656`
 
 Here are the instructions to run a validator for `regen-devnet-2`:
 
+1. Stop your existing regen validator (if any)
+```shell script
+sudo service regen stop
+```
+2. Run the latest setup script
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
