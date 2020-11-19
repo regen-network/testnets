@@ -37,7 +37,7 @@ YOUR_NAME=$2
 DAEMON=regen
 DENOM=utree
 CHAIN_ID=regen-devnet-2
-PERSISTENT_PEERS="a621e6bf1f5981b3e72e059f86cbfc9dc5577fcb@18.220.101.192:26656"
+PERSISTENT_PEERS="f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656"
 
 echo "install regen-ledger:master"
 git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
