@@ -8,16 +8,16 @@ We are currently supporting the [BigBang-1 Stargate testnet](https://github.com/
 
 ## Regen Devnets
 
-### regen-devnet-1
+### regen-devnet-2
 
-`regen-devnet-1` is active now and here are some important details:
+`regen-devnet-2` is active now and here are some important details:
 
 - Explorer: https://devnet.regen.aneka.io
 - Faucet: https://faucet.devnet.regen.vitwit.com
 - RPC: http://18.220.101.192:26657
 - LCD: http://18.220.101.192:1317
 
-Persistent Peer: `a621e6bf1f5981b3e72e059f86cbfc9dc5577fcb@18.220.101.192:26656`
+Persistent Peer: `f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656`
 
 Here are the instructions to run a validator for `regen-devnet-1`:
 
@@ -26,7 +26,7 @@ git clone https://github.com/regen-network/testnets
 cd testnets
 
 chmod +x scripts/devnet-val-setup.sh
-./scripts/devnet-val-setup.sh
+./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
 
 
