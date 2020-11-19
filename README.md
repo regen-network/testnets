@@ -24,6 +24,7 @@ Here are the instructions to run a validator for `regen-devnet-1`:
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
+git pull
 
 chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
