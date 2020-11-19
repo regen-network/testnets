@@ -19,7 +19,7 @@ We are currently supporting the [BigBang-1 Stargate testnet](https://github.com/
 
 Persistent Peer: `f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656`
 
-Here are the instructions to run a validator for `regen-devnet-1`:
+Here are the instructions to run a validator for `regen-devnet-2`:
 
 ```sh
 git clone https://github.com/regen-network/testnets
