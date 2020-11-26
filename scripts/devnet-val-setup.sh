@@ -30,7 +30,6 @@ fi
 echo "-- Clear old regen data and install Regen-ledger and setup the node --"
 
 rm -rf ~/.regen
-rm -rf $GOPATH/src/github.com/regen-network/regen-ledger
 
 YOUR_KEY_NAME=$1
 YOUR_NAME=$2
@@ -39,9 +38,10 @@ DENOM=utree
 CHAIN_ID=regen-devnet-2
 PERSISTENT_PEERS="f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656"
 
-echo "install regen-ledger:master"
-git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
+echo "install regen-ledger"
+go get github.com/regen-network/regen-ledger
 cd $GOPATH/src/github.com/regen-network/regen-ledger
+git fetch
 git checkout v0.6.0-alpha2
 make install
 
@@ -59,25 +59,41 @@ sed -i '/persistent_peers =/c\persistent_peers = "'"$PERSISTENT_PEERS"'"' ~/.$DA
 
 DAEMON_PATH=$(which $DAEMON)
 
+echo "Installing cosmovisor - an upgrade manager..."
+
+go get github.com/cosmos/cosmos-sdk
+cd $GOPATH/src/github.com/cosmos/cosmos-sdk
+git checkout v0.40.0-rc3
+cd cosmovisor
+make cosmovisor
+cp cosmovisor $GOBIN/cosmovisor
+
+echo "Setting up cosmovisor directories"
+mkdir -p ~/.regen/cosmovisor
+mkdir -p ~/.regen/cosmovisor/genesis/bin
+cp $GOBIN/regen ~/.regen/cosmovisor/genesis/bin
 
 echo "---------Creating system file---------"
 
 echo "[Unit]
-Description=${DAEMON} daemon
+Description=Cosmovisor daemon
 After=network-online.target
 [Service]
+Environment="DAEMON_NAME=regen"
+Environment="DAEMON_HOME=${HOME}/.${DAEMON}"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=on"
 User=${USER}
-ExecStart=${DAEMON_PATH} start
+ExecStart=${GOBIN}/cosmovisor start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
-" >$DAEMON.service
+" >cosmovisor.service
 
-sudo mv $DAEMON.service /lib/systemd/system/$DAEMON.service
+sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
 sudo -S systemctl daemon-reload
-sudo -S systemctl start $DAEMON
+sudo -S systemctl start cosmovisor
 
 echo
 echo "Your account address is :"
