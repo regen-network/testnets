@@ -48,7 +48,7 @@ echo "Creating key $YOUR_KEY_NAME"
 $DAEMON keys add $YOUR_KEY_NAME
 
 echo "Generating your validator keys"
-$DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
+$DAEMON init --chain-id $CHAIN_ID $YOUR_KEY_NAME
 
 echo "Here is your validator operator key"
 $DAEMON keys show $YOUR_KEY_NAME --bech val
