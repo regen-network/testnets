@@ -110,7 +110,6 @@ Deployed at `2018-12-19T20:40:06.463846Z`.
 
 The initial Regen Ledger testnet `xrn-1` was deployed on 2018-12-19.
 
-```
 
 ## KYC Utils
 
