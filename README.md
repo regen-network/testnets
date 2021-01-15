@@ -79,6 +79,17 @@ The incentive program for the testnet was ended on 12th Feb 2020 at 12:00UTC
 * Postmortem report of the testnet: https://medium.com/regen-network/postmortem-of-algradigon-1-eb2dc7652850
 * Testnet results: https://medium.com/@gregorylandua/algradigon-1-testnet-results-d32d8cfca615
 
+
+### Generate Validator Keys
+```sh
+git clone https://github.com/regen-network/testnets
+cd testnets
+git pull
+
+chmod +x scripts/gen_val_keys.sh
+./scripts/gen_val_keys.sh <your_key_name>
+```
+
 ### [`congo-1`](https://github.com/regen-network/testnets/tree/modifications/archive/congo-1)
 
 `congo-1` was the first community-driven testnet between 7th November 2019 and 17th January 2020, at which point it was abandoned in order to prepare for the next incentivised testnet.
