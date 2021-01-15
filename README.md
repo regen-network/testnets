@@ -114,6 +114,11 @@ The initial Regen Ledger testnet `xrn-1` was deployed on 2018-12-19.
 ## KYC Utils
 
 ### Generate Validator Keys
+Linking a validator address to your identity is how we ensure the right validator is rewarded for the hard work of participating in our incentivized testnets.  Please back up your keys and maintain the same keys thorughout testnet operations if possible.  If you have a key management issue, please use the same Moniker in generation of new keys and notify the team.
+
+The same validator keys can be used for different testnets, and even for main net (as long as you practice good key management). 
+
+Here are instructions for generating keys for regen ledger.
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
