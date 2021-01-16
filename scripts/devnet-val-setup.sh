@@ -29,20 +29,21 @@ fi
 
 echo "-- Clear old regen data and install Regen-ledger and setup the node --"
 
-rm -rf ~/.regen
+rm -rf ~/.regen/config
+rm -rf ~/.regen/data
 
 YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
 DENOM=utree
-CHAIN_ID=regen-devnet-2
-PERSISTENT_PEERS="f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656"
+CHAIN_ID=regen-devnet-3
+PERSISTENT_PEERS="55cf919bafebb627f3f7717de24c35c86df4f260@18.220.101.192:26656"
 
 echo "install regen-ledger"
 go get github.com/regen-network/regen-ledger
 cd $GOPATH/src/github.com/regen-network/regen-ledger
 git fetch
-git checkout v0.6.0-alpha2
+git checkout v0.6.0-alpha4
 make install
 
 echo "Creating keys"
@@ -51,7 +52,7 @@ $DAEMON keys add $YOUR_KEY_NAME
 echo "Setting up your validator"
 $DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
 curl http://18.220.101.192:26657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
-#sed -i "s/\"stake\"/\"$DENOM\"/g" ~/.$DAEMON/config/genesis.json
+sed -i "s/\"stake\"/\"$DENOM\"/g" ~/.$DAEMON/config/genesis.json
 
 echo "----------Setting config for seed node---------"
 sed -i 's#tcp://127.0.0.1:26657#tcp://0.0.0.0:26657#g' ~/.$DAEMON/config/config.toml
@@ -61,9 +62,10 @@ DAEMON_PATH=$(which $DAEMON)
 
 echo "Installing cosmovisor - an upgrade manager..."
 
-go get github.com/cosmos/cosmos-sdk
+rm -rf $GOPATH/src/github.com/cosmos/cosmos-sdk
+git clone https://github.com/cosmos/cosmos-sdk $GOPATH/src/github.com/cosmos/cosmos-sdk
 cd $GOPATH/src/github.com/cosmos/cosmos-sdk
-git checkout v0.40.0-rc3
+git checkout v0.40.0
 cd cosmovisor
 make cosmovisor
 cp cosmovisor $GOBIN/cosmovisor
