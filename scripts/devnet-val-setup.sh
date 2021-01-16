@@ -35,14 +35,14 @@ YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
 DENOM=utree
-CHAIN_ID=regen-devnet-2
+CHAIN_ID=regen-devnet-3
 PERSISTENT_PEERS="f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656"
 
 echo "install regen-ledger"
 go get github.com/regen-network/regen-ledger
 cd $GOPATH/src/github.com/regen-network/regen-ledger
 git fetch
-git checkout v0.6.0-alpha2
+git checkout v0.6.0-alpha4
 make install
 
 echo "Creating keys"
@@ -51,7 +51,7 @@ $DAEMON keys add $YOUR_KEY_NAME
 echo "Setting up your validator"
 $DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
 curl http://18.220.101.192:26657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
-#sed -i "s/\"stake\"/\"$DENOM\"/g" ~/.$DAEMON/config/genesis.json
+sed -i "s/\"stake\"/\"$DENOM\"/g" ~/.$DAEMON/config/genesis.json
 
 echo "----------Setting config for seed node---------"
 sed -i 's#tcp://127.0.0.1:26657#tcp://0.0.0.0:26657#g' ~/.$DAEMON/config/config.toml
