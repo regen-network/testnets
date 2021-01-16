@@ -62,9 +62,10 @@ DAEMON_PATH=$(which $DAEMON)
 
 echo "Installing cosmovisor - an upgrade manager..."
 
-go get github.com/cosmos/cosmos-sdk
+rm -rf $GOPATH/src/github.com/cosmos/cosmos-sdk
+git clone https://github.com/cosmos/cosmos-sdk $GOPATH/src/github.com/cosmos/cosmos-sdk
 cd $GOPATH/src/github.com/cosmos/cosmos-sdk
-git checkout v0.40.0-rc3
+git checkout v0.40.0
 cd cosmovisor
 make cosmovisor
 cp cosmovisor $GOBIN/cosmovisor
