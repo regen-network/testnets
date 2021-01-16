@@ -29,14 +29,15 @@ fi
 
 echo "-- Clear old regen data and install Regen-ledger and setup the node --"
 
-rm -rf ~/.regen
+rm -rf ~/.regen/config
+rm -rf ~/.regen/data
 
 YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
 DENOM=utree
 CHAIN_ID=regen-devnet-3
-PERSISTENT_PEERS="f864b879f59141d0ad3828ee17ea0644bdd10e9b@18.220.101.192:26656"
+PERSISTENT_PEERS="55cf919bafebb627f3f7717de24c35c86df4f260@18.220.101.192:26656"
 
 echo "install regen-ledger"
 go get github.com/regen-network/regen-ledger
