@@ -118,7 +118,8 @@ Linking a validator address to your identity is how we ensure the right validato
 
 The same validator keys can be used for different testnets, and even for main net (as long as you practice good key management). 
 
-Here are instructions for generating keys for regen ledger.
+### Handy Script
+Here are instructions for generating keys for regen ledger. This is well-tested on Ubuntu 18.04, if you are using different arch and running into issues, please use manual key generation instructions below
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
@@ -127,3 +128,37 @@ git pull
 chmod +x scripts/gen_val_keys.sh
 ./scripts/gen_val_keys.sh <your_key_name>
 ```
+### Generate regen keys manually
+Step-1: Install Go 1.15.x (Optional)
+```sh
+  $ sudo apt update
+  $ sudo apt install build-essential jq -y
+
+  $ wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+  $ tar -xvf go1.15.2.linux-amd64.tar.gz
+  $ sudo mv go /usr/local
+
+  $ echo "" >> ~/.bashrc
+  $ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+  $ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+  $ echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
+  $ echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
+
+  $ source ~/.bashrc
+  $ go version # should print 1.15.2
+```
+
+Step-2: Install Regen (from source)
+```sh
+$ git clone https://github.com/regen-network/regen-ledger
+$ cd regen-ledger
+$ git checkout v0.6.0-alpha2
+$ make install
+```
+
+Step-3: Create your key (keyname can be anything):
+
+```sh
+$ regen keys add <your_key_name>
+```
+Use the address generated from above command to fill your KYC
