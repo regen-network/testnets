@@ -15,14 +15,14 @@ else
   tar -xvf go1.15.2.linux-amd64.tar.gz
   sudo mv go /usr/local
 
-  echo "" >> ~/.bashrc
-  echo 'export GOPATH=$HOME/go' >> ~/.bashrc
-  echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
-  echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
-  echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
+  echo "" >> ~/.profile
+  echo 'export GOPATH=$HOME/go' >> ~/.profile
+  echo 'export GOROOT=/usr/local/go' >> ~/.profile
+  echo 'export GOBIN=$GOPATH/bin' >> ~/.profile
+  echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.profile
 
-  #source ~/.bashrc
-  . ~/.bashrc
+  #source ~/.profile
+  . ~/.profile
 
   go version
 fi
