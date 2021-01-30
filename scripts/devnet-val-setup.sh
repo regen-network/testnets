@@ -49,6 +49,12 @@ make install
 echo "Creating keys"
 $DAEMON keys add $YOUR_KEY_NAME
 
+echo ""
+echo "After you have copied the mnemonic phrase in a safe place,"
+echo "press the space bar to continue."
+read -s -d ' '
+echo ""
+
 echo "Setting up your validator"
 $DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
 curl http://18.220.101.192:26657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
