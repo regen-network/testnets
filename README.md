@@ -123,9 +123,7 @@ Here are instructions for generating keys for regen ledger. This is well-tested 
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
-git pull
 
-chmod +x scripts/gen_val_keys.sh
 ./scripts/gen_val_keys.sh <your_key_name>
 ```
 ### Generate regen keys manually
