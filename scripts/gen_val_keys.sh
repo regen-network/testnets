@@ -21,8 +21,8 @@ else
   echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
   echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
 
-  #source ~/.bashrc
-  . ~/.bashrc
+  source ~/.bashrc
+  #. ~/.bashrc
 
   go version
 fi
