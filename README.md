@@ -25,7 +25,7 @@ Here are the instructions to run a validator for `regen-devnet-3`:
 ```shell script
 sudo service regen stop
 ```
-2. Run the latest setup script
+2. Run the latest setup script (be sure to save your addresses and keys from the output)
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
@@ -34,8 +34,18 @@ git pull
 chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
-
-
+3. Start your node to get syncing (it takes about 1 hour for each 100k blocks and devnet3 is already over 270k blocks)
+```sh
+regen start
+```
+4. Go get some utree from the faucet
+5. Finish catching up
+```sh
+regen status |& jq '.SyncInfo.latest_block_height' 
+VS.
+curl http://18.220.101.192:26657/consensus_state | jq  '.result.round_state."height/round/step"' 
+```
+6. Personalize and run the validator creation transaction from the end of step 2.
 
 ## Upcoming Testnets
 
