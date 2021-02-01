@@ -45,7 +45,9 @@ regen status |& jq '.SyncInfo.latest_block_height'
 VS.
 curl http://18.220.101.192:26657/consensus_state | jq  '.result.round_state."height/round/step"' 
 ```
-6. Personalize and run the validator creation transaction from the end of step 2.
+6. Personalize and run the validator creation transaction from the end of step 2  
+7. Check the validators list for your moniker name  
+https://devnet.regen.aneka.io/validators
 
 ## Upcoming Testnets
 
