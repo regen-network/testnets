@@ -25,7 +25,7 @@ Here are the instructions to run a validator for `regen-devnet-3`:
 ```shell script
 sudo service regen stop
 ```
-2. Run the latest setup script
+2. Run the latest setup script (be sure to save your addresses and keys from the output)
 ```sh
 git clone https://github.com/regen-network/testnets
 cd testnets
@@ -34,8 +34,22 @@ git pull
 chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
-
-
+3. Start your node to get syncing (it takes about 1 hour for each 100k blocks and devnet3 is already over 270k blocks)
+```sh
+regen start
+```
+4. Go get some utree from the faucet
+5. Finish catching up, check via:
+```sh
+UPSTREAM_BLOCKS=$(curl -s http://18.220.101.192:26657/consensus_state | jq -r '.result.round_state."height/round/step"' | cut -d'/' -f1); LOCAL_BLOCKS=$(regen status |& jq -r '.SyncInfo.latest_block_height'); echo "$UPSTREAM_BLOCKS vs $LOCAL_BLOCKS behind by: $(($UPSTREAM_BLOCKS-$LOCAL_BLOCKS))"
+```
+6. Personalize and run the validator creation transaction from the end of step 2  
+7. Check the validators list for your moniker name  
+https://devnet.regen.aneka.io/validators  
+7b. If you got jailed you can run this after the sync catches up:
+```sh
+regen tx slashing unjail --from begreen   --chain-id regen-devnet-3 --node http://18.220.101.192:26657
+```
 
 ## Upcoming Testnets
 
