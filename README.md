@@ -39,11 +39,9 @@ chmod +x scripts/devnet-val-setup.sh
 regen start
 ```
 4. Go get some utree from the faucet
-5. Finish catching up
+5. Finish catching up, check via:
 ```sh
-regen status |& jq '.SyncInfo.latest_block_height' 
-VS.
-curl http://18.220.101.192:26657/consensus_state | jq  '.result.round_state."height/round/step"' 
+UPSTREAM_BLOCKS=$(curl -s http://18.220.101.192:26657/consensus_state | jq -r '.result.round_state."height/round/step"' | cut -d'/' -f1); LOCAL_BLOCKS=$(regen status |& jq -r '.SyncInfo.latest_block_height'); echo "$UPSTREAM_BLOCKS vs $LOCAL_BLOCKS behind by: $(($UPSTREAM_BLOCKS-$LOCAL_BLOCKS))"
 ```
 6. Personalize and run the validator creation transaction from the end of step 2  
 7. Check the validators list for your moniker name  
