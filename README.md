@@ -39,7 +39,7 @@ chmod +x scripts/devnet-val-setup.sh
 
 ## Upcoming Testnets
 
-Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
+Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020-21 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
 
 ### Regen Network Testnet 4000: Aplikiĝo Testnet
 
