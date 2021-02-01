@@ -47,7 +47,11 @@ curl http://18.220.101.192:26657/consensus_state | jq  '.result.round_state."hei
 ```
 6. Personalize and run the validator creation transaction from the end of step 2  
 7. Check the validators list for your moniker name  
-https://devnet.regen.aneka.io/validators
+https://devnet.regen.aneka.io/validators  
+7b. If you got jailed you can run this after the sync catches up:
+```sh
+regen tx slashing unjail --from begreen   --chain-id regen-devnet-3 --node http://18.220.101.192:26657
+```
 
 ## Upcoming Testnets
 
