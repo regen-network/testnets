@@ -12,9 +12,9 @@ Seeds: TBA
 
 ### Minimum Hardware Requirements
 
- - 4GB RAM
- - 2vCPUs
- - 80GB Disk space
+ - 8GB RAM
+ - 4vCPUs
+ - 200GB Disk space
 
 ## How to become a validator
 
@@ -147,36 +147,29 @@ persistent_peers = "TBA"
 
 ## Start Your Node
 
-### **Method 1** - With `systemd`
+### **Option 1** - With `systemd`
 
 #### Make `regen` a System Service
 
 ```
-$ sudo nano /lib/systemd/system/regen.service
-```
-Paste in the following:
-```
-[Unit]
+echo "[Unit]
 Description=Regen Node
 After=network-online.target
-
 [Service]
-User=<your_user>
-ExecStart=/home/<your_user>/go_workspace/bin/regen start 
+User=${USER}
+ExecStart=${GOBIN}/regen start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
-
 [Install]
 WantedBy=multi-user.target
+" >regen.service
 ```
 
 
-**This tutorial assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
-
 ```
-$ sudo systemctl enable regen
-$ sudo systemctl start regen
+$ sudo systemctl enable regen.service
+$ sudo systemctl start regen.service
 ```
 Check node status
 ```
@@ -187,7 +180,7 @@ Check logs
 $ sudo journalctl -u regen -f
 ```
 
-### **Method 2** - Without `systemd`
+### **Option 2** - Without `systemd`
 ```
 $ regen start 
 ```
