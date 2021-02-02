@@ -4,7 +4,23 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-We are currently supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
+### Regen Network Testnet 4000: Aplikiĝo Testnet
+
+**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+
+*Estimated Dates: Feb 8th — March 15th 2021
+
+*Total points to be allocated: 1800*
+
+Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
+
+Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-pre-launch-incentivized-testnet-2e353dffb4b6
+
+Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
+
+### Bigbang Stargate testnet
+We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
+
 
 ## Regen Devnets
 
@@ -35,19 +51,6 @@ chmod +x scripts/devnet-val-setup.sh
 ./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
 
-
-
-## Upcoming Testnets
-
-Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020-21 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
-
-### Regen Network Testnet 4000: Aplikiĝo Testnet
-
-**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
-
-*Estimated Dates: Feb 8th — March 15th 2021
-
-*Total points to be allocated: 1800*
 
 ## Historic Testnets (not in use)
 
