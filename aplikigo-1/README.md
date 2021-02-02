@@ -1,5 +1,6 @@
 # Regen Network Testnet: Aplikigo-1 Testnet
 
+## Quick Links
 Genesis: [genesis.json](https://raw.githubusercontent.com/regen-network/testnets/master/aplikigo-1/genesis.json)
 
 Git tag: [v0.6.0](https://github.com/regen-network/regen-ledger/releases/tag/v0.6.0)
@@ -10,26 +11,34 @@ Faucet: [regen.vitwit.com/faucet](https://regen.vitwit.com/faucet)
 
 Seeds: TBA
 
-### Minimum Hardware Requirements
-
+## Hardware Requirements
+Here are the minimal hardware configs required for running a validator/sentry node
  - 8GB RAM
  - 4vCPUs
  - 200GB Disk space
 
-## How to become a validator
+## Software Requirements
 
-Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
-
-* [Run a Validator](https://cosmos.network/docs/cosmos-hub/validators/validator-setup.html)
-* [Validators Overview](https://cosmos.network/docs/cosmos-hub/validators/overview.html)
-* [Validator Security](https://cosmos.network/docs/cosmos-hub/validators/security.html)
-* [Validator FAQ](https://cosmos.network/docs/cosmos-hub/validators/validator-faq.html)
-
-### Prerequisites
-
+### Install deps
 ```
 sudo apt-get install build-essential jq
 ```
+
+### Install Regen
+You can install Regen by downloading the binary (simple) or compiling from source.
+
+#### Option 1: Download binary
+
+1. Download the binary for your platform: [releases](https://github.com/regen-network/regen-ledger/releases/tag/v0.6.0).
+2. Copy it to a location in your PATH, i.e: `/usr/local/bin` or `$HOME/bin`.
+
+i.e:
+```sh
+$ wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0/regen_0.6.0_linux_arm64.tar.gz
+$ sudo tar -C /usr/local/bin -zxvf regen_0.6.0_linux_arm64.tar.gz
+```
+
+#### Option-2: Build from source
 
 ***Go 1.15+ is required***
 
@@ -41,8 +50,7 @@ $ ./go_install.sh -v 1.15.5
 $ go version # this should output `go version go1.15.5 ...`
 ```
 
-### Install Regen
-```
+```sh
 $ mkdir -p $GOPATH/src/github.com/regen
 $ cd $GOPATH/src/github.com/regen
 $ git clone https://github.com/regen-network/regen-ledger.git && cd regen-ledger
@@ -51,13 +59,16 @@ $ make install
 ```
 
 To verify if the installation was successful, execute the following command:
-```
+```sh
 $ regen version --long
 ```
+
 It will display the version of regen currently installed:
-```
+```sh
 TBA
 ```
+
+## How to become a validator
 
 ### Setting Up a Validator Node
 ```
@@ -144,6 +155,17 @@ seeds = "TBA"
 persistent_peers = "TBA"
 ```
 
+#### Set validator gas fees
+
+You can set the minimum gas prices for transactions to be accepted into your node's mempool. This sets a lower bound on gas prices, preventing spam. Stakebird can accept gas in *any* currency. To accept both ATOM and EGG for example, set `minimum-gas-prices` in `app.toml`.
+
+```sh
+$ nano $HOME/.regen/config/app.toml
+```
+
+```sh
+minimum-gas-prices = "0.025utree"
+```
 
 ## Start Your Node
 
@@ -166,7 +188,6 @@ WantedBy=multi-user.target
 " >regen.service
 ```
 
-
 ```
 $ sudo systemctl enable regen.service
 $ sudo systemctl start regen.service
@@ -180,7 +201,7 @@ Check logs
 $ sudo journalctl -u regen -f
 ```
 
-### **Option 2** - Without `systemd`
+### **Option 2** - Without `systemd` (using screen, etc)
 ```
 $ regen start 
 ```
@@ -189,4 +210,11 @@ Check node status
 $ regen status
 ```
 
+## More about validator
 
+Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
+
+* [Run a Validator](https://hub.cosmos.network/main/validators/validator-setup.html)
+* [Validators Overview](https://hub.cosmos.network/main/validators/overview.html)
+* [Validator Security](https://hub.cosmos.network/main/validators/security.html)
+* [Validator FAQ](https://hub.cosmos.network/main/validators/validator-faq.html)
