@@ -1,0 +1,10 @@
+name: Gentx
+on: [pull_request]
+jobs:
+  verify-gentx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: validate-gentx
+        run: |
+          bash -x ./scripts/verify_gentx.sh
