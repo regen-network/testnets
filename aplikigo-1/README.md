@@ -35,7 +35,7 @@ sudo apt-get install build-essential jq
 
 You can use following commands to install go-1.15.5
 ```sh
-$ wget https://raw.githubusercontent.com/jim380/node_tooling/master/Cosmos/CLI/go_install.sh
+$ wget https://raw.githubusercontent.com/jim380/node_tooling/master/cosmos/scripts/go_install.sh
 $ chmod +x go_install.sh
 $ ./go_install.sh -v 1.15.5
 $ go version # this should output `go version go1.15.5 ...`
