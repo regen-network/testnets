@@ -54,7 +54,16 @@ $ regen version --long
 
 It will display the version of regen currently installed:
 ```sh
-TBA
+name: regen
+server_name: regen
+version: v0.6.0-alpha6
+commit: ab03b73851befafbbb57e69acd72ea8014ca36d5
+build_tags: netgo,ledger
+go: go version go1.15.2 linux/amd64
+build_deps:
+- github.com/99designs/keyring@v1.1.6
+- github.com/ChainSafe/go-schnorrkel@v0.0.0-20200405005733-88cbf1b4c40d
+...
 ```
 
 #### Option 2: Download binary
