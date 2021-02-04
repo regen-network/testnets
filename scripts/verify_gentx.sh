@@ -51,6 +51,8 @@ else
 
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-01-01T00:00:00Z\",' $REGEN_HOME/config/genesis.json
 
+    ll
+
     GENACC=$(cat $GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
 
     echo $GENACC
