@@ -189,6 +189,8 @@ WantedBy=multi-user.target
 ```
 
 ```
+$ sudo mv regen.service /lib/systemd/system/
+$ sudo systemctl daemon-reload
 $ sudo systemctl enable regen.service
 $ sudo systemctl start regen.service
 ```
