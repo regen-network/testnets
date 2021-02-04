@@ -86,7 +86,7 @@ If you are looking to join the testnet after the genesis, please check [Start yo
 #### Generate Genesis Transaction 
 ```
 $ curl -s https://raw.githubusercontent.com/regen-network/testnets/master/aplikigo-1/genesis.json > ~/.regen/config/genesis.json
-$ regen add-genesis-account <your_wallet_name> 10000000utree   # other values will be removed.
+$ regen add-genesis-account <your_wallet_name> 100000000000utree   # other values will be removed.
 $ regen gentx <your_wallet_name> 90000000000utree --chain-id aplikigo-1
 ```
 If all goes well, you will see the following message:
