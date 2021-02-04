@@ -28,7 +28,7 @@ else
     ./scripts/check-gentx-amount.sh "./$CHAIN_ID/gentxs/$GENTX_FILE" || exit 1
 
     echo "...........Init Regen.............."
-    curl -L https://github.com/regen-network/regen-ledger/releases/download/v0.6.0/regen_0.6.0_linux_amd64.zip -o regen_linux.zip && unzip regen_linux.zip
+    curl -L https://github.com/regen-network/regen-ledger/releases/download/v0.6.0-alpha6/regen_0.6.0_linux_amd64.zip -o regen_linux.zip && unzip regen_linux.zip
     rm regen_linux.zip
     #cd regen_0.6.0_linux_amd64
 
