@@ -3,7 +3,7 @@ REGEN_HOME="/tmp/regen$(date +%s)"
 RANDOM_KEY="randomregenvalidatorkey"
 CHAIN_ID=aplikigo-1
 
-GENTX_FILE=$(find ./aplikigo-1/gentxs -iname "*.json" | head -1)
+GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 
 GENTX_STARTDATE=$(date -d '05-02-2021 15:00:00' '+%d/%m/%Y %H:%M:%S')
@@ -25,7 +25,7 @@ if [ $LEN_GENTX -eq 0 ]; then
 else
     set -e
 
-    ./scripts/check-gentx-amount.sh "./$CHAIN_ID/gentxs/$GENTX_FILE" || exit 1
+    ./scripts/check-gentx-amount.sh "$GENTX_FILE" || exit 1
 
     echo "...........Init Regen.............."
     curl -L https://github.com/regen-network/regen-ledger/releases/download/v0.6.0-alpha6/regen_0.6.0_linux_amd64.zip -o regen_linux.zip && unzip regen_linux.zip
@@ -42,7 +42,7 @@ else
 
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-01-01T00:00:00Z\",' $REGEN_HOME/config/genesis.json
 
-    GENACC=$(cat ../$CHAIN_ID/gentxs/$GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
+    GENACC=$(cat $GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
 
     echo $GENACC
 
@@ -52,7 +52,7 @@ else
 
     ./regen gentx --name $RANDOM_KEY --amount 900000000000utree --home $REGEN_HOME \
         --keyring-backend test
-    cp ../$CHAIN_ID/gentxs/$GENTX_FILE $REGEN_HOME/config/gentx/
+    cp $GENTX_FILE $REGEN_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
     ./regen collect-gentxs --home $REGEN_HOME
