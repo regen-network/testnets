@@ -77,6 +77,17 @@ $ wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0/re
 $ sudo tar -C /usr/local/bin -zxvf regen_0.6.0_linux_arm64.tar.gz
 ```
 
+#### Option 2: Download binary
+
+1. Download the binary for your platform: [releases](https://github.com/regen-network/regen-ledger/releases/tag/v0.6.0).
+2. Copy it to a location in your PATH, i.e: `/usr/local/bin` or `$HOME/bin`.
+
+i.e:
+```sh
+$ wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0/regen_0.6.0_linux_arm64.tar.gz
+$ sudo tar -C /usr/local/bin -zxvf regen_0.6.0_linux_arm64.tar.gz
+```
+
 ## How to become a validator
 
 ### Setting Up a Validator Node
