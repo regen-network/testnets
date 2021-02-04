@@ -39,12 +39,11 @@ else
     cd regen-ledger
     git checkout v0.6.0-alpha6
     make build
-    cd build
-    chmod +x regen
+    chmod +x ./build/regen
 
-    ./regen keys add $RANDOM_KEY --keyring-backend test --home $REGEN_HOME
+    ./build/regen keys add $RANDOM_KEY --keyring-backend test --home $REGEN_HOME
 
-    ./regen init --chain-id $CHAIN_ID validator --home $REGEN_HOME
+    ./build/regen init --chain-id $CHAIN_ID validator --home $REGEN_HOME
 
     echo "..........Fetching genesis......."
     rm -rf $REGEN_HOME/config/genesis.json
@@ -56,28 +55,28 @@ else
 
     echo $GENACC
 
-    ./regen add-genesis-account $RANDOM_KEY 1000000000000utree --home $REGEN_HOME \
+    ./build/regen add-genesis-account $RANDOM_KEY 1000000000000utree --home $REGEN_HOME \
         --keyring-backend test
-    ./regen add-genesis-account $GENACC 100000000000utree --home $REGEN_HOME
+    ./build/regen add-genesis-account $GENACC 100000000000utree --home $REGEN_HOME
 
-    ./regen gentx $RANDOM_KEY 900000000000utree --home $REGEN_HOME \
+    ./build/regen gentx $RANDOM_KEY 900000000000utree --home $REGEN_HOME \
         --keyring-backend test --chain-id $CHAIN_ID
     cp $GENTX_FILE $REGEN_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./regen collect-gentxs --home $REGEN_HOME
+    ./build/regen collect-gentxs --home $REGEN_HOME
     sed -i '/persistent_peers =/c\persistent_peers = ""' $REGEN_HOME/config/config.toml
 
-    ./regen validate-genesis --home $REGEN_HOME
+    ./build/regen validate-genesis --home $REGEN_HOME
 
     echo "..........Starting node......."
-    ./regen start --home $REGEN_HOME &
+    ./build/regen start --home $REGEN_HOME &
 
     sleep 5s
 
     echo "...checking network status.."
 
-    ./regen status --node http://localhost:26657
+    ./build/regen status --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
     killall regen >/dev/null 2>&1
