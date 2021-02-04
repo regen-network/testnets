@@ -59,7 +59,8 @@ server_name: regen
 version: v0.6.0
 commit: 6f743dce1e62b62c97b01ad042b49b0db31df5ab
 build_tags: netgo,ledger
-go: go version go1.15.5 linux/amd64build_deps:
+go: go version go1.15.5 linux/amd64
+build_deps:
 - github.com/99designs/keyring@v1.1.6
 - github.com/ChainSafe/go-schnorrkel@v0.0.0-20200405005733-88cbf1b4c40d
 ...
