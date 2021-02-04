@@ -155,7 +155,7 @@ Step-2: Install Regen (from source)
 ```sh
 $ git clone https://github.com/regen-network/regen-ledger
 $ cd regen-ledger
-$ git checkout v0.6.0-alpha2
+$ git checkout v0.6.0-alpha6
 $ make install
 ```
 

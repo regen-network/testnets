@@ -37,7 +37,7 @@ else
 
     git clone https://github.com/regen-network/regen-ledger
     cd regen-ledger
-    git checkout v0.6.0-alpha6
+    git checkout v0.6.0
     make build
     chmod +x ./build/regen
 
