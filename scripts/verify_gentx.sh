@@ -31,9 +31,16 @@ else
     ./scripts/check-gentx-amount.sh "$GENTX_FILE" || exit 1
 
     echo "...........Init Regen.............."
-    wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0-alpha6/regen_0.6.0_linux_arm64.tar.gz && tar -xzvf regen_0.6.0_linux_arm64.tar.gz
-    rm regen_0.6.0_linux_arm64.tar.gz
+    # wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0-alpha6/regen_0.6.0_linux_arm64.tar.gz && tar -xzvf regen_0.6.0_linux_arm64.tar.gz
+    # rm regen_0.6.0_linux_arm64.tar.gz
     #cd regen_0.6.0_linux_amd64
+
+    git clone https://github.com/regen-network/regen-ledger
+    cd regen-ledger
+    git checkout v0.6.0-alpha6
+    make build
+    cd build
+    chmod +x regen
 
     ./regen keys add $RANDOM_KEY --keyring-backend test --home $REGEN_HOME
 
