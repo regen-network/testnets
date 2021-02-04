@@ -8,3 +8,4 @@ jobs:
       - name: validate-gentx
         run: |
           bash -x ./scripts/verify_gentx.sh
+
