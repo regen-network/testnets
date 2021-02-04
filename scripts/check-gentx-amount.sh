@@ -6,33 +6,29 @@ path="$1"
 
 declare -i maxbond=100000000000
 
-extraquery='[.value.msg[]| select(.type != "cosmos-sdk/MsgCreateValidator")]|length'
+# querytype="jq -r '.body.messages[0][\"@type\"]' $path"
 
-gentxquery='.value.msg[]| select(.type == "cosmos-sdk/MsgCreateValidator")|.value.value'
+denomquery=$(jq -r '.body.messages[0].value.denom' $path)
 
-denomquery="[$gentxquery | select(.denom != \"utree\")] | length"
-
-amountquery="$gentxquery | .amount"
+amountquery=$(jq -r '.body.messages[0].value.amount' $path)
 
 # only allow MsgCreateValidator transactions.
-if [ "$(jq "$extraquery" "$path")" != "0" ]; then
-  echo "spurious transactions"
-  exit 1
-fi
+# if [ $querytype -neq "/cosmos.staking.v1beta1.MsgCreateValidator" ]; then
+#   echo "spurious transactions"
+#   exit 1
+# fi
 
 # only allow "utree" tokens to be bonded
-if [ "$(jq "$denomquery" "$path")" != "0" ]; then
+if [ $denomquery != "utree" ]; then
   echo "invalid denomination"
   exit 1
 fi
 
 # limit the amount that can be bonded
-for amount in "$(jq -rM "$amountquery" "$path")"; do
-  declare -i amt="$amount"
-  if [ $amt -gt $maxbond ]; then
-    echo "bonded too much: $amt > $maxbond"
-    exit 1
-  fi
-done
+
+if [ $amountquery -gt $maxbond ]; then
+  echo "bonded too much: $amt > $maxbond"
+  exit 1
+fi
 
 exit 0
