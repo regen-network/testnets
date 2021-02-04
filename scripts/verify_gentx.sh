@@ -3,9 +3,8 @@ REGEN_HOME="/tmp/regen$(date +%s)"
 RANDOM_KEY="randomregenvalidatorkey"
 CHAIN_ID=aplikigo-1
 
-GENTX_FILE=$(ls $CHAIN_ID/gentxs | head -1)
+GENTX_FILE=$(find ./aplikigo-1/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
-
 
 GENTX_STARTDATE=$(date -d '05-02-2021 15:00:00' '+%d/%m/%Y %H:%M:%S')
 GENTX_DEADLINE=$(date -d '07-02-2021 15:00:00' '+%d/%m/%Y %H:%M:%S')
