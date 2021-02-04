@@ -2,7 +2,7 @@
 
 CHAIN_ID=aplikigo-1
 CONFIG=~/.regen/config
-FAUCET_ACCOUNTS=("acc1" "acc2" "acc3")
+FAUCET_ACCOUNTS=("regen:1wuufq6vkl4qmmgzs06mtgatklpxr5zr4qqnk4k" "regen:1anc2w8g3ll9ypr4cdtl5j244eef2nsz5anre7k")
 
 rm -rf ~/.regen
 
