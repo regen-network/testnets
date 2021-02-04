@@ -51,9 +51,7 @@ else
 
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-01-01T00:00:00Z\",' $REGEN_HOME/config/genesis.json
 
-    ls
-
-    GENACC=$(cat $GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
+    GENACC=$(cat ../$GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
 
     echo $GENACC
 
@@ -63,7 +61,7 @@ else
 
     ./build/regen gentx $RANDOM_KEY 900000000000utree --home $REGEN_HOME \
         --keyring-backend test --chain-id $CHAIN_ID
-    cp $GENTX_FILE $REGEN_HOME/config/gentx/
+    cp ../$GENTX_FILE $REGEN_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
     ./build/regen collect-gentxs --home $REGEN_HOME
