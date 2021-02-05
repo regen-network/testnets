@@ -105,7 +105,7 @@ Genesis transaction written to "/home/user/.regen/config/gentx/gentx-f8038a89034
 #### Submit Gentx
 Submit your gentx in a PR [here](https://github.com/regen-network/testnets)
 
-- Fork the testnets repo to your github account 
+- Fork the testnets repo to your github account (You can fork any repo by clicking the fork button in the upper right hand corner of a repo page.)
 
 - Clone your repo using
 
@@ -116,6 +116,11 @@ git clone https://github.com/<your-github-username>/testnets
 - Copy the generated gentx json file to <repo_path>/aplikigo-1/gentxs/<your_gentx_file.json>
 
 - Commit and push to your repo
+```
+git add <repo_path>/aplikigo-1/gentxs/<your_gentx_file.json>
+git commit -m 'add gentx'
+git push origin master
+```
 - Create a PR into https://github.com/regen-network/testnets
 
 
