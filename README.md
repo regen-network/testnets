@@ -4,6 +4,58 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
+### Regen Network Testnet 4000: Aplikiĝo Testnet
+
+**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+
+*Estimated Dates: Feb 8th — March 15th 2021
+
+*Total points to be allocated: 1800*
+
+Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
+
+Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-pre-launch-incentivized-testnet-2e353dffb4b6
+
+Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
+
+### Bigbang Stargate testnet
+We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
+
+
+## Regen Devnets
+
+### regen-devnet-3
+
+`regen-devnet-3` is active now and here are some important details:
+
+- Explorer: https://devnet.regen.aneka.io
+- Faucet: https://faucet.devnet.regen.vitwit.com
+- RPC: http://18.220.101.192:26657
+- LCD: http://18.220.101.192:1317
+
+Persistent Peer: `55cf919bafebb627f3f7717de24c35c86df4f260@18.220.101.192:26656`
+
+Here are the instructions to run a validator for `regen-devnet-3`:
+
+1. Stop your existing regen validator (if any)
+```shell script
+sudo service regen stop
+```
+2. Run the latest setup script
+```sh
+git clone https://github.com/regen-network/testnets
+cd testnets
+git pull
+
+chmod +x scripts/devnet-val-setup.sh
+./scripts/devnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
+```
+
+
+## Historic Testnets (not in use)
+
+The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
+
 ### Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
 **Focus**: Adversarial testnet and network load testing with Regen Ledger running CosmWASM. This testnet may also morph into a Game of Zones testnet, as we are sensitive to the larger community opportunity.
@@ -15,23 +67,6 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 * Network start time: 13th March, 1500UTC
 
 #### [Click here to join the testnet](./kontraua/README.md)
-
-
-## Upcoming Testnets
-
-Here are the details for upcoming testnets. Please check our blog post [Regen Network 2020 testnet roadmap](https://link.medium.com/vVBNDosMr4) for more details
-
-### Regen Network Testnet 4000: Aplikiĝo Testnet
-
-**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
-
-*Estimated Dates: April 4th week*
-
-*Total points to be allocated: 800*
-
-## Historic Testnets (not in use)
-
-The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
 
 ### [`Algradigon-1`](https://github.com/regen-network/testnets/tree/modifications/archive/algradigon-1)
 
@@ -78,4 +113,55 @@ Deployed at `2018-12-19T20:40:06.463846Z`.
 
 The initial Regen Ledger testnet `xrn-1` was deployed on 2018-12-19.
 
+
+## KYC Utils
+
+### Generate Validator Keys
+Linking a validator address to your identity is how we ensure the right validator is rewarded for the hard work of participating in our incentivized testnets.  Please back up your keys and maintain the same keys thorughout testnet operations if possible.  If you have a key management issue, please use the same Moniker in generation of new keys and notify the team.
+
+The same validator keys can be used for different testnets, and even for main net (as long as you practice good key management). 
+
+### Handy Script
+Here are instructions for generating keys for regen ledger. This is well-tested on Ubuntu 18.04, if you are using different arch and running into issues, please use manual key generation instructions below
+```sh
+git clone https://github.com/regen-network/testnets
+cd testnets
+git pull
+
+chmod +x scripts/gen_val_keys.sh
+./scripts/gen_val_keys.sh <your_key_name>
 ```
+### Generate regen keys manually
+Step-1: Install Go 1.15.x (Optional)
+```sh
+  $ sudo apt update
+  $ sudo apt install build-essential jq -y
+
+  $ wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+  $ tar -xvf go1.15.2.linux-amd64.tar.gz
+  $ sudo mv go /usr/local
+
+  $ echo "" >> ~/.bashrc
+  $ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+  $ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+  $ echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
+  $ echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
+
+  $ source ~/.bashrc
+  $ go version # should print 1.15.2
+```
+
+Step-2: Install Regen (from source)
+```sh
+$ git clone https://github.com/regen-network/regen-ledger
+$ cd regen-ledger
+$ git checkout v0.6.0-alpha6
+$ make install
+```
+
+Step-3: Create your key (keyname can be anything):
+
+```sh
+$ regen keys add <your_key_name>
+```
+Use the address generated from above command to fill your KYC
