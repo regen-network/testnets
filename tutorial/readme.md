@@ -8,7 +8,8 @@
 ```cp <your-gentx-file-name> ~/testnets/aplikigo-1/gentxs/```
 
 4、Verify if the file is in the folder 
-```cd ~/testnets/aplikigo-1/gentxs/ ``` and ```ls```   
+```cd ~/testnets/aplikigo-1/gentxs/ ```
+```ls```   
 ***(Make sure you can find your gentx file!)***
 
 5、Save the change and submit the change 
