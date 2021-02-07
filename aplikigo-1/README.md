@@ -162,11 +162,11 @@ $ nano $HOME/.regen/config/config.toml
 Find the following section and add the seed nodes.
 ```
 # Comma separated list of seed nodes to connect to
-seeds = "TBA"
+seeds = "9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656"
 ```
 ```
 # Comma separated list of persistent peers to connect to
-persistent_peers = "TBA"
+persistent_peers = "35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656"
 ```
 
 #### Set validator gas fees
