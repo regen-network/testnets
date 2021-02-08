@@ -193,7 +193,7 @@ Description=Regen Node
 After=network-online.target
 [Service]
 User=${USER}
-ExecStart=${GOBIN}/regen start
+ExecStart=$(which regen) start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
