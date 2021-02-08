@@ -226,6 +226,19 @@ Check node status
 $ regen status
 ```
 
+### Troubleshooting
+If you get an error like: 
+```
+Error: error during handshake: error on replay: validator set is nil in genesis and still empty after InitChain
+```
+Please run the following command and restart the regen service
+```
+regen unsafe-reset-all
+sudo systemctl restart regen.service
+``` 
+
+
+
 ## More about validator
 
 Please refer to the Cosmos Hub documentation on validators for a general overview of running a validator. We are using the exact same validator model and software, but with slightly different parameters and other functionality specific to Regen Network.
