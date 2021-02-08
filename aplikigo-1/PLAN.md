@@ -1,7 +1,7 @@
 # Regen Network - Aplikiĝo Testnet Planning
 
 ## Disclaimer
-- Everything is subject to change. Pay attention to the discord [#dev-validator announcement channel] (https://discord.gg/ePFC8edB) for announcements. We are testing complex, opensource beta software. Expect things to break. If the dcoumentation is inadequit, make a PR. 
+- Everything is subject to change. Pay attention to the discord [dev-validator announcement channel] (https://discord.gg/ePFC8edB) for announcements. We are testing complex, opensource beta software. Expect things to break. If the dcoumentation is inadequit, make a PR. 
 ## Overview
 - 3 Phases (min)
 - 4 governance proposals, 2 Upgrades, 2 community spend proposals 
