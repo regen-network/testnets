@@ -1,0 +1,10 @@
+{
+    "moniker": "Stakin",
+    "valopr_address": "regen:valoper1cf79sumhf35ayq8n2e0szy266gsmf8rv054rvj",
+    "sendTxHashes": ["EDF6769C4BFFC65EECB323189BF4291A764577058952DFEFF894A6BB1AB0EC05", "A8DCF7056902D2E2D7F7222DA315AED8C96B2B49F269973265B86B1E1A1F6171"],
+    "delegateTxHashes": ["B4886AD12C5B19203D9D963F6E5D1E57FD052426FAF87BB736CD7DC1B5F6611D", "5216A1FA8EA336AFC62329B93DF53FBA8C2D1A2A258657E153CB364E99AFA41B"],
+    "tweetMemoTx": "https://twitter.com/StakinOfficial/status/1358803823826001921?s=20",
+    "linkedInPostMemoTx": "https://www.linkedin.com/feed/update/urn:li:activity:6764569905208545280",
+    "memoWithDiscordHandleTxHash": "AD9C370F5CEBA7508C85214786CE9310551CF6B6E890B514A55FDBA8D2498D76",
+    "blogpostUrl": "https://medium.com/stakin/regen-network-quick-guide-overview-1e7215da2aad"
+}
