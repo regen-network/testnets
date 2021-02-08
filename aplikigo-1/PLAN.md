@@ -15,12 +15,26 @@
 - Celebrate Stargate: - 100 points
     - Send 1TREE to others - 10 points
     - Delegate some TREEs to others - 10 points
-    - Tweet/LinkedIn post url linked in a memo - 30 points
+    - Tweet url linked in a memo - 30 points
+    - LinkedIn post url linked in a memo - 30 points
     - memo with your discord handle - 20 points (come to discord, leave telegram behind!)
     - Blogpost describing about Regen  linked in memo
         - 20 teams will get 50 each (Regen network team will review the blogs and finalize top-20)
-    - Participants get to raise a PR with the details onto regen-ledger/testnets repo (more details soon)
-- Network security and performance testing 100 max:
+    - Participants get to raise a PR with the details onto regen-ledger/testnets repo
+        - Time: Feb 9th, 1500UTC - Feb 11th, 1200 UTC (Only the txs in this time period are considered to be valid)
+        - Instructions to submit the PR:
+            - Clone regen-network/testnets repo,
+            ```sh
+            $ git clone https://github.com/regen-network/testnets
+            $ cd testnets
+            $ git pull origin master
+            $ cd /aplikigo-1/tasks/phase-1/1-celebrate
+            $ cp sample.json <your_moniker>.json
+            ```
+            - Add/Update the details
+            - Push to the repo and create a PR
+
+- Network security and performance testing - upto 100 points:
     - Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021
     - Top 10 teams will get 100 points each
     - Next 10 (11 to 20) will get 60 points each
