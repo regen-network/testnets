@@ -1,7 +1,9 @@
 # Regen Network - Aplikiĝo Testnet Planning
 
+## Disclaimer
+- Everything is subject to change. Pay attention to the discord [#dev-validator announcement channel] (https://discord.gg/ePFC8edB) for announcements. We are testing complex, opensource beta software. Expect things to break. If the dcoumentation is inadequit, make a PR. 
 ## Overview
-- 3 Phases
+- 3 Phases (min)
 - 4 governance proposals, 2 Upgrades, 2 community spend proposals 
 - Rewards: 1800+ points possible per participant with a total of 500,000 Regen tokens available for winners. 
 - Schedule: Feb 8th - Mar 8th
@@ -32,13 +34,16 @@
     - Other teams who are part of the upgrade will share 20 points each
     - Note: Teams are eligible for this reward only if they vote on the proposal
 
-## Phase - 2: Regen Times - max 800 points [TBD]
-- Run oracles
-- Deploy token contract
-- Deploy cosmwasm (?) contract
+## Phase - 2: Regen Times  - max 600 points [TBD]
 - Upgrade proposal to enable IBC transfers
+- Test IBC Transfers of $REGEN token
+- Test eco-credit module
+- Deploy eco-credit token contract
+- Deploy cosmwasm (?) contract
 
-## Phase - 3: Internet of Regeneration - 600 points
+## Phase - 3: Internet of Regeneration - 800 points
+- Test Groups Module
+- Test Data Module
 - Run solo machine and send token to Regen Ledger
 - Run Small PoA PoS chain and transact with Regen Ledger 
 
