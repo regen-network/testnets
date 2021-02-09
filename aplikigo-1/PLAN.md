@@ -28,7 +28,7 @@
             $ git clone https://github.com/regen-network/testnets
             $ cd testnets
             $ git pull origin master
-            $ cd /aplikigo-1/tasks/phase-1/1-celebrate
+            $ cd aplikigo-1/tasks/phase-1/1-celebrate
             $ cp sample.json <your_moniker>.json
             ```
             - Add/Update the details
