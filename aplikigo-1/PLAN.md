@@ -12,7 +12,7 @@
 - Gentx submission : 5th-7th Feb, 2021 1500 UTC. Up to 125 Gentx will be accepted.
 - Genesis file release: 7th Feb, 2021 1600 UTC
 - Network start time: 8th Feb, 2021 1500 UTC - 50 points for everyone who brings up their nodes in first 10 blocks (votes).
-- Celebrate Stargate: - 100 points
+### Celebrate Stargate: - 100 points
     - Send 1TREE to others - 10 points
     - Delegate some TREEs to others - 10 points
     - Tweet url linked in a memo - 30 points
@@ -34,12 +34,17 @@
             - Add/Update the details
             - Push to the repo and create a PR
 
-- Network security and performance testing - upto 100 points:
-    - Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021
+### Network security and performance testing - upto 100 points:
+    - Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021.
+    - Validators can use multiple addresses to send the transactions. It can be any transaction, even failed transactions would count. Make a PR with addresses you use for this testing. All addresses you use should have a delegation to your validator to verify it.
+    - PR Time: 1800 UTC 11 Feb, 2021 - 1800 UTC 12 Feb, 2021. 
     - Top 10 teams will get 100 points each
     - Next 10 (11 to 20) will get 60 points each
     - 21 to 50 teams will get 50 points each
-- Upgrade-1 Proposal: 15th Feb, 2021 ~1500 UTC
+    **NOTE:** Please check bonus section below for appropriate bonuses.
+    
+### Upgrade-1
+- Proposal: 15th Feb, 2021 ~1500 UTC
 - Voting Period: 15th Feb-17th Feb, ~1500 UTC
 - Upgrade Time: 18th UTC
     - First 10 teams to sign the upgrade block will get 100points each (upgrade height + 1's consensus state dump + prevotes will be used).
