@@ -36,7 +36,7 @@
 
 ### Network security and performance testing - upto 100 points:
     - Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021.
-    - Validators can use multiple addresses to send the transactions. It can be any transaction, even failed transactions would count. Make a PR with addresses you use for this testing. All addresses you use should have a delegation to your validator to verify it.
+    - Validators can use multiple addresses to send the transactions. It can be any transaction, even failed transactions would count. All the transactions a validator performs, should include the validator `moniker` as a memo so that we can map the transactions to your validator.
     - PR Time: 1800 UTC 11 Feb, 2021 - 1800 UTC 12 Feb, 2021. 
     - Top 10 teams will get 100 points each
     - Next 10 (11 to 20) will get 60 points each
