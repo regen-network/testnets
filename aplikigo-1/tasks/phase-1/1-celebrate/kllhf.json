@@ -1,0 +1,10 @@
+{
+    "moniker": "kllhf",
+    "valopr_address": "regen:valoper1a2ap76pvk767u4892cehqtwstf5ypkdaayu640",
+    "sendTxHashes": ["A1125C79D9C8D9D6A029D852E7D6AB51737DD2700F99E4E811DBAEB7595322B9"],
+    "delegateTxHashes": ["F8481C2757B805B667D5E3A3D9F6810AA8F59C5493B7911EE732028A3DD7B439"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "95104312AA5D7DB8F5002A8E8E9EAA04CC91191A160339DD39FBCAF0BBA17D89",
+    "blogpostUrl": "medium.com/..."
+}
