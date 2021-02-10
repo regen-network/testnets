@@ -9,12 +9,14 @@ rm -rf ~/.regen
 regen init dummy --chain-id $CHAIN_ID
 
 rm -rf $CONFIG/gentx && mkdir $CONFIG/gentx
+rm -rf $CONFIG/genesis.json
 
+cp $CHAIN_ID/genesis.json $CONFIG/genesis.json
 sed -i "s/\"stake\"/\"utree\"/g" ~/.regen/config/genesis.json
 
-for i in $NETWORK/gentxs/*.json; do
+for i in $CHAIN_ID/gentxs/*.json; do
   echo $i
-  regen add-genesis-account $(jq -r '.value.msg[0].value.delegator_address' $i) 100000000000utree
+  regen add-genesis-account $(jq -r '.body.messages[0].delegator_address' $i) 100000000000utree
   cp $i $CONFIG/gentx/
 done
 
@@ -27,4 +29,4 @@ regen collect-gentxs
 
 regen validate-genesis
 
-cp $CONFIG/genesis.json $NETWORK
+cp $CONFIG/genesis.json $CHAIN_ID
