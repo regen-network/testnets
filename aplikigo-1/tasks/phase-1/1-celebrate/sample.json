@@ -1,10 +1,10 @@
 {
-    "moniker": "wavez",
-    "valopr_address": "regen:valoper17u604lvmya6t2tjhrf9flyyyf0xqn32vcjk5z6",
-    "sendTxHashes": ["6F2A170FE0EF41EF405414384F2ECC5988D5B26931A988B1E6ADB5F1FA9AC894", "D9D00C9184C706C86D41B591E7FE3553C2F449121E03D6C1BDA6277206B3D74F"],
-    "delegateTxHashes": ["7D0194885DB435DE3B1D336BCE52F9DE93C18BDFD84AF2C1A32124F8D189538B", "546E4A3F8AB7A3F063CEA845CB4F6856FC1D83DC9DD7B831CEEBD0454E7583CC"],
-    "tweetMemoTx": "174F82C611C49369EE1FDDC82A449331599B79C766B0689F29A18BDADB562A95",
+    "moniker": "",
+    "valopr_address": "",
+    "sendTxHashes": ["hash1", "hash2"],
+    "delegateTxHashes": ["hash1", "hash2"],
+    "tweetMemoTx": "",
     "linkedInPostMemoTx": "",
-    "memoWithDiscordHandleTxHash": "6F2A170FE0EF41EF405414384F2ECC5988D5B26931A988B1E6ADB5F1FA9AC894",
-    "blogpostUrl": ""
+    "memoWithDiscordHandleTxHash": "",
+    "blogpostUrl": "medium.com/..."
 }
