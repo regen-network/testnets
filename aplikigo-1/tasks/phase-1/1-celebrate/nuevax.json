@@ -1,6 +1,6 @@
 {
     "moniker": "nuevax",
-    "valopr_address": "",
+    "valopr_address": "regen:valoper1mv0ge6ftwrpte084udgj6fad4l20ctp34pf0wf",
     "sendTxHashes": ["hash1", "hash2"],
     "delegateTxHashes": ["hash1", "hash2"],
     "tweetMemoTx": "",
