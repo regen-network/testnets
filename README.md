@@ -10,7 +10,8 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 *Estimated Dates: Feb 8th — March 15th 2021
 
-*Total points to be allocated: 1800*
+*Minimum points to be allocated: 1800*
+*$REGEN staking token rewards: 500,000*
 
 Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
 
