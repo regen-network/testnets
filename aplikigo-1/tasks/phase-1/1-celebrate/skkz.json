@@ -1,0 +1,10 @@
+{
+    "moniker": "skkz",
+    "valopr_address": "regen:valoper1fac67u5hr0pjuamepaj3ww76qwsp79rh75xqwt",
+    "sendTxHashes": ["888A7AF373F7E439839781280A0895CC464FD12727BA671DDF905BF6995758A4"],
+    "delegateTxHashes": ["B27491A695194ED03A1F6456BB09243A960BFE7004029ABB6BB214C8DF027D60"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "27DF1EA6B7C8F7FF51322F0E2E2F89C45658072E358BD169041175DD1643913A",
+    "blogpostUrl": "medium.com/..."
+}
