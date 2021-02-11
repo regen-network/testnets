@@ -10,13 +10,16 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 *Estimated Dates: Feb 8th — March 15th 2021
 
-*Total points to be allocated: 1800*
+*Minimum points to be allocated: 1800*
+*$REGEN staking token rewards: 500,000*
 
 Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
 
 Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-pre-launch-incentivized-testnet-2e353dffb4b6
 
 Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
+
+
 
 ### Bigbang Stargate testnet
 We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
