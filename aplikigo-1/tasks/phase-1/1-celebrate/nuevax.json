@@ -2,7 +2,7 @@
     "moniker": "nuevax",
     "valopr_address": "regen:valoper1mv0ge6ftwrpte084udgj6fad4l20ctp34pf0wf",
     "sendTxHashes": ["AB5A61060D18B7DD0953CF5238DC116338409625FEDD9982CC4FF285D43C7B98", "regen:1lk8t575vvgjak2xp7anmcjq403fz82puywlajg"],
-    "delegateTxHashes": ["hash1", "hash2"],
+    "delegateTxHashes": ["591DF2B07B53D1B0EE614697718855CC5201F8288FF6E708FF45B19B3B71C69A", "591DF2B07B53D1B0EE614697718855CC5201F8288FF6E708FF45B19B3B71C69A"],
     "tweetMemoTx": "",
     "linkedInPostMemoTx": "",
     "memoWithDiscordHandleTxHash": "",
