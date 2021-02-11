@@ -1,0 +1,10 @@
+{
+    "moniker": "longisland",
+    "valopr_address": "regen:valoper1fe0grnz5hm37ju439da8ue2vau80tm4mfx4jvd",
+    "sendTxHashes": ["00F8BFA78FE1A0DE07A0FFD5F088A2DFEFDBEB8C4BE761D63B27A2C29E5DF08A"],
+    "delegateTxHashes": ["5930272F497061363DF97157644F67A45017B7037A0093D8776899DE7ED3752A"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "EE836E62192CF032A127316A2F5CDEE5D5AFEE80110C7E465181B939AC49BDAF",
+    "blogpostUrl": "medium.com/..."
+}
