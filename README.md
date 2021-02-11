@@ -4,7 +4,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-### Regen Network Testnet 4000: Aplikiĝo Testnet
+### 1. Regen Network Testnet 4000: Aplikiĝo Testnet
 
 **Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
 
@@ -18,7 +18,16 @@ Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-p
 
 Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
 
-### Bigbang Stargate testnet
+**TL;DR**
+- Explorer: https://aplikigo.regen.aneka.io
+- RPC: http://public-rpc1.regen.vitwit.com:26657
+- LCD: http://public-rpc1.regen.vitwit.com:1317
+- Persistent Peers (Feel free to add yours and create a PR)
+```
+35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656,937bbb7a231a870452dd595a442a191d609a26a5@116.203.20.144:26656,
+```
+
+### 2. Bigbang Stargate testnet
 We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
 
 
