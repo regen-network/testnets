@@ -62,7 +62,7 @@ __New to upgrades?__ Read [this](https://docs.cosmos.network/master/modules/gov)
 - Review the software upgrade proposal and cast your vote before voting period endtime. 
 - Upgrade your nodes
 
-For detailed instructions click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
+For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
 
 ## Phase - 2: Regen Times  - max 600 points [TBD]
 - Upgrade proposal to enable IBC transfers
