@@ -2,15 +2,17 @@
 
 ## How to vote
 
-Here is the CLI command to vote on the proposal
-    ```sh
-    regen tx gov vote <proposalID> <option> --from <your_key_or_acc_address>
-    ```
-    ex:
+Here is the CLI command to vote on the proposal:
 
-    ```sh
-    regen tx gov vote 1 yes --from regen:1gpgpkmz3swt5ucdjxvrszk6yvjxjylsh4eur9d
-    ```
+
+    regen tx gov vote <proposalID> <option> --from <your_key_or_acc_address> [flags]
+
+
+Eg:
+
+``` 
+regen tx gov vote 3 yes --from <your_address> --gas auto -y --fees=2000utree --chain-id aplikigo-1
+```  
 
 
 ## How to upgrade
