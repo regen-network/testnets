@@ -43,15 +43,26 @@
     - 21 to 50 teams will get 50 points each
     **NOTE:** Please check bonus section below for appropriate bonuses.
     
-### Upgrade-1
+### Upgrade-1: The Gir Upgrade
+Lead validator team will create a governance proposal on 15th Feb, 2021 at ~1500 UTC, to upgrade the network to a new release i.e., `v0.6.1`.
+
+__New to upgrades?__ Read [this](https://docs.cosmos.network/master/modules/gov)
+
+**Upgrade Schedule:**
 - Proposal: 15th Feb, 2021 ~1500 UTC
 - Voting Period: 15th Feb-17th Feb, ~1500 UTC
-- Upgrade Time: 18th UTC
+- Upgrade Height: `138650` (Close to 18th Feb, ~1500 UTC)
     - First 10 teams to sign the upgrade block will get 100points each (upgrade height + 1's consensus state dump + prevotes will be used).
     - Next 20 teams will get 60 points each
     - Next 20 teams will get 40 points each
     - Other teams who are part of the upgrade will share 20 points each
     - Note: Teams are eligible for this reward only if they vote on the proposal
+
+**What should validators do?**
+- Review the software upgrade proposal and cast your vote before voting period endtime. 
+- Upgrade your nodes
+
+For detailed instructions click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
 
 ## Phase - 2: Regen Times  - max 600 points [TBD]
 - Upgrade proposal to enable IBC transfers
