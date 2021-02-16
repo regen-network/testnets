@@ -66,3 +66,84 @@ The following instructions should only be executed after the upgrade time
     ```
     sudo service regen start
     ```
+
+# Cosmovisor setup for Gir upgrade
+
+
+
+## Setting up Cosmovisor
+
+ - ### Creating directories for cosmovisor
+ ```
+ $ mkdir -p ${HOME}/.regen/cosmovisor/genesis/bin
+ $ mkdir -p ${HOME}/.regen/cosmovisor/upgrades/Gir/bin
+ ```
+ - ### Clone and build Cosmovisor
+ ```
+ $ cd ~
+ $ git clone https://github.com/cosmos/cosmos-sdk
+ $ cd cosmos-sdk/cosmovisor
+ $ git checkout v0.41.0
+ $ make cosmovisor
+ $ mv cosmovisor $GOBIN
+ ```
+ 
+ - ### Build the regen binaries
+ ```
+ $ cd $GOPATH/src/github.com/regen
+ $ git fetch && git checkout v0.6.0
+ $ make build
+ $ mv build/regen ${HOME}/.regen/cosmovisor/genesis/bin
+ $ git checkout v0.6.1
+ $ make build
+ ```
+ Verify the version of new binary
+ ```
+ $ ./build/regen version --long
+ ```
+ It will display the version of regen built:
+ ```
+ TBA
+ ```
+ 
+ Move the newly built binary to it's directory
+ ```
+ $ mv build/regen ${HOME}/.regen/cosmovisor/upgrades/Gir/bin
+ ```
+ 
+ Setup cosmovisor current version link
+```
+$ ln -s -T ${HOME}/.regen/cosmovisor/genesis ${HOME}/.regen/cosmovisor/current
+```
+
+Setup cosmovisor systemd service
+```
+echo "[Unit]
+Description=Regen Node
+After=network-online.target
+[Service]
+User=${USER}
+Environment=DAEMON_NAME=regen
+Environment=DAEMON_RESTART_AFTER_UPGRADE=true
+Environment=DAEMON_HOME=${HOME}/.regen
+ExecStart=$(which cosmovisor) start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target
+" >cosmovisor.service
+```
+
+```
+$ sudo mv cosmovisor.service /lib/systemd/system/
+$ sudo systemctl daemon-reload
+$ sudo systemctl stop regen.service && sudo systemctl disable regen.service 
+$ sudo systemctl enable cosmovisor.service && sudo systemctl start cosmovisor.service
+```
+
+Check logs
+
+```
+$ sudo journalctl -u cosmovisor -f
+```
