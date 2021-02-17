@@ -78,7 +78,7 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 
 ## Bonus Challenges
 - Uptime - 4000points
-    - 2000 points will be distributed among who never misses a block (max 200 points per validator)
+    - 2000 points will be distributed among who never misses _signing_ a block (max 200 points per validator)
     - uptime >= 99% 1000 points will be distributed equally among all the eligible validators  (max 100 points per validator)
     - 99% <= uptime >= 98% 1000 points  (max 60 points per validator)
 - Never jailed validators - 2000 points
@@ -99,6 +99,8 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 Regen Network is committed to build a strong community. We would like to extend our thanks to our  early adapters & supporters and they are given priority over new participants wherever there's a tie. Here are a possible cases (but not limited to) where we extend our support and prioritize early community members (participants from previous testnets, our partners and investors)
 - Allocate 10% extra tokens on genesis (gentxs)
 - Ranking boost (whenever there's a tie)
+
+For the avoidance of doubt, a _missed_ block, is a block for which the validator's signature is omitted from the finalised block, regardless of reason. Logs from a validator showing a signature was broadcast does not constitute inclusion of the signature in the finalised block.
 
 ## Code Of Conduct
 
