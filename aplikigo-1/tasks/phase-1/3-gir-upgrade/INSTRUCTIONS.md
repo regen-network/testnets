@@ -41,7 +41,7 @@ regen tx gov vote 3 yes --from <your_address> --gas auto -y --fees=2000utree --c
  $ make build
  $ mv build/regen ${HOME}/.regen/cosmovisor/genesis/bin
  $ git checkout v0.6.1
- $ make build
+ $ EXPERIMENTAL=true make build
  ```
  Verify the version of new binary
  ```

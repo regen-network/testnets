@@ -64,12 +64,11 @@ __New to upgrades?__ Read [this](https://docs.cosmos.network/master/modules/gov)
 
 For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
 
-## Phase - 2: Regen Times  - max 600 points [TBD]
+## Phase - 2: Regen Times  - max 600 points  | 18-Feb 2021 - 
 - Upgrade proposal to enable IBC transfers
 - Test IBC Transfers of $REGEN token
-- Test eco-credit module
+- Test groups module
 - Deploy eco-credit token contract
-- Deploy cosmwasm (?) contract
 
 ## Phase - 3: Internet of Regeneration - 800 points
 - Test Groups Module
