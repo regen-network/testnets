@@ -105,7 +105,7 @@ $ sudo journalctl -u cosmovisor -f
     cd $GOPATH/src/github.com/regen/regen-ledger
     git fetch
     git checkout v0.6.1
-    make install
+    EXPERIMENTAL=true make install
     ```
 - Verify the binary
     ```
