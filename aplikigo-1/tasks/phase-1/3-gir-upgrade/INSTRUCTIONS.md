@@ -102,7 +102,7 @@ $ sudo journalctl -u cosmovisor -f
 
 - Update the binary
     ```
-    cd $GOPATH/src/github.com/regen-ledger
+    cd $GOPATH/src/github.com/regen/regen-ledger
     git fetch
     git checkout v0.6.1
     make install
