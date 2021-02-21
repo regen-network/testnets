@@ -64,7 +64,7 @@ __New to upgrades?__ Read [this](https://docs.cosmos.network/master/modules/gov)
 
 For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
 
-## Phase - 2: Regen Times  - max 750 points  | 22-Feb 2021 - 01-Feb 2021
+## Phase - 2: Regen Times  - max 750 points  | 22-Feb 2021 - 01-Mar 2021
 - Upgrade proposal to enable IBC transfers - 22nd March, 1500 UTC
 - Voting Period: 22-02-2021 1500 to 24-02-2021 - 25 points
 - Test IBC Transfers of $REGEN token - max 200 points
