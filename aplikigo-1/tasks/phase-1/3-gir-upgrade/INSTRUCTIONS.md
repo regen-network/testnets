@@ -36,7 +36,7 @@ regen tx gov vote 3 yes --from <your_address> --gas auto -y --fees=2000utree --c
  
  - ### Build the regen binaries
  ```
- $ cd $GOPATH/src/github.com/regen-ledger
+ $ cd $GOPATH/src/github.com/regen/regen-ledger
  $ git fetch && git checkout v0.6.0
  $ make build
  $ mv build/regen ${HOME}/.regen/cosmovisor/genesis/bin
@@ -102,10 +102,10 @@ $ sudo journalctl -u cosmovisor -f
 
 - Update the binary
     ```
-    cd $GOPATH/src/github.com/regen-ledger
+    cd $GOPATH/src/github.com/regen/regen-ledger
     git fetch
     git checkout v0.6.1
-    make install
+    EXPERIMENTAL=true make install
     ```
 - Verify the binary
     ```
