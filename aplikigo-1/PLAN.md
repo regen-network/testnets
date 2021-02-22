@@ -65,13 +65,13 @@ __New to upgrades?__ Read [this](https://docs.cosmos.network/master/modules/gov)
 For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTIONS.md)
 
 ## Phase - 2: Regen Times  - max 750 points  | 22-Feb 2021 - 01-Mar 2021
-- Upgrade proposal to enable IBC transfers - 22nd March, 1500 UTC
+- Upgrade proposal to enable IBC transfers - 22nd Feb, 1500 UTC
 - Voting Period: 22-02-2021 1500 to 24-02-2021 - 25 points
 - Test IBC Transfers of $REGEN token - max 200 points
-    - Schedule 24-25th March, 1600 UTC (IBC transactions should be made in this time period)
-    - Make a PR with ibc-path info (see tasks/phase-2/4-ibc/sample.json for reference). Last date for submitting PRs is : 26th March, 0600 UTC
+    - Schedule 24-25th Feb, 1600 UTC (IBC transactions should be made in this time period)
+    - Make a PR with ibc-path info (see tasks/phase-2/4-ibc/sample.json for reference). Last date for submitting PRs is : 26th Feb, 0600 UTC
 - Network test - 200 points max
-    - Schedule 26-March-2021 from 1200-1600UTC
+    - Schedule 26-Feb-2021 from 1200-1600UTC
     - Maximum Transactions in a block and Max  Messages in a transaction
     - Top-1 validator in each category will get 100 points each (It can be a single validator too)
     - Top-10 (2-10), will get 150 points each (in both categories)
