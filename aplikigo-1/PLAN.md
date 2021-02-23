@@ -78,7 +78,7 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 - Run a custom ibc-enabled chain and transfer tokens back and forth - 200 points
 - Upgrade proposal - 25points
     - voting period: 26-Feb, 2021 1500 UTC - 28-Feb, 2021 1500 UTC
-- upgrade time 29-Feb, 2021 1500 UTC - 100points max
+- upgrade time 1-March, 2021 1500 UTC - 100points max
     - top-10 teams will get 100 points each
     - Next 20 will get 80 points each
     - Next 20 will get 60 points each
