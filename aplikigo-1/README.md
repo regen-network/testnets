@@ -166,7 +166,7 @@ seeds = "9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656"
 ```
 ```
 # Comma separated list of persistent peers to connect to
-persistent_peers = "35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656"
+persistent_peers = "35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656,937bbb7a231a870452dd595a442a191d609a26a5@116.203.20.144:26656"
 ```
 
 #### Set validator gas fees
@@ -193,7 +193,7 @@ Description=Regen Node
 After=network-online.target
 [Service]
 User=${USER}
-ExecStart=${GOBIN}/regen start
+ExecStart=$(which regen) start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
