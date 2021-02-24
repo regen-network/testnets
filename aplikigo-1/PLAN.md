@@ -75,6 +75,7 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
     - Maximum Transactions in a block and Max  Messages in a transaction
     - Top-1 validator in each category will get 100 points each (It can be a single validator too)
     - Top-10 (2-10), will get 150 points each (in both categories)
+    - Please find more detailed instructions [here](./tasks/phase-2/4-ibc/)
 - Run a custom ibc-enabled chain and transfer tokens back and forth - 200 points
 - Upgrade proposal - 25points
     - voting period: 26-Feb, 2021 1500 UTC - 28-Feb, 2021 1500 UTC
@@ -89,9 +90,9 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 - Deploy ecocredit contract (with instructions) - 100 points
 - Deploy custom contract - 100 points (with no instructions, references will be shared)
 - Deploy ibc contract - 150 points (with no instructions, references will be shared)
-- Test Groups Module - 200 points
+- Test Groups Module - 250 points
     - Create group, create policy and execute policy
-- Test Data & ecocredit Module - 150 points
+- Test Data & ecocredit Module - 100 points
 
 
 ## Bonus Challenges
