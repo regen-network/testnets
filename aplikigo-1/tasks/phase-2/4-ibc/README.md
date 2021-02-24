@@ -12,7 +12,7 @@ https://github.com/cosmos/relayer#relayer
 ### Install Relayer:
 ```sh
 export RELAYER=$GOPATH/src/github.com/cosmos/relayer
-mkdir -p $(dirname $RELAYER) && git clone https://github.com:cosmos/relayer $RELAYER && cd $RELAYER
+mkdir -p $(dirname $RELAYER) && git clone https://github.com/cosmos/relayer $RELAYER && cd $RELAYER
 
 git checkout colin/425-refactor-update-msgs
 
