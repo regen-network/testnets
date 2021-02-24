@@ -40,6 +40,7 @@ Option-1: Add individual chains
     ```
 Option-2: Add bulk (by copying both json files into one folder)
     ```sh
+
     rly chains add-dir  <path-to-chains-folder>/
     ```
 - **Step-4** Export source and destination chain-ids to variables.
@@ -78,7 +79,7 @@ Ensure each chain has its appropriate key. Import your keys by using:
     Note: If you don't have funds, you cannot make transactions
 
 - **Step-9** Add path between chains
-```sh
+    ```sh
     $ echo "{\"src\":{\"chain-id\":\"$SRC\",\"port-id\":\"transfer\",\"order\":\"unordered\",\"version\":\"ics20-1\"},\"dst\":{\"chain-id\":\"$DST\",\"port-id\":\"transfer\",\"order\":\"unordered\",\"version\":\"ics20-1\"},\"strategy\":{\"type\":\"naive\"}}" > $PTH.json
     $ rly pth add $SRC $DST $PTH -f $PTH.json
     ```
