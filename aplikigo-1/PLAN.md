@@ -12,36 +12,37 @@
 - Gentx submission : 5th-7th Feb, 2021 1500 UTC. Up to 125 Gentx will be accepted.
 - Genesis file release: 7th Feb, 2021 1600 UTC
 - Network start time: 8th Feb, 2021 1500 UTC - 50 points for everyone who brings up their nodes in first 10 blocks (votes).
+
 ### Celebrate Stargate: - 100 points
-    - Send 1TREE to others - 10 points
-    - Delegate some TREEs to others - 10 points
-    - Tweet url linked in a memo - 30 points
-    - LinkedIn post url linked in a memo - 30 points
-    - memo with your discord handle - 20 points (come to discord, leave telegram behind!)
-    - Blogpost describing about Regen  linked in memo
-        - 20 teams will get 50 each (Regen network team will review the blogs and finalize top-20)
-    - Participants get to raise a PR with the details onto regen-ledger/testnets repo
-        - Time: Feb 9th, 1500UTC - Feb 11th, 1200 UTC (Only the txs in this time period are considered to be valid)
-        - Instructions to submit the PR:
-            - Clone regen-network/testnets repo,
-            ```sh
-            $ git clone https://github.com/regen-network/testnets
-            $ cd testnets
-            $ git pull origin master
-            $ cd aplikigo-1/tasks/phase-1/1-celebrate
-            $ cp sample.json <your_moniker>.json
-            ```
-            - Add/Update the details
-            - Push to the repo and create a PR
+- Send 1TREE to others - 10 points
+- Delegate some TREEs to others - 10 points
+- Tweet url linked in a memo - 30 points
+- LinkedIn post url linked in a memo - 30 points
+- memo with your discord handle - 20 points (come to discord, leave telegram behind!)
+- Blogpost describing about Regen  linked in memo
+    - 20 teams will get 50 each (Regen network team will review the blogs and finalize top-20)
+- Participants get to raise a PR with the details onto regen-ledger/testnets repo
+    - Time: Feb 9th, 1500UTC - Feb 11th, 1200 UTC (Only the txs in this time period are considered to be valid)
+    - Instructions to submit the PR:
+        - Clone regen-network/testnets repo,
+        ```sh
+        $ git clone https://github.com/regen-network/testnets
+        $ cd testnets
+        $ git pull origin master
+        $ cd aplikigo-1/tasks/phase-1/1-celebrate
+        $ cp sample.json <your_moniker>.json
+        ```
+        - Add/Update the details
+        - Push to the repo and create a PR
 
 ### Network security and performance testing - upto 100 points:
-    - Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021.
-    - Validators can use multiple addresses to send the transactions. It can be any transaction, even failed transactions would count. All the transactions a validator performs, should include the validator `moniker` as a memo so that we can map the transactions to your validator.
-    - PR Time: 1800 UTC 11 Feb, 2021 - 1800 UTC 12 Feb, 2021. 
-    - Top 10 teams will get 100 points each
-    - Next 10 (11 to 20) will get 60 points each
-    - 21 to 50 teams will get 50 points each
-    **NOTE:** Please check bonus section below for appropriate bonuses.
+- Make transactions for continuous 3 hours from 1500UTC to 1800UTC 11 Feb, 2021.
+- Validators can use multiple addresses to send the transactions. It can be any transaction, even failed transactions would count. All the transactions a validator performs, should include the validator `moniker` as a memo so that we can map the transactions to your validator.
+- PR Time: 1800 UTC 11 Feb, 2021 - 1800 UTC 12 Feb, 2021. 
+- Top 10 teams will get 100 points each
+- Next 10 (11 to 20) will get 60 points each
+- 21 to 50 teams will get 50 points each
+**NOTE:** Please check bonus section below for appropriate bonuses.
     
 ### Upgrade-1: The Gir Upgrade
 Lead validator team will create a governance proposal on 15th Feb, 2021 at ~1500 UTC, to upgrade the network to a new release i.e., `v0.6.1`.
