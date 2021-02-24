@@ -4,7 +4,9 @@ The following instructions are for transfering the tokens from `aplikigo-1` (sou
 
 ## Setting up the realyer
 
-Useful links: https://docs.cosmos.network/master/ibc/relayer.html
+Useful links:
+https://docs.cosmos.network/master/ibc/relayer.html
+
 https://github.com/cosmos/relayer#relayer
 
 ### Install Relayer:
