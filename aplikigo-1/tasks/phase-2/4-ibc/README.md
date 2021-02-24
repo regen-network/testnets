@@ -7,6 +7,14 @@ The following instructions are for transfering the tokens from `aplikigo-1` (sou
 Useful links: https://docs.cosmos.network/master/ibc/relayer.html
 https://github.com/cosmos/relayer#relayer
 
+### Install Relayer:
+```sh
+export RELAYER=$GOPATH/src/github.com/cosmos/relayer
+mkdir -p $(dirname $RELAYER) && git clone https://github.com:cosmos/relayer $RELAYER && cd $RELAYER
+make install
+```
+
+### Setup the relayer & make ibc transfer
 - **Step-1:** Init relayer config
 `rly config init`
 
