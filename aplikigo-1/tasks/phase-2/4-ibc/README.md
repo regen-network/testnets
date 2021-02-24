@@ -11,6 +11,9 @@ https://github.com/cosmos/relayer#relayer
 ```sh
 export RELAYER=$GOPATH/src/github.com/cosmos/relayer
 mkdir -p $(dirname $RELAYER) && git clone https://github.com:cosmos/relayer $RELAYER && cd $RELAYER
+
+git checkout colin/425-refactor-update-msgs
+
 make install
 ```
 
