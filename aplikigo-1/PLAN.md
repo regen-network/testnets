@@ -70,12 +70,12 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 - Test IBC Transfers of `utree` token - max 200 points
     - Schedule 24-25th Feb, 1600 UTC (IBC transactions should be made in this time period)
     - Make a PR with ibc-path info (see [tasks/phase-2/4-ibc/sample.json](./tasks/phase-2/4-ibc/sample.json) for reference). Last date for submitting PRs is : 26th Feb, 0600 UTC
+    - Please find more detailed instructions [here](./tasks/phase-2/4-ibc/)
 - Network test - 200 points max
     - Schedule 26-Feb-2021 from 1200-1600UTC
     - Maximum Transactions in a block and Max  Messages in a transaction
     - Top-1 validator in each category will get 100 points each (It can be a single validator too)
     - Top-10 (2-10), will get 150 points each (in both categories)
-    - Please find more detailed instructions [here](./tasks/phase-2/4-ibc/)
 - Run a custom ibc-enabled chain and transfer tokens back and forth - 200 points
 - Upgrade proposal - 25points
     - voting period: 26-Feb, 2021 1500 UTC - 28-Feb, 2021 1500 UTC
