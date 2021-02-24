@@ -2,5 +2,7 @@
     "ibcIncomingTxHash": "",
     "ibcOutgoingTxHash": "",
     "ibcAccount": "",
-    "validatorOprAddress": ""
+    "validatorOprAddress": "",
+    "BonusIbcIncomingTxHash": "",
+    "BonusIbcOutgoingTxHash": ""
 }
