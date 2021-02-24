@@ -1,8 +1,8 @@
 {
-    "ibcIncomingTxHash": "",
-    "ibcOutgoingTxHash": "",
-    "ibcAccount": "",
+    "src2dstTxHash": "",
+    "dst2srcTxHash": "",
+    "accountAddress": "",
     "validatorOprAddress": "",
-    "BonusIbcIncomingTxHash": "",
-    "BonusIbcOutgoingTxHash": ""
+    "bonusSrc2DstTxHash": "",
+    "bonusDst2SrcTxHash": ""
 }
