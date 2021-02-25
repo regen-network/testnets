@@ -35,7 +35,7 @@ rm -rf ~/.regen/data
 YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
-DENOM=utree
+DENOM=uregen
 CHAIN_ID=regen-devnet-4
 PERSISTENT_PEERS="7610288e313f68f1a33dd1fb0bf89e29eefa1dd7@18.220.101.192:26656"
 
