@@ -1,8 +1,8 @@
 {
-    "src2dstTxHash": "",
-    "dst2srcTxHash": "",
-    "accountAddress": "",
-    "validatorOprAddress": "",
-    "bonusSrc2DstTxHash": "",
-    "bonusDst2SrcTxHash": ""
+    "src2dstTxHash": "230595C6DBEDBF1041B91C4C46611309AC54CFCDBD72A14322D9516779D98F0D",
+    "dst2srcTxHash": "A6324417F17804F206476BD75889EA84AA5EE99F8D0A6C6ADED03C1B972DE7B4",
+    "accountAddress": "regen:1q8m5cx4ccyqs8nyeva4pes8d6xv8x6dr7m7p9q",
+    "validatorOprAddress": "regen:valoper1q8m5cx4ccyqs8nyeva4pes8d6xv8x6drjhy7d9",
+    "bonusSrc2DstTxHash": "17D740BA6FE1B35458761C39BD935617D85C72DB9E642C0CF953E12A5F2B26C9",
+    "bonusDst2SrcTxHash": "B8F3EA064BE449D6953CA0670BF7CD2C926B11BA7011EA0FECA4FF0483F98AAD"
 }
