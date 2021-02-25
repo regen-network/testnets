@@ -1,0 +1,7 @@
+{
+    "src2dstTxHash": "2EAD47B4EACEACC1EB7FFAA56C5A2B41B6D1D9D01F0C710FC4C653F97722A1B1",
+    "dst2srcTxHash": "F30BF15D411B10ECE5F3AECFD543CB92241E638E74DE9C2EF0F19ECADDA34EF9",
+    "dstChainRPC":"54.177.35.160:26657",
+    "accountAddress": "regen:12pc0n7g3fn7cm5szvhdpd48fq0pj0qa792qy9y",
+    "validatorOprAddress": "regen:valoper12pc0n7g3fn7cm5szvhdpd48fq0pj0qa7fx6mdp"
+}
