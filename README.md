@@ -4,13 +4,14 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-### Regen Network Testnet 4000: Aplikiĝo Testnet
+### 1. Regen Network Testnet 4000: Aplikiĝo Testnet
 
 **Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
 
 *Estimated Dates: Feb 8th — March 15th 2021
 
-*Total points to be allocated: 1800*
+*Minimum points to be allocated: 1800*
+*$REGEN staking token rewards: 500,000*
 
 Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
 
@@ -18,24 +19,33 @@ Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-p
 
 Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
 
-### Bigbang Stargate testnet
+**TL;DR**
+- Explorer: https://aplikigo.regen.aneka.io
+- RPC: http://public-rpc1.regen.vitwit.com:26657
+- LCD: http://public-rpc1.regen.vitwit.com:1317
+- Persistent Peers (Feel free to add yours and create a PR)
+```
+35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656,937bbb7a231a870452dd595a442a191d609a26a5@116.203.20.144:26656,
+```
+
+### 2. Bigbang Stargate testnet
 We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
 
 
 ## Regen Devnets
 
-### regen-devnet-3
+### regen-devnet-4
 
-`regen-devnet-3` is active now and here are some important details:
+`regen-devnet-4` is active now and here are some important details:
 
 - Explorer: https://devnet.regen.aneka.io
 - Faucet: https://faucet.devnet.regen.vitwit.com
 - RPC: http://18.220.101.192:26657
 - LCD: http://18.220.101.192:1317
 
-Persistent Peer: `55cf919bafebb627f3f7717de24c35c86df4f260@18.220.101.192:26656`
+Persistent Peer: `7610288e313f68f1a33dd1fb0bf89e29eefa1dd7@18.220.101.192:26656`
 
-Here are the instructions to run a validator for `regen-devnet-3`:
+Here are the instructions to run a validator for `regen-devnet-4`:
 
 1. Stop your existing regen validator (if any)
 ```shell script
