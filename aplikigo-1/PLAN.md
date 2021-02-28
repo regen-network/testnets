@@ -89,14 +89,16 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
     - Note: the one's who voted on the proposal will be eligible for these rewards 
 
 ## Phase - 3: Internet of Regeneration - 800 points
-- Deploy ecocredit contract (with instructions) - 100 points
-- Deploy custom contract - 100 points (with no instructions, references will be shared)
-- Deploy ibc contract - 150 points (with no instructions, references will be shared)
-- Test Groups Module - 250 points
+- Deploy ecocredit contract (with instructions) - 100 points 
+    - March 2nd, 0300 UTC - March 2nd 2300UTC.
+- Deploy custom contract - 100 points (with no instructions, references will be shared) 
+    - March 3rd, 0300 UTC - March 3rd 2300UTC
+- Test Groups Module - 250 points -  - March 4th, 1200 UTC - March 3rd 2300UTC
     - Create group, create policy and execute policy
 - Test Data & ecocredit Module - 100 points
-
-
+    - Execute all the data & ecocredit module txs
+    - March 5th, 0300 UTC - March 5th 2300UTC
+- Deploy ibc contract - 150 points (with no instructions, references will be shared) [TBD]
 ## Bonus Challenges
 - Uptime - 4000points
     - 2000 points will be distributed among who never misses _signing_ a block (max 200 points per validator)
