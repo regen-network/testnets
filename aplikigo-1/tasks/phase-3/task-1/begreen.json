@@ -1,0 +1,18 @@
+{
+    "valOprAddr": "regen:valoper1xq3aq5ctyj3knu32usn66df9a67n0sf7ts5qdn",
+    "codeId": "40",
+    "contractAddress": "regen:1xdf7zpejr456aegsnmc2zez988k3y36f8spnj0",
+    "mintTxHash": "6EAD557CCD6BA65B58DAA4EB7632199C1F3FA3B17992BCBBC1A8BA61CF2139F8",
+    "transferTxHash": ["DE60C0EAE54B9675BF6FAB67665AE0E9883EFA08EA72A0B579ECB3A1ED516C3D", "71E7F9C9274F7B9AEDBDC1DA4D0DEE5F391B98EE338FCCD4B3E7FAC0305AEE63"],
+    "otherTxs": {
+        "burn": ["hash1", "hash2"],
+        "send": ["hash1", "hash2"],
+        "burnFrom": ["hash1", "hash2"],
+        "transferFrom": ["hash1", "hash2"],
+        "increaseAllowance": ["hash1", "hash2"],
+        "decreaseAllowance": ["hash1", "hash2"],
+    },
+    "customTxs":{
+        "myCustomFunc1": "hash-here"
+    }
+}
