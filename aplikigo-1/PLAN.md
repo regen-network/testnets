@@ -90,15 +90,15 @@ For detailed instructions [click here](./tasks/phase-1/3-gir-upgrade/INSTRUCTION
 
 ## Phase - 3: Internet of Regeneration - 800 points
 - Deploy a contract (with instructions) - 100 points 
-    - March 2nd, 0300 UTC - March 2nd 2300UTC.
+    - March 2nd, 0300 UTC - March 3r 2300UTC.
     - Instructions [here](./tasks/phase-3/task-1)
 - Deploy custom contract - 100 points (with no instructions, references will be shared) 
     - Deploy cosmwasm based fixed multisig contract and transfer tokents (or any message) using it
     - Multisig should contain at least 3 accounts with equal weights
     - Required weight should atleas be 2/3
     - Reference contract can be found here (you can use the same contract but bonus for any extra additions/improvements): https://github.com/CosmWasm/cosmwasm-plus/tree/master/contracts/cw3-fixed-multisig 
-    - March 3rd, 0300 UTC - March 3rd 2300UTC
-- Test Groups Module - 250 points -  - March 4th, 1200 UTC - March 3rd 2300UTC
+    - March 3rd, 0300 UTC - March 4th 2300UTC
+- Test Groups Module - 250 points -  - March 4th, 0300 UTC - March 5th 2300UTC
     - Create group, create policy and execute policy
 - Test Data & ecocredit Module - 100 points
     - Execute all the data & ecocredit module txs
