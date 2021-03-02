@@ -75,7 +75,7 @@ You can create/upload a new contract code or instantiate an existing code too.
 To upload a new contract,
 
 ```
-regen tx wasm store target/wasm32-unknown-unknown/release/cw20_base.wasm --chain-id aplikigo-1 --from <key_name> -y
+regen tx wasm store artifacts/cw20_base.wasm --chain-id aplikigo-1 --from <key_name> -y
 ```
 
 For more details about uploading contract, check the details here: https://docs.cosmwasm.com/0.13/getting-started/interact-with-contract.html
@@ -86,7 +86,7 @@ Note: Query the tx hash from above and get your `CodeID` details
 
 Instantiate the contract using the uploaded code using this command.
 ```sh
-regen tx wasm instantiate <CodeID> '{"name": "Witval Token", "symbol": "uwit", "decimals": 6, "mint": {"minter": "<your_account_address>"}}' --label "cw20base" --from <yourkey> --chain-id=aplikigo-1 --amount=1000000utree
+regen tx wasm instantiate <CodeID> '{"name": "Witval Token", "symbol": "UWIT", "decimals": 6, "initial_balances": [{"address": "<any_account_address>", "amount": "1000000"}], "mint": {"minter": "<your_account_address>"}}' --label "cw20base" --from <yourkey> --chain-id=aplikigo-1 --amount=1000000utree
 ```
 
 Where:
