@@ -1,0 +1,10 @@
+{
+    "valOprAddr": "xrn:1u500dy4lj2a9gf2kzpehk37tfvhrut6hv9a4c2",
+    "codeId": "34",
+    "contractAddress": "regen:1sxkt0pqjjfgmjtepc0qx248sges29d4hfn8uj7",
+    "mintTxHash": "F9661B75CF55B65E339F759826ED1F7B92AC478F874434342BF30322A1EFEF25",
+    "transferTxHash": ["468CD454EAC4EB9CCB23E2305BF325B486C7983358BCEF291BD9E4E26056D794"],
+    "otherTxs": {
+        "burn": ["968600E6F7FE6583ECDB282703038BA47838DB3EADF5DC8DC5C9D157EEAE05A2"]
+    }
+}
