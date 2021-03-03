@@ -1,0 +1,14 @@
+{
+    "valOprAddr": "xrn:1u500dy4lj2a9gf2kzpehk37tfvhrut6hv9a4c2",
+    "codeId": "your code id",
+    "contractAddress": "...",
+    "contractTxs": [
+        ""
+    ],
+    "improvementsOptional": [
+        {
+            "description": "use back door option to steal tokens from multisig",
+            "sampleTx": ""
+        }
+    ]
+}
