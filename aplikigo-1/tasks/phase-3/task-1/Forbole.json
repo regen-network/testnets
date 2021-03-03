@@ -5,12 +5,12 @@
     "mintTxHash": "CB6A95CB3074465334313C6DE1BACC7A43DD4179A54DDD38E5D76F614D275657",
     "transferTxHash": ["00281190DE45B9B49F1C8DF084635B436425C88B3097E03039E650FD73472053", "6D897D195C125341C6544CDFB48351D3DFF7E23FC7D37B365F9AE830F822FCD7"],
     "otherTxs": {
-        "burn": ["hash1", "hash2"],
-        "send": ["hash1", "hash2"],
-        "burnFrom": ["hash1", "hash2"],
-        "transferFrom": ["hash1", "hash2"],
-        "increaseAllowance": ["hash1", "hash2"],
-        "decreaseAllowance": ["hash1", "hash2"]
+        "burn": ["BC5563F6834CC932809FC9499D35B45CA6A43F67B937A4F2D958EBCB96B18E21"],
+        "send": [],
+        "burnFrom": ["80FDE854B9CD183589F2A82F3DA28C135E80503B2F9B25529485434F4BCE060C"],
+        "transferFrom": ["1F9217CBDB3ED878DDD61CAB1944ABE4D7AD814BE48F9C46604C0B57ED1F445E"],
+        "increaseAllowance": ["BC934E2939521FF186DB810C461B1CA8E118AE1D4012BB56F5AF3AD332CAC1CF"],
+        "decreaseAllowance": ["7AC846E1EA678DB7517E6A6FDF29F263E3067E1A206A1CEF07C337F8F5EBF302"]
     },
     "customTxs":{
         "myCustomFunc1": "hash-here"
