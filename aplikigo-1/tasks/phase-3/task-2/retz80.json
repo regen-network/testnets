@@ -1,0 +1,18 @@
+{
+    "valOprAddr": "regen:valoper1v86ejc4ak2rv9xqyy39hmhtkpvfmue8ar48jae",
+    "codeId": "109",
+    "contractAddress": "regen:1tedqeukynawhstyd0cgk9q7sx2m34a3pzy7uf2",
+    "contractTxs": [
+        "46D222868081F0A0583F6D3F20AC3F153EA65515A8D526044BD59F5DCAA453EE",
+	"042E252571F4C5E15012AFD8355E395A36A4D5D3657D06155B687E46D401AC53",
+	"71DE740C3C3DB98D0C93FB3CBF7B263E989006C3380AA1AA118D667054245B9B",
+	"A1225E80C9CF5D9D734F31556216F1BECE22499E9B5AACE6E9D291D3DF0551A0"
+
+    ],
+    "improvementsOptional": [
+        {
+            "description": "",
+            "sampleTx": ""
+        }
+    ]
+}
