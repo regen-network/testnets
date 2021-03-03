@@ -23,62 +23,59 @@ now=$(date +"%d/%m/%Y %H:%M:%S")
 if [ $LEN_GENTX -eq 0 ]; then
     echo "No new gentx file found."
 else
-    set -e
+    # set -e
 
-    echo "GentxFile::::"
-    echo $GENTX_FILE
+    # echo "GentxFile::::"
+    # echo $GENTX_FILE
 
-    ./scripts/check-gentx-amount.sh "$GENTX_FILE" || exit 1
+    # ./scripts/check-gentx-amount.sh "$GENTX_FILE" || exit 1
 
-    echo "...........Init Regen.............."
-    # wget https://github.com/regen-network/regen-ledger/releases/download/v0.6.0-alpha6/regen_0.6.0_linux_arm64.tar.gz && tar -xzvf regen_0.6.0_linux_arm64.tar.gz
-    # rm regen_0.6.0_linux_arm64.tar.gz
-    #cd regen_0.6.0_linux_amd64
+    # echo "...........Init Regen.............."
 
-    git clone https://github.com/regen-network/regen-ledger
-    cd regen-ledger
-    git checkout v0.6.0
-    make build
-    chmod +x ./build/regen
+    # git clone https://github.com/regen-network/regen-ledger
+    # cd regen-ledger
+    # git checkout v0.6.0
+    # make build
+    # chmod +x ./build/regen
 
-    ./build/regen keys add $RANDOM_KEY --keyring-backend test --home $REGEN_HOME
+    # ./build/regen keys add $RANDOM_KEY --keyring-backend test --home $REGEN_HOME
 
-    ./build/regen init --chain-id $CHAIN_ID validator --home $REGEN_HOME
+    # ./build/regen init --chain-id $CHAIN_ID validator --home $REGEN_HOME
 
-    echo "..........Fetching genesis......."
-    rm -rf $REGEN_HOME/config/genesis.json
-    curl -s https://raw.githubusercontent.com/regen-network/testnets/master/$CHAIN_ID/genesis.json > $REGEN_HOME/config/genesis.json
+    # echo "..........Fetching genesis......."
+    # rm -rf $REGEN_HOME/config/genesis.json
+    # curl -s https://raw.githubusercontent.com/regen-network/testnets/master/$CHAIN_ID/genesis.json > $REGEN_HOME/config/genesis.json
 
-    sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-01-01T00:00:00Z\",' $REGEN_HOME/config/genesis.json
+    # sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-01-01T00:00:00Z\",' $REGEN_HOME/config/genesis.json
 
-    GENACC=$(cat ../$GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
+    # GENACC=$(cat ../$GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
 
-    echo $GENACC
+    # echo $GENACC
 
-    ./build/regen add-genesis-account $RANDOM_KEY 1000000000000utree --home $REGEN_HOME \
-        --keyring-backend test
-    ./build/regen add-genesis-account $GENACC 100000000000utree --home $REGEN_HOME
+    # ./build/regen add-genesis-account $RANDOM_KEY 1000000000000utree --home $REGEN_HOME \
+    #     --keyring-backend test
+    # ./build/regen add-genesis-account $GENACC 100000000000utree --home $REGEN_HOME
 
-    ./build/regen gentx $RANDOM_KEY 900000000000utree --home $REGEN_HOME \
-        --keyring-backend test --chain-id $CHAIN_ID
-    cp ../$GENTX_FILE $REGEN_HOME/config/gentx/
+    # ./build/regen gentx $RANDOM_KEY 900000000000utree --home $REGEN_HOME \
+    #     --keyring-backend test --chain-id $CHAIN_ID
+    # cp ../$GENTX_FILE $REGEN_HOME/config/gentx/
 
-    echo "..........Collecting gentxs......."
-    ./build/regen collect-gentxs --home $REGEN_HOME
-    sed -i '/persistent_peers =/c\persistent_peers = ""' $REGEN_HOME/config/config.toml
+    # echo "..........Collecting gentxs......."
+    # ./build/regen collect-gentxs --home $REGEN_HOME
+    # sed -i '/persistent_peers =/c\persistent_peers = ""' $REGEN_HOME/config/config.toml
 
-    ./build/regen validate-genesis --home $REGEN_HOME
+    # ./build/regen validate-genesis --home $REGEN_HOME
 
-    echo "..........Starting node......."
-    ./build/regen start --home $REGEN_HOME &
+    # echo "..........Starting node......."
+    # ./build/regen start --home $REGEN_HOME &
 
-    sleep 5s
+    # sleep 5s
 
-    echo "...checking network status.."
+    # echo "...checking network status.."
 
-    ./build/regen status --node http://localhost:26657
+    # ./build/regen status --node http://localhost:26657
 
-    echo "...Cleaning the stuff..."
-    killall regen >/dev/null 2>&1
-    rm -rf $REGEN_HOME >/dev/null 2>&1
+    # echo "...Cleaning the stuff..."
+    # killall regen >/dev/null 2>&1
+    # rm -rf $REGEN_HOME >/dev/null 2>&1
 fi
