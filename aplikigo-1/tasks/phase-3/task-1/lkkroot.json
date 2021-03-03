@@ -1,0 +1,10 @@
+{
+    "valOprAddr": "regen:valoper1vlxnfvwn5fhhtvlvry708s8rhxkj420z7s7xct",
+    "codeId": "93",
+    "contractAddress": "regen:1dw63t6cetnkvs3qs27pds0mxnalsmjscjz7xuh",
+    "mintTxHash": "05144E1A9857A04FF79BD726385703FF02D70862D6DEB9FD892687AAB49F528D",
+    "transferTxHash": ["DE9668CE2D4B2748DFCD96C853A4EE80F259D5BB524EBDE69FC8AF2D90D1A754"],
+    "otherTxs": {
+        "burn": ["177AA69E0C1AFD5A4B90A29D58C399A96851030EEF73AE8214659CE79482B9AB"],
+    }
+}
