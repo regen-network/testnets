@@ -7,10 +7,10 @@
     "otherTxs": {
         "burn": ["CE62EC890D859B33764CF36086D2DDDFCE1F97079C4955041C555EBDC8CE7B89"],
         "send": [""],
-        "burnFrom": [""],
-        "transferFrom": [""],
-        "increaseAllowance": [""],
-        "decreaseAllowance": [""],
+        "burnFrom": ["AD9E37E6FA6195209AA279852934A3119CCD68F1389AA2AAE43DE3C8BC9A7343"],
+        "transferFrom": ["D6DB6EBFDECDBB63AA36547E0E9CF8CA56833B3D22ED894A51B1E41538FDCC83"],
+        "increaseAllowance": ["AFCFD51DAB65FD6393972A033413626F5D75C981AFDA01BC03E474EFCE3F7F21"],
+        "decreaseAllowance": ["CA6E5904224E142AB1FADB20F57576D80BFC20A8B5B1B2CD686D29B0146225CB"],
     },
     "customTxs":{
         "myCustomFunc1": ""
