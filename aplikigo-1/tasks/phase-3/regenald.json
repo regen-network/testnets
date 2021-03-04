@@ -1,0 +1,16 @@
+{
+    "valOprAddr": "regen:valoper1aqfcm0efmmhxz0kdc2zqekusxpa7zd6zgawlgz",
+    "codeId": "105",
+    "contractAddress": "regen:13cs0w9reutwgyzutz8v0jkgwf2k05kq2vgd3en",
+    "contractTxs": [
+        "6B43159E492C615A644E7DB3E6D8AE903A8D9F78DCDC5DE33179D7FD3C3ED195",
+        "498F28CABA3E33AF150EA0282C1713FD5DC83D1B7470A21BB88BF2587F203013",
+        "BCA8E2733D7A40BF65A15D49FB9F2AFA20F23D13FD0CD2A46A77C4F2C2154365"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "halt new proposals",
+            "sampleTx": "FA55B7B5668F00AC14BD9F5993A49EBA1108CE397672239DEB7E6149A48F9C99"
+        }
+    ]
+}
