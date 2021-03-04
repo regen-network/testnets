@@ -1,0 +1,18 @@
+{
+    "valOprAddr": "regen:valoper1g64vj20l0avyx4q5mlx9jlka3t3kl49c004tm3",
+    "codeId": "151",
+    "contractAddress": "regen:1kpm66nd29rvv2dxcnag2526dv7n8wrtlhcp6al",
+    "contractTxs": [
+        "store": "6B29012FBE5B3AA1F89FE20D953516924E87193E8B969E16857C7C57793142D3", 
+        "instantiate": "835C20EFF8823D90D2562BC0FD7147F021A8C0D0972506B9A644CD020994E207",
+        "propose": "21249A64B175E767B943D91624CBDC4E0C0218C15A54771EB96ED8C56366DF68",
+        "vote": "442F8067ABDF8987F2A7C38ADCE1CB5FF64954F3878C6B8F898568739CC03BA7",
+        "execute": "2A25A98C2AADBDA056F61F24A2F8FC88F343370A03059CB2BDD7196F5F0177FD"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "",
+            "sampleTx": ""
+        }
+    ]
+}
