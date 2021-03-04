@@ -4,5 +4,11 @@
     "contractAddress": "...",
     "contractTxs": [
         ""
+    ],
+    "improvementsOptional": [
+        {
+            "description": "use back door option to steal tokens from multisig",
+            "sampleTx": ""
+        }
     ]
 }
