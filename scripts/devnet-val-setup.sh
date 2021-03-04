@@ -43,8 +43,8 @@ echo "install regen-ledger"
 git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
 cd $GOPATH/src/github.com/regen-network/regen-ledger
 git fetch
-git checkout v0.6.1
-make install
+git checkout v0.6.2
+EXPERIMENTAL=true make install
 
 echo "Creating keys"
 $DAEMON keys add $YOUR_KEY_NAME
