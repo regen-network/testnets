@@ -44,7 +44,7 @@ Create a group account which is an account associated with a group and a decisio
 Example:
 ```sh
 $ regen tx group create-group-account [admin] [group-id] [metadata] \
-'{"@type":"/regen.group.v1alpha1.ThresholdDecisionPolicy", "threshold":"2", "timeout":"1s"}'
+'{"@type":"/regen.group.v1alpha1.ThresholdDecisionPolicy", "threshold":"2", "timeout":"1000s"}'
 ```
 
 ### Query group account by admin
@@ -71,13 +71,31 @@ here `proposer_address` should be one of the group members and metadata should b
 
 ### Vote for the proposal
 ```sh
-
+$  regen tx group vote [proposal-id] [voter] [choice] [metadata] [flags]
 ```
 
-### Execute Proposal
 ```sh
+regen tx group vote -h
+Vote on a proposal.
 
+Parameters:
+			proposal-id: unique ID of the proposal
+			voter: voter account addresses.
+			choice: choice of the voter(s)
+				CHOICE_UNSPECIFIED: no-op
+				CHOICE_NO: no
+				CHOICE_YES: yes
+				CHOICE_ABSTAIN: abstain
+				CHOICE_VETO: veto
+			Metadata: metadata for the vote
 ```
+### Execute Proposal
+- Query group account balances
+- Execute the proposal
+```sh
+ regen tx group exec 4 --from <your_account>
+```
+- Query group account balances
 
 ## What is expected from validators?
 1. Execute all the group related txs
