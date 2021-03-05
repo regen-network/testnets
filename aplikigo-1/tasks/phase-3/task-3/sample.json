@@ -1,8 +1,8 @@
 {
-    "validatorMoniker": "",
-    "validatorOprAddress": "",
-    "groupID": "",
-    "groupAccountAddress": "",
+    "validatorMoniker": "barebough",
+    "validatorOprAddress": "regen:valoper1u4qh29qy23xzhux2m2heleqyzfwhqf57dd0czg",
+    "groupID": "14",
+    "groupAccountAddress": "regen:1g2rymyq9eydhnda7zjhqhx3zzhdu4zsyl5jl02",
     "proposalID": "",
     "execTxHash": ""
 }
