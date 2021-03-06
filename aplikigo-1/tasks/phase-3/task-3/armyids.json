@@ -1,8 +1,8 @@
 {
     "validatorMoniker": "Army IDs",
     "validatorOprAddress": "regen:valoper14v3mc65ed7up6lle63n0nrtwemwwyeef87hsd7",
-    "groupID": "",
-    "groupAccountAddress": "",
-    "proposalID": "",
-    "execTxHash": ""
+    "groupID": "57",
+    "groupAccountAddress": "regen:1k33ukp90544yae74jrlhvtycyx7e7gtrmkylc7"",
+    "proposalID": "55",
+    "execTxHash": "0E8405DBBCEB80774DFA1018F4D24817034614FC69E7AA0370376AEF846FB40F"
 }
