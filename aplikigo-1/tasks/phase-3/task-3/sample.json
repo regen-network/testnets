@@ -1,8 +1,8 @@
 {
-    "validatorMoniker": "",
-    "validatorOprAddress": "",
-    "groupID": "",
-    "groupAccountAddress": "",
-    "proposalID": "",
-    "execTxHash": ""
+    "validatorMoniker": "KingSuper",
+    "validatorOprAddress": "regen:valoper1lmzuphpkrcrdsldm50guqma0kvnjsd98u302t8",
+    "groupID": "60",
+    "groupAccountAddress": "regen:1jlgc39xvgtw56cf3l9nzqnfv8nqnst9gvm2qzf",
+    "proposalID": "56",
+    "execTxHash": "D0260A89134681F2C39F68C714C678D412FF7F42F1473B287AD344B6920DC9C5"
 }
