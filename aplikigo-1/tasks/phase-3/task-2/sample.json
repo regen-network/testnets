@@ -5,5 +5,11 @@
     "contractTxs": [
         "ADEFE5059BE5139997CE69519B6A0640ED45C589FCFEBD63AB1ACC77A24B7990",
         "3BC04540786A5CED905E89A98C99B5A084B303691CF25287BAC3274C2204F6BE"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "use back door option to steal tokens from multisig",
+            "sampleTx": ""
+        }
     ]
 }
