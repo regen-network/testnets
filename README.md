@@ -34,18 +34,18 @@ We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmo
 
 ## Regen Devnets
 
-### regen-devnet-4
+### regen-devnet-5
 
-`regen-devnet-4` is active now and here are some important details:
+`regen-devnet-5` is active now and here are some important details:
 
 - Explorer: https://devnet.regen.aneka.io
 - Faucet: https://faucet.devnet.regen.vitwit.com
 - RPC: http://18.220.101.192:26657
 - LCD: http://18.220.101.192:1317
 
-Persistent Peer: `7610288e313f68f1a33dd1fb0bf89e29eefa1dd7@18.220.101.192:26656`
+Persistent Peer: `b2679a74d6bd9f89a3c294c447d6930293255e6b@18.220.101.192:26656`
 
-Here are the instructions to run a validator for `regen-devnet-4`:
+Here are the instructions to run a validator for `regen-devnet-5`:
 
 1. Stop your existing regen validator (if any)
 ```shell script
