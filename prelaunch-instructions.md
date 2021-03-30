@@ -59,7 +59,7 @@ sudo -S systemctl start $DAEMON
 Check latest height of the network at http://prelaunch.regen.aneka.io
 
 ```sh
-regen tx staking create-validator $DAEMON tx staking create-validator --amount 9000000000$DENOM \
+regen tx staking create-validator --amount 9000000000$DENOM \
   --commission-max-change-rate "0.1" --commission-max-rate "0.20" --commission-rate "0.1" \
   --details "Some details about yourvalidator" \
   --from <YOUR_KEY_NAME> \
