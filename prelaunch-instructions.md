@@ -71,5 +71,7 @@ regen tx staking create-validator --amount 9000000000$DENOM \
 ```
 
 Note: you can execute this command locally by replacing `--pubkey` with the validator pubkey and appending memo flag with `node-id@ip:26657`
-To get validator pubkey: `regen tendermint show-validaotr`
+
+To get validator pubkey: `regen tendermint show-validator`
+
 To get node id: `regen tendermint show-node-id`
