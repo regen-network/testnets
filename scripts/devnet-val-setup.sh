@@ -82,11 +82,6 @@ mkdir -p ~/.regen/cosmovisor/genesis/bin
 mkdir -p ~/.regen/cosmovisor/current/bin
 mv $GOBIN/regen ~/.regen/cosmovisor/genesis/bin/
 
-ln -s -T ${HOME}/.regen/cosmovisor/genesis ${HOME}/.regen/cosmovisor/current
-
-echo "export PATH=/home/$USER/.regen/cosmovisor/current/bin:\$PATH" >> ~/.profile
-. /home/$USER/.profile
-
 
 echo "---------Creating system file---------"
 
@@ -109,6 +104,9 @@ WantedBy=multi-user.target
 sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
 sudo -S systemctl daemon-reload
 sudo -S systemctl start cosmovisor
+
+echo "export PATH=/home/$USER/.regen/cosmovisor/current/bin:\$PATH" >> ~/.profile
+. /home/$USER/.profile
 
 echo
 echo "Your account address is :"
