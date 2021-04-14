@@ -78,9 +78,15 @@ make cosmovisor
 cp cosmovisor $GOBIN/cosmovisor
 
 echo "Setting up cosmovisor directories"
-mkdir -p ~/.regen/cosmovisor
 mkdir -p ~/.regen/cosmovisor/genesis/bin
-cp $GOBIN/regen ~/.regen/cosmovisor/genesis/bin
+mkdir -p ~/.regen/cosmovisor/current/bin
+mv $GOBIN/regen ~/.regen/cosmovisor/genesis/bin/
+
+ln -s -T ${HOME}/.regen/cosmovisor/genesis ${HOME}/.regen/cosmovisor/current
+
+echo "export PATH=/home/$USER/.regen/cosmovisor/current/bin:\$PATH" >> ~/.profile
+. /home/$USER/.profile
+
 
 echo "---------Creating system file---------"
 
