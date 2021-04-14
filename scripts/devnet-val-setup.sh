@@ -110,9 +110,11 @@ echo "export PATH=/home/$USER/.regen/cosmovisor/current/bin:\$PATH" >> ~/.profil
 
 echo
 echo "Your account address is :"
-$DAEMON keys show $YOUR_KEY_NAME -a
+~/.regen/cosmovisor/current/bin/$DAEMON keys show $YOUR_KEY_NAME -a
 echo "Your node setup is done. You would need some tokens to start your validator. You can get some tokens from the faucet: https://faucet.devnet.regen.vitwit.com"
 echo
 echo
 echo "After receiving tokens, you can create your validator by running"
 echo "$DAEMON tx staking create-validator --amount 9000000000$DENOM --commission-max-change-rate \"0.1\" --commission-max-rate \"0.20\" --commission-rate \"0.1\" --details \"Some details about yourvalidator\" --from $YOUR_KEY_NAME   --pubkey=\"$($DAEMON tendermint show-validator)\" --moniker $YOUR_NAME --min-self-delegation \"1\" --chain-id $CHAIN_ID --node http://18.220.101.192:26657"
+echo "Before running that command or any regen command, please run this command in order to update you PATH:"
+echo ". /home/$USER/.profile"
