@@ -1,4 +1,6 @@
 #!/bin/bash
+# Run with 2 arguments: your key name, and your node name (moniker).
+# For example: $ ./devnet-val-setup.sh my-key my-name
 
 command_exists () {
     type "$1" &> /dev/null ;
@@ -11,8 +13,8 @@ else
   sudo apt update
   sudo apt install build-essential jq -y
 
-  wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
-  tar -xvf go1.15.2.linux-amd64.tar.gz
+  wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz
+  tar -xvf go1.15.11.linux-amd64.tar.gz
   sudo mv go /usr/local
 
   echo "" >> ~/.profile
@@ -70,7 +72,7 @@ echo "Installing cosmovisor - an upgrade manager..."
 rm -rf $GOPATH/src/github.com/cosmos/cosmos-sdk
 git clone https://github.com/cosmos/cosmos-sdk $GOPATH/src/github.com/cosmos/cosmos-sdk
 cd $GOPATH/src/github.com/cosmos/cosmos-sdk
-git checkout v0.40.0
+git checkout v0.42.4
 cd cosmovisor
 make cosmovisor
 cp cosmovisor $GOBIN/cosmovisor
