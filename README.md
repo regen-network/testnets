@@ -4,33 +4,27 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-### 1. Regen Network Testnet 4000: Aplikiĝo Testnet
+### regen-testnet-1
 
-**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+`regen-testnet-1` is active now and here are some important details:
 
-*Estimated Dates: Feb 8th — March 15th 2021
+- Faucet: https://regen.vitwit.com/faucet
 
-*Minimum points to be allocated: 1800*
-*$REGEN staking token rewards: 500,000*
+Here are the instructions to run a validator for `regen-devnet-5`:
 
-Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
-
-Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-pre-launch-incentivized-testnet-2e353dffb4b6
-
-Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
-
-**TL;DR**
-- Explorer: https://aplikigo.regen.aneka.io
-- RPC: http://public-rpc1.regen.vitwit.com:26657
-- LCD: http://public-rpc1.regen.vitwit.com:1317
-- Persistent Peers (Feel free to add yours and create a PR)
+1. Stop your existing regen validator (if any)
+```shell script
+sudo service regen stop
 ```
-35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656,937bbb7a231a870452dd595a442a191d609a26a5@116.203.20.144:26656,
+2. Run the latest setup script
+```sh
+git clone https://github.com/regen-network/testnets
+cd testnets
+git pull
+
+chmod +x scripts/testnet-val-setup.sh
+./scripts/testnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
-
-### 2. Bigbang Stargate testnet
-We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
-
 
 ## Regen Devnets
 
@@ -65,6 +59,33 @@ chmod +x scripts/devnet-val-setup.sh
 ## Historic Testnets (not in use)
 
 The testnets listed below are no longer active but are retained here for posterity. Do not waste your time trying to join them :)
+
+### Regen Network Testnet 4000: Aplikiĝo Testnet
+
+**Focus**: Application specific testing and simulation of ecosystem service credit creation and trading with production ready MVP blockchain.
+
+*Estimated Dates: Feb 8th — March 15th 2021
+
+*Minimum points to be allocated: 1800*
+*$REGEN staking token rewards: 500,000*
+
+Aplikigo-1 Testnet is scheduled to start on 8th Feb, 2021. More details [here](./aplikigo-1)
+
+Blog Post: https://medium.com/regen-network/apliki%C4%9Do-regen-networks-final-pre-launch-incentivized-testnet-2e353dffb4b6
+
+Testnet Plan: [Aplikigo-1 Testnet Plan](./aplikigo-1/PLAN.md)
+
+**TL;DR**
+- Explorer: https://aplikigo.regen.aneka.io
+- RPC: http://public-rpc1.regen.vitwit.com:26657
+- LCD: http://public-rpc1.regen.vitwit.com:1317
+- Persistent Peers (Feel free to add yours and create a PR)
+```
+35d64042e1a5f6466b2b1540fa2e859dfc49666e@public-rpc1.regen.vitwit.com:26656,9082e4d408b0794f884f8c1733d7d11ffb010e38@161.35.51.84:26656,937bbb7a231a870452dd595a442a191d609a26a5@116.203.20.144:26656,
+```
+
+### 2. Bigbang Stargate testnet
+We are also supporting the [BigBang-1 Stargate testnet](https://github.com/cosmos/testnets/tree/master/bigbang-1)
 
 ### Regen Network Testnet 3000: COSMWASM Kontraŭa Testnet
 
