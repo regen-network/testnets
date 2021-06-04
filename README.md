@@ -10,7 +10,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 - Faucet: https://regen.vitwit.com/faucet
 
-Here are the instructions to run a validator for `regen-devnet-5`:
+Here are the instructions to run a validator for `regen-testnet-1`:
 
 1. Stop your existing regen validator (if any)
 ```shell script
