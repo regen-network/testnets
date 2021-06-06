@@ -1,0 +1,9 @@
+{
+    "src2dstTxHash": "89DFDC6D33B43385395814132ADA5FC35C0E6E71F5DB089C3E22DA88CADCFDFD",
+    "dst2srcTxHash": "D52672F42AAA4C55FE58C9E26C375396FB11410DD7B08C7B315B13B627D5A5EB",
+    "accountAddress": "regen:1xq3aq5ctyj3knu32usn66df9a67n0sf78uwl9k",
+    "validatorOprAddress": "regen:valoper1xq3aq5ctyj3knu32usn66df9a67n0sf7ts5qdn",
+    "dstChain": "edgenet-6 ", 
+    "dstAddress": "akash1z7sgxnkp4mj5huzx9rysg6xj6ft54xrqxapfdu",
+    "dst2srcAkashTxHash": "1A4C50CA0DACA90E06F274051A028D394962899247D97650658E9B5507063ACE"
+}
