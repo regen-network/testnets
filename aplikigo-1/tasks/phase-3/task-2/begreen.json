@@ -1,0 +1,18 @@
+{
+    "valOprAddr": "regen:valoper1xq3aq5ctyj3knu32usn66df9a67n0sf7ts5qdn",
+    "codeId": "142",
+    "contractAddress": "regen:1xgg24ptaq0hxtyrqcjv9ucpjjdvg554j92jvkd",
+    "contractTxs": [
+        "store": "475D63C4DE181328C4AABC8F514A2962038DE8B10ECF8CC8074D13F643E1DAAC", 
+        "instantiate": "5029FD5FCE70B686F3FC2E443B7C2E2DAF78532E72A9750DAA30B8CD1512D528",
+        "propose": "1514936B2C48DE682AEBC199238C0D7FFC18D1DAE3AD3EB54DE256374B7626CD",
+        "vote": "C24D5020B90F2BBBF03B41A29D8682475BA6401D49CC787D00CB2F9347171B2B",
+        "execute": "35211CCFCACDCB2EA8F09C4C07804E375E14E714397672440E0946FEBECBADA7"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "add actual veto that rejects immediately",
+            "sampleTx": "72F7326205DAC7130CEC17205672B29F154B5296296C79B1DCD13CD5DB45F885"
+        }
+    ]
+}
