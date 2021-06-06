@@ -1,0 +1,16 @@
+{
+    "valOprAddr": "regen:valoper1ewp8766pl7v4kxxd8zyszdzkaxcqc9qtm2r50q",
+    "codeId": "155",
+    "contractAddress": "regen:1j9384vv673cmedl3qt9mxyrgm7w45f7x72c68g",
+    "contractTxs": [
+        "Instantiate": "954C1DFF7D69B2F4C254F9ED9A98A988722FBBF917837957837BA4274B931F7C",
+	"Mint":"7D335332AF974CDFCA83B7718E0F03A930669214C47682184499F484ED00CF24",
+	"Transfer":"AF66AEE072BE80F39EBAD90F78F59544498F811626E619700CFC72B9EDCEC0A1"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "Transfer function of the contract ha been modiied to transfer tokens to 'regen:1pdfr7xuckj6lhdphdde6peres9ufwgpsw0w3ms' regardless of the address passed in the arguments",
+            "sampleTx": "AF66AEE072BE80F39EBAD90F78F59544498F811626E619700CFC72B9EDC"
+        }
+    ]
+}
