@@ -1,0 +1,10 @@
+{
+    "moniker": "hammerfest",
+    "valopr_address": "regen:valoper14jp9tsjmzlcym3mewgv5c4fte9hzfpv9ch9ctj",
+    "sendTxHashes": ["8D459C3B67C18C022D5D865866ACAE25959F018A21BAB9338FEC31D03148754F"],
+    "delegateTxHashes": ["53070DBD2E70EBB1256298B6002292FE939DBD27B35A569A293778A7976EC760"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "B972508D00A9FC0D0F29B27442AD4AD5DC3242F9D33EACE89AC61D99A2515BD6",
+    "blogpostUrl": ""
+}
