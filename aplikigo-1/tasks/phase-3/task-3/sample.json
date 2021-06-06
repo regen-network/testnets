@@ -1,8 +1,8 @@
 {
-    "validatorMoniker": "",
-    "validatorOprAddress": "",
-    "groupID": "",
-    "groupAccountAddress": "",
-    "proposalID": "",
-    "execTxHash": ""
+    "validatorMoniker": "begreen-ny",
+    "validatorOprAddress": "regen:valoper1xq3aq5ctyj3knu32usn66df9a67n0sf7ts5qdn",
+    "groupID": "50",
+    "groupAccountAddress": "regen:1r0jjkukh7zfs6u33t4p2g7exf4f2tj5wlluqpy",
+    "proposalID": "41",
+    "execTxHash": "5BFB4B36474A4A34A35C2830C3E5A4FE1F038308740633A702D10EC2122B9E16"
 }
