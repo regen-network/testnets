@@ -22,7 +22,11 @@ else
   echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
 
   #source ~/.bashrc
-  . ~/.bashrc
+  #. ~/.bashrc
+  export GOPATH=$HOME/go
+  export GOROOT=/usr/local/go
+  export GOBIN=$GOPATH/bin
+  export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
   go version
 fi
