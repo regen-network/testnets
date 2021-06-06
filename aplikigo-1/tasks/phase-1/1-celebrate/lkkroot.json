@@ -1,0 +1,10 @@
+{
+    "moniker": "lkkroot",
+    "valopr_address": "regen:valoper1vlxnfvwn5fhhtvlvry708s8rhxkj420z7s7xct",
+    "sendTxHashes": ["D9F9E85441CC54531852CD12177611B88D0DC363E5A7502E91BB68CA7306395D"],
+    "delegateTxHashes": ["42FB3A2035AB4C3FE623EE5A40662304FDBF71EC16A9C24DAEEBF95DAA92E938"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "1924DDE9A3CD59C14B470101272B94A08BAC16492FAB921BDBCBA8AE9F820B1A",
+    "blogpostUrl": "medium.com/..."
+}
