@@ -1,0 +1,15 @@
+{
+    "valOprAddr": "regen:1kjk2ynhe7lqc4qjhkrywdxsu5s380w7t9k8wra",
+    "codeId": "133",
+    "contractAddress": "regen:1y5ymru3xakfl28fckvhggazlrn62we8mh7ujxk",
+    "contractTxs": [
+        "3FE52F6F95EC990BCC190E568560AB6F020365ED9E7FB670C5C683803E86774B"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "copy and rename two functions,and redeploy",
+            "sampleTx": "77E9E32A9D917FCD76A742464B55334C66C52E9E054C3CBE439693995BA60A49"
+            "sampleTx": "955A32690DC3A28930925B1AFD6E7B53797196B7E4F8B10322242215028F48BF"
+        }
+    ]
+}
