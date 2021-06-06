@@ -1,0 +1,16 @@
+{
+    "valOprAddr": "regen:valoper10l9t2lvxhxut2s60lwct8f6n2q5x88khh6w7r4",
+    "codeId": "143",
+    "contractAddress": "regen:1m94tw6kt99qu2f62cfneayg0xkkjyr25gxsz9v",
+    "contractTxs": [
+        "ECE0E7100F3E3CABBD497B5031479B9B5163DD5BF5C4B77898CCF8134478E5BB",
+        "915D0E2F4966B92054FE5A3DA2ADA998BCFB457FBC0A027FECFBDE8C39BA28CF",
+        "542EE9D7F49A85823C9BC82B88A29F46A436340FEB2255B4D590E45ADA71B6D3"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "This uses three contracts. The modified contract from the previous task, a custom cw721 contract that can mint pokemon-like cosmon creature nfts. And the Main contract: an NFT-Marketplace. The marketplace allows to offer any cw721 token for any amount of any cw20 token. Txs in order are: mint cosmon (contractaddr: regen:1xswqut08fuyqu0vap87wfj63gwku0z2jc644y5), offer cosmon with send to marketplace and finally buying the cosmon with the cw20 tokens through a send tx from previous cw20 contract to marketplace.",
+            "sampleTx": ""
+        }
+    ]
+}
