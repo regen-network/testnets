@@ -1,0 +1,16 @@
+{
+    "validatorMoniker": "regenald",
+    "validatorOprAddress": "regen:valoper1aqfcm0efmmhxz0kdc2zqekusxpa7zd6zgawlgz",
+    "groupID": "9",
+    "groupAccountAddress": "regen:1q7k5llnm9c7vzq6z66gt96hvvwrsf8mdacalte",
+    "proposalID": "13",
+    "execTxHash": "0D4A55385069D7D3DEDB27FFD422BC73FFA1FCE34F391BEB26CF98E80C846CDC",
+    "bonusTxs": {
+        "groupID": "26",
+        "updateGroupMetadataTxHash": "F3BDF352DBB155B19C0996D7B30704EEC313B72DE99BFA3205E128D9BBBDF978",
+        "updateGroupDecisionPolicyTxHash": "69818D1333782DD6E6F17A2984356E07C323F07F92DCF6CAAA3E754F5077F28E",
+        "updateGroupMembersTxHash": "378BF71A84A98449132C1C8AFA7F1CD98B43D112F9C830828A2932516B5FFA87",
+        "updateGroupAccountAdminTxHash": "FF87E34D54730D0695E400813ED6D6F3622D549AB327013895010C4717AE5D40",
+        "updateGroupAdminTxHash": "07E885D7BEAC5CFFF8F3C88758A4426B78B14EFC58329080992A56F02C083F34"
+    }
+}
