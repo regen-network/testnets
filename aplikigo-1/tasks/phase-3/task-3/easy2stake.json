@@ -1,0 +1,16 @@
+{
+    "validatorMoniker": "Easy2Stake",
+    "validatorOprAddress": "regen:valoper185nzc47ja0akac0rcjum6g3luj93gdr9gmkdnq",
+    "groupID": "40",
+    "groupAccountAddress": "regen:1hwytmshmx3jqdks6lw3ktqtnwseet9nyf5ts24",
+    "proposalID": "31",
+    "execTxHash": "0CB170782AE4A8597435601D37FF847C37A729BA934D9BD81D8646CB9D61A2E0",
+    "bonusTxs":
+    {
+    "update_group_account_decision_policy": "D7C0DA0D2009A254CA83D3354F03101EFBEB136021661AC12DC5FCE68E994CF0",
+    "update_group_admin": "B83E3FDB0282B612EC8074E2B70B92904E796FB4392B2D64973AE3FDAB9409C3",
+    "update_group_account_comment": "2AB3CF61D4F16C2510C60EBF38977412F7DC5D3D08C9CA009BBA8A02DB4FF85B",
+    "update_group_members": "8CAFE1105F90987FE03FC32A4A9ABB40AFC8465B9D5028B2AE4ED5ABFCC1B9B3",
+    "update_group_account_admin": "63FD9EB77D3B32934E204241E95349B4791BC98677FB19497CF3F5D6DE88FA50"
+    }
+}
