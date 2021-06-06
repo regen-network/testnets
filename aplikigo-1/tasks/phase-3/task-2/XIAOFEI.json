@@ -1,0 +1,16 @@
+task 2:
+{
+    "valOprAddr": "regen:1nfhln2wruzmnhl9k6ykel8hk4cqj55aty9svdh",
+    "codeId": "136",
+    "contractAddress": "regen:1lh2hsd27y4ffmhqrpv0at0gx47lk7gacwz0v80",
+    "contractTxs": [
+        "1F61D797247A063F45B0D45E74048FA5DD93CDFE3A8E1162C7D83419A5A32826"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "custom_trans,custom_burn",
+            "sampleTx": "18CE2F5A82155FA9D1AB80D83C81E9EEE093093255FA6379B65EB2E2773EBFC2"
+            "sampleTx": "83F2F0B8A9FACE0FCB587120CF3AA6C74B392929CD537E974C469C72E16D0113"
+        }
+    ]
+}
