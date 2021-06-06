@@ -1,0 +1,15 @@
+{
+    "validatorMoniker": "XIAOFEI",
+    "validatorOprAddress": "regen:1nfhln2wruzmnhl9k6ykel8hk4cqj55aty9svdh",
+    "groupID": "29",
+    "groupAccountAddress": "regen:1e2aerl7hh32xhkfcldsw0w2gyd2f6wudn4hczy",
+    "proposalID": "21",
+    "execTxHash": "E57D1868096B3A13454092B7CC97B984188E89EA4766CFA1699A32AAF99492D7",
+    "bonusTxs": {
+        "update-group-account-admin": "FE105064BED8685E3EF0ABEE1620D398C3390216E6904B4674151E0BD25DD85A",
+        "update-group-account-metadata": "16B70360B8A875DE10A7CFD73E9A82D2B2FFBD1A592B73E2BCF7C437A0B9B609",
+        "update-group-account-policy": "C323BBE69D1962BE6B21FD7A5D460DABB0E8119041000233EEA027C614D0C477",
+        "update-group-admin": "D0CB131DBEEFA53000BC174E3AA0E132476AAC221DA7643EB15EFE4A9B02A1B9",
+        "update-group-members": "F5DF6FF3A7B03E1732200123A61687F11A55DA75169B44A1AEB56D5D7A64AB81"
+    }
+}
