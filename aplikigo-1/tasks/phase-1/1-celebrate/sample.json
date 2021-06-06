@@ -1,10 +1,14 @@
 {
-    "moniker": "",
-    "valopr_address": "",
-    "sendTxHashes": ["hash1", "hash2"],
-    "delegateTxHashes": ["hash1", "hash2"],
-    "tweetMemoTx": "",
-    "linkedInPostMemoTx": "",
-    "memoWithDiscordHandleTxHash": "",
-    "blogpostUrl": "medium.com/..."
+    "moniker": "begreen-ny",
+    "valopr_address": "regen:valoper1xq3aq5ctyj3knu32usn66df9a67n0sf7ts5qdn",
+    "sendTxHashes": ["3FCD2AD87AA300225F107A69B1CF7DB7CABE4C8055B7C6E47068AF90227D6F42", "AD9905BB5A14AEB202BA404941F808BC2E738E044CFE15DF22C7E40A7369EF91"],
+    "delegateTxHashes": ["68DAEE85BC0AF8D0629CA2AD41DFFDBC188E9D11F13E73BC28DD3943D63BBFFA", "FFF379916AA132C9BA681BF966BFB48AD1232CFEE9FC46CF008DD3D0C09E59FC"],
+    "tweetMemoTx": "AD9905BB5A14AEB202BA404941F808BC2E738E044CFE15DF22C7E40A7369EF91",
+    "linkedInPostMemoTx": "3FCD2AD87AA300225F107A69B1CF7DB7CABE4C8055B7C6E47068AF90227D6F42",
+    "memoWithDiscordHandleTxHash": "FFF379916AA132C9BA681BF966BFB48AD1232CFEE9FC46CF008DD3D0C09E59FC",
+    "blogpostUrl": "68DAEE85BC0AF8D0629CA2AD41DFFDBC188E9D11F13E73BC28DD3943D63BBFFA",
+    
+    "blogpostUrl": "https://gotjoshua.medium.com/running-a-regen-validator-in-docker-e8ae26cb42e1",
+    "tweetMemoUrl": "https://twitter.com/gotjoshua/status/1359104537362104325",
+    "linkedInPostUrl": "https://www.linkedin.com/posts/gotjosh_regen-networktestnets-activity-6764877007999270912-FNvK"
 }
