@@ -8,7 +8,7 @@ Create a group which is an aggregation of member accounts with associated weight
 $ regen tx group create-group [admin] [metadata] [members-json-file]
 ```
 Where
-- `admin` is your account address
+- `admin` is your validator account address
 - `metadata` is the description for your group, should be a base64 encoded string
 - `members.json` contains:
 ```sh
