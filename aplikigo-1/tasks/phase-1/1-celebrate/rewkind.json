@@ -1,0 +1,10 @@
+{
+    "moniker": "rewkind",
+    "valopr_address": "regen:valoper1gypy8elkqmv84ewmf7g4nwkphzkf3k78y6l9aw",
+    "sendTxHashes": ["AF17A1423C90943DAB84819906AB3C459A1B4354A98F773E75E34A5FBCE9AB79"],
+    "delegateTxHashes": ["CA6C9600F66BD30DFF13526B17B54DD26B9EDCA5C765356A9A2E4E05E14B4D13"],
+    "tweetMemoTx": "",
+    "linkedInPostMemoTx": "",
+    "memoWithDiscordHandleTxHash": "FF715D57A9F0D8F245E5E94A45CA49630E2E3ACF8860E2D08397BFE2B853BBD2",
+    "blogpostUrl": "medium.com/..."
+}
