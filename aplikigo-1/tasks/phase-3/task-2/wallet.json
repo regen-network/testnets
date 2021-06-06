@@ -1,0 +1,17 @@
+{
+    "valOprAddr": "regen:valoper1jgct7x9ta42vkmksul4gd0d4f0u4qv6ul2q9wr",
+    "codeId": "139",
+    "contractAddress": "regen:1am44u3dga62nuh09md52gm00jzj5p75v2ux2gc",
+    "contractTxs": [
+        "C78B06BC35C282C4D9892DAF45EB07C587F1AEA96D83CD309CA997815DCEE126",
+	"9EB65243DC70FDB8E88A7140851D0DE4AD824C37DB7F54F842D070F661C67DF6",
+	"A6EF17B691CAE8E7B9D07ABCCBEAF38B7C4ED329B3677B0989E59CBAF1ECBB7D",
+	"4E68F9C2FC0EE92EBCA18A6E3725C5BB650FE7B69ABAC3CF33FE493D73DC10C3"
+    ],
+    "improvementsOptional": [
+        {
+            "description": "use back door option to steal tokens from multisig",
+            "sampleTx": ""
+        }
+    ]
+}
