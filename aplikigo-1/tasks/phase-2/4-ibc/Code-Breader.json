@@ -1,0 +1,8 @@
+{
+    "src2dstTxHash": "383BD6E881A73FC00D2FC1E1E82FDAAFAC8BF27C73B303CFEC0A35A5C50B3340",
+    "dst2srcTxHash": "9E04717EC9E6C286FD25007922F8977BDCBD985E9E64BBFEF876593D3E51B04D",
+    "accountAddress": "regen:1kdxkezjm2le753yqzkppq247uj2f0qtryjur8d",
+    "validatorOprAddress": "regen:valoper1kdxkezjm2le753yqzkppq247uj2f0qtrg7xu0g",
+    "bonusSrc2DstTxHash": "",
+    "bonusDst2SrcTxHash": ""
+}
