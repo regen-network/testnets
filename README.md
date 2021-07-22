@@ -28,6 +28,13 @@ chmod +x scripts/testnet-val-setup.sh
 
 ## Regen Devnets
 
+### regen-devnet-6
+- Faucet: https://regen.vitwit.com/faucet
+- RPC: http://167.71.182.156:26657/
+- LCD: http://167.71.182.156:1317/
+- Explorer: http://devnet6.regen.aneka.io/
+- Chain-id: regen-devnet-6-7
+
 ### regen-devnet-5
 
 `regen-devnet-5` is active now and here are some important details:
