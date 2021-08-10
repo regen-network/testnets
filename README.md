@@ -4,13 +4,13 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-### regen-testnet-1
+### regen-testnet-2
 
-`regen-testnet-1` is active now and here are some important details:
+`regen-testnet-2` is active now and here are some important details:
 
 - Faucet: https://regen.vitwit.com/faucet
 
-Here are the instructions to run a validator for `regen-testnet-1`:
+Here are the instructions to run a validator for `regen-testnet-2`:
 
 1. Stop your existing regen validator (if any)
 ```shell script
@@ -25,6 +25,8 @@ git pull
 chmod +x scripts/testnet-val-setup.sh
 ./scripts/testnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
+
+You can find the genesis file and all the relevant information in [testnet](./testnet) directory
 
 ## Regen Devnets
 

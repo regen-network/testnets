@@ -35,8 +35,8 @@ YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
 DENOM=uregen
-CHAIN_ID=regen-testnet-1
-PERSISTENT_PEERS="145b85140ce85e4038aef244942eec67bbd56e65@139.59.79.183:26656"
+CHAIN_ID=regen-testnet-2
+PERSISTENT_PEERS="c82649de42fd5a3ca0d3540ed14ae7125c3a169f@157.245.252.46:26656"
 
 echo "install regen-ledger"
 git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
@@ -56,7 +56,7 @@ echo ""
 
 echo "Setting up your validator"
 $DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
-curl http://139.59.79.183:26657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
+curl http://157.245.252.46:36657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
 
 
 echo "----------Setting config for seed node---------"
@@ -105,7 +105,7 @@ sudo -S systemctl start cosmovisor
 echo
 echo "Your account address is :"
 $DAEMON keys show $YOUR_KEY_NAME -a
-echo "Your node setup is done. You would need some tokens to start your validator. You can get some tokens from the faucet: https://faucet.devnet.regen.vitwit.com"
+echo "Your node setup is done. You would need some tokens to start your validator. You can get some tokens from the faucet: https://regen.vitwit.com/faucet"
 echo
 echo
 echo "After receiving tokens, you can create your validator by running"
