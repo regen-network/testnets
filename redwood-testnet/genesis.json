@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2021-08-10T09:16:55.83819003Z",
-  "chain_id": "regen-testnet-2",
+  "genesis_time": "2021-08-18T10:32:15.02034107Z",
+  "chain_id": "regen-redwood-1",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -33,14 +33,21 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "regen1fj8n8hlfd4yrzpwwh27dkxascvwnez644y09hu",
+          "address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "regen1ylxjet9unzwjhjl0mlz7yqlxx6v2z7mwjkj4j2",
+          "address": "regen1pxag6wu3jz885yr9t8gkuvc4ktxxt2la7xm4x3",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "regen1ehmqt8ept5awlfkxcf3qp9a6ezsx2amyshqycs",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -54,20 +61,29 @@
       },
       "balances": [
         {
-          "address": "regen1ylxjet9unzwjhjl0mlz7yqlxx6v2z7mwjkj4j2",
+          "address": "regen1pxag6wu3jz885yr9t8gkuvc4ktxxt2la7xm4x3",
           "coins": [
             {
               "denom": "uregen",
-              "amount": "10000000000000000"
+              "amount": "1000000000000000"
             }
           ]
         },
         {
-          "address": "regen1fj8n8hlfd4yrzpwwh27dkxascvwnez644y09hu",
+          "address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
           "coins": [
             {
               "denom": "uregen",
-              "amount": "1000000000000"
+              "amount": "10000000000"
+            }
+          ]
+        },
+        {
+          "address": "regen1ehmqt8ept5awlfkxcf3qp9a6ezsx2amyshqycs",
+          "coins": [
+            {
+              "denom": "uregen",
+              "amount": "1000000000000000"
             }
           ]
         }
@@ -75,7 +91,7 @@
       "supply": [
         {
           "denom": "uregen",
-          "amount": "10001000000000000"
+          "amount": "2000010000000000"
         }
       ],
       "denom_metadata": []
@@ -120,7 +136,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "witval",
+                  "moniker": "Witval",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -132,15 +148,15 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "regen1fj8n8hlfd4yrzpwwh27dkxascvwnez644y09hu",
-                "validator_address": "regenvaloper1fj8n8hlfd4yrzpwwh27dkxascvwnez64frjq0d",
+                "delegator_address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
+                "validator_address": "regenvaloper15cea7lrp06c86hc3azzm0ffuvuya4e62p4hfuz",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
                   "key": "nUzWRiQMZEGTXgQF3jRfHqJMrboyFvGBsZE+uNtY21o="
                 },
                 "value": {
                   "denom": "uregen",
-                  "amount": "900000000000"
+                  "amount": "9000000000"
                 }
               }
             ],
@@ -154,7 +170,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "A7mGW2a23U8jhzM7I+FZMTqmeqVUiB43he8IHK+z2lV8"
+                  "key": "AkQhy8wCnpKurglghnNCe0Oremu8mqqRyCNh+8T52sss"
                 },
                 "mode_info": {
                   "single": {
@@ -172,7 +188,7 @@
             }
           },
           "signatures": [
-            "RhK0GNLwL6Uo80tMq2MJ+l+dVvWafIsqX2IIyonX0OBgFndAtklFlPnFLFCK+30RZSY9Q1hVsRKJMqmOBZyDdw=="
+            "jhRhJYK731iXYfa+DsH1LJQqYoCpMY0x+hNOuss8aodbQYk/flM/HvT2LWwgbJ5yvTSl0BGUvH5Oiu861Nn7qw=="
           ]
         }
       ]
@@ -186,13 +202,13 @@
         "min_deposit": [
           {
             "denom": "uregen",
-            "amount": "100000"
+            "amount": "10000000"
           }
         ],
         "max_deposit_period": "172800s"
       },
       "voting_params": {
-        "voting_period": "3600s"
+        "voting_period": "172800s"
       },
       "tally_params": {
         "quorum": "0.334000000000000000",
@@ -241,14 +257,14 @@
         "inflation_max": "0.200000000000000000",
         "inflation_min": "0.070000000000000000",
         "goal_bonded": "0.670000000000000000",
-        "blocks_per_year": "6311520"
+        "blocks_per_year": "4360000"
       }
     },
     "params": null,
     "slashing": {
       "params": {
         "signed_blocks_window": "10000",
-        "min_signed_per_window": "0.500000000000000000",
+        "min_signed_per_window": "0.050000000000000000",
         "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
         "slash_fraction_downtime": "0.010000000000000000"

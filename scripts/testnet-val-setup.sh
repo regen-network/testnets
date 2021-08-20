@@ -35,8 +35,8 @@ YOUR_KEY_NAME=$1
 YOUR_NAME=$2
 DAEMON=regen
 DENOM=uregen
-CHAIN_ID=regen-testnet-2
-PERSISTENT_PEERS="c82649de42fd5a3ca0d3540ed14ae7125c3a169f@157.245.252.46:26656"
+CHAIN_ID=regen-redwood-1
+PERSISTENT_PEERS="a5528d8f5fabd3d50e91e8d6a97e355403c5b842@128.199.249.31:26656"
 
 echo "install regen-ledger"
 git clone https://github.com/regen-network/regen-ledger $GOPATH/src/github.com/regen-network/regen-ledger
@@ -56,7 +56,7 @@ echo ""
 
 echo "Setting up your validator"
 $DAEMON init --chain-id $CHAIN_ID $YOUR_NAME
-curl http://157.245.252.46:36657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
+curl http://128.199.249.31:26657/genesis | jq .result.genesis > ~/.regen/config/genesis.json
 
 
 echo "----------Setting config for seed node---------"
@@ -105,8 +105,8 @@ sudo -S systemctl start cosmovisor
 echo
 echo "Your account address is :"
 $DAEMON keys show $YOUR_KEY_NAME -a
-echo "Your node setup is done. You would need some tokens to start your validator. You can get some tokens from the faucet: https://regen.vitwit.com/faucet"
+echo "Your node setup is done. You would need some tokens to start your validator. You can get some tokens from the faucet: http://128.199.249.31:8000/faucet/<address>"
 echo
 echo
 echo "After receiving tokens, you can create your validator by running"
-echo "$DAEMON tx staking create-validator --amount 9000000000$DENOM --commission-max-change-rate \"0.1\" --commission-max-rate \"0.20\" --commission-rate \"0.1\" --details \"Some details about yourvalidator\" --from $YOUR_KEY_NAME   --pubkey=\"$($DAEMON tendermint show-validator)\" --moniker $YOUR_NAME --min-self-delegation \"1\" --chain-id $CHAIN_ID --node http://18.220.101.192:26657"
+echo "$DAEMON tx staking create-validator --amount 9000000000$DENOM --commission-max-change-rate \"0.1\" --commission-max-rate \"0.20\" --commission-rate \"0.1\" --details \"Some details about yourvalidator\" --from $YOUR_KEY_NAME   --pubkey=\"$($DAEMON tendermint show-validator)\" --moniker $YOUR_NAME --min-self-delegation \"1\" --chain-id $CHAIN_ID --node http://128.199.249.31:26657"

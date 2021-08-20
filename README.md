@@ -4,13 +4,14 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ## Active Testnets
 
-### regen-testnet-2
+### regen-redwood-1
 
-`regen-testnet-2` is active now and here are some important details:
+`regen-redwood-1` is an active testnet for the community. It generally runs the same software as mainnet and useful for testing third-party integrations. Also it will be used as a platform for testing mainnet upgrades.
 
-- Faucet: https://regen.vitwit.com/faucet
+- [Faucet](./redwood-testnet/faucet.txt)
+- [Explorer](https://redwood.regen.aneka.io/)
 
-Here are the instructions to run a validator for `regen-testnet-2`:
+Here are the instructions to run a validator for `regen-redwood-1`:
 
 1. Stop your existing regen validator (if any)
 ```shell script
@@ -26,7 +27,12 @@ chmod +x scripts/testnet-val-setup.sh
 ./scripts/testnet-val-setup.sh <your_key_name> <your_validator_moniker_name>
 ```
 
-You can find the genesis file and all the relevant information in [testnet](./testnet) directory
+You can find the genesis file and all the relevant information in [redwood-testnet](./redwood-testnet) directory
+
+To get tokens from the faucet use the following curl command
+```
+curl http://<faucet-url>/faucet/address/<your-regen-address>
+```
 
 ## Regen Devnets
 
