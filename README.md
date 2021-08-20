@@ -6,7 +6,7 @@ Testnets for [Regen Ledger](https://github.com/regen-network/regen-ledger)
 
 ### regen-redwood-1
 
-`regen-redwood-1` is active now and here are some important details:
+`regen-redwood-1` is an active testnet for the community. It generally runs the same software as mainnet and useful for testing third-party integrations. Also it will be used as a platform for testing mainnet upgrades.
 
 - [Faucet](./redwood-testnet/faucet.txt)
 - [Explorer](https://redwood.regen.aneka.io/)
