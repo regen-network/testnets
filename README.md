@@ -31,7 +31,7 @@ You can find the genesis file and all the relevant information in [redwood-testn
 
 To get tokens from the faucet use the following curl command
 ```
-curl http://<faucet-url>/faucet/address/<your-regen-address>
+curl http://<faucet-url>/faucet/<your-regen-address>
 ```
 
 ## Regen Devnets
