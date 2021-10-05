@@ -1,17 +1,17 @@
 {
-  "genesis_time": "2021-08-18T10:32:15.02034107Z",
+  "genesis_time": "2021-09-30T10:05:51.381679131Z",
   "chain_id": "regen-redwood-1",
   "initial_height": "1",
   "consensus_params": {
     "block": {
-      "max_bytes": "22020096",
-      "max_gas": "-1",
+      "max_bytes": "200000",
+      "max_gas": "2000000",
       "time_iota_ms": "1000"
     },
     "evidence": {
-      "max_age_num_blocks": "100000",
+      "max_age_num_blocks": "1000000",
       "max_age_duration": "172800000000000",
-      "max_bytes": "1048576"
+      "max_bytes": "50000"
     },
     "validator": {
       "pub_key_types": [
@@ -24,7 +24,7 @@
   "app_state": {
     "auth": {
       "params": {
-        "max_memo_characters": "256",
+        "max_memo_characters": "512",
         "tx_sig_limit": "7",
         "tx_size_cost_per_byte": "10",
         "sig_verify_cost_ed25519": "590",
@@ -65,7 +65,7 @@
           "coins": [
             {
               "denom": "uregen",
-              "amount": "1000000000000000"
+              "amount": "100000000000"
             }
           ]
         },
@@ -74,7 +74,7 @@
           "coins": [
             {
               "denom": "uregen",
-              "amount": "10000000000"
+              "amount": "100000000000"
             }
           ]
         },
@@ -83,7 +83,7 @@
           "coins": [
             {
               "denom": "uregen",
-              "amount": "1000000000000000"
+              "amount": "10000000000"
             }
           ]
         }
@@ -91,10 +91,37 @@
       "supply": [
         {
           "denom": "uregen",
-          "amount": "2000010000000000"
+          "amount": "210000000000"
         }
       ],
-      "denom_metadata": []
+      "denom_metadata": [
+        {
+          "description": "The native staking token of Regen Network",
+          "denom_units": [
+            {
+              "denom": "uregen",
+              "exponent": 0,
+              "aliases": [
+                "microregen"
+              ]
+            },
+            {
+              "denom": "mregen",
+              "exponent": 3,
+              "aliases": [
+                "milliregen"
+              ]
+            },
+            {
+              "denom": "regen",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "uregen",
+          "display": "regen"
+        }
+      ]
     },
     "capability": {
       "index": "1",
@@ -103,7 +130,7 @@
     "crisis": {
       "constant_fee": {
         "denom": "uregen",
-        "amount": "1000"
+        "amount": "1000000000"
       }
     },
     "distribution": {
@@ -136,7 +163,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "Witval",
+                  "moniker": "witval",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -156,11 +183,11 @@
                 },
                 "value": {
                   "denom": "uregen",
-                  "amount": "9000000000"
+                  "amount": "90000000000"
                 }
               }
             ],
-            "memo": "c82649de42fd5a3ca0d3540ed14ae7125c3a169f@157.245.252.46:26656",
+            "memo": "49dc8b51e9dc08658b4f86133bc3e031857996bc@157.245.252.46:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -188,7 +215,7 @@
             }
           },
           "signatures": [
-            "jhRhJYK731iXYfa+DsH1LJQqYoCpMY0x+hNOuss8aodbQYk/flM/HvT2LWwgbJ5yvTSl0BGUvH5Oiu861Nn7qw=="
+            "pGYBOMhr2vYZjv+f7JlnQyYkEIAmbUAmoA05WqvpU91vatRxu0wUdAzIm1yk/NwYX4hZHG9kD3JCYz4spq0IHw=="
           ]
         }
       ]
@@ -202,16 +229,16 @@
         "min_deposit": [
           {
             "denom": "uregen",
-            "amount": "10000000"
+            "amount": "200000000"
           }
         ],
         "max_deposit_period": "172800s"
       },
       "voting_params": {
-        "voting_period": "172800s"
+        "voting_period": "86400s"
       },
       "tally_params": {
-        "quorum": "0.334000000000000000",
+        "quorum": "0.400000000000000000",
         "threshold": "0.500000000000000000",
         "veto_threshold": "0.334000000000000000"
       }
@@ -223,7 +250,6 @@
         "clients_metadata": [],
         "params": {
           "allowed_clients": [
-            "06-solomachine",
             "07-tendermint"
           ]
         },
@@ -248,7 +274,7 @@
     },
     "mint": {
       "minter": {
-        "inflation": "0.130000000000000000",
+        "inflation": "0.200000000000000000",
         "annual_provisions": "0.000000000000000000"
       },
       "params": {
@@ -267,7 +293,7 @@
         "min_signed_per_window": "0.050000000000000000",
         "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.010000000000000000"
+        "slash_fraction_downtime": "0.000100000000000000"
       },
       "signing_infos": [],
       "missed_blocks": []
@@ -275,7 +301,7 @@
     "staking": {
       "params": {
         "unbonding_time": "1814400s",
-        "max_validators": 100,
+        "max_validators": 50,
         "max_entries": 7,
         "historical_entries": 10000,
         "bond_denom": "uregen"
