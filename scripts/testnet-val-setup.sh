@@ -70,7 +70,7 @@ echo "Installing cosmovisor - an upgrade manager..."
 rm -rf $GOPATH/src/github.com/cosmos/cosmos-sdk
 git clone https://github.com/cosmos/cosmos-sdk $GOPATH/src/github.com/cosmos/cosmos-sdk
 cd $GOPATH/src/github.com/cosmos/cosmos-sdk
-git checkout v0.40.0
+git checkout cosmovisor/v1.0.0
 cd cosmovisor
 make cosmovisor
 cp cosmovisor $GOBIN/cosmovisor
@@ -88,7 +88,7 @@ After=network-online.target
 [Service]
 Environment="DAEMON_NAME=regen"
 Environment="DAEMON_HOME=${HOME}/.${DAEMON}"
-Environment="DAEMON_RESTART_AFTER_UPGRADE=on"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 User=${USER}
 ExecStart=${GOBIN}/cosmovisor start
 Restart=always
