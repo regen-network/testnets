@@ -1,0 +1,328 @@
+{
+  "genesis_time": "2021-09-30T10:05:51.381679131Z",
+  "chain_id": "regen-redwood-1",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "200000",
+      "max_gas": "2000000",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "1000000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "50000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "512",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "regen1pxag6wu3jz885yr9t8gkuvc4ktxxt2la7xm4x3",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "regen1ehmqt8ept5awlfkxcf3qp9a6ezsx2amyshqycs",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "regen1pxag6wu3jz885yr9t8gkuvc4ktxxt2la7xm4x3",
+          "coins": [
+            {
+              "denom": "uregen",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
+          "coins": [
+            {
+              "denom": "uregen",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "regen1ehmqt8ept5awlfkxcf3qp9a6ezsx2amyshqycs",
+          "coins": [
+            {
+              "denom": "uregen",
+              "amount": "10000000000"
+            }
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "denom": "uregen",
+          "amount": "210000000000"
+        }
+      ],
+      "denom_metadata": [
+        {
+          "description": "The native staking token of Regen Network",
+          "denom_units": [
+            {
+              "denom": "uregen",
+              "exponent": 0,
+              "aliases": [
+                "microregen"
+              ]
+            },
+            {
+              "denom": "mregen",
+              "exponent": 3,
+              "aliases": [
+                "milliregen"
+              ]
+            },
+            {
+              "denom": "regen",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "uregen",
+          "display": "regen"
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "uregen",
+        "amount": "1000000000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "witval",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "regen15cea7lrp06c86hc3azzm0ffuvuya4e62aj2vyn",
+                "validator_address": "regenvaloper15cea7lrp06c86hc3azzm0ffuvuya4e62p4hfuz",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "nUzWRiQMZEGTXgQF3jRfHqJMrboyFvGBsZE+uNtY21o="
+                },
+                "value": {
+                  "denom": "uregen",
+                  "amount": "90000000000"
+                }
+              }
+            ],
+            "memo": "49dc8b51e9dc08658b4f86133bc3e031857996bc@157.245.252.46:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AkQhy8wCnpKurglghnNCe0Oremu8mqqRyCNh+8T52sss"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "pGYBOMhr2vYZjv+f7JlnQyYkEIAmbUAmoA05WqvpU91vatRxu0wUdAzIm1yk/NwYX4hZHG9kD3JCYz4spq0IHw=="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "uregen",
+            "amount": "200000000"
+          }
+        ],
+        "max_deposit_period": "172800s"
+      },
+      "voting_params": {
+        "voting_period": "86400s"
+      },
+      "tally_params": {
+        "quorum": "0.400000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0"
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.200000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "uregen",
+        "inflation_rate_change": "0.130000000000000000",
+        "inflation_max": "0.200000000000000000",
+        "inflation_min": "0.070000000000000000",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "4360000"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "10000",
+        "min_signed_per_window": "0.050000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000100000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400s",
+        "max_validators": 50,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "uregen"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}
