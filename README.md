@@ -34,7 +34,17 @@ To get tokens from the faucet use the following curl command
 curl http://<faucet-url>/faucet/<your-regen-address>
 ```
 
-## Regen Devnets
+## Experimental Testnets
+
+### regen-hambach-2
+- Faucet: (coming soon)
+- RPC: http://137.184.24.185:26657/
+- LCD: http://137.184.24.185:1317/
+- Explorer: http://hambach.regen.aneka.io/
+- Chain-id: regen-hambach-2
+
+
+## Historical Devnets
 
 ### regen-devnet-6
 - Faucet: https://regen.vitwit.com/faucet
